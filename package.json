@@ -4,6 +4,7 @@
   "description": "Electron interactive API demos",
   "main": "main.js",
   "scripts": {
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
