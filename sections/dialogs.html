@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Electron API Demos</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <h1>Creating Native Dialogs</h1>
+        <h3>The <code>diaglog</code> module in Electron allows you to make use of native system dialogs.</h3>
+      </div>
+    </header>
+    <section class="native-ui">
+      <div class="wrapper">
+        <h2>Open a File or Directory</h2>
+        <div class="support">Supports: Win, OS X, Linux</div>
+        <button id="select-directory">Demo</button><span id="selected-file"></span>
+        <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
+          from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
+          to the other.</p>
+        <h5>main.js</h5>
+        <pre><code>
+// some code
+        </code></pre>
+        <h5>dialogs.html</h5>
+        <pre><code>
+// some code
+        </pre></code>
+        <p>Note: add each dialog and example for sheet option</p>
+      </div>
+      <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
+      <script type="text/javascript">
+        var ipc = require('ipc');
+
+        ipc.on('selected-directory', function (path) {
+          document.getElementById('selected-file').innerHTML = "You selected: " + path
+        });
+      </script>
+    </section>
+
+    <section class="native-ui">
+      <div class="wrapper">
+        <h2>Create an Alert</h2>
+        <button id="select-directory">Demo</button>
+        <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
+          from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
+          to the other.</p>
+        <h5>main.js</h5>
+        <pre><code>
+// some code
+        </code></pre>
+        <h5>dialogs.html</h5>
+        <pre><code>
+// some code
+        </pre></code>
+      </div>
+    </section>
+
+    <script>
+    </script>
+  </body>
+</html>
