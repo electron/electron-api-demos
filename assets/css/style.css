@@ -75,4 +75,11 @@ section {
 pre {
   background: #fff;
   color: #333;
+  font-size: 12px;
+  overflow: auto;
+  padding: 10px;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
 }
