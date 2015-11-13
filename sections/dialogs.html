@@ -21,44 +21,61 @@
           from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
           to the other.</p>
         <h5>main.js</h5>
-        <pre><code>
-// some code
-        </code></pre>
+        <pre><code id="open-file-main"></code></pre>
         <h5>dialogs.html</h5>
-        <pre><code>
-// some code
-        </pre></code>
+        <pre><code id="open-file-render"></pre></code>
         <p>Note: add each dialog and example for sheet option</p>
       </div>
-      <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
-      <script type="text/javascript">
-        var ipc = require('ipc');
-
-        ipc.on('selected-directory', function (path) {
-          document.getElementById('selected-file').innerHTML = "You selected: " + path
-        });
-      </script>
     </section>
 
     <section class="native-ui">
       <div class="wrapper">
-        <h2>Create an Alert</h2>
-        <button id="select-directory">Demo</button>
-        <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
-          from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
-          to the other.</p>
+        <h2>Error Dialogs</h2>
+        <div class="support">Supports: Win, OS X, Linux</div>
+        <button id="error-dialog">Demo</button>
+        <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
         <h5>main.js</h5>
-        <pre><code>
-// some code
-        </code></pre>
+        <pre><code id="error-dialog-main"></code></pre>
         <h5>dialogs.html</h5>
-        <pre><code>
-// some code
-        </pre></code>
+        <pre><code id="error-dialog-render"></pre></code>
       </div>
     </section>
 
-    <script>
+    <section class="native-ui">
+      <div class="wrapper">
+        <h2>Error Dialogs</h2>
+        <div class="support">Supports: Win, OS X, Linux</div>
+        <button id="error-dialog">Demo</button>
+        <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+        <h5>main.js</h5>
+        <pre><code id="error-dialog-main"></code></pre>
+        <h5>dialogs.html</h5>
+        <pre><code id="error-dialog-render"></pre></code>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
+    <script type="text/javascript" src="../render-process/dialogs/error.js"></script>
+    <script type="text/javascript">
+      var ipc = require('ipc');
+
+      ipc.on('selected-directory', => (path) {
+        document.getElementById('selected-file').innerHTML = "You selected: " + path
+      });
+
+    </script>
+    <script type="text/javascript">
+      var fs = require('fs')
+      // Open File Dialog
+      var content = fs.readFileSync('main-process/dialogs/open-file.js')
+      document.getElementById('open-file-main').innerHTML= content
+      var content = fs.readFileSync('render-process/dialogs/open-file.js')
+      document.getElementById('open-file-render').innerHTML= content
+      // Error Dialog
+      var content = fs.readFileSync('main-process/dialogs/error.js')
+      document.getElementById('error-dialog-main').innerHTML= content
+      var content = fs.readFileSync('render-process/dialogs/error.js')
+      document.getElementById('error-dialog-render').innerHTML= content
     </script>
   </body>
 </html>
