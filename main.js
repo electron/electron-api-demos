@@ -10,6 +10,9 @@ openFileDialog()
 var errorDialog = require('./main-process/dialogs/error.js')
 errorDialog()
 
+var infoDialog = require('./main-process/dialogs/information.js')
+infoDialog()
+
 app.on('window-all-closed', () => {
   if (process.platform != 'darwin') {
     app.quit();

@@ -72,6 +72,10 @@ section {
   background-color: #76C8DD;
 }
 
+.native-ui + .native-ui + .native-ui {
+  background-color: salmon;
+}
+
 pre {
   background: #fff;
   color: #333;

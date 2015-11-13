@@ -12,56 +12,66 @@
         <h3>The <code>diaglog</code> module in Electron allows you to make use of native system dialogs.</h3>
       </div>
     </header>
-    <section class="native-ui">
-      <div class="wrapper">
-        <h2>Open a File or Directory</h2>
-        <div class="support">Supports: Win, OS X, Linux</div>
-        <button id="select-directory">Demo</button><span id="selected-file"></span>
-        <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
-          from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
-          to the other.</p>
-        <h5>main.js</h5>
-        <pre><code id="open-file-main"></code></pre>
-        <h5>dialogs.html</h5>
-        <pre><code id="open-file-render"></pre></code>
-        <p>Note: add each dialog and example for sheet option</p>
-      </div>
-    </section>
+    <div class="sections">
+      <section class="native-ui">
+        <div class="wrapper">
+          <h2>Open a File or Directory</h2>
+          <div class="support">Supports: Win, OS X, Linux</div>
+          <button id="select-directory">Demo</button><span id="selected-file"></span>
+          <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
+            from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
+            to the other.</p>
+          <h5>main.js</h5>
+          <pre><code id="open-file-main"></code></pre>
+          <h5>dialogs.html</h5>
+          <pre><code id="open-file-render"></pre></code>
+          <p>Note: add each dialog and example for sheet option</p>
+        </div>
+      </section>
 
-    <section class="native-ui">
-      <div class="wrapper">
-        <h2>Error Dialogs</h2>
-        <div class="support">Supports: Win, OS X, Linux</div>
-        <button id="error-dialog">Demo</button>
-        <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
-        <h5>main.js</h5>
-        <pre><code id="error-dialog-main"></code></pre>
-        <h5>dialogs.html</h5>
-        <pre><code id="error-dialog-render"></pre></code>
-      </div>
-    </section>
+      <section class="native-ui">
+        <div class="wrapper">
+          <h2>Error Dialogs</h2>
+          <div class="support">Supports: Win, OS X, Linux</div>
+          <button id="error-dialog">Demo</button>
+          <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+          <h5>main.js</h5>
+          <pre><code id="error-dialog-main"></code></pre>
+          <h5>dialogs.html</h5>
+          <pre><code id="error-dialog-render"></pre></code>
+        </div>
+      </section>
 
-    <section class="native-ui">
-      <div class="wrapper">
-        <h2>Error Dialogs</h2>
-        <div class="support">Supports: Win, OS X, Linux</div>
-        <button id="error-dialog">Demo</button>
-        <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
-        <h5>main.js</h5>
-        <pre><code id="error-dialog-main"></code></pre>
-        <h5>dialogs.html</h5>
-        <pre><code id="error-dialog-render"></pre></code>
-      </div>
-    </section>
+      <section class="native-ui">
+        <div class="wrapper">
+          <h2>Information Dialogs</h2>
+          <div class="support">Supports: Win, OS X, Linux</div>
+          <button id="information-dialog">Demo</button><span id="info-selection"></span>
+          <p>An information dialog can contain an icon, your choice of buttons, title and message. Button selections can be sent back to the render process via `ipc`.</p>
+          <h5>main.js</h5>
+          <pre><code id="information-dialog-main"></code></pre>
+          <h5>dialogs.html</h5>
+          <pre><code id="information-dialog-render"></pre></code>
+        </div>
+      </section>
+    </div>
 
     <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
     <script type="text/javascript" src="../render-process/dialogs/error.js"></script>
+    <script type="text/javascript" src="../render-process/dialogs/information.js"></script>
     <script type="text/javascript">
       var ipc = require('ipc');
 
-      ipc.on('selected-directory', => (path) {
+      ipc.on('selected-directory', function (path) {
         document.getElementById('selected-file').innerHTML = "You selected: " + path
       });
+
+      ipc.on('information-dialog-selection', function (index) {
+        var message = "You selected "
+        if (index === 0) message += "yes."
+        else message += "no."
+        document.getElementById('info-selection').innerHTML = message
+      })
 
     </script>
     <script type="text/javascript">
@@ -76,6 +86,11 @@
       document.getElementById('error-dialog-main').innerHTML= content
       var content = fs.readFileSync('render-process/dialogs/error.js')
       document.getElementById('error-dialog-render').innerHTML= content
+      // Information Dialog
+      var content = fs.readFileSync('main-process/dialogs/information.js')
+      document.getElementById('information-dialog-main').innerHTML= content
+      var content = fs.readFileSync('render-process/dialogs/information.js')
+      document.getElementById('information-dialog-render').innerHTML= content
     </script>
   </body>
 </html>
