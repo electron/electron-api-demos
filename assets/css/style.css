@@ -87,3 +87,13 @@ pre {
 code {
   font-family: 'Source Code Pro', monospace;
 }
+
+/* TOGGLE! */
+
+.toggle-content {
+  display: none;
+}
+
+.active .toggle-content {
+  display: block;
+}

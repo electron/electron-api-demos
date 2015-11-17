@@ -15,57 +15,69 @@
     <div class="sections">
       <section class="native-ui">
         <div class="wrapper">
-          <h2>Open a File or Directory</h2>
+          <h2 class="js-container-target">Open a File or Directory
           <div class="support">Supports: Win, OS X, Linux</div>
-          <button id="select-directory">Demo</button><span id="selected-file"></span>
-          <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
-            from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
-            to the other.</p>
-          <h5>main.js</h5>
-          <pre><code id="open-file-main"></code></pre>
-          <h5>dialogs.html</h5>
-          <pre><code id="open-file-render"></pre></code>
-          <p>Note: add each dialog and example for sheet option</p>
+          </h2>
+          <div class="toggle-content">
+            <button id="select-directory">Demo</button><span id="selected-file"></span>
+            <p>Opening a file must be done in the <strong>main process</strong> so if you're wanting to launch the dialog
+              from a browser window (render process) you'll use the <code>ipc</code> module to communicate from one process
+              to the other.</p>
+            <h5>main.js</h5>
+            <pre><code id="open-file-main"></code></pre>
+            <h5>dialogs.html</h5>
+            <pre><code id="open-file-render"></pre></code>
+            <p>Note: add each dialog and example for sheet option</p>
+          </div>
         </div>
       </section>
 
       <section class="native-ui">
         <div class="wrapper">
-          <h2>Error Dialogs</h2>
+          <h2 class="js-container-target">Error Dialogs
           <div class="support">Supports: Win, OS X, Linux</div>
-          <button id="error-dialog">Demo</button>
-          <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
-          <h5>main.js</h5>
-          <pre><code id="error-dialog-main"></code></pre>
-          <h5>dialogs.html</h5>
-          <pre><code id="error-dialog-render"></pre></code>
+          </h2>
+          <div class="toggle-content">
+            <button id="error-dialog">Demo</button>
+            <p>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+            <h5>main.js</h5>
+            <pre><code id="error-dialog-main"></code></pre>
+            <h5>dialogs.html</h5>
+            <pre><code id="error-dialog-render"></pre></code>
+          </div>
         </div>
       </section>
 
       <section class="native-ui">
         <div class="wrapper">
-          <h2>Information Dialogs</h2>
+          <h2 class="js-container-target">Information Dialogs
           <div class="support">Supports: Win, OS X, Linux</div>
-          <button id="information-dialog">Demo</button><span id="info-selection"></span>
-          <p>An information dialog can contain an icon, your choice of buttons, title and message. Button selections can be sent back to the render process via `ipc`.</p>
-          <h5>main.js</h5>
-          <pre><code id="information-dialog-main"></code></pre>
-          <h5>dialogs.html</h5>
-          <pre><code id="information-dialog-render"></pre></code>
+          </h2>
+          <div class="toggle-content">
+            <button id="information-dialog">Demo</button><span id="info-selection"></span>
+            <p>An information dialog can contain an icon, your choice of buttons, title and message. Button selections can be sent back to the render process via `ipc`.</p>
+            <h5>main.js</h5>
+            <pre><code id="information-dialog-main"></code></pre>
+            <h5>dialogs.html</h5>
+            <pre><code id="information-dialog-render"></pre></code>
+          </div>
         </div>
       </section>
     </div>
 
     <section class="native-ui">
       <div class="wrapper">
-        <h2>Save Dialogs</h2>
+        <h2 class="js-container-target">Save Dialogs
         <div class="support">Supports: Win, OS X, Linux</div>
-        <button id="save-dialog">Demo</button><span id="file-saved"></span>
-        <p>Save a file.</p>
-        <h5>main.js</h5>
-        <pre><code id="save-dialog-main"></code></pre>
-        <h5>dialogs.html</h5>
-        <pre><code id="save-dialog-render"></pre></code>
+        </h2>
+        <div class="toggle-content">
+          <button id="save-dialog">Demo</button><span id="file-saved"></span>
+          <p>Save a file.</p>
+          <h5>main.js</h5>
+          <pre><code id="save-dialog-main"></code></pre>
+          <h5>dialogs.html</h5>
+          <pre><code id="save-dialog-render"></pre></code>
+        </div>
       </div>
     </section>
   </div>
@@ -93,6 +105,15 @@
         document.getElementById('file-saved').innerHTML = "You saved " + filename
       })
 
+      document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('js-container-target')) {
+          if (event.target.parentElement.classList.contains('active')) {
+            event.target.parentElement.classList.remove('active')
+          } else {
+            event.target.parentElement.classList.add('active')
+          }
+        }
+      })
     </script>
     <script type="text/javascript">
       var fs = require('fs')
