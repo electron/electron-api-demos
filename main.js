@@ -13,6 +13,9 @@ errorDialog()
 var infoDialog = require('./main-process/dialogs/information.js')
 infoDialog()
 
+var saveDialog = require('./main-process/dialogs/save.js')
+saveDialog()
+
 app.on('window-all-closed', () => {
   if (process.platform != 'darwin') {
     app.quit();
