@@ -95,15 +95,15 @@
       });
 
       ipc.on('information-dialog-selection', function (index) {
-        var message = "You selected "
-        if (index === 0) message += "yes."
-        else message += "no."
-        document.getElementById('info-selection').innerHTML = message
-      })
+        var message = "You selected ";
+        if (index === 0) message += "yes.";
+        else message += "no.";
+        document.getElementById('info-selection').innerHTML = message;
+      });
 
       ipc.on('saved-file', function (filename) {
-        document.getElementById('file-saved').innerHTML = "You saved " + filename
-      })
+        document.getElementById('file-saved').innerHTML = "You saved " + filename;
+      });
 
       document.addEventListener('click', function (event) {
         if (event.target.classList.contains('js-container-target')) {
@@ -111,32 +111,32 @@
             event.target.parentElement.classList.remove('active')
           } else {
             event.target.parentElement.classList.add('active')
-          }
-        }
-      })
+          };
+        };
+      });
     </script>
     <script type="text/javascript">
-      var fs = require('fs')
+      var fs = require('fs');
       // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/dialogs/open-file.js')
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent
-      var OpenFileRenderContent = fs.readFileSync('render-process/dialogs/open-file.js')
-      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent
+      var OpenFileMainContent = fs.readFileSync('main-process/dialogs/open-file.js');
+      document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
+      var OpenFileRenderContent = fs.readFileSync('render-process/dialogs/open-file.js');
+      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
       // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/dialogs/error.js')
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent
-      var ErrorRenderContent = fs.readFileSync('render-process/dialogs/error.js')
-      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent
+      var ErrorMainContent = fs.readFileSync('main-process/dialogs/error.js');
+      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
+      var ErrorRenderContent = fs.readFileSync('render-process/dialogs/error.js');
+      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
       // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/dialogs/information.js')
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent
-      var InfoRenderContent = fs.readFileSync('render-process/dialogs/information.js')
-      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent
+      var InfoMainContent = fs.readFileSync('main-process/dialogs/information.js');
+      document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
+      var InfoRenderContent = fs.readFileSync('render-process/dialogs/information.js');
+      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
       // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/dialogs/save.js')
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent
-      var SaveRenderContent = fs.readFileSync('render-process/dialogs/save.js')
-      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent
+      var SaveMainContent = fs.readFileSync('main-process/dialogs/save.js');
+      document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
+      var SaveRenderContent = fs.readFileSync('render-process/dialogs/save.js');
+      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
     </script>
   </body>
 </html>
