@@ -1,23 +1,22 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
-var ipc = require('electron').ipcMain;
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/dialogs/open-file.js')
-openFileDialog()
+var openFileDialog = require('./main-process/dialogs/open-file.js');
+openFileDialog();
 
-var errorDialog = require('./main-process/dialogs/error.js')
-errorDialog()
+var errorDialog = require('./main-process/dialogs/error.js');
+errorDialog();
 
-var infoDialog = require('./main-process/dialogs/information.js')
-infoDialog()
+var infoDialog = require('./main-process/dialogs/information.js');
+infoDialog();
 
-var saveDialog = require('./main-process/dialogs/save.js')
-saveDialog()
+var saveDialog = require('./main-process/dialogs/save.js');
+saveDialog();
 
 app.on('window-all-closed', () => {
-  if (process.platform != 'darwin') {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
