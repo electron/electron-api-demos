@@ -1,4 +1,4 @@
-var ipc = require('ipc');
+var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
 var BrowserWindow = require('browser-window');
 
