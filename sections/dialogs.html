@@ -88,7 +88,7 @@
     <script type="text/javascript" src="../render-process/dialogs/save.js"></script>
 
     <script type="text/javascript">
-      var ipc = require('ipc');
+      var ipc = require('electron').ipcRenderer;
 
       ipc.on('selected-directory', function (path) {
         document.getElementById('selected-file').innerHTML = "You selected: " + path
