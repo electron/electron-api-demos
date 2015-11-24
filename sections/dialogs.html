@@ -16,7 +16,7 @@
       <section class="native-ui">
         <div class="wrapper">
           <h2 class="js-container-target">Open a File or Directory
-          <div class="support">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
             <button id="select-directory">Demo</button><span id="selected-file"></span>
@@ -35,7 +35,7 @@
       <section class="native-ui">
         <div class="wrapper">
           <h2 class="js-container-target">Error Dialogs
-          <div class="support">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
             <button id="error-dialog">Demo</button>
@@ -51,7 +51,7 @@
       <section class="native-ui">
         <div class="wrapper">
           <h2 class="js-container-target">Information Dialogs
-          <div class="support">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
             <button id="information-dialog">Demo</button><span id="info-selection"></span>
@@ -68,7 +68,7 @@
     <section class="native-ui">
       <div class="wrapper">
         <h2 class="js-container-target">Save Dialogs
-        <div class="support">Supports: Win, OS X, Linux</div>
+        <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
         </h2>
         <div class="toggle-content">
           <button id="save-dialog">Demo</button><span id="file-saved"></span>
@@ -105,15 +105,17 @@
         document.getElementById('file-saved').innerHTML = "You saved " + filename;
       });
 
-      document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('js-container-target')) {
+      var demoBtns = document.querySelectorAll('.js-container-target');
+      Array.prototype.forEach.call(demoBtns, function (btn) {
+        btn.addEventListener('click', function (event) {
           if (event.target.parentElement.classList.contains('active')) {
             event.target.parentElement.classList.remove('active')
           } else {
             event.target.parentElement.classList.add('active')
           };
-        };
+        });
       });
+
     </script>
     <script type="text/javascript">
       var fs = require('fs');

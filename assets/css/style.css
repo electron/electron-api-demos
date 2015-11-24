@@ -53,10 +53,13 @@ body {
   opacity: .75;
 }
 
+.avoid-clicks {
+  pointer-events: none;
+}
+
 /* Sections */
 
 section {
-  padding: 20px 0;
   color: #fff;
 }
 
@@ -96,4 +99,10 @@ code {
 
 .active .toggle-content {
   display: block;
+}
+
+.js-container-target {
+  cursor: pointer;
+  padding: 20px 0;
+  margin: 0;
 }
