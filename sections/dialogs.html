@@ -9,12 +9,12 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
-  <body>
+  <body class="task-page">
     <header>
       <div class="wrapper">
         <div class="nav"><a href="../index.html">Back</a></div>
         <h1>Creating Native Dialogs</h1>
-        <h3>The <code>diaglog</code> module in Electron allows you to make use of native system dialogs.</h3>
+        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs.</h3>
       </div>
     </header>
     <div class="sections">
@@ -84,6 +84,18 @@
         </div>
       </div>
     </section>
+
+    <section class="pro-tip">
+      <div class="wrapper">
+        <h2>Pro-Tips</h2>
+        <div class="non-toggle-content">
+        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, include the window in your dialog method:</p>
+        <pre><code>
+var files = dialog.showOpenDialog(window, {properties: ['openFile', 'openDirectory']});
+        </code></pre>
+        </div>
+      </div>
+    </section>
   </div>
 
     <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
@@ -119,7 +131,6 @@
           };
         });
       });
-
     </script>
     <script type="text/javascript">
       var fs = require('fs');

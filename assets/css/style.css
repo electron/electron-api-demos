@@ -111,6 +111,10 @@ section {
   background-color: #8aba87;
 }
 
+.pro-tip {
+  background-color: #00d683;
+}
+
 .task-page .native-ui + .task-page .native-ui {
   background-color: #5C8E9A;
 }
@@ -136,6 +140,10 @@ code {
 
 .toggle-content {
   display: none;
+  padding-bottom: 20px;
+}
+
+.non-toggle-content {
   padding-bottom: 20px;
 }
 
