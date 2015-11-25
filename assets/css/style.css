@@ -51,7 +51,7 @@ header {
   margin: 0 auto;
 }
 
-.support {
+.support, .meta {
   text-transform: uppercase;
   font-size: 11px;
   opacity: .75;
@@ -70,11 +70,21 @@ button {
   margin-right: 10px;
 }
 
+.index h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.index section {
+  padding-top: 10px;
+}
+
 /* Sections */
 
 section {
   color: #fff;
   overflow: auto;
+  border-bottom: 3px solid #DBF6FB;
 }
 
 .native-ui {
@@ -85,11 +95,27 @@ section {
   background-color: #76DEB4;
 }
 
-.native-ui + .native-ui {
+.system {
+  background-color: #76dec8;
+}
+
+.printing {
+  background-color: #76c8de;
+}
+
+.communication {
+  background-color: #7696de;
+}
+
+.window {
+  background-color: #8aba87;
+}
+
+.task-page .native-ui + .task-page .native-ui {
   background-color: #5C8E9A;
 }
 
-.native-ui + .native-ui + .native-ui {
+.task-page .native-ui + .task-page .native-ui + .task-page .native-ui {
   background-color: #79d9ca;
 }
 
