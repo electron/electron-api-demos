@@ -90,18 +90,18 @@
     <script type="text/javascript">
       var ipc = require('electron').ipcRenderer;
 
-      ipc.on('selected-directory', function (path) {
+      ipc.on('selected-directory', function (event, path) {
         document.getElementById('selected-file').innerHTML = "You selected: " + path
       });
 
-      ipc.on('information-dialog-selection', function (index) {
+      ipc.on('information-dialog-selection', function (event, index) {
         var message = "You selected ";
         if (index === 0) message += "yes.";
         else message += "no.";
         document.getElementById('info-selection').innerHTML = message;
       });
 
-      ipc.on('saved-file', function (filename) {
+      ipc.on('saved-file', function (event, filename) {
         document.getElementById('file-saved').innerHTML = "You saved " + filename;
       });
 
