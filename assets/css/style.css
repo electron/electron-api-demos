@@ -42,16 +42,41 @@ body {
   margin: 0 auto;
 }
 
-header {
-  padding-top: 20px;
-}
-
 .wrapper {
   width: 700px;
   margin: 0 auto;
 }
 
-.support, .meta {
+header {
+  padding: 4em 0;
+}
+
+header h1,
+header h3 {
+  margin: 0;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.2em;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.support {
   text-transform: uppercase;
   font-size: 11px;
   opacity: .75;
@@ -61,59 +86,67 @@ header {
   pointer-events: none;
 }
 
+.meta {
+  text-transform: uppercase;
+  font-size: .9em;
+  color: hsla(0,0%,0%,.5);
+  margin: 0 0 .5em 0;
+}
+
 a.no-dec {
   text-decoration: none;
   color: inherit;
 }
 
-button {
-  margin-right: 10px;
+
+/* block */
+
+.block {
+  display: block;
+  margin: 0;
+  padding: 1.5em;
+  border-top: 1px solid hsla(0,0%,0%,.15);
+  cursor: pointer;
+}
+.block:hover,
+.block:focus {
+  background-color: hsla(0,0%,0%,.1);
+  border-color: transparent;
+}
+.block:active {
+  background-color: hsla(0,0%,0%,.05);
+}
+.block:focus {
+  outline: none;
 }
 
-.index h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
+.block h2 {
+  margin: 0 0 .25em 0;
+  font-weight: 600;
 }
 
-.index section {
-  padding-top: 10px;
+.block p {
+  margin: 0;
+  color: hsl(0,0%,30%);
 }
 
 /* Sections */
-
 section {
+  position: relative;
   color: #fff;
   overflow: auto;
-  border-bottom: 3px solid #DBF6FB;
+  padding: 3em 0
 }
 
-.native-ui {
-  background-color: #3DA6AB;
-}
+/* Section Colors */
+.window        { background-color: #8aba87; }
+.menu          { background-color: #76DEB4; }
+.native-ui     { background-color: #3DA6AB; }
+.communication { background-color: #7696de; }
+.system        { background-color: #76dec8; }
+.printing      { background-color: #76c8de; }
 
-.menu {
-  background-color: #76DEB4;
-}
-
-.system {
-  background-color: #76dec8;
-}
-
-.printing {
-  background-color: #76c8de;
-}
-
-.communication {
-  background-color: #7696de;
-}
-
-.window {
-  background-color: #8aba87;
-}
-
-.pro-tip {
-  background-color: #00d683;
-}
+.pro-tip       { background-color: #00d683; }
 
 .task-page .native-ui + .task-page .native-ui {
   background-color: #5C8E9A;
@@ -122,6 +155,16 @@ section {
 .task-page .native-ui + .task-page .native-ui + .task-page .native-ui {
   background-color: #79d9ca;
 }
+
+
+/* Index Page -------------------------------------- */
+
+
+
+
+/* Detail Page -------------------------------------- */
+
+/* Code */
 
 pre {
   background: #f8f8f8;
@@ -135,6 +178,7 @@ pre {
 code {
   font-family: 'Source Code Pro', monospace;
 }
+
 
 /* TOGGLE! */
 
@@ -154,7 +198,6 @@ code {
 .active .toggle-content {
   display: block;
 }
-
 .js-container-target {
   cursor: pointer;
   padding: 20px 0;
