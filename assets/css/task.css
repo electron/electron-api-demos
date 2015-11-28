@@ -1,20 +1,47 @@
 
 /* Task page */
 
-
-/* Sections */
-
-.task-page section {
-  position: relative;
+.task-page {
   color: #fff;
-  overflow: auto;
-  padding: 3em 0
 }
 
-.task-page .support {
+/* Clicky */
+
+.task-page h2 {
+  display: block;
+  margin: 0;
+  padding: 1em;
+  line-height: 1.5;
+  font-weight: 600;
+  border-top: 1px solid hsla(0,0%,0%,.15);
+  cursor: pointer;
+}
+.task-page h2:hover,
+.task-page h2:focus {
+  background-color: hsla(0,0%,0%,.1);
+  border-color: transparent;
+}
+.task-page h2:active {
+  background-color: hsla(0,0%,0%,.05);
+}
+.task-page h2:focus {
+  outline: none;
+}
+
+.support {
+  margin-top: .5em;
+  font-size: 12px;
+  color: hsl(0,0%,30%);
   text-transform: uppercase;
-  font-size: 11px;
-  opacity: .75;
+}
+
+.pro-tip {
+  padding: 1.5em 0;
+}
+
+.pro-tip h2 {
+  border: none;
+  padding: 0;
 }
 
 
@@ -38,7 +65,8 @@ code {
 
 .toggle-content {
   display: none;
-  padding-bottom: 20px;
+  padding: 2em;
+  background-color: hsla(0,0%,100%,.1);
 }
 
 .non-toggle-content {
@@ -51,9 +79,4 @@ code {
 
 .active .toggle-content {
   display: block;
-}
-.js-container-target {
-  cursor: pointer;
-  padding: 20px 0;
-  margin: 0;
 }
