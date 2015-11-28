@@ -28,6 +28,30 @@
   outline: none;
 }
 
+
+/* Nav */
+
+.nav a {
+  color: inherit;
+  font-size: 1.2em;
+}
+
+.nav .back::before {
+  content: "〈 ";
+  margin-left: -.3em;
+  margin-right: .1em;
+}
+.nav .back:hover::before {
+  margin-left: -.4em;
+  margin-right: .2em;
+}
+.nav .back:active {
+  color: #45828E;
+}
+
+
+/* Misc */
+
 .support {
   margin-top: .5em;
   font-size: 12px;
