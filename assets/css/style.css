@@ -1,3 +1,6 @@
+
+/* Fonts */
+
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -33,17 +36,15 @@
   src: local('Source Code Pro'), local('SourceCodePro'), url(fonts/SourceCodePro-Regular.ttf) format('truetype');
 }
 
+
+/* Global */
+
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
   line-height: 1.8em;
   color: #45828E;
   background-color: #DBF6FB;
   font-size: 15px;
-  margin: 0 auto;
-}
-
-.wrapper {
-  width: 700px;
   margin: 0 auto;
 }
 
@@ -76,21 +77,16 @@ button {
   margin-right: 10px;
 }
 
-.support {
-  text-transform: uppercase;
-  font-size: 11px;
-  opacity: .75;
+
+/* Utilities */
+
+.wrapper {
+  width: 700px;
+  margin: 0 auto;
 }
 
 .avoid-clicks {
   pointer-events: none;
-}
-
-.meta {
-  text-transform: uppercase;
-  font-size: .9em;
-  color: hsla(0,0%,0%,.5);
-  margin: 0 0 .5em 0;
 }
 
 a.no-dec {
@@ -99,46 +95,8 @@ a.no-dec {
 }
 
 
-/* block */
+/* Colors */
 
-.block {
-  display: block;
-  margin: 0;
-  padding: 1.5em;
-  border-top: 1px solid hsla(0,0%,0%,.15);
-  cursor: pointer;
-}
-.block:hover,
-.block:focus {
-  background-color: hsla(0,0%,0%,.1);
-  border-color: transparent;
-}
-.block:active {
-  background-color: hsla(0,0%,0%,.05);
-}
-.block:focus {
-  outline: none;
-}
-
-.block h2 {
-  margin: 0 0 .25em 0;
-  font-weight: 600;
-}
-
-.block p {
-  margin: 0;
-  color: hsl(0,0%,30%);
-}
-
-/* Sections */
-section {
-  position: relative;
-  color: #fff;
-  overflow: auto;
-  padding: 3em 0
-}
-
-/* Section Colors */
 .window        { background-color: #8aba87; }
 .menu          { background-color: #76DEB4; }
 .native-ui     { background-color: #3DA6AB; }
@@ -154,52 +112,4 @@ section {
 
 .task-page .native-ui + .task-page .native-ui + .task-page .native-ui {
   background-color: #79d9ca;
-}
-
-
-/* Index Page -------------------------------------- */
-
-
-
-
-/* Detail Page -------------------------------------- */
-
-/* Code */
-
-pre {
-  background: #f8f8f8;
-  color: #333;
-  font-size: 12px;
-  overflow: auto;
-  padding: 10px;
-  margin: 0;
-}
-
-code {
-  font-family: 'Source Code Pro', monospace;
-}
-
-
-/* TOGGLE! */
-
-.toggle-content {
-  display: none;
-  padding-bottom: 20px;
-}
-
-.non-toggle-content {
-  padding-bottom: 20px;
-}
-
-.toggle-content p {
-  margin: 0;
-}
-
-.active .toggle-content {
-  display: block;
-}
-.js-container-target {
-  cursor: pointer;
-  padding: 20px 0;
-  margin: 0;
 }

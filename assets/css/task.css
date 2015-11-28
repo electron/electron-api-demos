@@ -1,0 +1,59 @@
+
+/* Task page */
+
+
+/* Sections */
+
+.task-page section {
+  position: relative;
+  color: #fff;
+  overflow: auto;
+  padding: 3em 0
+}
+
+.task-page .support {
+  text-transform: uppercase;
+  font-size: 11px;
+  opacity: .75;
+}
+
+
+/* Code */
+
+pre {
+  background: #f8f8f8;
+  color: #333;
+  font-size: 12px;
+  overflow: auto;
+  padding: 10px;
+  margin: 0;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+}
+
+
+/* TOGGLE! */
+
+.toggle-content {
+  display: none;
+  padding-bottom: 20px;
+}
+
+.non-toggle-content {
+  padding-bottom: 20px;
+}
+
+.toggle-content p {
+  margin: 0;
+}
+
+.active .toggle-content {
+  display: block;
+}
+.js-container-target {
+  cursor: pointer;
+  padding: 20px 0;
+  margin: 0;
+}
