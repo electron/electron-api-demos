@@ -31,22 +31,34 @@
 
 /* Nav */
 
-.nav a {
-  color: inherit;
-  font-size: 1.2em;
+.nav {
+  margin-bottom: 1em;
 }
 
-.nav .back::before {
+.nav a {
+  font-size: 1.2em;
+  color: hsla(0,0%,100%,.75);
+}
+.nav a:hover,
+.nav a:focus {
+  color: hsla(0,0%,100%,1);
+}
+.nav a:active {
+  color: hsla(0,0%,100%,.5);
+}
+.nav a:focus {
+  outline: none;
+}
+
+.back::before {
   content: "〈 ";
   margin-left: -.3em;
   margin-right: .1em;
 }
-.nav .back:hover::before {
+.back:hover::before,
+.back:focus::before {
   margin-left: -.4em;
   margin-right: .2em;
-}
-.nav .back:active {
-  color: #45828E;
 }
 
 
@@ -67,6 +79,33 @@
   border: none;
   padding: 0;
 }
+
+
+/* Button */
+
+button {
+  border: 2px solid;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.2em;
+  color: inherit;
+  padding: .5em 1em;
+  background-color: inherit;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: hsla(0,0%,0%,.1);
+}
+button:active {
+  background-color: hsla(0,0%,0%,.05);
+}
+button:focus {
+  outline: none;
+}
+
+
+
 
 
 /* Code */
@@ -92,15 +131,14 @@ code {
   padding: 2em;
   background-color: hsla(0,0%,100%,.1);
 }
+.active .toggle-content {
+  display: block;
+}
 
 .non-toggle-content {
   padding-bottom: 20px;
 }
 
-.toggle-content p {
-  margin: 0;
-}
-
-.active .toggle-content {
-  display: block;
+.toggle-content button {
+  margin-right: 1em;
 }
