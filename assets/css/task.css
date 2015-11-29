@@ -5,6 +5,15 @@
   color: #fff;
 }
 
+.task-page header {
+  background-image: linear-gradient(to bottom, hsla(0,0%,100%,.2), hsla(0,0%,100%,.2));
+}
+
+.task-page h3 {
+  color: hsla(0,0%,0%,.5);
+}
+
+
 /* Clicky */
 
 .task-page h2 {
@@ -13,19 +22,23 @@
   padding: 1em;
   line-height: 1.5;
   font-weight: 600;
-  border-top: 1px solid hsla(0,0%,0%,.15);
+  border-bottom: 1px solid hsla(0,0%,0%,.1);
   cursor: pointer;
 }
 .task-page h2:hover,
 .task-page h2:focus {
-  background-color: hsla(0,0%,0%,.1);
   border-color: transparent;
+  background-color: hsla(0,0%,0%,.06);
 }
 .task-page h2:active {
-  background-color: hsla(0,0%,0%,.05);
+  background-color: hsla(0,0%,0%,.1);
 }
 .task-page h2:focus {
   outline: none;
+}
+
+.sections section:last-child h2 {
+  /*border-bottom: none;*/
 }
 
 
@@ -66,9 +79,10 @@
 
 .support {
   margin-top: .5em;
-  font-size: 12px;
-  color: hsl(0,0%,30%);
+  font-size: 13px;
+  color: hsla(0,0%,0%,.45);
   text-transform: uppercase;
+  text-shadow: none;
 }
 
 .pro-tip {
@@ -89,7 +103,7 @@ button {
   font: inherit;
   font-size: 1.2em;
   color: inherit;
-  padding: .5em 1em;
+  padding: .4em 1.2em;
   background-color: inherit;
   cursor: pointer;
 }
@@ -103,9 +117,6 @@ button:active {
 button:focus {
   outline: none;
 }
-
-
-
 
 
 /* Code */
@@ -128,9 +139,11 @@ code {
 
 .toggle-content {
   display: none;
+  position: relative;
   padding: 2em;
-  background-color: hsla(0,0%,100%,.1);
+  background-color: hsla(0,0%,0%,.08);
 }
+
 .active .toggle-content {
   display: block;
 }
@@ -141,4 +154,23 @@ code {
 
 .toggle-content button {
   margin-right: 1em;
+}
+
+
+/* Pointy arrow */
+
+.active h2 {
+  border-bottom: none;
+}
+
+.active h2:hover + .toggle-content:before {
+  visibility: hidden;
+}
+
+.toggle-content:before {
+  content: "";
+  position: absolute;
+  border: 1em solid;
+  border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) hsla(0,0%,0%,.08) hsla(0, 0%, 0%, 0);
+  top: -2em;
 }

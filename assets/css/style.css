@@ -41,10 +41,10 @@
 
 body {
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
-  line-height: 1.8em;
+  line-height: 1.5;
   color: #45828E;
   background-color: #DBF6FB;
-  font-size: 15px;
+  font-size: 16px;
   margin: 0 auto;
 }
 
@@ -59,17 +59,19 @@ header h3 {
 }
 
 h1 {
-  font-size: 3.2em;
-  font-weight: 300;
+  font-size: 2.8em;
+  font-weight: 600;
+  text-shadow: 2px 5px 4px hsla(0,0%,0%,0.1);
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: normal;
+  text-shadow: 1px 2px 2px hsla(0,0%,0%,0.1);
 }
 
 h3 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
@@ -94,18 +96,10 @@ a.no-dec {
 /* Colors */
 
 .window        { background-color: #8aba87; }
-.menu          { background-color: #76DEB4; }
-.native-ui     { background-color: #3DA6AB; }
-.communication { background-color: #7696de; }
-.system        { background-color: #76dec8; }
+.menu          { background-color: #6ED8AE; }
+.native-ui     { background-color: #55C8CE; }
+.communication { background-color: #8FA7E0; }
+.system        { background-color: #7AD6C2; }
 .printing      { background-color: #76c8de; }
 
-.pro-tip       { background-color: #00d683; }
-
-.task-page .native-ui + .task-page .native-ui {
-  background-color: #5C8E9A;
-}
-
-.task-page .native-ui + .task-page .native-ui + .task-page .native-ui {
-  background-color: #79d9ca;
-}
+.pro-tip       { background-color: #DFD19B; color: #696141; }
