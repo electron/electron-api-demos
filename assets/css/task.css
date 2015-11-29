@@ -124,10 +124,11 @@ button:focus {
 pre {
   background: #f8f8f8;
   color: #333;
-  font-size: 12px;
+  font-size: 13px;
   overflow: auto;
-  padding: 10px;
+  padding: 1em;
   margin: 0;
+  border-radius: 4px;
 }
 
 code {
@@ -154,6 +155,11 @@ code {
 
 .toggle-content button {
   margin-right: 1em;
+}
+
+.toggle-content h5 {
+  font-size: 1em;
+  margin-bottom: .6em;
 }
 
 
