@@ -1,17 +1,15 @@
 var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
 
-module.exports = function OpenFileDialogMainProcess () {
+module.exports = function OpenInfoDialogMainProcess () {
   ipc.on('open-information-dialog', function (event) {
-    var window = BrowserWindow.fromWebContents(event.sender);
     var options = {
       'type': 'info',
       'title': 'Information',
       'message': "This is an information dialog. Isn't it nice?",
       'buttons': ['Yes', 'No']
     };
-    dialog.showMessageBox(window, options, (index) => {
+    dialog.showMessageBox(options, function (index) {
       event.sender.send('information-dialog-selection', index);
     });
   });

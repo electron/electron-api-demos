@@ -1,17 +1,15 @@
 var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
 
-module.exports = function OpenFileDialogMainProcess () {
+module.exports = function OpenSaveDialogMainProcess () {
   ipc.on('save-dialog', function (event) {
-    var window = BrowserWindow.fromWebContents(event.sender);
     var options = {
       'title': 'Save an Image',
       'filters': [
         { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
       ]
     };
-    dialog.showSaveDialog(window, options, (filename) => {
+    dialog.showSaveDialog(options, function (filename) {
       event.sender.send('saved-file', filename);
     });
   });
