@@ -23,7 +23,11 @@
   },
   "homepage": "https://github.com/atom/electron-demo#readme",
   "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
     "electron-prebuilt": "^0.35.0",
-    "semistandard": "^7.0.3"
+    "mocha": "^2.3.4",
+    "semistandard": "^7.0.3",
+    "spectron": "^0.35.0"
   }
 }
