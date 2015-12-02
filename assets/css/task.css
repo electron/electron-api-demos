@@ -5,6 +5,12 @@
   color: #fff;
 }
 
+.task-page a {
+  color: #3F9498;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .task-page header {
   background-image: linear-gradient(to bottom, hsla(0,0%,100%,.2), hsla(0,0%,100%,.2));
 }
