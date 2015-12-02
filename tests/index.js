@@ -34,7 +34,7 @@ describe('application launch', function () {
       .isWindowDevToolsOpened().should.eventually.be.false
       .isWindowVisible().should.eventually.be.true
       .isWindowFocused().should.eventually.be.true
-      .getWindowWidth().should.eventually.be.above(0)
-      .getWindowHeight().should.eventually.be.above(0)
+      .getWindowWidth().should.eventually.equal(800)
+      .getWindowHeight().should.eventually.equal(900)
   })
 })
