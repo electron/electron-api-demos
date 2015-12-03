@@ -1,15 +1,20 @@
-var Application = require('spectron').Application
-var chai = require('chai')
-var chaiAsPromised = require('chai-as-promised')
-var path = require('path')
+var Application = require('spectron').Application;
+var chai = require('chai');
+var chaiAsPromised = require('chai-as-promised');
+var path = require('path');
 
-chai.should()
-chai.use(chaiAsPromised)
+chai.should();
+chai.use(chaiAsPromised);
 
-var expect = chai.expect
+var afterEach = global.afterEach;
+var beforeEach = global.beforeEach;
+var describe = global.describe;
+var it = global.it;
+
+var expect = chai.expect;
 
 describe('demo app', function () {
-  this.timeout(30000)
+  this.timeout(30000);
 
   beforeEach(function () {
     this.app = new Application({
@@ -17,19 +22,19 @@ describe('demo app', function () {
       args: [
         path.join(__dirname, '..')
       ]
-    })
-    return this.app.start()
-  })
+    });
+    return this.app.start();
+  });
 
   beforeEach(function () {
-    chaiAsPromised.transferPromiseness = this.app.client.transferPromiseness
-  })
+    chaiAsPromised.transferPromiseness = this.app.client.transferPromiseness;
+  });
 
   afterEach(function () {
     if (this.app && this.app.isRunning()) {
-      return this.app.stop()
+      return this.app.stop();
     }
-  })
+  });
 
   it('opens a window and lists the API sections', function () {
     return this.app.client.waitUntilWindowLoaded()
@@ -42,17 +47,17 @@ describe('demo app', function () {
       .getWindowHeight().should.eventually.equal(600)
       .getTitle().should.eventually.equal('Electron API Demos')
       .elements('section').then(function (response) {
-        expect(response.status).to.equal(0)
-        expect(response.value.length).to.equal(6)
-      })
-  })
+        expect(response.status).to.equal(0);
+        expect(response.value.length).to.equal(6);
+      });
+  });
 
   describe('when clicking on a section', function () {
     it('opens the selected section', function () {
       return this.app.client.waitUntilWindowLoaded()
         .click('a').pause(100)
         .waitForVisible('.task-page', 10000)
-        .getText('h1').should.eventually.equal('Use system dialogs')
-    })
-  })
-})
+        .getText('h1').should.eventually.equal('Use system dialogs');
+    });
+  });
+});
