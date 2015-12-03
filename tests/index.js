@@ -55,7 +55,7 @@ describe('demo app', function () {
   describe('when clicking on a section', function () {
     it('opens the selected section', function () {
       return this.app.client.waitUntilWindowLoaded()
-        .click('a').pause(100)
+        .click('a').pause(1000)
         .waitForVisible('.task-page', 10000)
         .getText('h1').should.eventually.equal('Use system dialogs');
     });
