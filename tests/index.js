@@ -6,7 +6,9 @@ var path = require('path')
 chai.should()
 chai.use(chaiAsPromised)
 
-describe('application launch', function () {
+var expect = chai.expect
+
+describe('demo app', function () {
   this.timeout(30000)
 
   beforeEach(function () {
@@ -29,7 +31,7 @@ describe('application launch', function () {
     }
   })
 
-  it('opens a window', function () {
+  it('opens a window and lists the API sections', function () {
     return this.app.client.waitUntilWindowLoaded()
       .getWindowCount().should.eventually.equal(1)
       .isWindowMinimized().should.eventually.be.false
@@ -37,22 +39,20 @@ describe('application launch', function () {
       .isWindowVisible().should.eventually.be.true
       .isWindowFocused().should.eventually.be.true
       .getWindowWidth().should.eventually.equal(800)
-      .getWindowHeight().should.eventually.equal(900)
+      .getWindowHeight().should.eventually.equal(600)
       .getTitle().should.eventually.equal('Electron API Demos')
-      .getText('.foo')
-      .getHTML('')
+      .elements('section').then(function (response) {
+        expect(response.status).to.equal(0)
+        expect(response.value.length).to.equal(6)
+      })
   })
 
-  it('opens the system dialogs section', function () {
-    return this.app.client.waitUntilWindowLoaded()
-      .click('a.system-dialogs')
-      .click('a.system-dialogs')
-      .waitUntil(function() {
-        return this.getUrl().then(function(url) {
-          return url.indexOf('dialogs.html') !== -1
-        });
-      });
-      // .waitForVisible('.task-page', 10000)
-      // .getText('h1').should.eventually.equal('Use system dialogs')
+  describe('when clicking on a section', function () {
+    it('opens the selected section', function () {
+      return this.app.client.waitUntilWindowLoaded()
+        .click('a').pause(100)
+        .waitForVisible('.task-page', 10000)
+        .getText('h1').should.eventually.equal('Use system dialogs')
+    })
   })
 })
