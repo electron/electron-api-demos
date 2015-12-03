@@ -7,6 +7,8 @@ chai.should()
 chai.use(chaiAsPromised)
 
 describe('application launch', function () {
+  this.timeout(30000)
+
   beforeEach(function () {
     this.app = new Application({
       path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
@@ -36,5 +38,21 @@ describe('application launch', function () {
       .isWindowFocused().should.eventually.be.true
       .getWindowWidth().should.eventually.equal(800)
       .getWindowHeight().should.eventually.equal(900)
+      .getTitle().should.eventually.equal('Electron API Demos')
+      .getText('.foo')
+      .getHTML('')
+  })
+
+  it('opens the system dialogs section', function () {
+    return this.app.client.waitUntilWindowLoaded()
+      .click('a.system-dialogs')
+      .click('a.system-dialogs')
+      .waitUntil(function() {
+        return this.getUrl().then(function(url) {
+          return url.indexOf('dialogs.html') !== -1
+        });
+      });
+      // .waitForVisible('.task-page', 10000)
+      // .getText('h1').should.eventually.equal('Use system dialogs')
   })
 })
