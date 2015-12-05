@@ -6,8 +6,8 @@ informationBtn.addEventListener('click', function (event) {
 });
 
 ipc.on('information-dialog-selection', function (event, index) {
-  var message = "You selected ";
-  if (index === 0) message += "yes.";
-  else message += "no.";
+  var message = 'You selected ';
+  if (index === 0) message += 'yes.';
+  else message += 'no.';
   document.getElementById('info-selection').innerHTML = message;
 });
