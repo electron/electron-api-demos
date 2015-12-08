@@ -44,7 +44,7 @@ describe('demo app', function () {
       .isWindowVisible().should.eventually.be.true
       .isWindowFocused().should.eventually.be.true
       .getWindowWidth().should.eventually.equal(800)
-      .getWindowHeight().should.eventually.equal(600)
+      .getWindowHeight().should.eventually.equal(733)
       .getTitle().should.eventually.equal('Electron API Demos')
       .elements('section').then(function (response) {
         expect(response.status).to.equal(0);
