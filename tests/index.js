@@ -65,4 +65,15 @@ describe('demo app', function () {
         .isVisible('.toggle-content').should.eventually.be.false;
     });
   });
+
+  describe('when a task is clicked', function () {
+    it('it expands', function () {
+      return this.app.client.waitUntilWindowLoaded()
+        .click('a').pause(1000)
+        .waitForVisible('.task-page')
+        .click('.js-container-target').pause(1000)
+        .waitForVisible('.toggle-content')
+        .isVisible('.toggle-content').should.eventually.deep.equal([ true, false, false, false ]);
+    });
+  });
 });
