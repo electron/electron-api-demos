@@ -21,7 +21,8 @@ describe('demo app', function () {
       path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
       args: [
         path.join(__dirname, '..')
-      ]
+      ],
+      waitTimeout: 10000
     });
     return this.app.start();
   });
@@ -56,7 +57,7 @@ describe('demo app', function () {
     it('opens the selected section', function () {
       return this.app.client.waitUntilWindowLoaded()
         .click('a').pause(1000)
-        .waitForVisible('.task-page', 10000)
+        .waitForVisible('.task-page')
         .getText('h1').should.eventually.equal('Use system dialogs');
     });
     it('all tasks are collapsed', function () {
