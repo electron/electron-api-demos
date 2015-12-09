@@ -61,8 +61,8 @@ describe('demo app', function () {
         .getText('h1').should.eventually.equal('Use system dialogs');
     });
     it('all tasks are collapsed', function () {
-      return this.app.client.isVisible('.toggle-content')
-        .should.eventually.equal(false);
+      return this.app.client
+        .isVisible('.toggle-content').should.eventually.be.false;
     });
   });
 });
