@@ -76,4 +76,32 @@ describe('demo app', function () {
         .isVisible('.toggle-content').should.eventually.deep.equal([ true, false, false, false ]);
     });
   });
+
+  describe('when demo buttons are clicked', function () {
+    it('uses Electron dialog api', function () {
+      return this.app.client.waitUntilWindowLoaded()
+        .execute(function () {
+          require('electron').ipcRenderer.send('eval', (function () {
+            require('electron').dialog.showOpenDialog = function () {
+              global.showOpenDialogCalled = true;
+              return '/a/b/c';
+            };
+          }).toString());
+        })
+        .click('a').pause(1000)
+        .waitForVisible('.task-page')
+        .click('.js-container-target').pause(1000)
+        .waitForVisible('.toggle-content')
+        .click('button').pause(1000)
+        .waitUntil(function () {
+          return this.execute(function () {
+            return require('electron').remote.getGlobal('showOpenDialogCalled');
+          }).then(function (response) {
+            return response.value === true;
+          });
+        })
+        .waitForText('#selected-file')
+        .getText('#selected-file').should.eventually.equal('You selected: /a/b/c');
+    });
+  });
 });
