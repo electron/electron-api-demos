@@ -114,10 +114,10 @@ ipc.on('open-file-dialog-sheet', function (event) {
     </section>
   </div>
 
-    <script type="text/javascript" src="../render-process/dialogs/open-file.js"></script>
-    <script type="text/javascript" src="../render-process/dialogs/error.js"></script>
-    <script type="text/javascript" src="../render-process/dialogs/information.js"></script>
-    <script type="text/javascript" src="../render-process/dialogs/save.js"></script>
+    <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
+    <script type="text/javascript" src="../render-process/native-ui/dialogs/error.js"></script>
+    <script type="text/javascript" src="../render-process/native-ui/dialogs/information.js"></script>
+    <script type="text/javascript" src="../render-process/native-ui/dialogs/save.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -135,24 +135,24 @@ ipc.on('open-file-dialog-sheet', function (event) {
     <script type="text/javascript">
       var fs = require('fs');
       // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/dialogs/open-file.js');
+      var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
       document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/dialogs/open-file.js');
+      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
       document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
       // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/dialogs/error.js');
+      var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
       document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/dialogs/error.js');
+      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
       document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
       // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/dialogs/information.js');
+      var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
       document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/dialogs/information.js');
+      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
       document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
       // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/dialogs/save.js');
+      var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
       document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/dialogs/save.js');
+      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
       document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
     </script>
   </body>

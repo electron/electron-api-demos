@@ -3,16 +3,16 @@ var BrowserWindow = require('browser-window');
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/dialogs/open-file.js');
+var openFileDialog = require('./main-process/native-ui/dialogs/open-file.js');
 openFileDialog();
 
-var errorDialog = require('./main-process/dialogs/error.js');
+var errorDialog = require('./main-process/native-ui/dialogs/error.js');
 errorDialog();
 
-var infoDialog = require('./main-process/dialogs/information.js');
+var infoDialog = require('./main-process/native-ui/dialogs/information.js');
 infoDialog();
 
-var saveDialog = require('./main-process/dialogs/save.js');
+var saveDialog = require('./main-process/native-ui/dialogs/save.js');
 saveDialog();
 
 app.on('window-all-closed', () => {
