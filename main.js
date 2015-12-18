@@ -15,6 +15,9 @@ infoDialog();
 var saveDialog = require('./main-process/native-ui/dialogs/save.js');
 saveDialog();
 
+var trayIcon = require('./main-process/native-ui/tray/tray.js');
+trayIcon();
+
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
