@@ -1,19 +1,15 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
+var glob = require('glob');
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/dialogs/open-file.js');
-openFileDialog();
-
-var errorDialog = require('./main-process/dialogs/error.js');
-errorDialog();
-
-var infoDialog = require('./main-process/dialogs/information.js');
-infoDialog();
-
-var saveDialog = require('./main-process/dialogs/save.js');
-saveDialog();
+// Require and setup each JS file in the main-process dir
+glob('main-process/**/*.js', function (error, files) {
+  files.forEach(function (file) {
+    require('./' + file).setup();
+  });
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
