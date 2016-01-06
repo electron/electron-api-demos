@@ -14,7 +14,7 @@
     <header class="windows">
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Windows</h1>
+        <h1>Create and Manage Windows</h1>
         <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka render process) in your app.</h3>
 
         <p>This module works in both the <b>main</b> process as well as the <b>renderer</b> process when using the <code>remote</code> module.
@@ -25,14 +25,15 @@
     <div class="sections">
       <section class="windows">
         <div class="wrapper">
-          <h2 class="js-container-target">Create a new Window
+          <h2 class="js-container-target">Create a new window
           <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
           </h2>
           <div class="toggle-content">
             <button id="new-window">Demo</button><span id="tray-countdown"></span>
             <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. It is a <b>main</b> process module but can be used in the <b>renderer</b> process with the <code>remote</code> module. We'll do that in this demo.</p>
 
-            <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.
+            <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.</p>
+            
             <h5>Render Process</h5>
             <pre><code id="new-window-renderer"></pre></code>
           </div>
@@ -42,16 +43,17 @@
       <div class="sections">
         <section class="windows">
           <div class="wrapper">
-            <h2 class="js-container-target">Manage Window State
+            <h2 class="js-container-target">Manage window state
             <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
             </h2>
             <div class="toggle-content">
-              <button id="new-window">Demo</button><span id="tray-countdown"></span>
-              <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. It is a <b>main</b> process module but can be used in the <b>renderer</b> process with the <code>remote</code> module. We'll do that in this demo.</p>
+              <button id="manage-window">Demo</button><span id="tray-countdown"></span>
+              <p>In this demo we create a new window, listen for a move event and then set the window to position itself back in the center of the screen.</p>
 
-              <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.
+              <p>There are a lot of methods for controlling the state of the window such as the size, location and focus status as well as events to listen for window changes. Visit the <a href="">documentation</a> for the full list.</p>
+
               <h5>Render Process</h5>
-              <pre><code id="new-window-renderer"></pre></code>
+              <pre><code id="manage-window-renderer"></pre></code>
             </div>
           </div>
         </section>
@@ -70,7 +72,8 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
       </section>
   </div>
 
-    <script type="text/javascript" src="../../render-process/windows/create-window/create-window.js"></script>
+    <script type="text/javascript" src="../../render-process/windows/create-window.js"></script>
+    <script type="text/javascript" src="../../render-process/windows/manage-window.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -87,9 +90,12 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
 
     <script type="text/javascript">
       var fs = require('fs');
-      // New Windows
-      var windowRenderContent = fs.readFileSync('render-process/windows/create-window/create-window.js');
+      // New Window
+      var windowRenderContent = fs.readFileSync('render-process/windows/create-window.js');
       document.getElementById('new-window-renderer').innerHTML= windowRenderContent;
+      // Manage Window
+      var manageWindowRenderContent = fs.readFileSync('render-process/windows/manage-window.js');
+      document.getElementById('manage-window-renderer').innerHTML= manageWindowRenderContent;
     </script>
   </body>
 </html>
