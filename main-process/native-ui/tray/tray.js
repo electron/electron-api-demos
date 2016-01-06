@@ -6,8 +6,7 @@ var path = require('path');
 
 var appIcon = null;
 
-module.exports = function () {
-
+module.exports.setup = function () {
   ipc.on('put-in-tray', function (event) {
     var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/IconTemplate.png')
     appIcon = new Tray(iconPath);
@@ -18,6 +17,7 @@ module.exports = function () {
     appIcon.setContextMenu(contextMenu);
     // No reason to keep it around for the whole demo
     // so remove icon after 1 minute.
+    // TODO create an icon
     setTimeout(function () { appIcon.destroy(); }, 60000)
   })
 }
