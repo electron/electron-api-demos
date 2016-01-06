@@ -11,20 +11,24 @@ glob('main-process/**/*.js', function (error, files) {
   });
 });
 
-app.on('window-all-closed', () => {
+function createWindow () {
+  mainWindow = new BrowserWindow({ width: 800, height: 900 });
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.on('closed', function() {
+    mainWindow = null;
+  });
+}
+
+app.on('ready', createWindow);
+
+app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('ready', () => {
-  mainWindow = new BrowserWindow({ width: 800, height: 900 });
-
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-  // mainWindow.openDevTools();
-
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
+app.on('activate', function () {
+  if (mainWindow === null) {
+    createWindow();
+  }
 });
