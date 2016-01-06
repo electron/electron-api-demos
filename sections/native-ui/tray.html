@@ -15,11 +15,11 @@
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
         <h1>Tray</h1>
-        <h3>The <code>shell</code> module in Electron allows you to access certain native elements like the file manager and default web browser.</h3>
+        <h3>The <code>tray</code> module in Electron allows you to create an icon in the operating system's notification area. This icon can also have a context menu attached.</h3>
 
-        <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process.</p>
+        <p>This module is a <b>main</b> process module but can be triggered by using the <code>ipc</code> module to talk to that process from the <b>renderer</b> process.</p>
 
-        Open the <a href="http://electron.atom.io/docs/latest/shell.html">full API documentation</a> in your browser.
+        Open the <a href="http://electron.atom.io/docs/latest/api/tray.html">full API documentation</a> in your browser.
       </div>
     </header>
     <div class="sections">
@@ -30,7 +30,7 @@
           </h2>
           <div class="toggle-content">
             <button id="put-in-tray">Demo</button><span id="tray-countdown"></span>
-            <p>The <code>tray</code> module is used to launch the system file manager. Provide the method location to open at.</p>
+            <p>The button above sends a message to the <b>main</b> process using the <code>ipc</code> module. In the <b>main</b> process the app is told to place an icon in the tray for one minute. The limited time is for deomonstration purposes, you're more likely to keep the icon in the tray for as long as your app is active.</p>
             <h5>Main Process</h5>
             <pre><code id="tray-main"></pre></code>
             <h5>Render Process</h5>

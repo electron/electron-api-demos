@@ -1,37 +1,34 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
+var glob = require('glob');
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/native-ui/dialogs/open-file.js');
-openFileDialog();
+// Require and setup each JS file in the main-process dir
+glob('main-process/**/*.js', function (error, files) {
+  files.forEach(function (file) {
+    require('./' + file).setup();
+  });
+});
 
-var errorDialog = require('./main-process/native-ui/dialogs/error.js');
-errorDialog();
+function createWindow () {
+  mainWindow = new BrowserWindow({ width: 800, height: 900 });
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.on('closed', function() {
+    mainWindow = null;
+  });
+}
 
-var infoDialog = require('./main-process/native-ui/dialogs/information.js');
-infoDialog();
+app.on('ready', createWindow);
 
-var saveDialog = require('./main-process/native-ui/dialogs/save.js');
-saveDialog();
-
-var trayIcon = require('./main-process/native-ui/tray/tray.js');
-trayIcon();
-
-app.on('window-all-closed', () => {
+app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('ready', () => {
-  mainWindow = new BrowserWindow({ width: 800, height: 900 });
-
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-  // mainWindow.openDevTools();
-
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
+app.on('activate', function () {
+  if (mainWindow === null) {
+    createWindow();
+  }
 });
