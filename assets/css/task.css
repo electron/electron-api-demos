@@ -139,6 +139,9 @@ pre {
 
 code {
   font-family: 'Source Code Pro', monospace;
+  border-radius: 4px;
+  padding: 1px 4px;
+  background-color: #C1C1C1;
 }
 
 
