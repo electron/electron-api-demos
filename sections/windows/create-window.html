@@ -38,6 +38,19 @@
           </div>
         </div>
       </section>
+
+      <section class="pro-tip">
+        <div class="wrapper">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+            <strong>Use an invisible browser window to run background tasks.</strong>
+          <p>You can create many new browser windows and you can also choose to not show them in order to use that additional render process as a type of new thread in which to run JS in the background of your app. You do this by setting the <code>show</code> option to <code>false</code> when defining the new window.</h5>
+          <pre><code>
+var win = new BrowserWindow({ width: 400, height: 225, show: false });
+          </code></pre>
+          </div>
+        </div>
+      </section>
   </div>
 
     <script type="text/javascript" src="../../render-process/windows/new-windows/new-windows.js"></script>
