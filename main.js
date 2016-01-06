@@ -1,22 +1,15 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
+var glob = require('glob');
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/native-ui/dialogs/open-file.js');
-openFileDialog();
-
-var errorDialog = require('./main-process/native-ui/dialogs/error.js');
-errorDialog();
-
-var infoDialog = require('./main-process/native-ui/dialogs/information.js');
-infoDialog();
-
-var saveDialog = require('./main-process/native-ui/dialogs/save.js');
-saveDialog();
-
-var trayIcon = require('./main-process/native-ui/tray/tray.js');
-trayIcon();
+// Require and setup each JS file in the main-process dir
+glob('main-process/**/*.js', function (error, files) {
+  files.forEach(function (file) {
+    require('./' + file).setup();
+  });
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
