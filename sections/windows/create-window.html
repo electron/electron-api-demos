@@ -15,9 +15,9 @@
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
         <h1>Windows</h1>
-        <h3>The <code>browserWindow</code> module in Electron...</h3>
+        <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka render process) in your app.</h3>
 
-        <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process.</p>
+        <p>This module works in both the <b>main</b> process as well as the <b>renderer</b> process when using the <code>remote</code> module.
 
         Open the <a href="http://electron.atom.io/docs/latest/api/browser-window/">full API documentation</a> in your browser.
       </div>
@@ -53,7 +53,7 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
       </section>
   </div>
 
-    <script type="text/javascript" src="../../render-process/windows/new-windows/new-windows.js"></script>
+    <script type="text/javascript" src="../../render-process/windows/create-window/create-window.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -71,7 +71,7 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
     <script type="text/javascript">
       var fs = require('fs');
       // New Windows
-      var windowRenderContent = fs.readFileSync('render-process/windows/new-windows/new-windows.js');
+      var windowRenderContent = fs.readFileSync('render-process/windows/create-window/create-window.js');
       document.getElementById('new-window-renderer').innerHTML= windowRenderContent;
     </script>
   </body>
