@@ -43,25 +43,24 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="error-dialog">Demo</button>
+            <!-- TODO Seems odd to use a button to show right-click menu -->
+            <button id="context-menu">Demo</button>
             <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
 
             <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
             <h5>Renderer Process</h5>
-            <pre><code id="error-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="error-dialog-main"></code></pre>
+            <pre><code id="context-menu-renderer"></pre></code>
+            <!-- <h5>Main Process</h5>
+            <pre><code id="context-menu-main"></code></pre> -->
           </div>
         </div>
       </section>
   </div>
 
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/error.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/information.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/save.js"></script>
+    <script type="text/javascript" src="../../render-process/menus/context-menu.js"></script>
 
     <script type="text/javascript">
+      // TODO Pull this out for all pages to use
       var demoBtns = document.querySelectorAll('.js-container-target');
       Array.prototype.forEach.call(demoBtns, function (btn) {
         btn.addEventListener('click', function (event) {
@@ -76,26 +75,9 @@
 
     <script type="text/javascript">
       var fs = require('fs');
-      // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
-      // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
-      // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
-      // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
+      // Context Menu
+      var contextMenuRendererContent = fs.readFileSync('render-process/menus/context-menu.js');
+      document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
     </script>
   </body>
 </html>
