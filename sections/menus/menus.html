@@ -27,12 +27,11 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="select-directory">Demo</button><span id="selected-file"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="open-file-render"></pre></code>
+            <button id="application-menu">Demo</button><span id="selected-file"></span>
+            <!-- TODO Is there a way to open application menu on click (of something else?) -->
+            <p></p>
             <h5>Main Process</h5>
-            <pre><code id="open-file-main"></code></pre>
+            <pre><code id="application-menu-main"></code></pre>
           </div>
         </div>
       </section>
@@ -52,6 +51,19 @@
             <pre><code id="context-menu-renderer"></pre></code>
             <!-- <h5>Main Process</h5>
             <pre><code id="context-menu-main"></code></pre> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="pro-tip">
+        <div class="wrapper">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+          <strong>Electron will build a default application menu.</strong>
+          <p>If you don't set any menu, Electron will generate a minimal menu for you app by default.</h5>
+          <pre><code>
+// no code
+          </code></pre>
           </div>
         </div>
       </section>
@@ -75,6 +87,9 @@
 
     <script type="text/javascript">
       var fs = require('fs');
+      // Application Menu
+      var appMenuMainContent = fs.readFileSync('main-process/menus/application-menu.js');
+      document.getElementById('application-menu-main').innerHTML= appMenuMainContent;
       // Context Menu
       var contextMenuRendererContent = fs.readFileSync('render-process/menus/context-menu.js');
       document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
