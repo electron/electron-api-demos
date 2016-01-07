@@ -140,8 +140,8 @@ pre {
 code {
   font-family: 'Source Code Pro', monospace;
   border-radius: 4px;
-  padding: 1px 4px;
-  background-color: #C1C1C1;
+  padding: 1px 4px 3px 4px;
+  background-color: #F7F7F7;
 }
 
 
