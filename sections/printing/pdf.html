@@ -11,21 +11,19 @@
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body class="task-page">
-    <header class="native-ui">
+    <header class="printing">
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Use system dialogs</h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h1>Printing</h1>
+        <h3>The <code>browser window</code> module in Electron...</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return.</p>
-
-        Open the <a href="">full API documentation</a> in your browser.
+        <p>Open the <a href="http://electron.atom.io/docs/latest/api/browser-window/#win-print-options">full API documentation</a> in your browser.</p>
       </div>
     </header>
     <div class="sections">
-      <section class="native-ui">
+      <section class="printing">
         <div class="wrapper">
-          <h2 class="js-container-target">Open a File or Directory
+          <h2 class="js-container-target">Print to PDF
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
@@ -38,80 +36,6 @@
           </div>
         </div>
       </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Error Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="error-dialog">Demo</button>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
-
-            <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="error-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="error-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Information Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="information-dialog">Demo</button><span id="info-selection"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the information dialog. You can provide options for responses which can then be relayed back to the renderer process.</p>
-
-            <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="information-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="information-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Save Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="save-dialog">Demo</button><span id="file-saved"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="save-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="save-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <section class="pro-tip">
-      <div class="wrapper">
-        <h2 class="avoid-clicks">Pro-Tip</h2>
-        <div class="non-toggle-content">
-        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
-        <h5>Using a sheet-style dialog</h5>
-        <pre><code>
-var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
-
-ipc.on('open-file-dialog-sheet', function (event) {
-  var window = BrowserWindow.fromWebContents(event.sender)
-  var files = dialog.showOpenDialog(window, { properties: [ 'openFile' ]})
-});
-        </code></pre>
-        </div>
-      </div>
-    </section>
   </div>
 
     <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
