@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Electron API Demos</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/task.css">
+    <!-- Temp. use of CDN version of highlighting  -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body class="task-page">
+    <header class="windows">
+      <div class="wrapper">
+        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
+        <h1>Create and Manage Windows</h1>
+        <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka render process) in your app.</h3>
+
+        <p>This module works in both the <b>main</b> process as well as the <b>renderer</b> process when using the <code>remote</code> module.
+
+        Open the <a href="http://electron.atom.io/docs/latest/api/browser-window/">full API documentation</a> in your browser.
+      </div>
+    </header>
+    <div class="sections">
+      <section class="windows">
+        <div class="wrapper">
+          <h2 class="js-container-target">Create a new window
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
+          </h2>
+          <div class="toggle-content">
+            <button id="new-window">Demo</button><span id="tray-countdown"></span>
+            <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. It is a <b>main</b> process module but can be used in the <b>renderer</b> process with the <code>remote</code> module. We'll do that in this demo.</p>
+
+            <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.</p>
+            
+            <h5>Render Process</h5>
+            <pre><code id="new-window-renderer"></pre></code>
+          </div>
+        </div>
+      </section>
+
+      <div class="sections">
+        <section class="windows">
+          <div class="wrapper">
+            <h2 class="js-container-target">Manage window state
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
+            </h2>
+            <div class="toggle-content">
+              <button id="manage-window">Demo</button><span id="tray-countdown"></span>
+              <p>In this demo we create a new window, listen for a move event and then set the window to position itself back in the center of the screen.</p>
+
+              <p>There are a lot of methods for controlling the state of the window such as the size, location and focus status as well as events to listen for window changes. Visit the <a href="">documentation</a> for the full list.</p>
+
+              <h5>Render Process</h5>
+              <pre><code id="manage-window-renderer"></pre></code>
+            </div>
+          </div>
+        </section>
+
+      <section class="pro-tip">
+        <div class="wrapper">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+            <strong>Use an invisible browser window to run background tasks.</strong>
+          <p>You can create many new browser windows and you can also choose to not show them in order to use that additional render process as a type of new thread in which to run JS in the background of your app. You do this by setting the <code>show</code> option to <code>false</code> when defining the new window.</h5>
+          <pre><code>
+var win = new BrowserWindow({ width: 400, height: 225, show: false });
+          </code></pre>
+          </div>
+        </div>
+      </section>
+  </div>
+
+    <script type="text/javascript" src="../../render-process/windows/create-window.js"></script>
+    <script type="text/javascript" src="../../render-process/windows/manage-window.js"></script>
+
+    <script type="text/javascript">
+      var demoBtns = document.querySelectorAll('.js-container-target');
+      Array.prototype.forEach.call(demoBtns, function (btn) {
+        btn.addEventListener('click', function (event) {
+          if (event.target.parentElement.classList.contains('active')) {
+            event.target.parentElement.classList.remove('active')
+          } else {
+            event.target.parentElement.classList.add('active')
+          };
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      var fs = require('fs');
+      // New Window
+      var windowRenderContent = fs.readFileSync('render-process/windows/create-window.js');
+      document.getElementById('new-window-renderer').innerHTML= windowRenderContent;
+      // Manage Window
+      var manageWindowRenderContent = fs.readFileSync('render-process/windows/manage-window.js');
+      document.getElementById('manage-window-renderer').innerHTML= manageWindowRenderContent;
+    </script>
+  </body>
+</html>
