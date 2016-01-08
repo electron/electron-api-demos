@@ -6,7 +6,7 @@ var shell = require('shell');
 module.exports.setup = function () {
   ipc.on('print-to-pdf', function (event) {
     var pdfPath = "/tmp/print.pdf"
-    var win = BrowserWindow.getFocusedWindow()
+    var win = BrowserWindow.fromWebContents(event.sender)
     // Use default printing options
     win.webContents.printToPDF({}, function(error, data) {
       if (error) throw error;
