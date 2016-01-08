@@ -27,8 +27,8 @@
         <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
         </h2>
         <div class="toggle-content">
-          <button id="async-msg">Demo</button><span id="async-reply"></span>
-          <p>Preferred</p>
+          <button id="async-msg">Ping</button><span id="async-reply"></span>
+          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations. This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
           <pre><code id="async-msg-render"></pre></code>
           <h5>Main Process</h5>
@@ -44,8 +44,8 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="sync-msg">Demo</button><span id="sync-reply"></span>
-            <p>Sync is blocking...</p>
+            <button id="sync-msg">Ping</button><span id="sync-reply"></span>
+            <p>Use <code>ipc</code> when you need to send synchronous messages between processes. Note that the synchronous nature of this method means that it will block other operations while it is completing its task. This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
             <h5>Renderer Process</h5>
             <pre><code id="sync-msg-render"></pre></code>
             <h5>Main Process</h5>
@@ -54,17 +54,33 @@
         </div>
       </section>
 
+      <div class="sections">
+        <section class="communication">
+          <div class="wrapper">
+            <h2 class="js-container-target">Communication with an invisible window
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+            </h2>
+            <div class="toggle-content">
+              <button id="invis-msg">Ping</button><span id="invis-reply"></span>
+              <p>Use <code>ipc</code> when you need to send synchronous messages between processes. Note that the synchronous nature of this method means that it will block other operations while it is completing its task. This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
+              <h5>Renderer Process</h5>
+              <pre><code id="invis-msg-render"></pre></code>
+              <h5>Main Process</h5>
+              <pre><code id="invis-msg-main"></code></pre>
+            </div>
+          </div>
+        </section>
+
       <section class="pro-tip">
         <div class="wrapper">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
-          <strong>Blocking...</strong>
-          <p>Sync...</p>
-          <h5>Using a sheet-style dialog</h5>
-          <pre><code>
-  var ipc = require('electron').ipcMain;
-  var dialog = require('dialog');
-          </code></pre>
+          <strong>Talk to invisible windows.</strong>
+          <p>You may want to create invisible browser windows to run tasks in a separate process. You can use ipc to communicate with these windows from a visible window (renderer process).</p>
+
+          <em>Note that each invisible renderer process requires 200MB of disk space.</em></p>
+          <pre><code>var ipc = require('electron').ipcRenderer;
+var something something something</code></pre>
           </div>
         </div>
       </section>
@@ -72,6 +88,7 @@
 
     <script type="text/javascript" src="../../render-process/communication/sync-msg.js"></script>
     <script type="text/javascript" src="../../render-process/communication/async-msg.js"></script>
+    <script type="text/javascript" src="../../render-process/communication/invisible-msg.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');

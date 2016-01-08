@@ -1,0 +1,12 @@
+<html>
+<body>
+  Hi, I'm invisible!
+<script>
+  var ipc = require('electron').ipcRenderer;
+  ipc.on('send-ping', function (event, arg) {
+    console.log("got", arg)
+    event.sender.send('ping-reply', 'pong');
+  });
+</script>
+</body>
+</html>
