@@ -1,0 +1,31 @@
+@media print {
+   body {
+     background: none;
+     color: black !important;
+     font-size: 70%;
+     margin: 0; padding: 0;
+   }
+
+   h1 {
+     font-size: 22px;
+   }
+
+   .nav, button, .toggle-content:before,
+   #pdf-path, header p {
+     display: none;
+   }
+
+   .toggle-content, h2,
+   pre, code {
+     padding: 0 !important;
+     margin: 0 !important;
+   }
+
+   header {
+     padding: 0 0 10px 0;
+   }
+
+   code, .support {
+     font-size: 10px;
+   }
+}
