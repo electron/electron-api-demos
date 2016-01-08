@@ -6,6 +6,6 @@ asyncMsgBtn.addEventListener('click', function () {
 })
 
 ipc.on('asynchronous-reply', function (event, arg) {
-  var message = "Snchronous message reply: " + arg;
+  var message = "Synchronous message reply: " + arg;
   document.getElementById('async-reply').innerHTML = message;
 });
