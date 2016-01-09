@@ -1,5 +1,6 @@
-var ipc = require('electron').ipcRenderer;
-var BrowserWindow = require('electron').remote.BrowserWindow;
+var remote = require('electron').remote;
+var BrowserWindow = remote.BrowserWindow;
+var ipcMain = remote.ipcMain;
 var path = require('path');
 
 var invisMsgBtn = document.getElementById('invis-msg');
@@ -9,13 +10,17 @@ invisMsgBtn.addEventListener('click', function (event) {
   var invisPath = 'file://' + path.join(process.cwd(), 'sections/communication/invisible.html')
   var win = new BrowserWindow({ width: 0, height: 0, show: false });
   win.loadURL(invisPath);
-
-  ipc.send('send-ping', 'ping');
-  console.log("All:", BrowserWindow.getAllWindows(), "invis:", win.id);
+  win.webContents.on('did-finish-load', function (event) {
+    // after invisible page loads, pass the original event
+    // then use the main process browser window web contents get the window
+    // from the event and then use webcontents to send a message that
+    // the invisible window can listen for
+    var appWindow = BrowserWindow.fromWebContents(event.sender)
+    appWindow.webContents.send('send-ping', 'whoooooooh!');
+  });
 });
 
-ipc.on('ping-reply', function (event, arg) {
-  console.log("visible site got", arg)
+ipcMain.on('ping-reply', function (event, arg) {
   var message = "Invisible window reply: " + arg;
   document.getElementById('invis-reply').innerHTML = message;
 })
