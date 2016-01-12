@@ -65,8 +65,8 @@
               <p>Use <code>ipc</code> when you need to send synchronous messages between processes. Note that the synchronous nature of this method means that it will block other operations while it is completing its task. This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
               <h5>Renderer Process</h5>
               <pre><code id="invis-msg-render"></pre></code>
-              <h5>Main Process</h5>
-              <pre><code id="invis-msg-main"></code></pre>
+              <h5>Invisible Window Page HTML</h5>
+              <pre><code id="invis-window-render"></code></pre>
             </div>
           </div>
         </section>
@@ -115,6 +115,11 @@ var something something something</code></pre>
       document.getElementById('async-msg-render').innerHTML= asyncMsgRendererContent;
       var asyncMsgMainContent = fs.readFileSync('main-process/communication/async-msg.js');
       document.getElementById('async-msg-main').innerHTML= asyncMsgMainContent;
+      // Invisible Window Message
+      var invisMsgRendererContent = fs.readFileSync('render-process/communication/invisible-msg.js');
+      document.getElementById('invis-msg-render').innerHTML= invisMsgRendererContent;
+      var invisWindowRendererContent = fs.readFileSync('sections/communication/invisible.html');
+      document.getElementById('invis-window-render').textContent = invisWindowRendererContent;
     </script>
   </body>
 </html>
