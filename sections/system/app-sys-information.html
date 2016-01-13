@@ -37,6 +37,20 @@
         </div>
       </section>
 
+      <section class="system">
+        <div class="wrapper">
+          <h2 class="js-container-target">Get system information
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          </h2>
+          <div class="toggle-content">
+            <button id="sys-info">Demo</button><span id="got-sys-info"></span>
+            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+            <h5>Renderer Process</h5>
+            <pre><code id="sys-info-render"></pre></code>
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <section class="pro-tip">
@@ -61,6 +75,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
   </div>
 
     <script type="text/javascript" src="../../render-process/system/app-information.js"></script>
+    <script type="text/javascript" src="../../render-process/system/sys-information.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -80,7 +95,9 @@ ipc.on('open-file-dialog-sheet', function (event) {
       // App Information
       var appInfoRenderContent = fs.readFileSync('render-process/system/app-information.js');
       document.getElementById('app-info-render').innerHTML= appInfoRenderContent;
-
+      // Sys Information
+      var sysInfoRenderContent = fs.readFileSync('render-process/system/sys-information.js');
+      document.getElementById('sys-info-render').innerHTML= sysInfoRenderContent;
     </script>
   </body>
 </html>
