@@ -7,7 +7,6 @@ var invisReply = document.getElementById('invis-reply');
 
 invisMsgBtn.addEventListener('click', function (clickEvent) {
   var windowID = BrowserWindow.getFocusedWindow().id;
-
   var invisPath = 'file://' + path.join(process.cwd(), 'sections/communication/invisible.html');
   var win = new BrowserWindow({ width: 400, height: 400, show: false });
   win.loadURL(invisPath);
