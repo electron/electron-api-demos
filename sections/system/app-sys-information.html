@@ -15,11 +15,8 @@
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
         <h1>Get App and System Information</h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen. Each task below can be done in the <code>renderer process</code>.</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return.</p>
-
-        Open the <a href="">full API documentation</a> in your browser.
       </div>
     </header>
     <div class="sections">
@@ -30,7 +27,8 @@
           </h2>
           <div class="toggle-content">
             <button id="app-info">Demo</button><span id="got-app-info"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+            <p>The <code>process</code> module is built into Node.js and in Electron apps a few more useful properties have been added. The example below gets the version of Electron in use by the app.
+            <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/process">documentation</a> for more.</p>
             <h5>Renderer Process</h5>
             <pre><code id="app-info-render"></pre></code>
           </div>
@@ -44,7 +42,9 @@
           </h2>
           <div class="toggle-content">
             <button id="sys-info">Demo</button><span id="got-sys-info"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+            <p>The Node.js <code>os</code> module provides useful information about the user's operating system. In the example below we require the module and then return the location of the home directory.</p>
+
+            <p>See the full <a href="https://nodejs.org/api/os.html">documentation</a> for more.</p>
             <h5>Renderer Process</h5>
             <pre><code id="sys-info-render"></pre></code>
           </div>
@@ -58,7 +58,10 @@
           </h2>
           <div class="toggle-content">
             <button id="screen-info">Demo</button><span id="got-screen-info"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+            <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, etc. In the example below we retrieve the dimensions of the monitor in use.</p>
+
+            <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/screen">documentation</a> for more.</p>
+
             <h5>Renderer Process</h5>
             <pre><code id="screen-info-render"></pre></code>
           </div>
@@ -72,7 +75,7 @@
         <h2 class="avoid-clicks">Pro-Tip</h2>
         <div class="non-toggle-content">
         <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
-        
+
         <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code></p>
         <h5>Getting Process Versions in Electron</h5>
         <pre><code>// Returns version of Chromium in use
@@ -80,8 +83,7 @@ process.versions.chrome;
 // Returns version of V8 in use
 process.versions.v8;
 // Returns version of Node in use
-process.versions.node;
-        </code></pre>
+process.versions.node;</code></pre>
         </div>
       </div>
     </section>
