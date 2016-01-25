@@ -142,8 +142,12 @@ code {
   border-radius: 4px;
   padding: 1px 4px;
   background-color: #C1C1C1;
+  white-space: nowrap;
 }
 
+pre code {
+  white-space: pre;
+}
 
 /* TOGGLE! */
 
