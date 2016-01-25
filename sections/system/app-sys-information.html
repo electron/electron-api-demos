@@ -71,17 +71,16 @@
       <div class="wrapper">
         <h2 class="avoid-clicks">Pro-Tip</h2>
         <div class="non-toggle-content">
-        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
-        <h5>Using a sheet-style dialog</h5>
-        <pre><code>
-var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
-
-ipc.on('open-file-dialog-sheet', function (event) {
-  var window = BrowserWindow.fromWebContents(event.sender)
-  var files = dialog.showOpenDialog(window, { properties: [ 'openFile' ]})
-});
+        <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
+        
+        <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code></p>
+        <h5>Getting Process Versions in Electron</h5>
+        <pre><code>// Returns version of Chromium in use
+process.versions.chrome;
+// Returns version of V8 in use
+process.versions.v8;
+// Returns version of Node in use
+process.versions.node;
         </code></pre>
         </div>
       </div>
