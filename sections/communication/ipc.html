@@ -28,7 +28,9 @@
         </h2>
         <div class="toggle-content">
           <button id="async-msg">Ping</button><span id="async-reply"></span>
-          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations. This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
+          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations.
+
+          <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
           <pre><code id="async-msg-render"></pre></code>
           <h5>Main Process</h5>
@@ -45,7 +47,8 @@
           </h2>
           <div class="toggle-content">
             <button id="sync-msg">Ping</button><span id="sync-reply"></span>
-            <p>Use <code>ipc</code> when you need to send synchronous messages between processes. Note that the synchronous nature of this method means that it will block other operations while it is completing its task. This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
+            <p>Use the <code>ipc</code> module to send synchronous messages between processes. Note that the synchronous nature of this method means that it <b>will block</b> other operations while it is completing its task.</p>
+            <p>This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
             <h5>Renderer Process</h5>
             <pre><code id="sync-msg-render"></pre></code>
             <h5>Main Process</h5>
@@ -57,12 +60,13 @@
       <div class="sections">
         <section class="communication">
           <div class="wrapper">
-            <h2 class="js-container-target">Communication with an invisible window
+            <h2 class="js-container-target">Communicate with an invisible window
             <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
             </h2>
             <div class="toggle-content">
               <button id="invis-msg">Ping</button><span id="invis-reply"></span>
-              <p>Use <code>ipc</code> when you need to send synchronous messages between processes. Note that the synchronous nature of this method means that it will block other operations while it is completing its task. This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
+              <p>It is common practice to create a new and invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
+              <p>In this example we use the <code>remote</code> module to create a new, invisible browser window from the render process. When this page is loaded we send a message with <code>ipc</code> that the new window is listening for. The new window then computes the factorial and sends the result to be recieved by the original window and added above.</p>
               <h5>Renderer Process</h5>
               <pre><code id="invis-msg-render"></pre></code>
               <h5>Invisible Window Page HTML</h5>

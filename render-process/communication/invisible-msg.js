@@ -1,5 +1,5 @@
 var BrowserWindow = require('electron').remote.BrowserWindow;
-var ipcRenderer = require('electron').ipcRenderer
+var ipcRenderer = require('electron').ipcRenderer;
 var path = require('path');
 
 var invisMsgBtn = document.getElementById('invis-msg');
@@ -7,7 +7,6 @@ var invisReply = document.getElementById('invis-reply');
 
 invisMsgBtn.addEventListener('click', function (clickEvent) {
   var windowID = BrowserWindow.getFocusedWindow().id;
-
   var invisPath = 'file://' + path.join(process.cwd(), 'sections/communication/invisible.html');
   var win = new BrowserWindow({ width: 400, height: 400, show: false });
   win.loadURL(invisPath);
@@ -20,5 +19,5 @@ invisMsgBtn.addEventListener('click', function (clickEvent) {
 
 ipcRenderer.on('factorial-computed', function (event, input, output) {
   var message = 'The factorial of ' + input + ' is: ' + output
-  invisReply.textContent = message
+  invisReply.textContent = message;
 })
