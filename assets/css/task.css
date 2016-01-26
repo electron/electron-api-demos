@@ -19,6 +19,16 @@
   color: hsla(0,0%,0%,.5);
 }
 
+.task-page input {
+  font-size: 14px;
+  border: none;
+  padding: 14px 19px;
+  width: 300px;
+  font-family: 'Source Sans Pro';
+  vertical-align: top;
+  border-radius: 3px;
+}
+
 
 /* Clicky */
 
