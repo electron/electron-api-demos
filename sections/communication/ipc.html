@@ -11,113 +11,74 @@
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body class="task-page">
-    <header class="native-ui">
+    <header class="communication">
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Use system dialogs</h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h1>Communication</h1>
+        <h3>The <code>ipc</code> (inter-process communication) module allows you to send and recieve synchronous and asynchronous messages between the main and renderer processes. There is a version of it available for both processes.</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return.</p>
-
-        Open the <a href="">full API documentation</a> in your browser.
+        <p>Open the <a href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
       </div>
     </header>
-    <div class="sections">
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Open a File or Directory
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="select-directory">Demo</button><span id="selected-file"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="open-file-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="open-file-main"></code></pre>
-          </div>
-        </div>
-      </section>
 
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Error Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="error-dialog">Demo</button>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
-
-            <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="error-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="error-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Information Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="information-dialog">Demo</button><span id="info-selection"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the information dialog. You can provide options for responses which can then be relayed back to the renderer process.</p>
-
-            <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="information-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="information-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Save Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="save-dialog">Demo</button><span id="file-saved"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="save-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="save-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <section class="pro-tip">
+    <section class="communication">
       <div class="wrapper">
-        <h2 class="avoid-clicks">Pro-Tip</h2>
-        <div class="non-toggle-content">
-        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
-        <h5>Using a sheet-style dialog</h5>
-        <pre><code>
-var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
+        <h2 class="js-container-target">Asynchronous messages
+        <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+        </h2>
+        <div class="toggle-content">
+          <button id="async-msg">Ping</button><span id="async-reply"></span>
+          <p>Using <code>ipc</code> to send messages between processes asynchronously is the preferred method since it will return when finished without blocking other operations.
 
-ipc.on('open-file-dialog-sheet', function (event) {
-  var window = BrowserWindow.fromWebContents(event.sender)
-  var files = dialog.showOpenDialog(window, { properties: [ 'openFile' ]})
-});
-        </code></pre>
+          <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
+          <h5>Renderer Process</h5>
+          <pre><code id="async-msg-render"></pre></code>
+          <h5>Main Process</h5>
+          <pre><code id="async-msg-main"></code></pre>
         </div>
       </div>
     </section>
+
+    <div class="sections">
+      <section class="communication">
+        <div class="wrapper">
+          <h2 class="js-container-target">Synchronous messages
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          </h2>
+          <div class="toggle-content">
+            <button id="sync-msg">Ping</button><span id="sync-reply"></span>
+            <p>Use the <code>ipc</code> module to send synchronous messages between processes. Note that the synchronous nature of this method means that it <b>will block</b> other operations while it is completing its task.</p>
+            <p>This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
+            <h5>Renderer Process</h5>
+            <pre><code id="sync-msg-render"></pre></code>
+            <h5>Main Process</h5>
+            <pre><code id="sync-msg-main"></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <div class="sections">
+        <section class="communication">
+          <div class="wrapper">
+            <h2 class="js-container-target">Communicate with an invisible window
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+            </h2>
+            <div class="toggle-content">
+              <button id="invis-msg">Ping</button><span id="invis-reply"></span>
+              <p>It is common practice to create a new and invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
+              <p>In this example we use the <code>remote</code> module to create a new, invisible browser window from the render process. When this page is loaded we send a message with <code>ipc</code> that the new window is listening for. The new window then computes the factorial and sends the result to be recieved by the original window and added above.</p>
+              <h5>Renderer Process</h5>
+              <pre><code id="invis-msg-render"></pre></code>
+              <h5>Invisible Window Page HTML</h5>
+              <pre><code id="invis-window-render"></code></pre>
+            </div>
+          </div>
+        </section>
   </div>
 
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/error.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/information.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/save.js"></script>
+    <script type="text/javascript" src="../../render-process/communication/sync-msg.js"></script>
+    <script type="text/javascript" src="../../render-process/communication/async-msg.js"></script>
+    <script type="text/javascript" src="../../render-process/communication/invisible-msg.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -134,26 +95,21 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <script type="text/javascript">
       var fs = require('fs');
-      // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
-      // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
-      // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
-      // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
+      // Sync Message
+      var syncMsgRendererContent = fs.readFileSync('render-process/communication/sync-msg.js');
+      document.getElementById('sync-msg-render').innerHTML= syncMsgRendererContent;
+      var syncMsgMainContent = fs.readFileSync('main-process/communication/sync-msg.js');
+      document.getElementById('sync-msg-main').innerHTML= syncMsgMainContent;
+      // Async Message
+      var asyncMsgRendererContent = fs.readFileSync('render-process/communication/async-msg.js');
+      document.getElementById('async-msg-render').innerHTML= asyncMsgRendererContent;
+      var asyncMsgMainContent = fs.readFileSync('main-process/communication/async-msg.js');
+      document.getElementById('async-msg-main').innerHTML= asyncMsgMainContent;
+      // Invisible Window Message
+      var invisMsgRendererContent = fs.readFileSync('render-process/communication/invisible-msg.js');
+      document.getElementById('invis-msg-render').innerHTML= invisMsgRendererContent;
+      var invisWindowRendererContent = fs.readFileSync('sections/communication/invisible.html');
+      document.getElementById('invis-window-render').textContent = invisWindowRendererContent;
     </script>
   </body>
 </html>

@@ -19,6 +19,10 @@
   color: hsla(0,0%,0%,.5);
 }
 
+.task-page code {
+  color: rgba(51, 51, 51, 0.64);
+}
+
 .task-page input {
   font-size: 14px;
   border: none;
@@ -28,7 +32,6 @@
   vertical-align: top;
   border-radius: 3px;
 }
-
 
 /* Clicky */
 
@@ -150,9 +153,14 @@ pre {
 code {
   font-family: 'Source Code Pro', monospace;
   border-radius: 4px;
+<<<<<<< HEAD
+  padding: 1px 4px 3px 4px;
+  background-color: #F7F7F7;
+=======
   padding: 1px 4px;
   background-color: #C1C1C1;
   white-space: nowrap;
+>>>>>>> master
 }
 
 pre code {
