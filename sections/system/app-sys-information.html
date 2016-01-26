@@ -11,82 +11,59 @@
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body class="task-page">
-    <header class="native-ui">
+    <header class="system ">
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Use system dialogs</h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h1>Get App and System Information</h1>
+        <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen. Each task below can be done in the <code>renderer process</code>.</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return.</p>
-
-        Open the <a href="">full API documentation</a> in your browser.
       </div>
     </header>
     <div class="sections">
-      <section class="native-ui">
+      <section class="system">
         <div class="wrapper">
-          <h2 class="js-container-target">Open a File or Directory
+          <h2 class="js-container-target">Get app information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="select-directory">Demo</button><span id="selected-file"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+            <button id="app-info">Demo</button><span id="got-app-info"></span>
+            <p>The <code>process</code> module is built into Node.js and in Electron apps a few more useful properties have been added. The example below gets the version of Electron in use by the app.
+            <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/process">documentation</a> for more.</p>
             <h5>Renderer Process</h5>
-            <pre><code id="open-file-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="open-file-main"></code></pre>
+            <pre><code id="app-info-render"></pre></code>
           </div>
         </div>
       </section>
 
-      <section class="native-ui">
+      <section class="system">
         <div class="wrapper">
-          <h2 class="js-container-target">Error Dialogs
+          <h2 class="js-container-target">Get system information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="error-dialog">Demo</button>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
+            <button id="sys-info">Demo</button><span id="got-sys-info"></span>
+            <p>The Node.js <code>os</code> module provides useful information about the user's operating system. In the example below we require the module and then return the location of the home directory.</p>
 
-            <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+            <p>See the full <a href="https://nodejs.org/api/os.html">documentation</a> for more.</p>
             <h5>Renderer Process</h5>
-            <pre><code id="error-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="error-dialog-main"></code></pre>
+            <pre><code id="sys-info-render"></pre></code>
           </div>
         </div>
       </section>
 
-      <section class="native-ui">
+      <section class="system">
         <div class="wrapper">
-          <h2 class="js-container-target">Information Dialogs
+          <h2 class="js-container-target">Get screen information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="information-dialog">Demo</button><span id="info-selection"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the information dialog. You can provide options for responses which can then be relayed back to the renderer process.</p>
+            <button id="screen-info">Demo</button><span id="got-screen-info"></span>
+            <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, etc. In the example below we retrieve the dimensions of the monitor in use.</p>
 
-            <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="information-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="information-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
+            <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/screen">documentation</a> for more.</p>
 
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Save Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="save-dialog">Demo</button><span id="file-saved"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
             <h5>Renderer Process</h5>
-            <pre><code id="save-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="save-dialog-main"></code></pre>
+            <pre><code id="screen-info-render"></pre></code>
           </div>
         </div>
       </section>
@@ -97,27 +74,24 @@
       <div class="wrapper">
         <h2 class="avoid-clicks">Pro-Tip</h2>
         <div class="non-toggle-content">
-        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
-        <h5>Using a sheet-style dialog</h5>
-        <pre><code>
-var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
+        <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
 
-ipc.on('open-file-dialog-sheet', function (event) {
-  var window = BrowserWindow.fromWebContents(event.sender)
-  var files = dialog.showOpenDialog(window, { properties: [ 'openFile' ]})
-});
-        </code></pre>
+        <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code></p>
+        <h5>Getting Process Versions in Electron</h5>
+        <pre><code>// Returns version of Chromium in use
+process.versions.chrome;
+// Returns version of V8 in use
+process.versions.v8;
+// Returns version of Node in use
+process.versions.node;</code></pre>
         </div>
       </div>
     </section>
   </div>
 
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/error.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/information.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/save.js"></script>
+    <script type="text/javascript" src="../../render-process/system/app-information.js"></script>
+    <script type="text/javascript" src="../../render-process/system/sys-information.js"></script>
+    <script type="text/javascript" src="../../render-process/system/screen-information.js"></script>
 
     <script type="text/javascript">
       var demoBtns = document.querySelectorAll('.js-container-target');
@@ -134,26 +108,15 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <script type="text/javascript">
       var fs = require('fs');
-      // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
-      // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
-      // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
-      // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
+      // App Information
+      var appInfoRenderContent = fs.readFileSync('render-process/system/app-information.js');
+      document.getElementById('app-info-render').innerHTML= appInfoRenderContent;
+      // Sys Information
+      var sysInfoRenderContent = fs.readFileSync('render-process/system/sys-information.js');
+      document.getElementById('sys-info-render').innerHTML= sysInfoRenderContent;
+      // Screen Information
+      var screenInfoRenderContent = fs.readFileSync('render-process/system/screen-information.js');
+      document.getElementById('screen-info-render').innerHTML= screenInfoRenderContent;
     </script>
   </body>
 </html>

@@ -5,6 +5,7 @@
     <title>Electron API Demos</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/task.css">
+    <link rel="stylesheet" href="../../assets/css/print.css">
     <!-- Temp. use of CDN version of highlighting  -->
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
@@ -15,7 +16,7 @@
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
         <h1>Printing</h1>
-        <h3>The <code>browser window</code> module in Electron has a property, <code>webContents</code> which allows your app to print as well as print to PDF.</h3>
+        <h3>The <code>browser window</code> module in Electron has a property, <code>webContents</code>, which allows your app to print as well as print to PDF.</h3>
 
         <p>Open the <a href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
       </div>
@@ -36,6 +37,20 @@
           </div>
         </div>
       </section>
+
+      <section class="pro-tip">
+        <div class="wrapper">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+            <strong>Use a print style sheet.</strong>
+            <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Check out the stylesheet we use for this printing demo.</p>
+            <h5>In your stylesheet:</h5>
+            <pre><code>@media print {
+  /* Print styles here */
+}</code></pre>
+        </div>
+      </div>
+    </section>
   </div>
 
     <script type="text/javascript" src="../../render-process/printing/pdf.js"></script>
