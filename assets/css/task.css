@@ -19,6 +19,16 @@
   color: hsla(0,0%,0%,.5);
 }
 
+.task-page input {
+  font-size: 14px;
+  border: none;
+  padding: 14px 19px;
+  width: 300px;
+  font-family: 'Source Sans Pro';
+  vertical-align: top;
+  border-radius: 3px;
+}
+
 
 /* Clicky */
 
@@ -142,8 +152,12 @@ code {
   border-radius: 4px;
   padding: 1px 4px;
   background-color: #C1C1C1;
+  white-space: nowrap;
 }
 
+pre code {
+  white-space: pre;
+}
 
 /* TOGGLE! */
 
