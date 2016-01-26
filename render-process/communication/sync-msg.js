@@ -3,6 +3,6 @@ var syncMsgBtn = document.getElementById('sync-msg');
 
 syncMsgBtn.addEventListener('click', function () {
   var reply = ipc.sendSync('synchronous-message', 'ping');
-  var message = "Synchronous message reply: " + reply;
+  var message = 'Synchronous message reply: ' + reply;
   document.getElementById('sync-reply').innerHTML = message;
 });

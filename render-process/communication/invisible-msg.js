@@ -18,6 +18,6 @@ invisMsgBtn.addEventListener('click', function (clickEvent) {
 });
 
 ipcRenderer.on('factorial-computed', function (event, input, output) {
-  var message = 'The factorial of ' + input + ' is: ' + output
+  var message = 'The factorial of ' + input + ' is: ' + output;
   invisReply.textContent = message;
-})
+});
