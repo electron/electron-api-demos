@@ -5,7 +5,7 @@ var MenuItem = remote.MenuItem;
 var menu = new Menu();
 menu.append(new MenuItem({ label: 'Hello' }));
 menu.append(new MenuItem({ type: 'separator' }));
-menu.append(new MenuItem({ label: 'Electron' }));
+menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }));
 
 // When window is right clicked
 window.addEventListener('contextmenu', function (e) {
