@@ -11,13 +11,20 @@ module.exports.setup = function () {
     var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/IconTemplate.png')
     appIcon = new Tray(iconPath);
     var contextMenu = Menu.buildFromTemplate([
-      { label: 'Hello', type: 'radio' },
+      { label: 'Quit',
+        click: function (menuItem, browserWindow) {
+          // TODO why isn't this working
+          // browserWindow.webContents.send('remove-tray');
+          appIcon.destroy();
+        }
+      },
     ]);
     appIcon.setToolTip('Electron Demo in the tray.');
     appIcon.setContextMenu(contextMenu);
-    // No reason to keep it around for the whole demo
-    // so remove icon after 1 minute.
     // TODO create an icon
-    setTimeout(function () { appIcon.destroy(); }, 60000)
+  })
+
+  ipc.on('remove-tray', function (event) {
+    appIcon.destroy();
   })
 }
