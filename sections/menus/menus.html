@@ -27,9 +27,9 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="application-menu">Demo</button><span id="selected-file"></span>
-            <!-- TODO Is there a way to open application menu on click (of something else?) -->
-            <p></p>
+            <!-- <button id="application-menu">Demo</button><span id="selected-file"></span> -->
+            <!-- TODO how to demo this -->
+            <p>If you don't set any menu, Electron will generate a minimal menu for your app by default. In this application we set the menu with the code below.</p>
             <h5>Main Process</h5>
             <pre><code id="application-menu-main"></code></pre>
           </div>
@@ -59,11 +59,13 @@
         <div class="wrapper">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
-          <strong>Electron will build a default application menu.</strong>
-          <p>If you don't set any menu, Electron will generate a minimal menu for you app by default.</h5>
-          <pre><code>
-// no code
-          </code></pre>
+          <strong>OS Differences.</strong>
+          <p>When designing an app for different operating systems, it's important to remember the different naming conventions for similar operations.</p>
+          <!-- TODO add more  -->
+          <table>
+            <tr><th>Windows</th><th>OS X</th><th>Linux</th></tr>
+            <tr><td>Settings</td><td>Preferences</td><td>Settings</td></tr>
+          </table>
           </div>
         </div>
       </section>
