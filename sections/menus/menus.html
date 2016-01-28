@@ -15,9 +15,9 @@
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
         <h1>Customize Menus</h1>
-        <h3>The <code>menu</code> module allows you to create native menus that can be used as application menus and context (right-click) menus.</h3>
+        <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
 
-        <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu/">full API documentation</a> in your browser.</p>
+        <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
       </div>
     </header>
     <div class="sections">
@@ -28,7 +28,7 @@
           </h2>
           <div class="toggle-content">
             <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
-            
+
             <p>If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed. The code below shows how the entire menu for this app as well as the App Menu Demo option were added.</p>
             <h5>Main Process</h5>
             <pre><code id="application-menu-main"></code></pre>
@@ -42,15 +42,12 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <!-- TODO Seems odd to use a button to show right-click menu -->
             <button id="context-menu">Demo</button>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
+            <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> as well. You can right click anywhere in this Menu window or click the demo button to see an example context menu.</p>
 
-            <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+            <p>In this example we use the <code>remote</code> module to access <code>menu</code> and <code>menubar</code> from the renderer proocess.</p>
             <h5>Renderer Process</h5>
             <pre><code id="context-menu-renderer"></pre></code>
-            <!-- <h5>Main Process</h5>
-            <pre><code id="context-menu-main"></code></pre> -->
           </div>
         </div>
       </section>
