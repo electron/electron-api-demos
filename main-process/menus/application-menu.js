@@ -39,6 +39,23 @@ module.exports.setup = function () {
               focusedWindow.toggleDevTools();
           }
         },
+        {
+          type: 'separator'
+        },
+        {
+          label: 'App Menu Demo',
+          click: function(item, focusedWindow) {
+            if (focusedWindow)  {
+              var options = {
+                type: "info",
+                title: "Application Menu Demo",
+                buttons: ["Ok"],
+                message: "This demo is for the Menu section, showing how to create a clickable menuitem in the application menu."
+              }
+              require('electron').dialog.showMessageBox(focusedWindow, options)
+            }
+          }
+        },
       ]
     },
     {
