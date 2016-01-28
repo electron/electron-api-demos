@@ -11,115 +11,67 @@
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body class="task-page">
-    <header class="native-ui">
+    <header class="menu">
       <div class="wrapper">
         <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Use system dialogs</h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h1>Customize Menus</h1>
+        <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return.</p>
-
-        Open the <a href="">full API documentation</a> in your browser.
+        <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
       </div>
     </header>
     <div class="sections">
-      <section class="native-ui">
+      <section class="menu">
         <div class="wrapper">
-          <h2 class="js-container-target">Open a File or Directory
+          <h2 class="js-container-target">Create an application menu
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="select-directory">Demo</button><span id="selected-file"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="open-file-render"></pre></code>
+            <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
+
+            <p>If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed. The code below shows how the entire menu for this app as well as the App Menu Demo option were added.</p>
             <h5>Main Process</h5>
-            <pre><code id="open-file-main"></code></pre>
+            <pre><code id="application-menu-main"></code></pre>
           </div>
         </div>
       </section>
 
-      <section class="native-ui">
+      <section class="menu">
         <div class="wrapper">
-          <h2 class="js-container-target">Error Dialogs
+          <h2 class="js-container-target">Create a context menu
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
           </h2>
           <div class="toggle-content">
-            <button id="error-dialog">Demo</button>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
+            <button id="context-menu">Demo</button>
+            <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> as well. You can right click anywhere in this Menu window or click the demo button to see an example context menu.</p>
 
-            <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+            <p>In this example we use the <code>remote</code> module to access <code>menu</code> and <code>menubar</code> from the renderer proocess.</p>
             <h5>Renderer Process</h5>
-            <pre><code id="error-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="error-dialog-main"></code></pre>
+            <pre><code id="context-menu-renderer"></pre></code>
           </div>
         </div>
       </section>
 
-      <section class="native-ui">
+      <section class="pro-tip">
         <div class="wrapper">
-          <h2 class="js-container-target">Information Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="information-dialog">Demo</button><span id="info-selection"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the information dialog. You can provide options for responses which can then be relayed back to the renderer process.</p>
-
-            <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="information-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="information-dialog-main"></code></pre>
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+          <strong>OS Differences.</strong>
+          <p>When designing an app for different operating systems, it's important to remember the different naming conventions for similar operations.</p>
+          <!-- TODO add more  -->
+          <table>
+            <tr><th>Windows</th><th>OS X</th><th>Linux</th></tr>
+            <tr><td>Settings</td><td>Preferences</td><td>Settings</td></tr>
+          </table>
           </div>
         </div>
       </section>
-
-      <section class="native-ui">
-        <div class="wrapper">
-          <h2 class="js-container-target">Save Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="save-dialog">Demo</button><span id="file-saved"></span>
-            <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="save-dialog-render"></pre></code>
-            <h5>Main Process</h5>
-            <pre><code id="save-dialog-main"></code></pre>
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <section class="pro-tip">
-      <div class="wrapper">
-        <h2 class="avoid-clicks">Pro-Tip</h2>
-        <div class="non-toggle-content">
-        <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
-        <h5>Using a sheet-style dialog</h5>
-        <pre><code>
-var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
-var BrowserWindow = require('browser-window');
-
-ipc.on('open-file-dialog-sheet', function (event) {
-  var window = BrowserWindow.fromWebContents(event.sender)
-  var files = dialog.showOpenDialog(window, { properties: [ 'openFile' ]})
-});
-        </code></pre>
-        </div>
-      </div>
-    </section>
   </div>
 
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/open-file.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/error.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/information.js"></script>
-    <script type="text/javascript" src="../render-process/native-ui/dialogs/save.js"></script>
+    <script type="text/javascript" src="../../render-process/menus/context-menu.js"></script>
 
     <script type="text/javascript">
+      // TODO Pull this out for all pages to use
       var demoBtns = document.querySelectorAll('.js-container-target');
       Array.prototype.forEach.call(demoBtns, function (btn) {
         btn.addEventListener('click', function (event) {
@@ -134,26 +86,12 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
     <script type="text/javascript">
       var fs = require('fs');
-      // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
-      document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
-      // Error Dialog
-      var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
-      document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
-      // Information Dialog
-      var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
-      document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
-      // Save Dialog
-      var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
-      document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
+      // Application Menu
+      var appMenuMainContent = fs.readFileSync('main-process/menus/application-menu.js');
+      document.getElementById('application-menu-main').innerHTML= appMenuMainContent;
+      // Context Menu
+      var contextMenuRendererContent = fs.readFileSync('render-process/menus/context-menu.js');
+      document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
     </script>
   </body>
 </html>
