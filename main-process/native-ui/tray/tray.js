@@ -8,7 +8,7 @@ var appIcon = null;
 
 module.exports.setup = function () {
   ipc.on('put-in-tray', function (event) {
-    var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/elec-icon.png')
+    var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/iconTemplate.png')
     appIcon = new Tray(iconPath);
     var contextMenu = Menu.buildFromTemplate([
       { label: 'Remove',
