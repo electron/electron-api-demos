@@ -8,10 +8,10 @@ var appIcon = null;
 
 module.exports.setup = function () {
   ipc.on('put-in-tray', function (event) {
-    var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/IconTemplate.png')
+    var iconPath = path.join(process.cwd(), 'main-process/native-ui/tray/elec-icon.png')
     appIcon = new Tray(iconPath);
     var contextMenu = Menu.buildFromTemplate([
-      { label: 'Quit',
+      { label: 'Remove',
         click: function (menuItem, browserWindow) {
           // TODO why isn't this working
           // browserWindow.webContents.send('remove-tray');
