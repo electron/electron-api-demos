@@ -1,4 +1,5 @@
 var Menu = require('electron').Menu;
+var app = require('electron').app;
 
 module.exports.setup = function () {
   var template = [
@@ -52,7 +53,7 @@ module.exports.setup = function () {
                 buttons: ["Ok"],
                 message: "This demo is for the Menu section, showing how to create a clickable menuitem in the application menu."
               }
-              require('electron').dialog.showMessageBox(focusedWindow, options)
+              require('electron').dialog.showMessageBox(focusedWindow, options);
             }
           }
         },
