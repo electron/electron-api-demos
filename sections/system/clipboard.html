@@ -69,21 +69,9 @@ clipboard.readHtml();
     </div>
   </div>
 
+    <script src="../../assets/demo-btns.js"></script>
     <script type="text/javascript" src="../../render-process/system/copy.js"></script>
     <script type="text/javascript" src="../../render-process/system/paste.js"></script>
-
-    <script type="text/javascript">
-      var demoBtns = document.querySelectorAll('.js-container-target');
-      Array.prototype.forEach.call(demoBtns, function (btn) {
-        btn.addEventListener('click', function (event) {
-          if (event.target.parentElement.classList.contains('active')) {
-            event.target.parentElement.classList.remove('active')
-          } else {
-            event.target.parentElement.classList.add('active')
-          };
-        });
-      });
-    </script>
 
     <script type="text/javascript">
       var fs = require('fs');

@@ -33,7 +33,7 @@
             <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. It is a <b>main</b> process module but can be used in the <b>renderer</b> process with the <code>remote</code> module. We'll do that in this demo.</p>
 
             <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.</p>
-            
+
             <h5>Render Process</h5>
             <pre><code id="new-window-renderer"></pre></code>
           </div>
@@ -72,21 +72,9 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
       </section>
   </div>
 
+    <script src="../../assets/demo-btns.js"></script>
     <script type="text/javascript" src="../../render-process/windows/create-window.js"></script>
     <script type="text/javascript" src="../../render-process/windows/manage-window.js"></script>
-
-    <script type="text/javascript">
-      var demoBtns = document.querySelectorAll('.js-container-target');
-      Array.prototype.forEach.call(demoBtns, function (btn) {
-        btn.addEventListener('click', function (event) {
-          if (event.target.parentElement.classList.contains('active')) {
-            event.target.parentElement.classList.remove('active')
-          } else {
-            event.target.parentElement.classList.add('active')
-          };
-        });
-      });
-    </script>
 
     <script type="text/javascript">
       var fs = require('fs');
