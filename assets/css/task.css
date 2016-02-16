@@ -7,8 +7,6 @@
 
 .task-page a {
   color: #3F9498;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .task-page header {
@@ -42,7 +40,6 @@
   line-height: 1.5;
   font-weight: 600;
   border-bottom: 1px solid hsla(0,0%,0%,.1);
-  cursor: pointer;
 }
 .task-page h2:hover,
 .task-page h2:focus {
@@ -124,7 +121,6 @@ button {
   color: inherit;
   padding: .4em 1.2em;
   background-color: inherit;
-  cursor: pointer;
 }
 button:hover,
 button:focus {

@@ -1,3 +1,4 @@
+@import 'normalize.css';
 
 /* Fonts */
 
@@ -45,7 +46,6 @@ body {
   color: #45828E;
   background-color: #DBF6FB;
   font-size: 16px;
-  margin: 0 auto;
 }
 
 header {

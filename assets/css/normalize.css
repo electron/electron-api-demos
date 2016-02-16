@@ -1,0 +1,40 @@
+/*
+** normalize.css
+** Makes the UI feel more native
+*/
+
+html {
+  font-family: sans-serif;
+
+  /* disable text selection */
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+body {
+  margin: 0; /* remove default margin */
+}
+
+
+/* enable text selection */
+
+.is-selectable,
+pre,
+code {
+  -webkit-user-select: auto;
+  cursor: auto;
+}
+
+
+/* Buttons and links */
+
+button,
+a {
+  cursor: default;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}

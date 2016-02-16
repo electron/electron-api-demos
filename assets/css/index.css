@@ -25,7 +25,6 @@
   margin: 0;
   padding: 1.5em;
   border-top: 1px solid hsla(0,0%,0%,.15);
-  cursor: pointer;
 }
 .block:hover,
 .block:focus {
