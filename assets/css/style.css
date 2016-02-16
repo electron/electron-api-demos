@@ -40,6 +40,7 @@
 /* Global */
 
 body {
+  min-width: 400px;
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
   line-height: 1.5;
   color: #45828E;
@@ -80,8 +81,9 @@ h3 {
 /* Utilities */
 
 .wrapper {
-  width: 700px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: 0 2em;
 }
 
 .avoid-clicks {
