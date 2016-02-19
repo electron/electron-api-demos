@@ -107,9 +107,24 @@ a.no-dec {
 
 .pro-tip       { background-color: #DFD19B; color: #696141; }
 
-
 #windows-view,
 #menus-view,
-#native-ui-view {
+#index-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hide-view {
   display: none;
+  /*visibility: hidden;*/
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+
+.show-view {
+  display: block;
+  /*visibility: visible;*/
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }

@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="assets/css/github.css">
     <link rel="import" href="sections/windows/windows.html">
     <link rel="import" href="sections/menus/menus.html">
-
+    <script src="assets/demo-btns.js"></script>
   </head>
   <body class="index">
 
-    <div id="index-view">
+    <div id="index-view" class="show-view">
       <header>
         <div class="wrapper">
           <h1>Electron Demos</h1>
@@ -99,12 +99,8 @@
 
     <script>
       var links = document.querySelectorAll('link[rel="import"]');
-      window.links = links
-      console.log("Link", links)
       var array = []
-
       array.forEach.call(links, function (link) {
-        // Clone the <template> in the import.
         var template = link.import.querySelector('.task-template')
         var clone = document.importNode(template.content, true)
         document.querySelector('body').appendChild(clone);
@@ -112,13 +108,18 @@
 
       document.querySelector('.to-windows').addEventListener('click', function () {
         console.log("clicked to windows")
-        document.querySelector('#index-view').style.display = "none"
-        document.querySelector('#windows-view').style.display = "block"
+        document.querySelector('#index-view').classList.remove('show-view')
+        document.querySelector('#index-view').classList.add('hide-view')
+        document.querySelector('#windows-view').classList.remove('hide-view')
+        document.querySelector('#windows-view').classList.add('show-view')
       })
+
       document.querySelector('.to-menus').addEventListener('click', function () {
-        console.log("clicked to windows")
-        document.querySelector('#index-view').style.display = "none"
-        document.querySelector('#menus-view').style.display = "block"
+        console.log("clicked to menus")
+        document.querySelector('#index-view').classList.add('hide-view')
+        document.querySelector('#index-view').classList.remove('show-view')
+        document.querySelector('#menus-view').classList.add('show-view')
+        document.querySelector('#menus-view').classList.remove('hide-view')
       })
     </script>
   </body>
