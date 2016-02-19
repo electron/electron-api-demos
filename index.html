@@ -5,87 +5,63 @@
   <title>Electron API Demos</title>
 
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/nav.css">
   <link rel="stylesheet" href="assets/css/task.css">
   <link rel="stylesheet" href="assets/css/github.css">
 
   <link rel="import" href="sections/windows/windows.html">
   <link rel="import" href="sections/menus/menus.html">
+  <!--
+  <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
+  <link rel="import" href="sections/native-ui/dialogs.html">
+  <link rel="import" href="sections/native-ui/tray.html">
+  <link rel="import" href="sections/communication/ipc.html">
+  <link rel="import" href="sections/system/app-sys-information.html">
+  <link rel="import" href="sections/system/clipboard.html">
+  <link rel="import" href="sections/printing/pdf.html">
+  -->
 
   <script src="assets/demo-btns.js"></script>
 </head>
 <body>
 
   <nav id="index-view" class="nav">
-    <header>
-      <div class="wrapper">
-        <h1>Electron Demos</h1>
-        <h3>What do you want to do?</h3>
-      </div>
+    <header class="nav-header">
+      <h1 class="nav-title">Electron Demos</h1>
     </header>
 
-    <section class="windows">
-      <div class="wrapper">
-        <h4 class="meta">Windows</h4>
-        <div class="block no-dec to-windows">
-          <h2>Create and manage windows.</h2>
-        </div>
-      </div>
+    <section class="nav-item windows">
+      <h2 class="nav-category">Windows</h2>
+      <h3 class="nav-link to-windows is-selected">Create and manage <em>windows</em></h3>
     </section>
 
-
-    <section class="menu">
-      <div class="wrapper">
-        <h4 class="meta">Menus</h4>
-        <div class="block no-dec to-menus">
-          <h2>Customize menus.</h2>
-        </div>
-      </div>
+    <section class="nav-item menu">
+      <h2 class="nav-category">Menus</h2>
+      <h3 class="nav-link to-menus">Customize <em>menus</em> </h3>
     </section>
 
-    <section class="native-ui">
-      <div class="wrapper">
-        <h4 class="meta">Native User Interface</h4>
-        <a class="block no-dec to-ex-links-file-manager" href="sections/native-ui/ex-links-file-manager.html">
-          <h2>Open external links or system file manager.</h2>
-        </a>
-        <a class="block no-dec to-dialogs" href="sections/native-ui/dialogs.html">
-          <h2>Use system dialogs.</h2>
-        </a>
-        <a class="block no-dec to-tray" href="sections/native-ui/tray.html">
-          <h2>Put your app in the tray.</h2>
-        </a>
-      </div>
+    <section class="nav-item native-ui">
+      <h2 class="nav-category">Native User Interface</h2>
+      <h3 class="nav-link to-ex-links-file-manager">Open <em>external links</em> or system <em>file manager</em></h3>
+      <h3 class="nav-link to-dialogs">Use system <em>dialogs</em></h3>
+      <h3 class="nav-link to-tray">Put your app in the <em>tray</em></h3>
     </section>
 
-    <section class="communication">
-      <div class="wrapper">
-        <h4 class="meta">Communication</h4>
-        <a class="block no-dec to-ipc" href="sections/communication/ipc.html">
-          <h2>Communicate between the two processes.</h2>
-        </a>
-      </div>
+    <section class="nav-item communication">
+      <h2 class="nav-category">Communication</h2>
+      <h3 class="nav-link to-ipc">Communicate between the <em>two processes</em></h3>
     </section>
 
-    <section class="system">
-      <div class="wrapper">
-        <h4 class="meta">System</h4>
-        <a class="block no-dec to-app-sys-information" href="sections/system/app-sys-information.html">
-          <h2>Get app or user system information.</h2>
-        </a>
-        <a class="block no-dec to-clipboard" href="sections/system/clipboard.html">
-          <h2>Copy and paste from the clipboard.</h2>
-        </a>
-      </div>
+    <section class="nav-item system">
+      <h2 class="nav-category">System</h2>
+      <h3 class="nav-link to-app-sys-information" >Get app or user system <em>information</em></h3>
+      <h3 class="nav-link to-clipboard">Copy and paste from the <em>clipboard</em></h3>
     </section>
 
-    <section class="printing">
-      <div class="wrapper">
-        <h4 class="meta">Printing</h4>
-        <a class="block no-dec to-pdf" href="sections/printing/pdf.html">
-          <h2>Print to PDF.</h2>
-        </a>
-      </div>
+    <section class="nav-item printing">
+      <h2 class="nav-category">Printing</h2>
+      <h3 class="nav-link to-pdf">Print to <em>PDF</em></h3>
     </section>
   </nav>
 
@@ -101,14 +77,20 @@
     })
 
     document.querySelector('.to-windows').addEventListener('click', function () {
-      console.log("clicked to windows")
+      // console.log("clicked to windows")
+      document.querySelector('.to-menus').classList.remove('is-selected')
       document.querySelector('#menus-view').classList.remove('show')
+
+      document.querySelector('.to-windows').classList.add('is-selected')
       document.querySelector('#windows-view').classList.add('show')
     })
 
     document.querySelector('.to-menus').addEventListener('click', function () {
-      console.log("clicked to menus")
+      // console.log("clicked to menus")
+      document.querySelector('.to-windows').classList.remove('is-selected')
       document.querySelector('#windows-view').classList.remove('show')
+
+      document.querySelector('.to-menus').classList.add('is-selected')
       document.querySelector('#menus-view').classList.add('show')
     })
   </script>

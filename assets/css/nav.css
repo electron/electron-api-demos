@@ -5,51 +5,53 @@
   min-width: 300px;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 1em 0;
 }
 
-/* Nav items */
-
-.nav section {
-  position: relative;
-  color: #fff;
-  overflow: auto;
-  padding: 3em 0;
+.nav-header {
+  padding: 1em 1em 1em 2em;
 }
 
-.nav .meta {
+.nav-title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 2em;
+  line-height: 1;
   text-transform: uppercase;
-  font-size: .9em;
-  color: hsla(0,0%,0%,.5);
-  margin: 0 0 .5em 0;
 }
 
-/* Clicky Blocks */
+.nav-item {
+  padding: .5em 0 .5em 2em;
+}
 
-.block {
-  display: block;
+.nav-category {
   margin: 0;
-  padding: 1.5em;
-  border-top: 1px solid hsla(0,0%,0%,.15);
-  cursor: pointer;
+  font-size: .8em;
+  font-weight: 600;
+  color: hsla(0,0%,0%,.36);
+  text-transform: uppercase;
+  border-bottom: 1px solid hsla(0,0%,0%,.1);
 }
-.block:hover,
-.block:focus {
+
+.nav-link {
+  margin: 0;
+  padding: .5em 1.5em;
+  line-height: 1;
+  font-size: 1em;
+  font-weight: normal;
+  cursor: default;
+}
+.nav-link:hover {
   background-color: hsla(0,0%,0%,.1);
-  border-color: transparent;
-}
-.block:active {
-  background-color: hsla(0,0%,0%,.05);
-}
-.block:focus {
-  outline: none;
 }
 
-.block h2 {
-  margin: 0;
+.nav-link em {
+  font-style: normal;
+  color: #294f56;
   font-weight: 600;
 }
 
-.block p {
-  margin: 0;
-  color: hsl(0,0%,30%);
+.is-selected.nav-link,
+.is-selected.nav-link em {
+  color: #fff;
 }
