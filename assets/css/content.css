@@ -1,0 +1,220 @@
+/* content */
+
+.content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-left: 2px solid;
+}
+
+.content-item {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
+}
+.content-item.show {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
+}
+
+
+.content header {
+  padding: 2em 0 1em 0;
+}
+
+.content header h1,
+.content header h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.content h1 {
+  font-size: 2em;
+  font-weight: 600;
+  padding-bottom: .5em;
+}
+
+.content h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.content h3 {
+  font-size: 1.12em;
+  font-weight: 600;
+}
+
+.content input {
+  font-size: 14px;
+  border: none;
+  padding: 14px 19px;
+  width: 300px;
+  font-family: 'Source Sans Pro';
+  vertical-align: top;
+  border-radius: 3px;
+}
+
+
+/* Misc */
+
+.support {
+  margin-top: .2em;
+  font-size: 13px;
+  color: hsla(0,0%,0%,.3);
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.pro-tip {
+  margin-top: 2em;
+  background: currentColor linear-gradient(to bottom, hsla(0,0%,100%,.8), hsla(0,0%,100%,.8) );
+}
+
+.pro-tip strong {
+  font-weight: 600;
+}
+
+.pro-tip.pro-tip h2 {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: .5em;
+}
+
+
+/* Button */
+
+button {
+  border: 2px solid;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.2em;
+  color: inherit;
+  padding: .4em 1.2em;
+  background-color: transparent;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: hsla(0,0%,100%,.1);
+}
+button:active {
+  background-color: transparent;
+}
+button:focus {
+  outline: none;
+}
+
+
+/* Code */
+
+pre {
+  font-size: 13px;
+  overflow: auto;
+  padding: 1em;
+  margin: 0;
+  border-radius: 4px;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  border-radius: 4px;
+  padding: 1px 4px;
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre;
+}
+
+
+
+/* Clicky */
+
+.content h2 {
+  display: block;
+  margin: 0;
+  padding: .5em 1em;
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+  border-left: 2px solid;
+  transition: border-color .12s;
+}
+.content h2:hover,
+.content h2:focus {
+  /*border-color: transparent;*/
+  /*background-color: hsla(0,0%,100%,1);*/
+}
+.content h2:active {
+  /*background-color: hsla(0,0%,0%,0);*/
+}
+.content h2:focus {
+  outline: none;
+}
+
+.active h2 {
+  border-left-color: transparent;
+}
+
+
+
+/* TOGGLE! */
+
+.toggle-content {
+  display: none;
+  position: relative;
+  padding: 2em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px hsla(0,0%,0%,.2);
+}
+
+.active .toggle-content {
+  display: block;
+}
+
+.non-toggle-content {
+  padding-bottom: 20px;
+}
+
+.toggle-content button {
+  margin-right: 1em;
+}
+
+.toggle-content h5 {
+  font-size: 1em;
+  margin-bottom: .6em;
+}
+
+
+/* Pointy arrow */
+
+/*.active h2:hover + .toggle-content:before {
+  visibility: hidden;
+}*/
+
+.toggle-content:before {
+  content: "";
+  position: absolute;
+  border: 1em solid;
+  border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) #fff hsla(0, 0%, 0%, 0);
+  top: -2em;
+}

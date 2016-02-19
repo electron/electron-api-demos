@@ -4,23 +4,25 @@ html {
   height: 100%;
   font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  color: #45828E;
-  background-color: #DBF6FB;
+  line-height: 1.4;
 }
 
 body {
   margin: 0;
   height: 100%;
   display: flex;
-  /* overflow: hidden; */
+   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Utilities */
 
 .wrapper {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 2em;
 }
@@ -32,55 +34,4 @@ body {
 a.no-dec {
   text-decoration: none;
   color: inherit;
-}
-
-
-/* Colors */
-
-.content .windows       { background-color: #8aba87; }
-.content .menu          { background-color: #6ED8AE; }
-.content .native-ui     { background-color: #55C8CE; }
-.content .communication { background-color: #8FA7E0; }
-.content .system        { background-color: #7AD6C2; }
-.content .printing      { background-color: #76c8de; }
-
-.nav-item.windows       .is-selected { background-color: #8aba87; }
-.nav-item.menu          .is-selected { background-color: #6ED8AE; }
-.nav-item.native-ui     .is-selected { background-color: #55C8CE; }
-.nav-item.communication .is-selected { background-color: #8FA7E0; }
-.nav-item.system        .is-selected { background-color: #7AD6C2; }
-.nav-item.printing      .is-selected { background-color: #76c8de; }
-
-.content .pro-tip       { background-color: #DFD19B; color: #696141; }
-
-
-/* content */
-
-.content {
-  flex: 1;
-  position: relative;
-}
-
-.content-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.content-item {
-  display: none;
-  /*visibility: hidden;*/
-  opacity: 0;
-  transition: visibility 0s linear 300ms, opacity 300ms;
-}
-
-.content-item.show {
-  display: block;
-  /*visibility: visible;*/
-  opacity: 1;
-  transition: visibility 0s linear 0s, opacity 300ms;
 }
