@@ -1,29 +1,29 @@
 
 /* Task page */
 
-.task-page {
+.task-wrapper {
   color: #fff;
 }
 
-.task-page a {
+.task-wrapper a {
   color: #3F9498;
   text-decoration: none;
   cursor: pointer;
 }
 
-.task-page header {
+.task-wrapper header {
   background-image: linear-gradient(to bottom, hsla(0,0%,100%,.2), hsla(0,0%,100%,.2));
 }
 
-.task-page h3 {
+.task-wrapper h3 {
   color: hsla(0,0%,0%,.5);
 }
 
-.task-page code {
+.task-wrapper code {
   color: rgba(51, 51, 51, 0.64);
 }
 
-.task-page input {
+.task-wrapper input {
   font-size: 14px;
   border: none;
   padding: 14px 19px;
@@ -35,7 +35,7 @@
 
 /* Clicky */
 
-.task-page h2 {
+.task-wrapper h2 {
   display: block;
   margin: 0;
   padding: 1em;
@@ -44,15 +44,15 @@
   border-bottom: 1px solid hsla(0,0%,0%,.1);
   cursor: pointer;
 }
-.task-page h2:hover,
-.task-page h2:focus {
+.task-wrapper h2:hover,
+.task-wrapper h2:focus {
   border-color: transparent;
   background-color: hsla(0,0%,0%,.06);
 }
-.task-page h2:active {
+.task-wrapper h2:active {
   background-color: hsla(0,0%,0%,.1);
 }
-.task-page h2:focus {
+.task-wrapper h2:focus {
   outline: none;
 }
 

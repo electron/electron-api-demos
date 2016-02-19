@@ -9,10 +9,11 @@
     <script src="../../assets/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </head>
-  <body class="task-page">
+  <template class="task-template">
+    <div id="windows-view" class="task-wrapper">
     <header class="windows">
       <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
+        <div class="nav"><a class="back no-dec" href="index.html">Back</a></div>
         <h1>Create and Manage Windows</h1>
         <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka render process) in your app.</h3>
 
@@ -70,10 +71,12 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
         </div>
       </section>
   </div>
+</div>
+</div>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/windows/create-window.js"></script>
-    <script type="text/javascript" src="../../render-process/windows/manage-window.js"></script>
+    <script src="assets/demo-btns.js"></script>
+    <script type="text/javascript" src="render-process/windows/create-window.js"></script>
+    <script type="text/javascript" src="render-process/windows/manage-window.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
@@ -84,5 +87,5 @@ var win = new BrowserWindow({ width: 400, height: 225, show: false });
       var manageWindowRenderContent = fs.readFileSync('render-process/windows/manage-window.js');
       document.getElementById('manage-window-renderer').innerHTML= manageWindowRenderContent;
     </script>
-  </body>
+  </template>
 </html>

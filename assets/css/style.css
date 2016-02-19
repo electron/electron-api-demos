@@ -106,3 +106,10 @@ a.no-dec {
 .printing      { background-color: #76c8de; }
 
 .pro-tip       { background-color: #DFD19B; color: #696141; }
+
+
+#windows-view,
+#menus-view,
+#native-ui-view {
+  display: none;
+}

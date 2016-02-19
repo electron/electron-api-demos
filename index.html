@@ -5,33 +5,41 @@
     <title>Electron API Demos</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/task.css">
+    <link rel="stylesheet" href="assets/css/github.css">
+    <link rel="import" href="sections/windows/windows.html">
+    <link rel="import" href="sections/menus/menus.html">
+
   </head>
   <body class="index">
 
-    <header>
-      <div class="wrapper">
-        <h1>Electron Demos</h1>
-        <h3>What do you want to do?</h3>
-      </div>
-    </header>
+    <div id="index-view">
+      <header>
+        <div class="wrapper">
+          <h1>Electron Demos</h1>
+          <h3>What do you want to do?</h3>
+        </div>
+      </header>
 
-    <section class="windows">
-      <div class="wrapper">
-        <h4 class="meta">Windows</h4>
-        <a class="block no-dec to-windows" href="sections/windows/windows.html">
-          <h2>Create and manage windows.</h2>
-          <p>Create a new window in your app or manage the state, location or recent documents.</p>
-        </a>
-      </div>
-    </section>
+      <section class="windows">
+        <div class="wrapper">
+          <h4 class="meta">Windows</h4>
+          <div class="block no-dec to-windows">
+            <h2>Create and manage windows.</h2>
+            <p>Create a new window in your app or manage the state, location or recent documents.</p>
+          </div>
+        </div>
+      </section>
 
-    <section class="menu">
+
+     <section class="menu">
       <div class="wrapper">
         <h4 class="meta">Menus</h4>
-        <a class="block no-dec to-menus" href="sections/menus/menus.html">
+        <div class="block no-dec to-menus">
           <h2>Customize menus.</h2>
           <p>Create an application (top) menu as well as a context (right-click) menu for your app.</p>
-        </a>
+        </div>
       </div>
     </section>
 
@@ -86,6 +94,32 @@
         </a>
       </div>
     </section>
+  </div>
+</div>
 
+    <script>
+      var links = document.querySelectorAll('link[rel="import"]');
+      window.links = links
+      console.log("Link", links)
+      var array = []
+
+      array.forEach.call(links, function (link) {
+        // Clone the <template> in the import.
+        var template = link.import.querySelector('.task-template')
+        var clone = document.importNode(template.content, true)
+        document.querySelector('body').appendChild(clone);
+      })
+
+      document.querySelector('.to-windows').addEventListener('click', function () {
+        console.log("clicked to windows")
+        document.querySelector('#index-view').style.display = "none"
+        document.querySelector('#windows-view').style.display = "block"
+      })
+      document.querySelector('.to-menus').addEventListener('click', function () {
+        console.log("clicked to windows")
+        document.querySelector('#index-view').style.display = "none"
+        document.querySelector('#menus-view').style.display = "block"
+      })
+    </script>
   </body>
 </html>

@@ -9,10 +9,11 @@
     <script src="../../assets/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </head>
-  <body class="task-page">
+  <template class="task-template">
+    <div id="menus-view" class="task-wrapper">
     <header class="menu">
       <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
+        <div class="nav"><a class="back no-dec" href="index.html">Back</a></div>
         <h1>Customize Menus</h1>
         <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
 
@@ -66,9 +67,10 @@
         </div>
       </section>
   </div>
+</div>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/menus/context-menu.js"></script>
+    <script src="assets/demo-btns.js"></script>
+    <script type="text/javascript" src="render-process/menus/context-menu.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
