@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Electron API Demos</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/task.css">
-    <link rel="stylesheet" href="assets/css/github.css">
-    <link rel="import" href="sections/windows/windows.html">
-    <link rel="import" href="sections/menus/menus.html">
-    <script src="assets/demo-btns.js"></script>
-  </head>
-  <body class="index">
+<head>
+  <meta charset="utf-8">
+  <title>Electron API Demos</title>
 
-    <div id="index-view" class="show-view">
-      <header>
-        <div class="wrapper">
-          <h1>Electron Demos</h1>
-          <h3>What do you want to do?</h3>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/task.css">
+  <link rel="stylesheet" href="assets/css/github.css">
+
+  <link rel="import" href="sections/windows/windows.html">
+  <link rel="import" href="sections/menus/menus.html">
+
+  <script src="assets/demo-btns.js"></script>
+</head>
+<body>
+
+  <nav id="index-view" class="nav">
+    <header>
+      <div class="wrapper">
+        <h1>Electron Demos</h1>
+        <h3>What do you want to do?</h3>
+      </div>
+    </header>
+
+    <section class="windows">
+      <div class="wrapper">
+        <h4 class="meta">Windows</h4>
+        <div class="block no-dec to-windows">
+          <h2>Create and manage windows.</h2>
         </div>
-      </header>
-
-      <section class="windows">
-        <div class="wrapper">
-          <h4 class="meta">Windows</h4>
-          <div class="block no-dec to-windows">
-            <h2>Create and manage windows.</h2>
-            <p>Create a new window in your app or manage the state, location or recent documents.</p>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
 
-     <section class="menu">
+    <section class="menu">
       <div class="wrapper">
         <h4 class="meta">Menus</h4>
         <div class="block no-dec to-menus">
           <h2>Customize menus.</h2>
-          <p>Create an application (top) menu as well as a context (right-click) menu for your app.</p>
         </div>
       </div>
     </section>
@@ -48,15 +48,12 @@
         <h4 class="meta">Native User Interface</h4>
         <a class="block no-dec to-ex-links-file-manager" href="sections/native-ui/ex-links-file-manager.html">
           <h2>Open external links or system file manager.</h2>
-          <p>Launch links in the user's default web browser or show files in the system's file manager.</p>
         </a>
         <a class="block no-dec to-dialogs" href="sections/native-ui/dialogs.html">
           <h2>Use system dialogs.</h2>
-          <p>Use native dialogs like a file or directory picker, file saver, an error or info dialog.</p>
         </a>
         <a class="block no-dec to-tray" href="sections/native-ui/tray.html">
           <h2>Put your app in the tray.</h2>
-          <p>Give your app an icon and context menu in the top menu tray.</p>
         </a>
       </div>
     </section>
@@ -66,7 +63,6 @@
         <h4 class="meta">Communication</h4>
         <a class="block no-dec to-ipc" href="sections/communication/ipc.html">
           <h2>Communicate between the two processes.</h2>
-          <p>Send messages and fire off actions between the main and renderer processes.</p>
         </a>
       </div>
     </section>
@@ -76,11 +72,9 @@
         <h4 class="meta">System</h4>
         <a class="block no-dec to-app-sys-information" href="sections/system/app-sys-information.html">
           <h2>Get app or user system information.</h2>
-          <p>Get the version of Electron, the operating system in use and the specs of the user's screen.</p>
         </a>
         <a class="block no-dec to-clipboard" href="sections/system/clipboard.html">
           <h2>Copy and paste from the clipboard.</h2>
-          <p>Add to or read from the user's clipboard.</p>
         </a>
       </div>
     </section>
@@ -90,37 +84,33 @@
         <h4 class="meta">Printing</h4>
         <a class="block no-dec to-pdf" href="sections/printing/pdf.html">
           <h2>Print to PDF.</h2>
-          <p>Provide an option for printing to PDF in your app.</p>
         </a>
       </div>
     </section>
-  </div>
-</div>
+  </nav>
 
-    <script>
-      var links = document.querySelectorAll('link[rel="import"]');
-      var array = []
-      array.forEach.call(links, function (link) {
-        var template = link.import.querySelector('.task-template')
-        var clone = document.importNode(template.content, true)
-        document.querySelector('body').appendChild(clone);
-      })
+  <main class="content"></main>
 
-      document.querySelector('.to-windows').addEventListener('click', function () {
-        console.log("clicked to windows")
-        document.querySelector('#index-view').classList.remove('show-view')
-        document.querySelector('#index-view').classList.add('hide-view')
-        document.querySelector('#windows-view').classList.remove('hide-view')
-        document.querySelector('#windows-view').classList.add('show-view')
-      })
+  <script>
+    var links = document.querySelectorAll('link[rel="import"]');
+    var array = []
+    array.forEach.call(links, function (link) {
+      var template = link.import.querySelector('.task-template')
+      var clone = document.importNode(template.content, true)
+      document.querySelector('.content').appendChild(clone);
+    })
 
-      document.querySelector('.to-menus').addEventListener('click', function () {
-        console.log("clicked to menus")
-        document.querySelector('#index-view').classList.add('hide-view')
-        document.querySelector('#index-view').classList.remove('show-view')
-        document.querySelector('#menus-view').classList.add('show-view')
-        document.querySelector('#menus-view').classList.remove('hide-view')
-      })
-    </script>
-  </body>
+    document.querySelector('.to-windows').addEventListener('click', function () {
+      console.log("clicked to windows")
+      document.querySelector('#menus-view').classList.remove('show')
+      document.querySelector('#windows-view').classList.add('show')
+    })
+
+    document.querySelector('.to-menus').addEventListener('click', function () {
+      console.log("clicked to menus")
+      document.querySelector('#windows-view').classList.remove('show')
+      document.querySelector('#menus-view').classList.add('show')
+    })
+  </script>
+</body>
 </html>

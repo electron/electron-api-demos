@@ -63,7 +63,7 @@
 
 /* Nav */
 
-.nav {
+/*.nav {
   margin-bottom: 1em;
 }
 
@@ -91,7 +91,7 @@
 .back:focus::before {
   margin-left: -.4em;
   margin-right: .2em;
-}
+}*/
 
 
 /* Misc */
