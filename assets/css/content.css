@@ -32,6 +32,7 @@
 }
 
 .wrapper {
+  position: relative;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -49,6 +50,15 @@
   }
 }
 
+
+/* Icon */
+
+.content .icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: .5em;
+}
 
 .content input {
   font-size: 14px;
@@ -76,21 +86,12 @@
 
 /* Pro tip */
 
-.pro-tip .wrapper {
+.pro-tip {
   margin-top: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
-  border-width: 1px 0;
-  background: currentColor linear-gradient(to bottom, hsla(0,0%,100%,.9), hsla(0,0%,100%,.9) );
-}
-
-@media (min-width: 940px) {
-  .pro-tip .wrapper {
-    border-radius: 6px;
-    border-width: 1px;
-    margin-bottom: 4rem;
-  }
+  border-radius: 6px;
+  margin-bottom: 4rem;
 }
 
 .pro-tip strong {
@@ -166,17 +167,17 @@ pre code {
 }
 .content h2:hover,
 .content h2:focus {
-  /*border-color: transparent;*/
-  /*background-color: hsla(0,0%,100%,1);*/
+  border-left-color: hsl(0,0%,88%);
 }
 .content h2:active {
-  /*background-color: hsla(0,0%,0%,0);*/
+  border-left-color: transparent;
 }
 .content h2:focus {
   outline: none;
 }
 
-.active h2 {
+.active h2,
+.active h2:hover {
   border-left-color: transparent;
 }
 
@@ -195,6 +196,10 @@ pre code {
 
 .active .toggle-content {
   display: block;
+}
+
+.toggle-content > p:first-child {
+  margin-top: 0;
 }
 
 .non-toggle-content {

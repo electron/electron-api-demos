@@ -10,7 +10,10 @@
   <div id="menus-view" class="content-item menu task-wrapper">
     <header>
       <div class="wrapper">
-        <h1>Customize Menus</h1>
+        <h1>
+          <svg class="icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
+          Customize Menus
+        </h1>
         <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
 
         <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
@@ -48,17 +51,19 @@
         </div>
       </section>
 
-      <section class="pro-tip">
+      <section>
         <div class="wrapper">
-          <h2 class="avoid-clicks">Pro-Tip</h2>
-          <div class="non-toggle-content">
-          <strong>OS Differences.</strong>
-          <p>When designing an app for different operating systems, it's important to remember the different naming conventions for similar operations.</p>
-          <!-- TODO add more  -->
-          <table>
-            <tr><th>Windows</th><th>OS X</th><th>Linux</th></tr>
-            <tr><td>Settings</td><td>Preferences</td><td>Settings</td></tr>
-          </table>
+          <div class="pro-tip">
+            <h2 class="avoid-clicks">Pro-Tip</h2>
+            <div class="non-toggle-content">
+              <strong>OS Differences.</strong>
+              <p>When designing an app for different operating systems, it's important to remember the different naming conventions for similar operations.</p>
+              <!-- TODO add more  -->
+              <table>
+                <tr><th>Windows</th><th>OS X</th><th>Linux</th></tr>
+                <tr><td>Settings</td><td>Preferences</td><td>Settings</td></tr>
+              </table>
+            </div>
           </div>
         </div>
       </section>

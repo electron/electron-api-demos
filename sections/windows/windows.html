@@ -11,7 +11,10 @@
 
     <header>
       <div class="wrapper">
-        <h1>Create and Manage Windows</h1>
+        <h1>
+          <svg class="icon" viewBox="0 0 14 16"><use xlink:href="#icon-windows"></use></svg>
+          Create and Manage Windows
+        </h1>
         <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka render process) in your app.</h3>
 
         <p>This module works in both the <b>main</b> process as well as the <b>renderer</b> process when using the <code>remote</code> module.
@@ -55,15 +58,17 @@
         </div>
       </section>
 
-      <section class="pro-tip">
+      <section>
         <div class="wrapper">
-          <h2 class="avoid-clicks">Pro-Tip</h2>
-          <div class="non-toggle-content">
-            <strong>Use an invisible browser window to run background tasks.</strong>
-          <p>You can create many new browser windows and you can also choose to not show them in order to use that additional render process as a type of new thread in which to run JS in the background of your app. You do this by setting the <code>show</code> option to <code>false</code> when defining the new window.</h5>
-          <pre><code>
+          <div class="pro-tip">
+            <h2 class="avoid-clicks">Pro-Tip</h2>
+            <div class="non-toggle-content">
+              <strong>Use an invisible browser window to run background tasks.</strong>
+            <p>You can create many new browser windows and you can also choose to not show them in order to use that additional render process as a type of new thread in which to run JS in the background of your app. You do this by setting the <code>show</code> option to <code>false</code> when defining the new window.</h5>
+            <pre><code>
 var win = new BrowserWindow({ width: 400, height: 225, show: false });
-          </code></pre>
+            </code></pre>
+            </div>
           </div>
         </div>
       </section>
