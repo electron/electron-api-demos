@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Electron API Demos</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/task.css">
-    <link rel="stylesheet" href="../../assets/css/github.css">
     <script src="../../assets/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </head>
-  <body class="task-page">
+  <template class="task-template">
+    <div id="ipc-view" class="content-item communication task-wrapper">
     <header class="communication">
       <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Communication</h1>
-        <h3>The <code>ipc</code> (inter-process communication) module allows you to send and recieve synchronous and asynchronous messages between the main and renderer processes. There is a version of it available for both processes.</h3>
+        <h1>
+          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-communication"></use></svg>
+          Communication
+        </h1>
+        <h3>The <code>ipc</code> (inter-process communication) module allows you to send and recieve synchronous and asynchronous messages between the main and renderer processes.</h3>
 
-        <p>Open the <a href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
+        <p>There is a version of it available for both processes. Open the <a href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
-    <section class="communication">
+    <section>
       <div class="wrapper">
         <h2 class="js-container-target">Asynchronous messages
         <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -39,7 +39,7 @@
     </section>
 
     <div class="sections">
-      <section class="communication">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Synchronous messages
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -57,7 +57,7 @@
       </section>
 
       <div class="sections">
-        <section class="communication">
+        <section>
           <div class="wrapper">
             <h2 class="js-container-target">Communicate with an invisible window
             <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -75,10 +75,9 @@
         </section>
   </div>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/communication/sync-msg.js"></script>
-    <script type="text/javascript" src="../../render-process/communication/async-msg.js"></script>
-    <script type="text/javascript" src="../../render-process/communication/invisible-msg.js"></script>
+    <script type="text/javascript" src="render-process/communication/sync-msg.js"></script>
+    <script type="text/javascript" src="render-process/communication/async-msg.js"></script>
+    <script type="text/javascript" src="render-process/communication/invisible-msg.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
