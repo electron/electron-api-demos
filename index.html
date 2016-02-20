@@ -14,9 +14,8 @@
   <link rel="import" href="sections/windows/windows.html">
   <link rel="import" href="sections/menus/menus.html">
   <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
-
-  <!--
   <link rel="import" href="sections/native-ui/dialogs.html">
+  <!--
   <link rel="import" href="sections/native-ui/tray.html">
   <link rel="import" href="sections/communication/ipc.html">
   <link rel="import" href="sections/system/app-sys-information.html">
@@ -166,6 +165,13 @@
       removeSelectedShow()
       document.querySelector('.to-ex-links-file-manager').classList.add('is-selected')
       document.querySelector('#ex-links-file-manager-view').classList.add('show')
+    })
+
+    document.querySelector('.to-dialogs').addEventListener('click', function () {
+      // console.log("clicked to menus")
+      removeSelectedShow()
+      document.querySelector('.to-dialogs').classList.add('is-selected')
+      document.querySelector('#dialogs-view').classList.add('show')
     })
 
     function removeSelectedShow () {
