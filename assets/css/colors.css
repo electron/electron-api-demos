@@ -56,8 +56,6 @@ pre > .hljs {
 }
 
 
-
-
 /* Toggle-content ------------------------ */
 
 .toggle-content {
@@ -65,6 +63,9 @@ pre > .hljs {
   background-color: hsl(0,0%,96%);
 }
 
+.support {
+  color: hsl(0,0%,75%);
+}
 
 /* Nav ------------------------ */
 

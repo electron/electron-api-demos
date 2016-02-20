@@ -61,15 +61,20 @@
 }
 
 
-/* Misc */
+/* Support */
 
 .support {
   margin-top: .2em;
   font-size: 11px;
-  color: hsla(0,0%,0%,.3);
+  font-weight: 300;
   text-transform: uppercase;
-  text-shadow: none;
 }
+.support-divider {
+  margin: 0 .5em;
+}
+
+
+/* Pro tip */
 
 .pro-tip .wrapper {
   margin-top: 2rem;
