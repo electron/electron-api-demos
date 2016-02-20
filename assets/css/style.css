@@ -1,17 +1,23 @@
 /* Global */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   height: 100%;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
+  font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 body {
   margin: 0;
   height: 100%;
   display: flex;
-   overflow: hidden;
+  min-width: 680px; /* Double the nav */
+  overflow-x: auto;
+  overflow-y: hidden; /* Prevents rubber-band scrolling of the whole "page" */
 }
 
 a {
@@ -19,13 +25,30 @@ a {
   cursor: pointer;
 }
 
-/* Utilities */
-
-.wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 2em;
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
 }
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.12em;
+  font-weight: 600;
+}
+
+
+/* Utilities */
 
 .avoid-clicks {
   pointer-events: none;

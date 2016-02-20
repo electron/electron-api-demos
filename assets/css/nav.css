@@ -1,22 +1,18 @@
 /* Nav */
 
 .nav {
-  width: 33vw;
-  min-width: 280px;
+  width: 340px;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 .nav-header {
-  padding: 2em 0 1em 2vw;
+  padding: 2rem 2rem 0 2rem;
 }
 
 .nav-title {
-  margin: 0;
-  font-weight: normal;
-  font-size: 2em;
-  line-height: 1;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .nav-item {
@@ -24,24 +20,19 @@
 }
 
 .nav-category {
-  margin: 0;
-  padding-left: 2vw;
-  font-size: 1em;
+  margin: .2em 0;
+  padding-left: 2rem;
+  font-size: 11px;
   font-weight: normal;
   text-transform: uppercase;
 }
 
 .nav-link {
-  margin: 0;
-  padding: .5em 1em .6em 3vw;
-  line-height: 1;
-  font-size: 1em;
-  font-weight: normal;
+  display: block;
+  padding-left: 3rem;
+  line-height: 2;
+  font-size: 13px;
   cursor: default;
-}
-
-.nav-link:first-of-type {
-  border-top: 1px solid hsla(0,0%,0%,.1);
 }
 
 .nav-link em {

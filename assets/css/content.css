@@ -14,7 +14,6 @@
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  border-left: 2px solid;
 }
 
 .content-item {
@@ -32,32 +31,24 @@
   transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
 }
 
-
-.content header {
-  padding: 2em 0 1em 0;
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-.content header h1,
-.content header h3 {
-  margin: 0;
-  line-height: 1.2;
+.content header .wrapper {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid hsl(0,0%,92%);
+}
+@media (min-width: 940px) {
+  .content header .wrapper {
+    padding-top: 4rem;
+  }
 }
 
-.content h1 {
-  font-size: 2em;
-  font-weight: 600;
-  padding-bottom: .5em;
-}
-
-.content h2 {
-  font-size: 1.5em;
-  font-weight: normal;
-}
-
-.content h3 {
-  font-size: 1.12em;
-  font-weight: 600;
-}
 
 .content input {
   font-size: 14px;
@@ -74,15 +65,27 @@
 
 .support {
   margin-top: .2em;
-  font-size: 13px;
+  font-size: 11px;
   color: hsla(0,0%,0%,.3);
   text-transform: uppercase;
   text-shadow: none;
 }
 
-.pro-tip {
-  margin-top: 2em;
-  background: currentColor linear-gradient(to bottom, hsla(0,0%,100%,.8), hsla(0,0%,100%,.8) );
+.pro-tip .wrapper {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid hsla(0,0%,0%,.06);
+  border-width: 1px 0;
+  background: currentColor linear-gradient(to bottom, hsla(0,0%,100%,.9), hsla(0,0%,100%,.9) );
+}
+
+@media (min-width: 940px) {
+  .pro-tip .wrapper {
+    border-radius: 6px;
+    border-width: 1px;
+    margin-bottom: 4rem;
+  }
 }
 
 .pro-tip strong {
@@ -183,8 +186,6 @@ pre code {
   margin-top: 1em;
   margin-bottom: 2em;
   border-radius: 6px;
-  background-color: #fff;
-  box-shadow: 0 1px 3px hsla(0,0%,0%,.2);
 }
 
 .active .toggle-content {
@@ -214,7 +215,14 @@ pre code {
 .toggle-content:before {
   content: "";
   position: absolute;
-  border: 1em solid;
-  border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) #fff hsla(0, 0%, 0%, 0);
-  top: -2em;
+  top: -11px;
+  width: 20px;
+  height: 20px;
+  background-color: inherit;
+  border-top: inherit;
+  border-right: inherit;
+  border-top-right-radius: 3px;
+  transform: rotate(-45deg);
+  /*border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) hsl(0,0%,96%) hsla(0, 0%, 0%, 0);*/
+  /*box-shadow: 1px 1px 0 hsl(0,0%,88%);*/
 }

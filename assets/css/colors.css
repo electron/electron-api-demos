@@ -1,12 +1,5 @@
 /* Colors */
 
-.nav-item.windows       .nav-category { color: hsl(116,20%,50%); }
-.nav-item.menu          .nav-category { color: hsl(248,34%,50%); }
-.nav-item.native-ui     .nav-category { color: #55C8CE; }
-.nav-item.communication .nav-category { color: #8FA7E0; }
-.nav-item.system        .nav-category { color: #7AD6C2; }
-.nav-item.printing      .nav-category { color: #76c8de; }
-
 .nav-item.windows       .is-selected { background-color: hsl(116,20%,50%); }
 .nav-item.menu          .is-selected { background-color: hsl(248,34%,50%); }
 .nav-item.native-ui     .is-selected { background-color: #55C8CE; }
@@ -14,8 +7,8 @@
 .nav-item.system        .is-selected { background-color: #7AD6C2; }
 .nav-item.printing      .is-selected { background-color: #76c8de; }
 
-.content-item.windows       { color: hsl(116,20%,50%); background: hsl(116,20%,95%); }
-.content-item.menu          { color: hsl(248,34%,50%); background: hsl(248,34%,96%); }
+.content-item.windows       { color: hsl(116,20%,50%); }
+.content-item.menu          { color: hsl(248,34%,50%); }
 .content-item.native-ui     { color: #55C8CE; }
 .content-item.communication { color: #8FA7E0; }
 .content-item.system        { color: #7AD6C2; }
@@ -34,7 +27,7 @@
 html,
 .content h3,
 .content p {
-  color: hsl(0,0%,33%);
+  color: hsl(0,0%,28%);
 }
 
 
@@ -47,17 +40,42 @@ a {
 
 /* Code ------------------------ */
 
-pre {
-  background: #f8f8f8;
+code {
+  color: hsl(0,0%,44%);
+  background-color: hsla(0,0%,60%,.15);
 }
 
-code {
+pre {
+  border: 1px solid hsl(0,0%,88%);
+  background-color: white;
+}
+
+pre > .hljs {
   color: hsl(0,0%,50%);
-  background-color: hsla(0,0%,0%,.06);
+  background-color: white;
+}
+
+
+
+
+/* Toggle-content ------------------------ */
+
+.toggle-content {
+  border: 1px solid hsl(0,0%,88%);
+  background-color: hsl(0,0%,96%);
 }
 
 
 /* Nav ------------------------ */
+
+.nav {
+  border-right: 1px solid hsl(0,0%,88%);
+  background-color: hsl(0,0%,96%);
+}
+
+.nav-category {
+  color: hsl(0,0%,75%);
+}
 
 .nav-link {
   color: hsl(0,0%,50%);
