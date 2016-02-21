@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Electron API Demos</title>
-    <script src="../../assets/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
   <template class="task-template">
     <div id="ex-links-file-manager-view" class="content-item native-ui task-wrapper">
       <header>
@@ -19,37 +11,35 @@
           <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process. Open the <a href="http://electron.atom.io/docs/latest/shell.html">full API documentation</a> in your browser.</p>
         </div>
       </header>
-      <div class="sections">
-        <section>
-          <div class="wrapper">
-            <h2 class="js-container-target">Open Path in File Manager
-            <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-            </h2>
-            <div class="toggle-content">
-              <button id="open-file-manager">Demo</button>
-              <p>The <code>shell</code> module is used to launch the system file manager. Provide the method a location to open with.</p>
-              <h5>Renderer Process</h5>
-              <pre><code id="file-manager-renderer"></pre></code>
-            </div>
-          </div>
-        </section>
 
-        <section>
-          <div class="wrapper">
-            <h2 class="js-container-target">Open External Links
+      <section>
+        <div class="wrapper">
+          <h2 class="js-container-target">Open Path in File Manager
             <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-            </h2>
-            <div class="toggle-content">
-              <button id="open-ex-links">Demo</button>
-              <p>The <code>shell</code> module is used to open links externally, outside of your app and in the user's default web browser.</p>
-
-              <h5>Renderer Process</h5>
-              <pre><code id="ex-links-render"></pre></code>
-            </div>
+          </h2>
+          <div class="toggle-content">
+            <button id="open-file-manager">Demo</button>
+            <p>The <code>shell</code> module is used to launch the system file manager. Provide the method a location to open with.</p>
+            <h5>Renderer Process</h5>
+            <pre><code id="file-manager-renderer"></pre></code>
           </div>
-        </section>
-      </div>
-    </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <h2 class="js-container-target">Open External Links
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+          </h2>
+          <div class="toggle-content">
+            <button id="open-ex-links">Demo</button>
+            <p>The <code>shell</code> module is used to open links externally, outside of your app and in the user's default web browser.</p>
+
+            <h5>Renderer Process</h5>
+            <pre><code id="ex-links-render"></pre></code>
+          </div>
+        </div>
+      </section>
 
       <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/file-manager.js"></script>
       <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/ex-links.js"></script>
@@ -63,6 +53,6 @@
         var exLinksRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/ex-links.js');
         document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
       </script>
-    </div>
+    </div><!-- end ex-links-file-manager-view -->
   </template>
 </html>

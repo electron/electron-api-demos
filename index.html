@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="assets/css/content.css">
   <link rel="stylesheet" href="assets/css/github.css">
 
+  <script src="assets/highlight.pack.js"></script>
+
   <link rel="import" href="sections/windows/windows.html">
   <link rel="import" href="sections/menus/menus.html">
   <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
@@ -136,12 +138,16 @@
   <script>
     var links = document.querySelectorAll('link[rel="import"]');
     var array = []
+    // Import and add each page to the DOM
     array.forEach.call(links, function (link) {
       var template = link.import.querySelector('.task-template')
       var clone = document.importNode(template.content, true)
       document.querySelector('.content').appendChild(clone);
     })
+    // Run syntax highlighting
+    hljs.initHighlightingOnLoad();
 
+    // Add listeners for each section
     document.querySelector('.to-windows').addEventListener('click', function () {
       // console.log("clicked to windows")
       removeSelectedShow()
@@ -205,6 +211,7 @@
       document.querySelector('#pdf-view').classList.add('show')
     })
 
+    // Remove classes for currently selected item
     function removeSelectedShow () {
       document.querySelector('.is-selected').classList.remove('is-selected')
       document.querySelector('.show').classList.remove('show')
