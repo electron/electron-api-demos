@@ -17,14 +17,11 @@
   <link rel="import" href="sections/native-ui/dialogs.html">
   <link rel="import" href="sections/native-ui/tray.html">
   <link rel="import" href="sections/communication/ipc.html">
-  <!--
-  <link rel="import" href="sections/communication/ipc.html">
   <link rel="import" href="sections/system/app-sys-information.html">
+  <!--
   <link rel="import" href="sections/system/clipboard.html">
   <link rel="import" href="sections/printing/pdf.html">
   -->
-
-  <!-- <script src="assets/demo-btns.js"></script> -->
 </head>
 <body>
 
@@ -187,6 +184,13 @@
       removeSelectedShow()
       document.querySelector('.to-ipc').classList.add('is-selected')
       document.querySelector('#ipc-view').classList.add('show')
+    })
+
+    document.querySelector('.to-app-sys-information').addEventListener('click', function () {
+      // console.log("clicked to menus")
+      removeSelectedShow()
+      document.querySelector('.to-app-sys-information').classList.add('is-selected')
+      document.querySelector('#app-sys-information-view').classList.add('show')
     })
 
     function removeSelectedShow () {

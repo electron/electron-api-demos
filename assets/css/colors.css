@@ -18,7 +18,7 @@
 .content-item.menu          .pro-tip { background-color: hsl(248,34%,96%); }
 .content-item.native-ui     .pro-tip { background-color: hsl(183,34%,96%); }
 .content-item.communication .pro-tip { background-color: #8FA7E0; }
-.content-item.system        .pro-tip { background-color: #7AD6C2; }
+.content-item.system        .pro-tip { background-color: hsl(167,53%,96%);  }
 .content-item.printing      .pro-tip { background-color: #76c8de; }
 
 

@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Electron API Demos</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/task.css">
-    <link rel="stylesheet" href="../../assets/css/github.css">
     <script src="../../assets/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </head>
-  <body class="task-page">
+  <template class="task-template">
+    <div id="app-sys-information-view" class="content-item system task-wrapper">
     <header class="system ">
       <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Get App and System Information</h1>
+        <h1>
+          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
+          Get app and system information
+        </h1>
         <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen. Each task below can be done in the <code>renderer process</code>.</h3>
 
       </div>
     </header>
     <div class="sections">
-      <section class="system">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Get app information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -34,7 +34,7 @@
         </div>
       </section>
 
-      <section class="system">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Get system information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -50,7 +50,7 @@
         </div>
       </section>
 
-      <section class="system">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Get screen information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
@@ -69,29 +69,29 @@
 
     </div>
 
-    <section class="pro-tip">
+    <section>
       <div class="wrapper">
-        <h2 class="avoid-clicks">Pro-Tip</h2>
-        <div class="non-toggle-content">
-        <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
-
-        <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code></p>
-        <h5>Getting Process Versions in Electron</h5>
-        <pre><code>// Returns version of Chromium in use
+        <div class="pro-tip">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+            <strong>Find versions of Chrome and Node.js</strong>
+            <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
+            <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code>.</p>
+            <pre><code>// Returns version of Chromium in use
 process.versions.chrome;
 // Returns version of V8 in use
 process.versions.v8;
 // Returns version of Node in use
 process.versions.node;</code></pre>
+          </div>
         </div>
       </div>
     </section>
   </div>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/system/app-information.js"></script>
-    <script type="text/javascript" src="../../render-process/system/sys-information.js"></script>
-    <script type="text/javascript" src="../../render-process/system/screen-information.js"></script>
+    <script type="text/javascript" src="render-process/system/app-information.js"></script>
+    <script type="text/javascript" src="render-process/system/sys-information.js"></script>
+    <script type="text/javascript" src="render-process/system/screen-information.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
