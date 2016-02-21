@@ -19,9 +19,7 @@
   <link rel="import" href="sections/communication/ipc.html">
   <link rel="import" href="sections/system/app-sys-information.html">
   <link rel="import" href="sections/system/clipboard.html">
-  <!--
   <link rel="import" href="sections/printing/pdf.html">
-  -->
 </head>
 <body>
 
@@ -198,6 +196,13 @@
       removeSelectedShow()
       document.querySelector('.to-clipboard').classList.add('is-selected')
       document.querySelector('#clipboard-view').classList.add('show')
+    })
+
+    document.querySelector('.to-pdf').addEventListener('click', function () {
+      // console.log("clicked to menus")
+      removeSelectedShow()
+      document.querySelector('.to-pdf').classList.add('is-selected')
+      document.querySelector('#pdf-view').classList.add('show')
     })
 
     function removeSelectedShow () {
