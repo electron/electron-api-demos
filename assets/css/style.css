@@ -1,90 +1,73 @@
-
-/* Fonts */
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(fonts/SourceSansPro-Regular.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(fonts/SourceSansPro-Semibold.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(fonts/SourceSansPro-Bold.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style: normal;
-  font-weight: 900;
-  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(fonts/SourceSansPro-Black.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro'), url(fonts/SourceCodePro-Regular.ttf) format('truetype');
-}
-
-
 /* Global */
 
-body {
-  min-width: 400px;
-  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', sans-serif;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
   line-height: 1.5;
-  color: #45828E;
-  background-color: #DBF6FB;
-  font-size: 16px;
-  margin: 0 auto;
 }
 
-header {
-  padding: 4em 0;
-}
-
-header h1,
-header h3 {
+body {
   margin: 0;
-  line-height: 1.3;
-  padding-bottom: 8px;
+  height: 100%;
+  display: flex;
+  min-width: 680px; /* Double the nav */
+  overflow-x: auto;
+  overflow-y: hidden; /* Prevents rubber-band scrolling of the whole "page" */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 1.5em;
   font-weight: 600;
-  text-shadow: 2px 5px 4px hsla(0,0%,0%,0.1);
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.3em;
   font-weight: normal;
-  text-shadow: 1px 2px 2px hsla(0,0%,0%,0.1);
 }
 
 h3 {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.12em;
+  font-weight: 600;
 }
 
+table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid hsla(0,0%,0%,.08);
+  border-width: 0 1px 1px 0;
+}
+th {
+  background-color: hsla(0,0%,50%,.06);
+}
+th,
+td {
+  text-align: center;
+  border: 1px solid hsla(0,0%,0%,.08);
+  border-width: 1px 0 0 1px;
+}
+
+svg {
+  fill: currentColor;
+}
 
 /* Utilities */
-
-.wrapper {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 2em;
-}
 
 .avoid-clicks {
   pointer-events: none;
@@ -94,15 +77,3 @@ a.no-dec {
   text-decoration: none;
   color: inherit;
 }
-
-
-/* Colors */
-
-.windows        { background-color: #8aba87; }
-.menu          { background-color: #6ED8AE; }
-.native-ui     { background-color: #55C8CE; }
-.communication { background-color: #8FA7E0; }
-.system        { background-color: #7AD6C2; }
-.printing      { background-color: #76c8de; }
-
-.pro-tip       { background-color: #DFD19B; color: #696141; }
