@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Electron API Demos</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/task.css">
-    <link rel="stylesheet" href="../../assets/css/github.css">
-    <script src="../../assets/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
-  <body class="task-page">
-    <header class="native-ui">
-      <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Open external links and <br>the file manager</h1>
-        <h3>The <code>shell</code> module in Electron allows you to access certain native elements like the file manager and default web browser.</h3>
+  <template class="task-template">
+    <div id="ex-links-file-manager-view" class="content-item native-ui task-wrapper">
+      <header>
+        <div class="wrapper">
+          <h1>
+            <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-native-ui"></use></svg>
+            Open external links and the file manager
+          </h1>
+          <h3>The <code>shell</code> module in Electron allows you to access certain native elements like the file manager and default web browser.</h3>
 
-        <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process.</p>
+          <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process. Open the <a href="http://electron.atom.io/docs/latest/shell.html">full API documentation</a> in your browser.</p>
+        </div>
+      </header>
 
-        Open the <a href="http://electron.atom.io/docs/latest/shell.html">full API documentation</a> in your browser.
-      </div>
-    </header>
-    <div class="sections">
-      <section class="native-ui">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Open Path in File Manager
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Both</div>
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
           </h2>
           <div class="toggle-content">
             <button id="open-file-manager">Demo</button>
@@ -36,10 +26,10 @@
         </div>
       </section>
 
-      <section class="native-ui">
+      <section>
         <div class="wrapper">
           <h2 class="js-container-target">Open External Links
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Both</div>
+            <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
           </h2>
           <div class="toggle-content">
             <button id="open-ex-links">Demo</button>
@@ -50,21 +40,19 @@
           </div>
         </div>
       </section>
-    </div>
-  </div>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/native-ui/ex-links-file-manager/file-manager.js"></script>
-    <script type="text/javascript" src="../../render-process/native-ui/ex-links-file-manager/ex-links.js"></script>
+      <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/file-manager.js"></script>
+      <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/ex-links.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs');
-      // Open File Manager
-      var openFileManagerRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/file-manager.js');
-      document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
-      // Open External Links
-      var exLinksRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/ex-links.js');
-      document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
-    </script>
-  </body>
+      <script type="text/javascript">
+        var fs = require('fs');
+        // Open File Manager
+        var openFileManagerRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/file-manager.js');
+        document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
+        // Open External Links
+        var exLinksRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/ex-links.js');
+        document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
+      </script>
+    </div><!-- end ex-links-file-manager-view -->
+  </template>
 </html>

@@ -1,62 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Electron API Demos</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/task.css">
-    <link rel="stylesheet" href="../../assets/css/github.css">
-    <script src="../../assets/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
-  <body class="task-page">
-    <header class="menu">
+<template class="task-template">
+  <div id="menus-view" class="content-item menu task-wrapper">
+    <header>
       <div class="wrapper">
-        <div class="nav"><a class="back no-dec" href="../../index.html">Back</a></div>
-        <h1>Customize Menus</h1>
+        <h1>
+          <svg class="icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
+          Customize Menus
+        </h1>
         <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
 
         <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
       </div>
     </header>
-    <div class="sections">
-      <section class="menu">
-        <div class="wrapper">
-          <h2 class="js-container-target">Create an application menu
+
+    <section>
+      <div class="wrapper">
+        <h2 class="js-container-target">Create an application menu
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
+        </h2>
+        <div class="toggle-content">
+          <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
 
-            <p>If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed. The code below shows how the entire menu for this app as well as the App Menu Demo option were added.</p>
-            <h5>Main Process</h5>
-            <pre><code id="application-menu-main"></code></pre>
-          </div>
+          <p>If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed. The code below shows how the entire menu for this app as well as the App Menu Demo option were added.</p>
+          <h5>Main Process</h5>
+          <pre><code id="application-menu-main"></code></pre>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="menu">
-        <div class="wrapper">
-          <h2 class="js-container-target">Create a context menu
+    <section>
+      <div class="wrapper">
+        <h2 class="js-container-target">Create a context menu
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-          </h2>
-          <div class="toggle-content">
-            <button id="context-menu">Demo</button>
-            <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> as well. You can right click anywhere in this Menu window or click the demo button to see an example context menu.</p>
+        </h2>
+        <div class="toggle-content">
+          <button id="context-menu">Demo</button>
+          <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> as well. You can right click anywhere in this Menu window or click the demo button to see an example context menu.</p>
 
-            <p>In this example we use the <code>remote</code> module to access <code>menu</code> and <code>menubar</code> from the renderer proocess.</p>
-            <h5>Renderer Process</h5>
-            <pre><code id="context-menu-renderer"></pre></code>
-          </div>
+          <p>In this example we use the <code>remote</code> module to access <code>menu</code> and <code>menubar</code> from the renderer proocess.</p>
+          <h5>Renderer Process</h5>
+          <pre><code id="context-menu-renderer"></pre></code>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="pro-tip">
-        <div class="wrapper">
+    <section>
+      <div class="wrapper">
+        <div class="pro-tip">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
           <strong>Operating System Menu Differences</strong>
-          <p>When designing an app for different operating systems, it's important to be mindful of the ways in which conventions are different, on operating systems, for application menus. For instance, on Windows, accelerators are set with an <code>&</code>. Sometimes naming conventions vary like with using "Settings" or "Preferences". Below are resources for learning operating system specific standards.</p>
+          <p>When designing an app for different operating systems, it's important to be mindful of the ways in which conventions are different, on operating systems, for application menus.</p>
+          <p>For instance, on Windows, accelerators are set with an <code>&</code>. Sometimes naming conventions vary like when using "Settings" or "Preferences". Below are resources for learning operating system specific standards.</p>
           <ul>
             <li><a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/MenuBarMenus.html#//apple_ref/doc/uid/20000957-CH29-SW1">OS X</a></li>
             <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb226797(v=vs.85).aspx">Windows</a></li>
@@ -64,11 +58,10 @@
           </ul>
           </div>
         </div>
-      </section>
-  </div>
+      </div>
+    </section>
 
-    <script src="../../assets/demo-btns.js"></script>
-    <script type="text/javascript" src="../../render-process/menus/context-menu.js"></script>
+    <script type="text/javascript" src="render-process/menus/context-menu.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
@@ -79,5 +72,5 @@
       var contextMenuRendererContent = fs.readFileSync('render-process/menus/context-menu.js');
       document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
     </script>
-  </body>
-</html>
+  </div><!-- end menu-view -->
+</template>
