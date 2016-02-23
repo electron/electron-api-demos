@@ -38,44 +38,49 @@ module.exports.setup = function () {
           label: 'Select All',
           accelerator: 'CmdOrCtrl+A',
           role: 'selectall'
-        },
+        }
       ]
     },
-    { 
+    {
       label: 'View',
       submenu: [
         {
           label: 'Reload',
           accelerator: 'CmdOrCtrl+R',
-          click: function(item, focusedWindow) {
-            if (focusedWindow)
+          click: function (item, focusedWindow) {
+            if (focusedWindow) {
               focusedWindow.reload();
+            }
           }
         },
         {
           label: 'Toggle Full Screen',
-          accelerator: (function() {
-            if (process.platform == 'darwin')
+          accelerator: (function () {
+            if (process.platform === 'darwin') {
               return 'Ctrl+Command+F';
-            else
+            } else {
               return 'F11';
+            }
           })(),
-          click: function(item, focusedWindow) {
-            if (focusedWindow)
+          click: function (item, focusedWindow) {
+            if (focusedWindow) {
               focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
+            }
           }
         },
         {
           label: 'Toggle Developer Tools',
-          accelerator: (function() {
-            if (process.platform == 'darwin')
+          accelerator: (function () {
+            if (process.platform === 'darwin') {
               return 'Alt+Command+I';
-            else
+            } else {
               return 'Ctrl+Shift+I';
+            }
           })(),
-          click: function(item, focusedWindow) {
-            if (focusedWindow)
+          click: function (item, focusedWindow) {
+            if (focusedWindow) {
               focusedWindow.toggleDevTools();
+            }
           }
         },
         {
@@ -83,18 +88,18 @@ module.exports.setup = function () {
         },
         {
           label: 'App Menu Demo',
-          click: function(item, focusedWindow) {
-            if (focusedWindow)  {
+          click: function (item, focusedWindow) {
+            if (focusedWindow) {
               var options = {
-                type: "info",
-                title: "Application Menu Demo",
-                buttons: ["Ok"],
-                message: "This demo is for the Menu section, showing how to create a clickable menuitem in the application menu."
-              }
+                type: 'info',
+                title: 'Application Menu Demo',
+                buttons: ['Ok'],
+                message: 'This demo is for the Menu section, showing how to create a clickable menuitem in the application menu.'
+              };
               require('electron').dialog.showMessageBox(focusedWindow, options);
             }
           }
-        },
+        }
       ]
     },
     {
@@ -110,7 +115,7 @@ module.exports.setup = function () {
           label: 'Close',
           accelerator: 'CmdOrCtrl+W',
           role: 'close'
-        },
+        }
       ]
     },
     {
@@ -119,13 +124,13 @@ module.exports.setup = function () {
       submenu: [
         {
           label: 'Learn More',
-          click: function() { require('electron').shell.openExternal('http://electron.atom.io') }
-        },
+          click: function () { require('electron').shell.openExternal('http://electron.atom.io'); }
+        }
       ]
-    },
+    }
   ];
 
-  if (process.platform == 'darwin') {
+  if (process.platform === 'darwin') {
     var name = require('electron').app.getName();
     template.unshift({
       label: name,
@@ -165,8 +170,8 @@ module.exports.setup = function () {
         {
           label: 'Quit',
           accelerator: 'Command+Q',
-          click: function() { app.quit(); }
-        },
+          click: function () { app.quit(); }
+        }
       ]
     });
     // Window menu.
@@ -181,6 +186,6 @@ module.exports.setup = function () {
     );
   }
 
-  menu = Menu.buildFromTemplate(template);
+  var menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
-}
+};
