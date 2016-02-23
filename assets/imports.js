@@ -6,5 +6,3 @@ array.forEach.call(links, function (link) {
   var clone = document.importNode(template.content, true)
   document.querySelector('.content').appendChild(clone);
 })
-// Run syntax highlighting
-hljs.initHighlightingOnLoad();
