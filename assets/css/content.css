@@ -116,17 +116,11 @@ button {
   color: inherit;
   padding: .4em 1.2em;
   background-color: transparent;
-  cursor: pointer;
 }
-button:hover,
-button:focus {
-  background-color: hsla(0,0%,100%,.1);
-}
+button:focus,
 button:active {
-  background-color: transparent;
-}
-button:focus {
   outline: none;
+  border-color: hsl(0,0%,88%);
 }
 
 
@@ -161,23 +155,14 @@ pre code {
   padding: .5em 1em;
   line-height: 1.5;
   font-weight: 600;
-  cursor: pointer;
   border-left: 2px solid;
   transition: border-color .12s;
-}
-.content h2:hover,
-.content h2:focus {
-  border-left-color: hsl(0,0%,88%);
-}
-.content h2:active {
-  border-left-color: transparent;
-}
-.content h2:focus {
   outline: none;
 }
-
-.active h2,
-.active h2:hover {
+.content h2:active {
+  border-color: hsl(0,0%,88%);
+}
+.active h2 {
   border-left-color: transparent;
 }
 

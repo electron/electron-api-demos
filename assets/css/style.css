@@ -20,11 +20,6 @@ body {
   overflow-y: hidden; /* Prevents rubber-band scrolling of the whole "page" */
 }
 
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 h1,
 h2,
 h3 {

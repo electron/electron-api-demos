@@ -1,5 +1,5 @@
 /*
-** normalize.css
+** nativize.css
 ** Makes the UI feel more native
 */
 
@@ -33,7 +33,11 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+
+/* External links */
+
+a[href]:hover,
+a[href]:focus {
+  cursor: pointer;
   text-decoration: underline;
 }
