@@ -6,4 +6,4 @@ var copyInput = document.getElementById('copy-to-input');
 copyBtn.addEventListener('click', function () {
   copyInput.placeholder = 'Copied! Paste here to see.';
   clipboard.writeText('Electron Demo!');
-})
+});
