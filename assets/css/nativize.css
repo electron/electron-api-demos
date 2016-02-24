@@ -33,6 +33,14 @@ a {
   text-decoration: none;
 }
 
+#index-view button {
+  display: block;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  padding-left: calc(2rem + 16px + .5rem);
+}
+
 
 /* External links */
 
