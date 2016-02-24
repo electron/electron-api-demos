@@ -9,6 +9,7 @@ html {
   font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
   font-size: 14px;
   line-height: 1.5;
+  overflow: hidden; /* Prevents rubber-band scrolling of the whole "page" */
 }
 
 body {
@@ -16,8 +17,6 @@ body {
   height: 100%;
   display: flex;
   min-width: 680px; /* Double the nav */
-  overflow-x: auto;
-  overflow-y: hidden; /* Prevents rubber-band scrolling of the whole "page" */
 }
 
 h1,
