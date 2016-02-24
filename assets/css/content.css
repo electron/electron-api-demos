@@ -166,6 +166,19 @@ pre code {
   border-left-color: transparent;
 }
 
+.exlink::after {
+  content: '\f07f';
+  font-size: 12px;
+  font-family: octicons;
+  padding: 0 2px;
+  position: relative;
+  top: -4px;
+}
+
+.exlink:hover::after {
+  /* this isn't working */
+  text-decoration: none !important;
+}
 
 
 /* TOGGLE! */
