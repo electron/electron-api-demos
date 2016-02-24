@@ -13,15 +13,13 @@ module.exports.setup = function () {
     var contextMenu = Menu.buildFromTemplate([
       { label: 'Remove',
         click: function (menuItem, browserWindow) {
-          // TODO why isn't this working
-          // browserWindow.webContents.send('remove-tray');
+          event.sender.send('tray-removed');
           appIcon.destroy();
         }
       }
     ]);
     appIcon.setToolTip('Electron Demo in the tray.');
     appIcon.setContextMenu(contextMenu);
-    // TODO create an icon
   });
 
   ipc.on('remove-tray', function (event) {
