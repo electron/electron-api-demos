@@ -8,7 +8,6 @@ manageWindowBtn.addEventListener('click', function (event) {
   var win = new BrowserWindow({ width: 400, height: 225 });
 
   win.on('move', function () { win.center(); });
-  // TODO alter this window's content?
   win.on('closed', function () { win = null; });
   win.loadURL(modalPath);
   win.show();
