@@ -64,10 +64,10 @@ clipboard.readHtml();
     <script type="text/javascript">
       var fs = require('fs');
       // Copy
-      var copyToRenderContent = fs.readFileSync('render-process/system/copy.js');
+      var copyToRenderContent = fs.readFileSync('renderer-process/system/copy.js');
       document.getElementById('copy-to-render').innerHTML= copyToRenderContent;
       // Paste
-      var pasteToRenderContent = fs.readFileSync('render-process/system/paste.js');
+      var pasteToRenderContent = fs.readFileSync('renderer-process/system/paste.js');
       document.getElementById('paste-to-render').innerHTML= pasteToRenderContent;
     </script>
   </div><!-- end clipboard-view -->

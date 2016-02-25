@@ -47,10 +47,10 @@
       <script type="text/javascript">
         var fs = require('fs');
         // Open File Manager
-        var openFileManagerRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/file-manager.js');
+        var openFileManagerRenderContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
         document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
         // Open External Links
-        var exLinksRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/ex-links.js');
+        var exLinksRenderContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
         document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->

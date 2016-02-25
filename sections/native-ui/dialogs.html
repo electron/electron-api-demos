@@ -110,22 +110,22 @@ ipc.on('open-file-dialog-sheet', function (event) {
       // Open File Dialog
       var OpenFileMainContent = fs.readFileSync('main-process/native-ui/dialogs/open-file.js');
       document.getElementById('open-file-main').innerHTML= OpenFileMainContent;
-      var OpenFileRenderContent = fs.readFileSync('render-process/native-ui/dialogs/open-file.js');
+      var OpenFileRenderContent = fs.readFileSync('renderer-process/native-ui/dialogs/open-file.js');
       document.getElementById('open-file-render').innerHTML= OpenFileRenderContent;
       // Error Dialog
       var ErrorMainContent = fs.readFileSync('main-process/native-ui/dialogs/error.js');
       document.getElementById('error-dialog-main').innerHTML= ErrorMainContent;
-      var ErrorRenderContent = fs.readFileSync('render-process/native-ui/dialogs/error.js');
+      var ErrorRenderContent = fs.readFileSync('renderer-process/native-ui/dialogs/error.js');
       document.getElementById('error-dialog-render').innerHTML= ErrorRenderContent;
       // Information Dialog
       var InfoMainContent = fs.readFileSync('main-process/native-ui/dialogs/information.js');
       document.getElementById('information-dialog-main').innerHTML= InfoMainContent;
-      var InfoRenderContent = fs.readFileSync('render-process/native-ui/dialogs/information.js');
+      var InfoRenderContent = fs.readFileSync('renderer-process/native-ui/dialogs/information.js');
       document.getElementById('information-dialog-render').innerHTML= InfoRenderContent;
       // Save Dialog
       var SaveMainContent = fs.readFileSync('main-process/native-ui/dialogs/save.js');
       document.getElementById('save-dialog-main').innerHTML= SaveMainContent;
-      var SaveRenderContent = fs.readFileSync('render-process/native-ui/dialogs/save.js');
+      var SaveRenderContent = fs.readFileSync('renderer-process/native-ui/dialogs/save.js');
       document.getElementById('save-dialog-render').innerHTML= SaveRenderContent;
     </script>
   </div><!-- end dialog-view -->

@@ -71,17 +71,17 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Sync Message
-      var syncMsgRendererContent = fs.readFileSync('render-process/communication/sync-msg.js');
+      var syncMsgRendererContent = fs.readFileSync('renderer-process/communication/sync-msg.js');
       document.getElementById('sync-msg-render').innerHTML= syncMsgRendererContent;
       var syncMsgMainContent = fs.readFileSync('main-process/communication/sync-msg.js');
       document.getElementById('sync-msg-main').innerHTML= syncMsgMainContent;
       // Async Message
-      var asyncMsgRendererContent = fs.readFileSync('render-process/communication/async-msg.js');
+      var asyncMsgRendererContent = fs.readFileSync('renderer-process/communication/async-msg.js');
       document.getElementById('async-msg-render').innerHTML= asyncMsgRendererContent;
       var asyncMsgMainContent = fs.readFileSync('main-process/communication/async-msg.js');
       document.getElementById('async-msg-main').innerHTML= asyncMsgMainContent;
       // Invisible Window Message
-      var invisMsgRendererContent = fs.readFileSync('render-process/communication/invisible-msg.js');
+      var invisMsgRendererContent = fs.readFileSync('renderer-process/communication/invisible-msg.js');
       document.getElementById('invis-msg-render').innerHTML= invisMsgRendererContent;
       var invisWindowRendererContent = fs.readFileSync('sections/communication/invisible.html');
       document.getElementById('invis-window-render').textContent = invisWindowRendererContent;

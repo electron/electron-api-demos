@@ -48,7 +48,7 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Open File Dialog
-      var printPDFRenderContent = fs.readFileSync('render-process/printing/pdf.js');
+      var printPDFRenderContent = fs.readFileSync('renderer-process/printing/pdf.js');
       document.getElementById('print-pdf-main').innerHTML= printPDFRenderContent;
       var printPDFMainContent = fs.readFileSync('main-process/printing/pdf.js');
       document.getElementById('print-pdf-render').innerHTML= printPDFMainContent;
