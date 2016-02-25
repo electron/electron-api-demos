@@ -36,22 +36,22 @@
             <p>The <code>shell</code> module is used to open links externally, outside of your app and in the user's default web browser.</p>
 
             <h5>Renderer Process</h5>
-            <pre><code id="ex-links-render"></pre></code>
+            <pre><code id="ex-links-renderer"></pre></code>
           </div>
         </div>
       </section>
 
-      <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/file-manager.js"></script>
-      <script type="text/javascript" src="render-process/native-ui/ex-links-file-manager/ex-links.js"></script>
+      <script type="text/javascript" src="renderer-process/native-ui/ex-links-file-manager/file-manager.js"></script>
+      <script type="text/javascript" src="renderer-process/native-ui/ex-links-file-manager/ex-links.js"></script>
 
       <script type="text/javascript">
         var fs = require('fs');
         // Open File Manager
-        var openFileManagerRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/file-manager.js');
-        document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
+        var openFileManagerRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
+        document.getElementById('file-manager-renderer').innerHTML= openFileManagerRendererContent;
         // Open External Links
-        var exLinksRenderContent = fs.readFileSync('render-process/native-ui/ex-links-file-manager/ex-links.js');
-        document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
+        var exLinksRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
+        document.getElementById('ex-links-renderer').innerHTML= exLinksRendererContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->
   </template>

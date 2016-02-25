@@ -21,7 +21,7 @@
           <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
           <p>In this example we copy a phrase to the clipboard. After clicking 'copy' use the text area to paste the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="copy-to-render"></pre></code>
+          <pre><code id="copy-to-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -36,7 +36,7 @@
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code id="paste-to-render"></pre></code>
+          <pre><code id="paste-to-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -58,17 +58,17 @@ clipboard.readHtml();
       </div>
     </section>
 
-    <script type="text/javascript" src="render-process/system/copy.js"></script>
-    <script type="text/javascript" src="render-process/system/paste.js"></script>
+    <script type="text/javascript" src="renderer-process/system/copy.js"></script>
+    <script type="text/javascript" src="renderer-process/system/paste.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
       // Copy
-      var copyToRenderContent = fs.readFileSync('render-process/system/copy.js');
-      document.getElementById('copy-to-render').innerHTML= copyToRenderContent;
+      var copyToRendererContent = fs.readFileSync('renderer-process/system/copy.js');
+      document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
       // Paste
-      var pasteToRenderContent = fs.readFileSync('render-process/system/paste.js');
-      document.getElementById('paste-to-render').innerHTML= pasteToRenderContent;
+      var pasteToRendererContent = fs.readFileSync('renderer-process/system/paste.js');
+      document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
     </script>
   </div><!-- end clipboard-view -->
 </tempalte>
