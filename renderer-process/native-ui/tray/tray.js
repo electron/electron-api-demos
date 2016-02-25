@@ -1,6 +1,6 @@
-var trayBtn = document.getElementById('put-in-tray');
 var ipc = require('electron').ipcRenderer;
 
+var trayBtn = document.getElementById('put-in-tray');
 var trayOn = false;
 
 trayBtn.addEventListener('click', function (event) {

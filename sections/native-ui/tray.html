@@ -6,9 +6,9 @@
           <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-native-ui"></use></svg>
           Tray
         </h1>
-        <h3>The <code>tray</code> module in Electron allows you to create an icon in the operating system's notification area. This icon can also have a context menu attached.</h3>
+        <h3>The <code>tray</code> module allows you to create an icon in the operating system's notification area. This icon can also have a context menu attached.</h3>
 
-        <p>This module is a <b>main</b> process module but can be triggered by using the <code>ipc</code> module to talk to that process from the <b>renderer</b> process. Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/tray.html">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/tray">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
@@ -19,7 +19,9 @@
         </h2>
         <div class="toggle-content">
           <button id="put-in-tray">Demo</button><span id="tray-countdown"></span>
-          <p>The button above sends a message to the <b>main</b> process using the <code>ipc</code> module. In the <b>main</b> process the app is told to place an icon in the tray for one minute. The limited time is for deomonstration purposes, you're more likely to keep the icon in the tray for as long as your app is active.</p>
+          <p>The demo button sends a message to the <b>main process</b> using the <code>ipc</code> module. In the <b>main process</b> the app is told to place an icon, with a context menu, in the tray.</p>
+
+          <p>In this example the tray icon can be removed by clicking 'Remove' in the context menu or selecting the demo button again.</p>
           <h5>Main Process</h5>
           <pre><code id="tray-main"></pre></code>
           <h5>Renderer Process</h5>
