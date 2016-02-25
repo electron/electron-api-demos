@@ -12,7 +12,7 @@ glob('main-process/**/*.js', function (error, files) {
 });
 
 function createWindow () {
-  mainWindow = new BrowserWindow({ width: 920, height: 900 });
+  mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900 });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   mainWindow.on('closed', function() {
     mainWindow = null;

@@ -16,7 +16,6 @@ body {
   margin: 0;
   height: 100%;
   display: flex;
-  min-width: 680px; /* Double the nav */
 }
 
 h1,
