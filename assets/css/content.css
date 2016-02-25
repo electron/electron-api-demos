@@ -166,18 +166,26 @@ pre code {
   border-left-color: transparent;
 }
 
+
+/* External link */
+
 .exlink::after {
-  content: '\f07f';
-  font-size: 12px;
-  font-family: octicons;
-  padding: 0 2px;
+  content: '';
   position: relative;
-  top: -4px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: -3px;
+  margin-left: 3px;
+  text-decoration: none;
+  background: url(../img/link-external.svg) no-repeat top right;
+  background-size: auto 100%;
 }
 
-.exlink:hover::after {
-  /* this isn't working */
-  text-decoration: none !important;
+.exlink:hover,
+.exlink:focus {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 
