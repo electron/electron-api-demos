@@ -21,7 +21,7 @@
           <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
           <p>In this example we copy a phrase to the clipboard. After clicking 'copy' use the text area to paste the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="copy-to-render"></pre></code>
+          <pre><code id="copy-to-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -36,7 +36,7 @@
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code id="paste-to-render"></pre></code>
+          <pre><code id="paste-to-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -65,10 +65,10 @@ clipboard.readHtml();
       var fs = require('fs');
       // Copy
       var copyToRenderContent = fs.readFileSync('renderer-process/system/copy.js');
-      document.getElementById('copy-to-render').innerHTML= copyToRenderContent;
+      document.getElementById('copy-to-renderer').innerHTML= copyToRenderContent;
       // Paste
       var pasteToRenderContent = fs.readFileSync('renderer-process/system/paste.js');
-      document.getElementById('paste-to-render').innerHTML= pasteToRenderContent;
+      document.getElementById('paste-to-renderer').innerHTML= pasteToRenderContent;
     </script>
   </div><!-- end clipboard-view -->
 </tempalte>

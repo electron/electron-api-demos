@@ -36,7 +36,7 @@
             <p>The <code>shell</code> module is used to open links externally, outside of your app and in the user's default web browser.</p>
 
             <h5>Renderer Process</h5>
-            <pre><code id="ex-links-render"></pre></code>
+            <pre><code id="ex-links-renderer"></pre></code>
           </div>
         </div>
       </section>
@@ -51,7 +51,7 @@
         document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
         // Open External Links
         var exLinksRenderContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
-        document.getElementById('ex-links-render').innerHTML= exLinksRenderContent;
+        document.getElementById('ex-links-renderer').innerHTML= exLinksRenderContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->
   </template>

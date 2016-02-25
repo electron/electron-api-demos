@@ -21,7 +21,7 @@
           <button id="print-pdf">Demo</button><span id="pdf-path"></span>
           <p>This demonstrates printing to PDF and for the purposes of the demo we've set it to the button above. In a real-world application you're more likely to set this within your application menu.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="print-pdf-render"></pre></code>
+          <pre><code id="print-pdf-renderer"></pre></code>
           <h5>Main Process</h5>
           <pre><code id="print-pdf-main"></code></pre>
         </div>
@@ -51,7 +51,7 @@
       var printPDFRenderContent = fs.readFileSync('renderer-process/printing/pdf.js');
       document.getElementById('print-pdf-main').innerHTML= printPDFRenderContent;
       var printPDFMainContent = fs.readFileSync('main-process/printing/pdf.js');
-      document.getElementById('print-pdf-render').innerHTML= printPDFMainContent;
+      document.getElementById('print-pdf-renderer').innerHTML= printPDFMainContent;
     </script>
   </div><!-- end pdf-view -->
 </tempalte>

@@ -23,7 +23,7 @@
 
           <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
-          <pre><code id="async-msg-render"></pre></code>
+          <pre><code id="async-msg-renderer"></pre></code>
           <h5>Main Process</h5>
           <pre><code id="async-msg-main"></code></pre>
         </div>
@@ -40,7 +40,7 @@
           <p>Use the <code>ipc</code> module to send synchronous messages between processes. Note that the synchronous nature of this method means that it <b>will block</b> other operations while it is completing its task.</p>
           <p>This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
-          <pre><code id="sync-msg-render"></pre></code>
+          <pre><code id="sync-msg-renderer"></pre></code>
           <h5>Main Process</h5>
           <pre><code id="sync-msg-main"></code></pre>
         </div>
@@ -57,9 +57,9 @@
           <p>It is common practice to create a new and invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
           <p>In this example we use the <code>remote</code> module to create a new, invisible browser window from the renderer process. When this page is loaded we send a message with <code>ipc</code> that the new window is listening for. The new window then computes the factorial and sends the result to be recieved by the original window and added above.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="invis-msg-render"></pre></code>
+          <pre><code id="invis-msg-renderer"></pre></code>
           <h5>Invisible Window Page HTML</h5>
-          <pre><code id="invis-window-render"></code></pre>
+          <pre><code id="invis-window-renderer"></code></pre>
         </div>
       </div>
     </section>
@@ -72,19 +72,19 @@
       var fs = require('fs');
       // Sync Message
       var syncMsgRendererContent = fs.readFileSync('renderer-process/communication/sync-msg.js');
-      document.getElementById('sync-msg-render').innerHTML= syncMsgRendererContent;
+      document.getElementById('sync-msg-renderer').innerHTML= syncMsgRendererContent;
       var syncMsgMainContent = fs.readFileSync('main-process/communication/sync-msg.js');
       document.getElementById('sync-msg-main').innerHTML= syncMsgMainContent;
       // Async Message
       var asyncMsgRendererContent = fs.readFileSync('renderer-process/communication/async-msg.js');
-      document.getElementById('async-msg-render').innerHTML= asyncMsgRendererContent;
+      document.getElementById('async-msg-renderer').innerHTML= asyncMsgRendererContent;
       var asyncMsgMainContent = fs.readFileSync('main-process/communication/async-msg.js');
       document.getElementById('async-msg-main').innerHTML= asyncMsgMainContent;
       // Invisible Window Message
       var invisMsgRendererContent = fs.readFileSync('renderer-process/communication/invisible-msg.js');
-      document.getElementById('invis-msg-render').innerHTML= invisMsgRendererContent;
+      document.getElementById('invis-msg-renderer').innerHTML= invisMsgRendererContent;
       var invisWindowRendererContent = fs.readFileSync('sections/communication/invisible.html');
-      document.getElementById('invis-window-render').textContent = invisWindowRendererContent;
+      document.getElementById('invis-window-renderer').textContent = invisWindowRendererContent;
     </script>
   </div><!--- end ipc-view -->
 </template>

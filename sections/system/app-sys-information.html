@@ -20,7 +20,7 @@
           <p>The <code>process</code> module is built into Node.js and in Electron apps a few more useful properties have been added. The example below gets the version of Electron in use by the app.
           <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/process">documentation</a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="app-info-render"></pre></code>
+          <pre><code id="app-info-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -36,7 +36,7 @@
 
           <p>See the full <a href="https://nodejs.org/api/os.html">documentation</a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="sys-info-render"></pre></code>
+          <pre><code id="sys-info-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -52,7 +52,7 @@
 
           <p>See the full <a href="http://electron.atom.io/docs/v0.36.5/api/screen">documentation</a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="screen-info-render"></pre></code>
+          <pre><code id="screen-info-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -84,13 +84,13 @@ process.versions.node;</code></pre>
       var fs = require('fs');
       // App Information
       var appInfoRenderContent = fs.readFileSync('renderer-process/system/app-information.js');
-      document.getElementById('app-info-render').innerHTML= appInfoRenderContent;
+      document.getElementById('app-info-renderer').innerHTML= appInfoRenderContent;
       // Sys Information
       var sysInfoRenderContent = fs.readFileSync('renderer-process/system/sys-information.js');
-      document.getElementById('sys-info-render').innerHTML= sysInfoRenderContent;
+      document.getElementById('sys-info-renderer').innerHTML= sysInfoRenderContent;
       // Screen Information
       var screenInfoRenderContent = fs.readFileSync('renderer-process/system/screen-information.js');
-      document.getElementById('screen-info-render').innerHTML= screenInfoRenderContent;
+      document.getElementById('screen-info-renderer').innerHTML= screenInfoRenderContent;
     </script>
   </div><!-- end app-sys-information -->
 </template>
