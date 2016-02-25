@@ -8,7 +8,8 @@
           </h1>
           <h3>The <code>shell</code> module in Electron allows you to access certain native elements like the file manager and default web browser.</h3>
 
-          <p>This module works in both the <b>main</b> and <b>renderer</b> process. The examples below show the code running the demo button which is using <code>shell</code> in the renderer process. Open the <a class="exlink" href="http://electron.atom.io/docs/latest/shell.html">full API documentation</a> in your browser.</p>
+          <p>This module works in both the <b>main</b> and <b>renderer process</b>.</p>
+          <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.8/api/shell">full API documentation</a> in your browser.</p>
         </div>
       </header>
 
@@ -19,7 +20,8 @@
           </h2>
           <div class="toggle-content">
             <button id="open-file-manager">Demo</button>
-            <p>The <code>shell</code> module is used to launch the system file manager. Provide the method a location to open with.</p>
+            <p>This demonstrates using the <code>shell</code> module to open the system file manager at a particular location.</p>
+            <p>Clicking the demo button will open your file manager at the root.</p>
             <h5>Renderer Process</h5>
             <pre><code id="file-manager-renderer"></pre></code>
           </div>
@@ -33,10 +35,34 @@
           </h2>
           <div class="toggle-content">
             <button id="open-ex-links">Demo</button>
-            <p>The <code>shell</code> module is used to open links externally, outside of your app and in the user's default web browser.</p>
-
+            <p>If you do not want your app to open website links <em>within</em> the app, you can use the <code>shell</code> module to open them externally. When clicked the links will open outside of your app and in the user's default web browser.</p>
+            <p>When the demo button is clicked, the electron website will open in your browser.<p>
             <h5>Renderer Process</h5>
             <pre><code id="ex-links-renderer"></pre></code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrapper">
+          <div class="pro-tip">
+            <h2 class="avoid-clicks">Pro-Tip</h2>
+            <div class="non-toggle-content">
+              <strong>Open all outbound links externally.</strong>
+              <p>You may want to open all <code>http</code> and <code>https</code> links outside of your app. To do this, query the document and loop through each link and add a listener as show below.</h5>
+            <pre><code>var shell = require('shell');
+
+var links = document.querySelectorAll('a[href]');
+Array.prototype.forEach.call(links, function (link) {
+  var url = link.getAttribute('href');
+  if (url.indexOf('http') > -1) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      shell.openExternal(url);
+    });
+  }
+});</code></pre>
+            </div>
           </div>
         </div>
       </section>
