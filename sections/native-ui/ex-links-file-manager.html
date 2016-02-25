@@ -47,11 +47,11 @@
       <script type="text/javascript">
         var fs = require('fs');
         // Open File Manager
-        var openFileManagerRenderContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
-        document.getElementById('file-manager-renderer').innerHTML= openFileManagerRenderContent;
+        var openFileManagerRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
+        document.getElementById('file-manager-renderer').innerHTML= openFileManagerRendererContent;
         // Open External Links
-        var exLinksRenderContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
-        document.getElementById('ex-links-renderer').innerHTML= exLinksRenderContent;
+        var exLinksRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
+        document.getElementById('ex-links-renderer').innerHTML= exLinksRendererContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->
   </template>

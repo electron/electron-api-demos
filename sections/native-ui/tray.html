@@ -33,8 +33,8 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Put in Tray
-      var trayRenderContent = fs.readFileSync('renderer-process/native-ui/tray/tray.js');
-      document.getElementById('tray-renderer').innerHTML= trayRenderContent;
+      var trayRendererContent = fs.readFileSync('renderer-process/native-ui/tray/tray.js');
+      document.getElementById('tray-renderer').innerHTML= trayRendererContent;
       var trayMainContent = fs.readFileSync('main-process/native-ui/tray/tray.js');
       document.getElementById('tray-main').innerHTML= trayMainContent;
     </script>
