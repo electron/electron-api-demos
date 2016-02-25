@@ -55,7 +55,7 @@
         <div class="toggle-content">
           <button id="invis-msg">Ping</button><span id="invis-reply"></span>
           <p>It is common practice to create a new and invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
-          <p>In this example we use the <code>remote</code> module to create a new, invisible browser window from the render process. When this page is loaded we send a message with <code>ipc</code> that the new window is listening for. The new window then computes the factorial and sends the result to be recieved by the original window and added above.</p>
+          <p>In this example we use the <code>remote</code> module to create a new, invisible browser window from the renderer process. When this page is loaded we send a message with <code>ipc</code> that the new window is listening for. The new window then computes the factorial and sends the result to be recieved by the original window and added above.</p>
           <h5>Renderer Process</h5>
           <pre><code id="invis-msg-render"></pre></code>
           <h5>Invisible Window Page HTML</h5>
