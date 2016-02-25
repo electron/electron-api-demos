@@ -6,15 +6,16 @@ var mainWindow = null;
 
 // Require and setup each JS file in the main-process dir
 glob('main-process/**/*.js', function (error, files) {
+  if (error) return console.log(error);
   files.forEach(function (file) {
     require('./' + file).setup();
   });
 });
 
 function createWindow () {
-  mainWindow = new BrowserWindow({ width: 920, height: 900 });
+  mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900 });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', function () {
     mainWindow = null;
   });
 }
