@@ -7,6 +7,7 @@
           Clipboard
         </h1>
         <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations.</h3>
+        <p>This module also has methods for copying text as markup (HTML) to the clipboard.</p>
 
         <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/clipboard">full API documentation</a> in your browser.</p>
       </div>
@@ -37,23 +38,6 @@
 
           <h5>Renderer Process</h5>
           <pre><code id="paste-to-renderer"></pre></code>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrapper">
-        <div class="pro-tip">
-          <h2 class="avoid-clicks">Pro-Tip</h2>
-          <div class="non-toggle-content">
-            <strong>Reading and Writing from the clipboard in Markup</strong>
-            <!-- TODO make this work -->
-            <p>The <code>clipboard</code> module has methods for reading and writing markup (HTML).</p>
-            <pre><code>// Copy + paste string to clipboard as markup
-clipboard.writeHtml('Make this markup, pls');
-clipboard.readHtml();
-// <meta charset='utf-8'>Make this markup, pls</code></pre>
-          </div>
         </div>
       </div>
     </section>
