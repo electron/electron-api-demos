@@ -7,6 +7,6 @@ printPDFBton.addEventListener('click', function (event) {
 
 ipc.on('wrote-pdf', function (event, path) {
   // TODO should we open the pdf? or put it somewhere else?
-  var message = 'Wrote PDF to: ~' + path;
+  var message = 'Wrote PDF to: ' + path;
   document.getElementById('pdf-path').innerHTML = message;
 });
