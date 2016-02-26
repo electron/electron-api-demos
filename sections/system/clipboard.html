@@ -6,7 +6,7 @@
           <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
           Clipboard
         </h1>
-        <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations. It can be used in both the <code>main</code> and <code>renderer processes</code>.</h3>
+        <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations.</h3>
 
         <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/clipboard">full API documentation</a> in your browser.</p>
       </div>
@@ -15,11 +15,11 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Copy
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
-          <p>In this example we copy a phrase to the clipboard. After clicking 'copy' use the text area to paste the phrase from the clipboard.</p>
+          <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
           <pre><code id="copy-to-renderer"></pre></code>
         </div>
@@ -29,7 +29,7 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Paste
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="paste-to">Paste</button><span id="paste-from"></span>
