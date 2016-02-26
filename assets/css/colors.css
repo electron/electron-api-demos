@@ -91,7 +91,7 @@ pre > .hljs {
   color: hsl(0,0%,50%);
 }
 .nav-link:hover,
-.nav-link:focus, {
+.nav-link:focus:not(.is-selected) {
   background-color: hsla(0,0%,0%,.1);
 }
 
@@ -99,13 +99,10 @@ pre > .hljs {
 .nav-link.is-selected em {
   color: #fff;
 }
-.nav-link:focus,
-.nav-link:focus.is-selected {
-  color: inherit;
-  background-color: hsla(0,0%,0%,.1);
+.nav-link.is-selected:focus {
+  opacity: .8;
 }
 
-.nav-link:focus.is-selected em,
 .nav-link em {
   color: hsl(0,0%,12%);
 }
