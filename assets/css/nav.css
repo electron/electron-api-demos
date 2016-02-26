@@ -68,6 +68,7 @@
 .nav-link em {
   font-style: normal;
   font-weight: 600;
+  pointer-events: none; /* makes it invisible to clicks */
 }
 
 .nav-footer {
