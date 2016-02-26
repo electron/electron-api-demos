@@ -8,7 +8,7 @@
         </h1>
         <h3>The <code>dialog</code> module in Electron allows you to use native system dialogs for opening files or directories, saving a file or displaying informational messages.</h3>
 
-        <p>This is a <b>main process</b> module because this process is more efficient with native utilities and it allows the call to happen without interupting the visible elements in your page's <b>renderer process</b>.</p>
+        <p>This is a main process module because this process is more efficient with native utilities and it allows the call to happen without interupting the visible elements in your page's renderer process.</p>
 
         <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.8/api/dialog/">full API documentation</a> in your browser.</p>
       </div>
@@ -21,7 +21,7 @@
         </h2>
         <div class="toggle-content">
           <button id="select-directory">Demo</button><span id="selected-file"></span>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the <b>renderer process</b> instructing the main process to launch the open file (or directory) dialog. If a file is selected, the <b>main process</b> can send that information back to the <b>renderer process</b>.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="open-file-renderer"></pre></code>
           <h5>Main Process</h5>
@@ -37,7 +37,7 @@
         </h2>
         <div class="toggle-content">
           <button id="error-dialog">Demo</button>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the <b>renderer process</b> instructing the <b>main process</b> to launch the error dialog.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
 
           <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon start up.</p>
           <h5>Renderer Process</h5>
@@ -55,7 +55,7 @@
         </h2>
         <div class="toggle-content">
           <button id="information-dialog">Demo</button><span id="info-selection"></span>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the <b>renderer process</b> instructing the <b>main process</b> to launch the information dialog. Options may be provided for responses which can then be relayed back to the <b>renderer process</b>.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the information dialog. Options may be provided for responses which can then be relayed back to the renderer process.</p>
 
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
           <h5>Renderer Process</h5>
@@ -73,7 +73,7 @@
         </h2>
         <div class="toggle-content">
           <button id="save-dialog">Demo</button><span id="file-saved"></span>
-          <p>In this demo, the <code>ipc</code> module is used to send a message from the <b>renderer process</b> instructing the <b>main process</b> to launch the save dialog. It returns the path selected by the user which can be relayed back to the <b>renderer process</b>.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="save-dialog-renderer"></pre></code>
           <h5>Main Process</h5>

@@ -8,7 +8,7 @@
         </h1>
         <h3>The <code>browserWindow</code> module in Electron allows you to create a new or manage an existing browser window in your app.</h3>
 
-        <p>Each browswer window is a separate <b>renderer process</b>.
+        <p>Each browswer window is a separate renderer process.
 
         <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
       </div>
@@ -21,7 +21,7 @@
         </h2>
         <div class="toggle-content">
           <button id="new-window">Demo</button>
-          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This <b>main process</b> module can be used from the <b>renderer process</b> with the <code>remote</code> module, as is shown in this demo.</p>
+          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
 
           <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
@@ -37,7 +37,7 @@
         </h2>
         <div class="toggle-content">
           <button id="manage-window">Demo</button>
-          <p>In this demo we create a new window, listen for a move <b>event</b> and then set the window to position itself back in the center of the screen.</p>
+          <p>In this demo we create a new window, listen for a move event and then set the window to position itself back in the center of the screen.</p>
 
           <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen for window changes. Visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
@@ -52,7 +52,7 @@
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
             <strong>Use an invisible browser window to run background tasks.</strong>
-            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional <b>renderer process</b> as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</h5>
+            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</h5>
           <pre><code>var win = new BrowserWindow({ width: 400, height: 225, show: false });</code></pre>
           </div>
         </div>
