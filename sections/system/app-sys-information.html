@@ -6,19 +6,21 @@
           <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
           Get app and system information
         </h1>
-        <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen. Each task below can be done in the <code>renderer process</code>.</h3>
+        <h3>With a few Node.js and Electron modules you can gather information about the user's system, app or screen.</h3>
+        <p>Links to the relevant documentation are in the demos below.</p>
       </div>
     </header>
 
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Get app information
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="app-info">Demo</button><span id="got-app-info"></span>
-          <p>The <code>process</code> module is built into Node.js and in Electron apps a few more useful properties have been added. The example below gets the version of Electron in use by the app.
-          <p>See the full <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/process">documentation</a> for more.</p>
+          <p>The <code>process</code> module is built into Node.js (therefore you can use this in both the main and renderer processe) and in Electron apps this object has a few more useful properties on it.</p>
+          <p>The example below gets the version of Electron in use by the app.</p>
+          <p>See the <a class="exlink" href="http://electron.atom.io/docs/v0.36.8/api/process">process documentation</a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code id="app-info-renderer"></pre></code>
         </div>
@@ -28,13 +30,14 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Get system information
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="sys-info">Demo</button><span id="got-sys-info"></span>
-          <p>The Node.js <code>os</code> module provides useful information about the user's operating system. In the example below we require the module and then return the location of the home directory.</p>
+          <p>The Node.js <code>os</code> module provides useful information about the user's operating system. It's built into Node.js and can be used in both the main and renderer proesses.</p>
+          <p>In the example below we require the module and then return the location of the home directory.</p>
 
-          <p>See the full <a class="exlink" href="https://nodejs.org/api/os.html">documentation</a> for more.</p>
+          <p>See the full <a class="exlink" href="https://nodejs.org/api/os.html"> os documentation</a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code id="sys-info-renderer"></pre></code>
         </div>
@@ -44,13 +47,13 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Get screen information
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="screen-info">Demo</button><span id="got-screen-info"></span>
-          <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, etc. In the example below we retrieve the dimensions of the monitor in use.</p>
+          <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, and etc. In the example below we retrieve the dimensions of the monitor in use.</p>
 
-          <p>See the full <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/screen">documentation</a> for more.</p>
+          <p>See the full <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/screen">screen documentation</a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code id="screen-info-renderer"></pre></code>
         </div>
@@ -62,9 +65,9 @@
         <div class="pro-tip">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
-            <strong>Find versions of Chrome and Node.js</strong>
-            <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking <code>process</code>.</p>
-            <p>Get there quickly by opening up developer tools in Electron and typing <code>process.versions</code>.</p>
+            <strong>Find versions of Chromium and Node.js.</strong>
+            <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking with the <code>process</code> module.</p>
+            <p>Get there quickly by opening up developer tools in an Electron app and typing <code>process.versions</code>.</p>
             <pre><code>// Returns version of Chromium in use
 process.versions.chrome;
 // Returns version of V8 in use
