@@ -2,6 +2,7 @@ var electron = require('electron');
 var Menu = electron.Menu;
 var Tray = electron.Tray;
 var ipc = electron.ipcMain;
+
 var path = require('path');
 
 var appIcon = null;

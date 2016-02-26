@@ -6,10 +6,11 @@
           <svg class="icon" viewBox="0 0 14 16"><use xlink:href="#icon-windows"></use></svg>
           Create and Manage Windows
         </h1>
-        <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window (aka renderer process) in your app.</h3>
+        <h3>The <code>browserWindow</code> module in Electron allows you to create a new browser window or manage an existing one.</h3>
 
-        <p>This module works in both the <b>main</b> process as well as the <b>renderer</b> process when using the <code>remote</code> module.
-        Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window/">full API documentation</a> in your browser.</p>
+        <p>Each browswer window is a separate process, the renderer process. This process, like the main process that controls the life cycle of the app, has full access to the Node.js APIs.
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
@@ -20,9 +21,9 @@
         </h2>
         <div class="toggle-content">
           <button id="new-window">Demo</button>
-          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. It is a <b>main</b> process module but can be used in the <b>renderer</b> process with the <code>remote</code> module. We'll do that in this demo.</p>
+          <p>The <code>browserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
 
-          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a href="">documentation</a> for the full list.</p>
+          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="new-window-renderer"></pre></code>
         </div>
@@ -38,7 +39,7 @@
           <button id="manage-window">Demo</button>
           <p>In this demo we create a new window, listen for a move event and then set the window to position itself back in the center of the screen.</p>
 
-          <p>There are a lot of methods for controlling the state of the window such as the size, location and focus status as well as events to listen for window changes. Visit the <a href="">documentation</a> for the full list.</p>
+          <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="manage-window-renderer"></pre></code>
         </div>
@@ -51,7 +52,7 @@
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
             <strong>Use an invisible browser window to run background tasks.</strong>
-          <p>You can create many new browser windows and you can also choose to not show them in order to use that additional renderer process as a type of new thread in which to run JS in the background of your app. You do this by setting the <code>show</code> option to <code>false</code> when defining the new window.</h5>
+            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</h5>
           <pre><code>var win = new BrowserWindow({ width: 400, height: 225, show: false });</code></pre>
           </div>
         </div>

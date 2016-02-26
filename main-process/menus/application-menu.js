@@ -95,7 +95,7 @@ module.exports.setup = function () {
                 type: 'info',
                 title: 'Application Menu Demo',
                 buttons: ['Ok'],
-                message: 'This demo is for the Menu section, showing how to create a clickable menuitem in the application menu.'
+                message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
               };
               require('electron').dialog.showMessageBox(focusedWindow, options);
             }

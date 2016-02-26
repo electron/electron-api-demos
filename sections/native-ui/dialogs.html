@@ -6,20 +6,22 @@
           <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-native-ui"></use></svg>
           Use system dialogs
         </h1>
-        <h3>The <code>dialog</code> module in Electron allows you to make use of native system dialogs for opening files or directories, saving a file or displaying an error or informational message.</h3>
+        <h3>The <code>dialog</code> module in Electron allows you to use native system dialogs for opening files or directories, saving a file or displaying informational messages.</h3>
 
-        <p>Each example requires using both the <b>renderer process</b> and the <b>main process</b>. The main process is used for executing these native utilities as it is more efficient and won't interupt other things happenings your page. So it is the renderer process that instructs the main processes and recieves any information there may be in return. Open the <a href="">full API documentation</a> in your browser.</p>
+        <p>This is a main process module because this process is more efficient with native utilities and it allows the call to happen without interupting the visible elements in your page's renderer process.</p>
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.8/api/dialog/">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Open a File or Directory
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <button id="select-directory">Demo</button><span id="selected-file"></span>
-          <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="open-file-renderer"></pre></code>
           <h5>Main Process</h5>
@@ -30,14 +32,14 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Error Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+        <h2 class="js-container-target">Error Dialog
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <button id="error-dialog">Demo</button>
-          <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the error dialog.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
 
-          <p><b>Tip: </b>You can use an error dialog before the `ready` event which is useful for showing errors upon start up.</p>
+          <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon start up.</p>
           <h5>Renderer Process</h5>
           <pre><code id="error-dialog-renderer"></pre></code>
           <h5>Main Process</h5>
@@ -48,12 +50,12 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Information Dialogs
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+        <h2 class="js-container-target">Information Dialog
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <button id="information-dialog">Demo</button><span id="info-selection"></span>
-          <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the information dialog. You can provide options for responses which can then be relayed back to the renderer process.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the information dialog. Options may be provided for responses which can then be relayed back to the renderer process.</p>
 
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
           <h5>Renderer Process</h5>
@@ -66,12 +68,12 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Save Dialogs
-        <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+        <h2 class="js-container-target">Save Dialog
+        <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <button id="save-dialog">Demo</button><span id="file-saved"></span>
-          <p>The <code>ipc</code> module is used to send a message from the renderer process that instructs the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
+          <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="save-dialog-renderer"></pre></code>
           <h5>Main Process</h5>
@@ -85,8 +87,8 @@
         <div class="pro-tip">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
-            <strong>Using a sheet-style dialog</strong>
-            <p>You can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
+            <strong>The sheet-style dialog on OS X.</strong>
+            <p>On OS X you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
             <pre><code>var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
 var BrowserWindow = require('browser-window');
