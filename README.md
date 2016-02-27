@@ -1,21 +1,24 @@
 # electron-demo
-WIP Electron API Demo App in Electron. META.
+This is a desktop app that interactively and with sample code demonstrates core features of the [Electron.js](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, OS X and Linux operating systems.
 
-## What
+Use this app to see what you can do with Electron.js and use the source code to learn how to create a basic Electron app.
 
-This is an Electron app that provides documentation and interaction with the Electron API. See this [existing project](https://github.com/craigshoemaker/electron-api-demos) for an idea of what this means.
+---
 
-## Goals
+This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
+By participating, you are expected to uphold this code. Please report unacceptable
+behavior to atom@github.com.
 
-Next-level documentation that helps developers build Electron apps.
+Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
+announcements. Visit the [electron website](http://electron.atom.io).
 
-This will demonstrate how to use the API and can be used to see the API in action on each platform. It will also serve to be a demonstration of basic Electron app structure and best practices.
+## To Use
 
-**Follow along in the [issues](https://github.com/atom/electron-demo/issues).**
+You can [download the latest release](https://github.com/atom/electron-demo/releases) for your operating system or build it yourself.
 
-## Development
+### To build
 
-To use while it's under development:
+You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
 
 ```bash
 $ git clone https://github.com/atom/electron-demo
@@ -23,3 +26,9 @@ $ cd electron-demo
 $ npm install
 $ npm start
 ```
+
+If you don't wish to clone, you can [download the source code](https://github.com/atom/electron-demo/archive/master.zip).
+
+#### See the [contributing doc]() on how to contribute.
+
+#### Reads the [docs]() to learn more about how this app is built.
