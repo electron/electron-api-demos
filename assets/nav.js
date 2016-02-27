@@ -54,6 +54,8 @@ document.querySelector('.to-pdf').addEventListener('click', function () {
 });
 
 function removeSelectedShow () {
-  document.querySelector('.is-selected').classList.remove('is-selected');
+  if (document.querySelector('.is-selected')) {
+    document.querySelector('.is-selected').classList.remove('is-selected');
+  }
   document.querySelector('.show').classList.remove('show');
 }
