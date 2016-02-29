@@ -2,7 +2,6 @@ var Menu = require('electron').Menu;
 var app = require('electron').app;
 
 module.exports.setup = function () {
-  // TODO Windows accelerators?
   var template = [
     {
       label: 'Edit',
