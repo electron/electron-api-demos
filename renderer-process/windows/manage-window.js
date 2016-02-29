@@ -13,7 +13,6 @@ manageWindowBtn.addEventListener('click', function (event) {
     }, 250)
   });
 
-  // TODO alter this window's content?
   win.on('closed', function () { win = null; });
   win.loadURL(modalPath);
   win.show();
