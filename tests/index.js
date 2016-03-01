@@ -45,14 +45,14 @@ describe('demo app', function () {
       .getWindowWidth().should.eventually.equal(920)
       .getWindowHeight().should.eventually.equal(900)
       .getTitle().should.eventually.equal('Electron API Demos')
-      .isVisible('#welcome-view').should.eventually.be.true
+      .isVisible('#about-view').should.eventually.be.true
       .isVisible('#index-view').should.eventually.be.true;
   });
 
   describe('when clicking on a section from the nav bar', function () {
     it('shows the selected section in the main area', function () {
       return this.app.client.waitUntilWindowLoaded()
-        .isVisible('#welcome-view').should.eventually.be.true
+        .isVisible('#about-view').should.eventually.be.true
         .click('button[data-view="windows"]')
         .waitForVisible('#windows-view')
         .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.true
