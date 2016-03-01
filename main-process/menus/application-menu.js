@@ -50,10 +50,15 @@ module.exports.setup = function () {
           accelerator: 'CmdOrCtrl+R',
           click: function (item, focusedWindow) {
             if (focusedWindow) {
-              BrowserWindow.getAllWindows().forEach(function (win) {
-                console.log("win", win)
-                if (!win.isFocused()) win.close()
-              })
+              // on reload, start fresh and close any old
+              // open secondary windows
+              if (focusedWindow.id === 1) {
+                BrowserWindow.getAllWindows().forEach(function (win) {
+                  if (win.id > 1) {
+                    win.close();
+                  }
+                })
+              }
               focusedWindow.reload();
             }
           }
