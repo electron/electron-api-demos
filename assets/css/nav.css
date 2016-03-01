@@ -73,3 +73,8 @@
   width: calc(770px / 6.5);
   height: calc(88px / 6.5);
 }
+
+.nav-footer-link {
+  display: block;
+  margin-bottom: 1em;
+}
