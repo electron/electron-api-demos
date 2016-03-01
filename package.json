@@ -31,10 +31,10 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
-    "electron-prebuilt": "^0.35.0",
+    "electron-prebuilt": "^0.36.9",
     "mocha": "^2.3.4",
     "semistandard": "^7.0.3",
-    "spectron": "^0.35.0",
+    "spectron": "^0.36.1",
     "snazzy": "^3.0.0"
   },
   "dependencies": {
