@@ -11,8 +11,6 @@ var beforeEach = global.beforeEach;
 var describe = global.describe;
 var it = global.it;
 
-var expect = chai.expect;
-
 describe('demo app', function () {
   this.timeout(30000);
 
@@ -37,71 +35,44 @@ describe('demo app', function () {
     }
   });
 
-  it('opens a window and lists the API sections', function () {
+  it('opens a window displaying the about page and nav bar', function () {
     return this.app.client.waitUntilWindowLoaded()
       .getWindowCount().should.eventually.equal(1)
       .isWindowMinimized().should.eventually.be.false
       .isWindowDevToolsOpened().should.eventually.be.false
       .isWindowVisible().should.eventually.be.true
       .isWindowFocused().should.eventually.be.true
-      .getWindowWidth().should.eventually.equal(800)
-      .getWindowHeight().should.eventually.equal(733)
+      .getWindowWidth().should.eventually.equal(920)
+      .getWindowHeight().should.eventually.equal(900)
       .getTitle().should.eventually.equal('Electron API Demos')
-      .elements('section').then(function (response) {
-        expect(response.status).to.equal(0);
-        expect(response.value.length).to.equal(6);
-      });
+      .isVisible('#welcome-view').should.eventually.be.true
+      .isVisible('#index-view').should.eventually.be.true;
   });
 
-  describe('when clicking on a section', function () {
-    it('opens the selected section', function () {
+  describe('when clicking on a section from the nav bar', function () {
+    it('shows the selected section in the main area', function () {
       return this.app.client.waitUntilWindowLoaded()
-        .click('a').pause(1000)
-        .waitForVisible('.task-page')
-        .getText('h1').should.eventually.equal('Use system dialogs');
-    });
-    it('all tasks are collapsed', function () {
-      return this.app.client
-        .isVisible('.toggle-content').should.eventually.be.false;
+        .isVisible('#welcome-view').should.eventually.be.true
+        .click('button[data-view="windows"]')
+        .waitForVisible('#windows-view')
+        .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.true
+        .isVisible('#pdf-view').should.eventually.be.false
+        .click('button[data-view="pdf"]')
+        .waitForVisible('#pdf-view')
+        .isVisible('#windows-view').should.eventually.be.false
+        .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.false
+        .isExisting('button.is-selected[data-view="pdf"]').should.eventually.be.true;
     });
   });
 
   describe('when a task is clicked', function () {
     it('it expands', function () {
       return this.app.client.waitUntilWindowLoaded()
-        .click('a').pause(1000)
-        .waitForVisible('.task-page')
-        .click('.js-container-target').pause(1000)
+        .click('button[data-view="windows"]')
+        .waitForVisible('#windows-view')
+        .click('.js-container-target')
         .waitForVisible('.toggle-content')
-        .isVisible('.toggle-content').should.eventually.deep.equal([ true, false, false, false ]);
-    });
-  });
-
-  describe('when demo buttons are clicked', function () {
-    it('uses Electron dialog api', function () {
-      return this.app.client.waitUntilWindowLoaded()
-        .execute(function () {
-          require('electron').ipcRenderer.send('eval', (function () {
-            require('electron').dialog.showOpenDialog = function () {
-              global.showOpenDialogCalled = true;
-              return '/a/b/c';
-            };
-          }).toString());
-        })
-        .click('a').pause(1000)
-        .waitForVisible('.task-page')
-        .click('.js-container-target').pause(1000)
-        .waitForVisible('.toggle-content')
-        .click('button').pause(1000)
-        .waitUntil(function () {
-          return this.execute(function () {
-            return require('electron').remote.getGlobal('showOpenDialogCalled');
-          }).then(function (response) {
-            return response.value === true;
-          });
-        })
-        .waitForText('#selected-file')
-        .getText('#selected-file').should.eventually.equal('You selected: /a/b/c');
+        .isVisible('.toggle-content').should.eventually.deep.equal([ true, false ]);
     });
   });
 });
