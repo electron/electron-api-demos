@@ -3,6 +3,7 @@ var Menu = remote.Menu;
 var MenuItem = remote.MenuItem;
 
 var menu = new Menu();
+
 menu.append(new MenuItem({ label: 'Hello' }));
 menu.append(new MenuItem({ type: 'separator' }));
 menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }));

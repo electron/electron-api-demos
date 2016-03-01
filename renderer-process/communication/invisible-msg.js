@@ -1,6 +1,7 @@
+var path = require('path');
+
 var BrowserWindow = require('electron').remote.BrowserWindow;
 var ipcRenderer = require('electron').ipcRenderer;
-var path = require('path');
 
 var invisMsgBtn = document.getElementById('invis-msg');
 var invisReply = document.getElementById('invis-reply');

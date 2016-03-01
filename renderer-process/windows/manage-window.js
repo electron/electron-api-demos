@@ -1,5 +1,6 @@
-var BrowserWindow = require('electron').remote.BrowserWindow;
 var path = require('path');
+
+var BrowserWindow = require('electron').remote.BrowserWindow;
 
 var manageWindowBtn = document.getElementById('manage-window');
 
