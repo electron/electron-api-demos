@@ -1,3 +1,4 @@
+var BrowserWindow = require('electron').BrowserWindow;
 var Menu = require('electron').Menu;
 var app = require('electron').app;
 
@@ -49,6 +50,10 @@ module.exports.setup = function () {
           accelerator: 'CmdOrCtrl+R',
           click: function (item, focusedWindow) {
             if (focusedWindow) {
+              BrowserWindow.getAllWindows().forEach(function (win) {
+                console.log("win", win)
+                if (!win.isFocused()) win.close()
+              })
               focusedWindow.reload();
             }
           }
