@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/atom/electron-demo#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.35.0",
+    "electron-prebuilt": "^0.36.9",
     "semistandard": "^7.0.3",
     "snazzy": "^3.0.0"
   },
