@@ -1,0 +1,112 @@
+/* Colors */
+
+.nav-item.windows       .is-selected { background-color: hsl(116, 20%, 50%); }
+.nav-item.menu          .is-selected { background-color: hsl(193, 71%, 43%); }
+.nav-item.native-ui     .is-selected { background-color: hsl(222, 53%, 50%); }
+.nav-item.communication .is-selected { background-color: hsl(285, 47%, 46%); }
+.nav-item.system        .is-selected { background-color: hsl(330, 65%, 55%); }
+.nav-item.printing      .is-selected { background-color: hsl( 36, 77%, 38%); }
+
+.content-item.windows       { color: hsl(116, 20%, 50%); }
+.content-item.menu          { color: hsl(193, 71%, 43%); }
+.content-item.native-ui     { color: hsl(222, 53%, 50%); }
+.content-item.communication { color: hsl(285, 47%, 46%); }
+.content-item.system        { color: hsl(330, 65%, 55%); }
+.content-item.printing      { color: hsl( 36, 77%, 38%); }
+
+.content-item.windows       .pro-tip { background-color: hsl(116, 20%, 95%); }
+.content-item.menu          .pro-tip { background-color: hsl(193, 71%, 95%); }
+.content-item.native-ui     .pro-tip { background-color: hsl(222, 53%, 96%); }
+.content-item.communication .pro-tip { background-color: hsl(285, 47%, 96%); }
+.content-item.system        .pro-tip { background-color: hsl(330, 65%, 95%); }
+.content-item.printing      .pro-tip { background-color: hsl( 36, 77%, 95%); }
+
+
+
+/* Text ------------------------ */
+
+html,
+.content h3,
+.content p {
+  color: hsl(0,0%,22%);
+}
+
+
+/* Links ------------------------ */
+
+a {
+  color: hsl(200,100%,50%);
+}
+
+
+/* Code ------------------------ */
+
+code {
+  color: hsl(0,0%,44%);
+  background-color: hsla(0,0%,60%,.15);
+}
+
+pre {
+  border: 1px solid hsl(0,0%,88%);
+  background-color: white;
+}
+
+pre > .hljs {
+  color: hsl(0,0%,50%);
+  background-color: white;
+}
+
+
+/* Toggle-content ------------------------ */
+
+.toggle-content {
+  border: 1px solid hsl(0,0%,88%);
+  background-color: hsl(0,0%,96%);
+}
+
+.support {
+  color: hsl(0,0%,75%);
+}
+
+/* Nav ------------------------ */
+
+.nav {
+  border-right: 1px solid hsl(0,0%,88%);
+  background-color: hsl(0,0%,96%);
+}
+
+.nav-header {
+  color: hsl(0,0%,50%);
+}
+
+.nav-title strong {
+  color: hsl(0,0%,33%);
+}
+
+.nav-category {
+  color: hsl(0,0%,72%);
+}
+
+.nav-link {
+  color: hsl(0,0%,50%);
+}
+.nav-link:hover,
+.nav-link:focus:not(.is-selected) {
+  background-color: hsla(0,0%,0%,.1);
+}
+
+.nav-link.is-selected,
+.nav-link.is-selected em {
+  color: #fff;
+}
+.nav-link.is-selected:focus {
+  opacity: .8;
+}
+
+.nav-link em {
+  color: hsl(0,0%,12%);
+}
+
+.nav-footer a {
+  color: hsl(0,0%,72%);
+}

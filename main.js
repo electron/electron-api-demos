@@ -1,39 +1,43 @@
 var app = require('app');
-var BrowserWindow = require('browser-window');
+var BrowserWindow = require('electron').BrowserWindow;
 var ipc = require('electron').ipcMain;
+
+var glob = require('glob');
 
 var mainWindow = null;
 
-var openFileDialog = require('./main-process/dialogs/open-file.js');
-openFileDialog();
+// Require and setup each JS file in the main-process dir
+glob('main-process/**/*.js', function (error, files) {
+  if (error) return console.log(error);
+  files.forEach(function (file) {
+    require('./' + file).setup();
+  });
+});
 
-var errorDialog = require('./main-process/dialogs/error.js');
-errorDialog();
+function createWindow () {
+  mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900 });
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
+  mainWindow.on('closed', function () {
+    mainWindow = null;
+  });
 
-var infoDialog = require('./main-process/dialogs/information.js');
-infoDialog();
+}
 
-var saveDialog = require('./main-process/dialogs/save.js');
-saveDialog();
+app.on('ready', function () {
+  ipc.on('eval', function (event, code) {
+    event.returnValue = eval('(' + code + ')')();
+  });
+  createWindow();
+});
 
-app.on('window-all-closed', () => {
+app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('ready', () => {
-  mainWindow = new BrowserWindow({ width: 800, height: 733 });
-
-  mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-  ipc.on('eval', function (event, code) {
-    event.returnValue = eval('(' + code + ')')();
-  });
-
-  // mainWindow.openDevTools();
-
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
+app.on('activate', function () {
+  if (mainWindow === null) {
+    createWindow();
+  }
 });

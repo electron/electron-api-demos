@@ -1,7 +1,7 @@
 var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
 
-module.exports = function OpenInfoDialogMainProcess () {
+module.exports.setup = function () {
   ipc.on('open-information-dialog', function (event) {
     var options = {
       'type': 'info',

@@ -1,0 +1,58 @@
+<template class="task-template">
+  <div id="clipboard-view" class="content-item system task-wrapper">
+    <header>
+      <div class="wrapper">
+        <h1>
+          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
+          Clipboard
+        </h1>
+        <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations.</h3>
+        <p>This module also has methods for copying text as markup (HTML) to the clipboard.</p>
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/clipboard">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrapper">
+        <h2 class="js-container-target">Copy
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+        </h2>
+        <div class="toggle-content">
+          <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
+          <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste the phrase from the clipboard.</p>
+          <h5>Renderer Process</h5>
+          <pre><code id="copy-to-renderer"></pre></code>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrapper">
+        <h2 class="js-container-target">Paste
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+        </h2>
+        <div class="toggle-content">
+          <button id="paste-to">Paste</button><span id="paste-from"></span>
+          <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
+
+          <h5>Renderer Process</h5>
+          <pre><code id="paste-to-renderer"></pre></code>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="renderer-process/system/copy.js"></script>
+    <script type="text/javascript" src="renderer-process/system/paste.js"></script>
+
+    <script type="text/javascript">
+      var fs = require('fs');
+      // Copy
+      var copyToRendererContent = fs.readFileSync('renderer-process/system/copy.js');
+      document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
+      // Paste
+      var pasteToRendererContent = fs.readFileSync('renderer-process/system/paste.js');
+      document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
+    </script>
+  </div><!-- end clipboard-view -->
+</tempalte>

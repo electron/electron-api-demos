@@ -5,7 +5,13 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "semistandard && mocha tests"
+    "lint" : "semistandard --verbose | snazzy",
+    "test": "mocha tests && npm run lint"
+  },
+  "semistandard": {
+    "ignore": [
+      "/assets/highlight.pack.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,6 +34,10 @@
     "electron-prebuilt": "^0.35.0",
     "mocha": "^2.3.4",
     "semistandard": "^7.0.3",
-    "spectron": "^0.35.0"
+    "spectron": "^0.35.0",
+    "snazzy": "^3.0.0"
+  },
+  "dependencies": {
+    "glob": "^6.0.4"
   }
 }

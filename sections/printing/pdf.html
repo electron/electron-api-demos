@@ -1,0 +1,58 @@
+<template class="task-template">
+  <div id="pdf-view" class="content-item printing task-wrapper">
+    <header>
+      <div class="wrapper">
+        <h1>
+          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-printing"></use></svg>
+          Print to PDF
+        </h1>
+        <h3>The <code>browser window</code> module in Electron has a property, <code>webContents</code>, which allows your app to print as well as print to PDF.</h3>
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrapper">
+        <h2 class="js-container-target">Print to PDF
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+        </h2>
+        <div class="toggle-content">
+          <button id="print-pdf">Demo</button><span id="pdf-path"></span>
+          <p>To demonstrate the print to PDF functionality, the demo button above will save this page as a PDF and, if you have a PDF viewer, open the file.</p>
+          <p>In a real-world application you're more likely to add this to application menu, but for the purposes of the demo we've set it to the demo button.</p>
+          <h5>Renderer Process</h5>
+          <pre><code id="print-pdf-renderer"></pre></code>
+          <h5>Main Process</h5>
+          <pre><code id="print-pdf-main"></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrapper">
+        <div class="pro-tip">
+          <h2 class="avoid-clicks">Pro-Tip</h2>
+          <div class="non-toggle-content">
+            <strong>Use a print style sheet.</strong>
+            <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Create a section in your style sheet like the one below. You can also view the print stylesheet of this app.</p>
+            <pre><code>@media print {
+  /* Print styles here */
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="renderer-process/printing/pdf.js"></script>
+
+    <script type="text/javascript">
+      var fs = require('fs');
+      // Open File Dialog
+      var printPDFRendererContent = fs.readFileSync('renderer-process/printing/pdf.js');
+      document.getElementById('print-pdf-main').innerHTML= printPDFRendererContent;
+      var printPDFMainContent = fs.readFileSync('main-process/printing/pdf.js');
+      document.getElementById('print-pdf-renderer').innerHTML= printPDFMainContent;
+    </script>
+  </div><!-- end pdf-view -->
+</tempalte>

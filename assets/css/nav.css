@@ -1,0 +1,89 @@
+/* Nav */
+
+.nav {
+  width: 340px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.nav-header {
+  position: relative;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid hsl(0,0%,88%);
+}
+
+.nav-title {
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+}
+
+.nav-header-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 1rem;
+  right: 3.6rem; /* magic */
+}
+
+
+
+.nav-item {
+  padding: .5em 0;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  margin-right: .25rem;
+}
+
+.nav-category {
+  margin: .2em 0;
+  padding-left: 2rem;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  display: block;
+  width: 100%;
+  padding: .3rem;
+  padding-left: calc(2rem + 16px + .5rem); /* padding + icon + magic */
+  line-height: 2;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  outline: none;
+}
+
+.nav-link em {
+  font-style: normal;
+  font-weight: 600;
+  pointer-events: none; /* makes it invisible to clicks */
+}
+
+.nav-footer {
+  margin-top: 1rem;
+  padding: 2rem;
+  border-top: 1px solid hsl(0,0%,88%);
+  text-align: center;
+}
+
+.nav-footer-icon {
+  width: calc(770px / 6.5);
+  height: calc(88px / 6.5);
+}
+
+.nav-footer-link {
+  display: block;
+  margin-bottom: 1em;
+}
