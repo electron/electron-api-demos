@@ -6,22 +6,23 @@
           <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
           Clipboard
         </h1>
-        <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations. It can be used in both the <code>main</code> and <code>renderer processes</code>.</h3>
+        <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations.</h3>
+        <p>This module also has methods for copying text as markup (HTML) to the clipboard.</p>
 
-        <p>Open the <a href="http://electron.atom.io/docs/v0.36.5/api/clipboard">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.5/api/clipboard">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Copy
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
-          <p>In this example we copy a phrase to the clipboard. After clicking 'copy' use the text area to paste the phrase from the clipboard.</p>
+          <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="copy-to-render"></pre></code>
+          <pre><code id="copy-to-renderer"></pre></code>
         </div>
       </div>
     </section>
@@ -29,46 +30,29 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Paste
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </h2>
         <div class="toggle-content">
           <button id="paste-to">Paste</button><span id="paste-from"></span>
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code id="paste-to-render"></pre></code>
+          <pre><code id="paste-to-renderer"></pre></code>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrapper">
-        <div class="pro-tip">
-          <h2 class="avoid-clicks">Pro-Tip</h2>
-          <div class="non-toggle-content">
-            <strong>Reading and Writing from the clipboard in Markup</strong>
-            <!-- TODO make this work -->
-            <p>The <code>clipboard</code> module has methods for reading and writing markup (HTML).</p>
-            <pre><code>// Copy + paste string to clipboard as markup
-clipboard.writeHtml('Make this markup, pls');
-clipboard.readHtml();
-// <meta charset='utf-8'>Make this markup, pls</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script type="text/javascript" src="render-process/system/copy.js"></script>
-    <script type="text/javascript" src="render-process/system/paste.js"></script>
+    <script type="text/javascript" src="renderer-process/system/copy.js"></script>
+    <script type="text/javascript" src="renderer-process/system/paste.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
       // Copy
-      var copyToRenderContent = fs.readFileSync('render-process/system/copy.js');
-      document.getElementById('copy-to-render').innerHTML= copyToRenderContent;
+      var copyToRendererContent = fs.readFileSync('renderer-process/system/copy.js');
+      document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
       // Paste
-      var pasteToRenderContent = fs.readFileSync('render-process/system/paste.js');
-      document.getElementById('paste-to-render').innerHTML= pasteToRenderContent;
+      var pasteToRendererContent = fs.readFileSync('renderer-process/system/paste.js');
+      document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
     </script>
   </div><!-- end clipboard-view -->
 </tempalte>

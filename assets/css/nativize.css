@@ -34,10 +34,10 @@ a {
 }
 
 
-/* External links */
+/* New window links */
 
-a[href]:hover,
-a[href]:focus {
+a[target]:hover,
+a[target]:focus {
   cursor: pointer;
   text-decoration: underline;
 }

@@ -1,11 +1,13 @@
 var fs = require('fs');
+var os = require('os');
+var path = require('path');
 var BrowserWindow = require('browser-window');
 var ipc = require('electron').ipcMain;
-var shell = require('shell');
+var shell = require('electron').shell;
 
 module.exports.setup = function () {
   ipc.on('print-to-pdf', function (event) {
-    var pdfPath = '/tmp/print.pdf';
+    var pdfPath = path.join(os.tmpdir(), 'print.pdf');
     var win = BrowserWindow.fromWebContents(event.sender);
     // Use default printing options
     win.webContents.printToPDF({}, function (error, data) {
