@@ -1,7 +1,7 @@
 // Listen for nav clicks
 
 document.body.addEventListener('click', function (event) {
-  if (classContains('nav-link') || classContains('nav-footer-link')) {
+  if (classContains(event, 'nav-link') || classContains(event, 'nav-footer-link')) {
     var viewId = '#' + event.target.dataset.view + '-view';
     removeSelectedShow();
     event.target.classList.add('is-selected');
@@ -9,7 +9,7 @@ document.body.addEventListener('click', function (event) {
   }
 });
 
-function classContains (className) {
+function classContains (event, className) {
   return event.target.classList.contains(className)
 }
 
