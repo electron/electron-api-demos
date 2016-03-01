@@ -107,7 +107,7 @@
 
 /* Button */
 
-button {
+.content button {
   border: 2px solid;
   border-radius: 4px;
   font: inherit;
@@ -116,8 +116,8 @@ button {
   padding: .4em 1.2em;
   background-color: transparent;
 }
-button:focus,
-button:active {
+.content button:focus,
+.content button:active {
   outline: none;
   border-color: hsl(0,0%,88%);
 }

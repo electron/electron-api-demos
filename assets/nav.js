@@ -1,56 +1,12 @@
-// Add listeners for each section
-document.querySelector('.to-windows').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-windows').classList.add('is-selected');
-  document.querySelector('#windows-view').classList.add('show');
-});
+// Listen for nav clicks
 
-document.querySelector('.to-menus').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-menus').classList.add('is-selected');
-  document.querySelector('#menus-view').classList.add('show');
-});
-
-document.querySelector('.to-ex-links-file-manager').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-ex-links-file-manager').classList.add('is-selected');
-  document.querySelector('#ex-links-file-manager-view').classList.add('show');
-});
-
-document.querySelector('.to-dialogs').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-dialogs').classList.add('is-selected');
-  document.querySelector('#dialogs-view').classList.add('show');
-});
-
-document.querySelector('.to-tray').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-tray').classList.add('is-selected');
-  document.querySelector('#tray-view').classList.add('show');
-});
-
-document.querySelector('.to-ipc').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-ipc').classList.add('is-selected');
-  document.querySelector('#ipc-view').classList.add('show');
-});
-
-document.querySelector('.to-app-sys-information').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-app-sys-information').classList.add('is-selected');
-  document.querySelector('#app-sys-information-view').classList.add('show');
-});
-
-document.querySelector('.to-clipboard').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-clipboard').classList.add('is-selected');
-  document.querySelector('#clipboard-view').classList.add('show');
-});
-
-document.querySelector('.to-pdf').addEventListener('click', function () {
-  removeSelectedShow();
-  document.querySelector('.to-pdf').classList.add('is-selected');
-  document.querySelector('#pdf-view').classList.add('show');
+document.body.addEventListener('click', function (event) {
+  if (event.target.classList.contains('nav-link')) {
+    var viewId = '#' + event.target.dataset.view + '-view';
+    removeSelectedShow();
+    event.target.classList.add('is-selected');
+    document.querySelector(viewId).classList.add('show');
+  }
 });
 
 function removeSelectedShow () {
