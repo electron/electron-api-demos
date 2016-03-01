@@ -1,5 +1,4 @@
 // Listen for nav clicks
-
 document.body.addEventListener('click', function (event) {
   if (event.target.classList.contains('nav-link')) {
     var viewId = '#' + event.target.dataset.view + '-view';
