@@ -90,16 +90,21 @@ pre > .hljs {
 .nav-link {
   color: hsl(0,0%,50%);
 }
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus:not(.is-selected) {
   background-color: hsla(0,0%,0%,.1);
 }
-.nav-link em {
-  color: hsl(0,0%,12%);
+
+.nav-link.is-selected,
+.nav-link.is-selected em {
+  color: #fff;
+}
+.nav-link.is-selected:focus {
+  opacity: .8;
 }
 
-.is-selected.nav-link,
-.is-selected.nav-link em {
-  color: #fff;
+.nav-link em {
+  color: hsl(0,0%,12%);
 }
 
 .nav-footer a {
