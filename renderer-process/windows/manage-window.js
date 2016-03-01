@@ -10,7 +10,7 @@ manageWindowBtn.addEventListener('click', function (event) {
   win.on('move', function () {
     setTimeout(function () {
       win.center();
-    }, 250)
+    }, 250);
   });
 
   win.on('closed', function () { win = null; });
