@@ -1,6 +1,5 @@
 var app = require('app');
 var BrowserWindow = require('electron').BrowserWindow;
-var ipc = require('electron').ipcMain;
 
 var glob = require('glob');
 
@@ -20,15 +19,9 @@ function createWindow () {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
-
 }
 
-app.on('ready', function () {
-  ipc.on('eval', function (event, code) {
-    event.returnValue = eval('(' + code + ')')();
-  });
-  createWindow();
-});
+app.on('ready', createWindow);
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
