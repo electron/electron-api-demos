@@ -90,18 +90,31 @@ pre > .hljs {
 .nav-link {
   color: hsl(0,0%,50%);
 }
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus:not(.is-selected) {
   background-color: hsla(0,0%,0%,.1);
 }
+
+.nav-link.is-selected,
+.nav-link.is-selected em {
+  color: #fff;
+}
+.nav-link.is-selected:focus {
+  opacity: .8;
+}
+
 .nav-link em {
   color: hsl(0,0%,12%);
 }
 
-.is-selected.nav-link,
-.is-selected.nav-link em {
-  color: #fff;
-}
-
+.nav-footer-link,
 .nav-footer a {
   color: hsl(0,0%,72%);
+}
+
+.nav-footer-link:active,
+.nav-footer-link:focus,
+.nav-footer a:active,
+.nav-footer a:focus {
+  color: hsl(0,0%,50%);
 }
