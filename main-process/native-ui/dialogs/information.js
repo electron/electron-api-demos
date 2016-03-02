@@ -1,5 +1,5 @@
 var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
+var dialog = require('electron').dialog;
 
 module.exports.setup = function () {
   ipc.on('open-information-dialog', function (event) {

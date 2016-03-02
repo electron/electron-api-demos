@@ -1,7 +1,8 @@
 var fs = require('fs');
 var os = require('os');
 var path = require('path');
-var BrowserWindow = require('browser-window');
+
+var BrowserWindow = require('electron').BrowserWindow;
 var ipc = require('electron').ipcMain;
 var shell = require('electron').shell;
 

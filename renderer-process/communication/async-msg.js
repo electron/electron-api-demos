@@ -1,4 +1,5 @@
 var ipc = require('electron').ipcRenderer;
+
 var asyncMsgBtn = document.getElementById('async-msg');
 
 asyncMsgBtn.addEventListener('click', function () {

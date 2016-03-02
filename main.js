@@ -1,4 +1,4 @@
-var app = require('app');
+var app = require('electron').app;
 var BrowserWindow = require('electron').BrowserWindow;
 
 var glob = require('glob');
