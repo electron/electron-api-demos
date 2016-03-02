@@ -1,5 +1,5 @@
 {
-  "name": "electron-demo",
+  "name": "electron-api-demos",
   "version": "1.0.0",
   "description": "Electron interactive API demos",
   "main": "main.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atom/electron-demo.git"
+    "url": "git+https://github.com/atom/electron-api-demos.git"
   },
   "keywords": [
     "Electron",
@@ -24,9 +24,9 @@
   "author": "GitHub",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atom/electron-demo/issues"
+    "url": "https://github.com/atom/electron-api-demos/issues"
   },
-  "homepage": "https://github.com/atom/electron-demo#readme",
+  "homepage": "https://github.com/atom/electron-api-demos#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.35.0",
     "semistandard": "^7.0.3",
