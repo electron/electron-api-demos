@@ -83,7 +83,21 @@
   height: calc(88px / 6.5);
 }
 
+.nav-footer a {
+  outline: none;
+}
+
 .nav-footer-link {
   display: block;
+  width: 100%;
   margin-bottom: 1em;
+  line-height: 2;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  outline: none;
+  text-align: center;
 }

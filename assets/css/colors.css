@@ -107,21 +107,14 @@ pre > .hljs {
   color: hsl(0,0%,12%);
 }
 
-.nav-footer button {
-  color: hsl(0,0%,72%);
-  display: block;
-  width: 100%;
-  line-height: 2;
-  text-align: left;
-  font: inherit;
-  font-size: 13px;
-  border: none;
-  background-color: transparent;
-  cursor: default;
-  outline: none;
-  text-align: center;
-}
-
+.nav-footer-link,
 .nav-footer a {
   color: hsl(0,0%,72%);
+}
+
+.nav-footer-link:active,
+.nav-footer-link:focus,
+.nav-footer a:active,
+.nav-footer a:focus {
+  color: hsl(0,0%,50%);
 }
