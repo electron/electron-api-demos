@@ -107,6 +107,14 @@ pre > .hljs {
   color: hsl(0,0%,12%);
 }
 
+.nav-footer-link,
 .nav-footer a {
   color: hsl(0,0%,72%);
+}
+
+.nav-footer-link:active,
+.nav-footer-link:focus,
+.nav-footer a:active,
+.nav-footer a:focus {
+  color: hsl(0,0%,50%);
 }

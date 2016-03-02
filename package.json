@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "semistandard --verbose | snazzy"
+    "lint" : "semistandard --verbose | snazzy",
+    "test": "mocha tests && npm run lint"
   },
   "semistandard": {
     "ignore": [
@@ -28,8 +29,12 @@
   },
   "homepage": "https://github.com/atom/electron-demo#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.35.0",
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "electron-prebuilt": "^0.36.9",
+    "mocha": "^2.3.4",
     "semistandard": "^7.0.3",
+    "spectron": "^0.36.1",
     "snazzy": "^3.0.0"
   },
   "dependencies": {

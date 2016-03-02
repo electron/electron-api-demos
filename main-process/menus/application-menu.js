@@ -1,3 +1,4 @@
+var BrowserWindow = require('electron').BrowserWindow;
 var Menu = require('electron').Menu;
 var app = require('electron').app;
 
@@ -49,6 +50,15 @@ module.exports.setup = function () {
           accelerator: 'CmdOrCtrl+R',
           click: function (item, focusedWindow) {
             if (focusedWindow) {
+              // on reload, start fresh and close any old
+              // open secondary windows
+              if (focusedWindow.id === 1) {
+                BrowserWindow.getAllWindows().forEach(function (win) {
+                  if (win.id > 1) {
+                    win.close();
+                  }
+                })
+              }
               focusedWindow.reload();
             }
           }
