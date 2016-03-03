@@ -241,3 +241,11 @@ pre code {
   /*border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) hsl(0,0%,96%) hsla(0, 0%, 0%, 0);*/
   /*box-shadow: 1px 1px 0 hsl(0,0%,88%);*/
 }
+
+
+/* Hacks --------------------- */
+
+.content-item {
+  /* Fixes vertical scrolling on OS X El Cap (10.11.3), non-retina screen */
+  backface-visibility: hidden;
+}
