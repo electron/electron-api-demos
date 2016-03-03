@@ -245,7 +245,20 @@ pre code {
 
 /* Hacks --------------------- */
 
+/* Fixes vertical scrolling on OS X El Cap (10.11.3), non-retina screen */
 .content-item {
-  /* Fixes vertical scrolling on OS X El Cap (10.11.3), non-retina screen */
   backface-visibility: hidden;
+}
+
+/* Fixes horizontal scrolling in code blocks on OS X El Cap (10.11.3), retina screen
+ *
+ * By adding and removing 1px, you don't see any visual change,
+ * but it should trigger a reflow, which enables the scrolling.
+ */
+.hljs {
+  position: relative;
+}
+.hljs:hover {
+  margin-left: 1px;
+  left: -1px;
 }
