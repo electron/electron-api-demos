@@ -41,12 +41,26 @@
 .content header .wrapper {
   padding-top: 2rem;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
   border-bottom: 1px solid hsl(0,0%,92%);
 }
 @media (min-width: 940px) {
   .content header .wrapper {
     padding-top: 4rem;
+  }
+}
+
+
+/* Section */
+
+.content-item > section:first-of-type {
+  margin-top: 2rem;
+}
+.content-item > section:last-of-type {
+  margin-bottom: 2rem;
+}
+@media (min-width: 940px) {
+  .content-item > section:last-of-type {
+    margin-bottom: 4rem;
   }
 }
 
@@ -90,7 +104,6 @@
   padding: 1rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
   border-radius: 6px;
-  margin-bottom: 4rem;
 }
 
 .pro-tip strong {
