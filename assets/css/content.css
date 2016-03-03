@@ -65,7 +65,6 @@
   border: none;
   padding: 14px 19px;
   width: 300px;
-  font-family: 'Source Sans Pro';
   vertical-align: top;
   border-radius: 3px;
 }
@@ -108,7 +107,7 @@
 
 /* Button */
 
-button {
+.content button {
   border: 2px solid;
   border-radius: 4px;
   font: inherit;
@@ -117,8 +116,8 @@ button {
   padding: .4em 1.2em;
   background-color: transparent;
 }
-button:focus,
-button:active {
+.content button:focus,
+.content button:active {
   outline: none;
   border-color: hsl(0,0%,88%);
 }
@@ -166,6 +165,27 @@ pre code {
   border-left-color: transparent;
 }
 
+
+/* External link */
+
+.exlink::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: -3px;
+  margin-left: 3px;
+  text-decoration: none;
+  background: url(../img/link-external.svg) no-repeat top right;
+  background-size: auto 100%;
+}
+
+.exlink:hover,
+.exlink:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 
 /* TOGGLE! */

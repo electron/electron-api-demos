@@ -6,21 +6,23 @@
           <svg class="icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
           Customize Menus
         </h1>
-        <h3>The <code>menu</code> and <code>menuitem</code> modules allows you to create custom native menus that can be used as an application menus or context (right-click) menu.</h3>
+        <h3>The <code>menu</code> and <code>menuitem</code> modules can be used create custom native menus.</h3>
 
-        <p>This module is a main process module which can be used in a render process via the remote module. Open the <a href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
+        <p>There are two kinds of menus: the application (top) menu and context (right-click) menu.</p>
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Create an application menu
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
 
-          <p>If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed. The code below shows how the entire menu for this app as well as the App Menu Demo option were added.</p>
+          <p>This app uses the code below to set the application menu. If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed.</p>
           <h5>Main Process</h5>
           <pre><code id="application-menu-main"></code></pre>
         </div>
@@ -30,13 +32,13 @@
     <section>
       <div class="wrapper">
         <h2 class="js-container-target">Create a context menu
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </h2>
         <div class="toggle-content">
           <button id="context-menu">Demo</button>
-          <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> as well. You can right click anywhere in this Menu window or click the demo button to see an example context menu.</p>
+          <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> modules as well. You can right-click anywhere in this app or click the demo button to see an example context menu.</p>
 
-          <p>In this example we use the <code>remote</code> module to access <code>menu</code> and <code>menubar</code> from the renderer proocess.</p>
+          <p>In this demo we use the <code>remote</code> module to access <code>menu</code> and <code>menuitem</code> from the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="context-menu-renderer"></pre></code>
         </div>
@@ -48,20 +50,20 @@
         <div class="pro-tip">
           <h2 class="avoid-clicks">Pro-Tip</h2>
           <div class="non-toggle-content">
-          <strong>Operating System Menu Differences</strong>
-          <p>When designing an app for different operating systems, it's important to be mindful of the ways in which conventions are different, on operating systems, for application menus.</p>
-          <p>For instance, on Windows, accelerators are set with an <code>&</code>. Sometimes naming conventions vary like when using "Settings" or "Preferences". Below are resources for learning operating system specific standards.</p>
+          <strong>Know operating system menu differences.</strong>
+          <p>When designing an app for multiple operating systems it's important to be mindful of the ways application menu conventions differ on each operating systems.</p>
+          <p>For instance, on Windows, accelerators are set with an <code>&</code>. Naming conventions also vary, like between "Settings" or "Preferences". Below are resources for learning operating system specific standards.</p>
           <ul>
-            <li><a href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/MenuBarMenus.html#//apple_ref/doc/uid/20000957-CH29-SW1">OS X</a></li>
-            <li><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb226797(v=vs.85).aspx">Windows</a></li>
-            <li><a href="https://developer.gnome.org/hig/stable/menu-bars.html.en">Linux</a></li>
+            <li><a class="exlink" href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/MenuBarMenus.html#//apple_ref/doc/uid/20000957-CH29-SW1">OS X</a></li>
+            <li><a class="exlink" href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb226797(v=vs.85).aspx">Windows</a></li>
+            <li><a class="exlink" href="https://developer.gnome.org/hig/stable/menu-bars.html.en">Linux</a></li>
           </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <script type="text/javascript" src="render-process/menus/context-menu.js"></script>
+    <script type="text/javascript" src="renderer-process/menus/context-menu.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
@@ -69,7 +71,7 @@
       var appMenuMainContent = fs.readFileSync('main-process/menus/application-menu.js');
       document.getElementById('application-menu-main').innerHTML= appMenuMainContent;
       // Context Menu
-      var contextMenuRendererContent = fs.readFileSync('render-process/menus/context-menu.js');
+      var contextMenuRendererContent = fs.readFileSync('renderer-process/menus/context-menu.js');
       document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
     </script>
   </div><!-- end menu-view -->

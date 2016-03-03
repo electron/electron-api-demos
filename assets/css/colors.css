@@ -1,25 +1,25 @@
 /* Colors */
 
-.nav-item.windows       .is-selected { background-color: hsl(116,20%,50%); }
-.nav-item.menu          .is-selected { background-color: hsl(248,34%,50%); }
-.nav-item.native-ui     .is-selected { background-color: #55C8CE; }
-.nav-item.communication .is-selected { background-color: #8FA7E0; }
-.nav-item.system        .is-selected { background-color: #7AD6C2; }
-.nav-item.printing      .is-selected { background-color: #76c8de; }
+.nav-item.windows       .is-selected { background-color: hsl(116, 20%, 50%); }
+.nav-item.menu          .is-selected { background-color: hsl(193, 71%, 43%); }
+.nav-item.native-ui     .is-selected { background-color: hsl(222, 53%, 50%); }
+.nav-item.communication .is-selected { background-color: hsl(285, 47%, 46%); }
+.nav-item.system        .is-selected { background-color: hsl(330, 65%, 55%); }
+.nav-item.printing      .is-selected { background-color: hsl( 36, 77%, 38%); }
 
-.content-item.windows       { color: hsl(116,20%,50%); }
-.content-item.menu          { color: hsl(248,34%,50%); }
-.content-item.native-ui     { color: #55C8CE; }
-.content-item.communication { color: #8FA7E0; }
-.content-item.system        { color: #7AD6C2; }
-.content-item.printing      { color: #76c8de; }
+.content-item.windows       { color: hsl(116, 20%, 50%); }
+.content-item.menu          { color: hsl(193, 71%, 43%); }
+.content-item.native-ui     { color: hsl(222, 53%, 50%); }
+.content-item.communication { color: hsl(285, 47%, 46%); }
+.content-item.system        { color: hsl(330, 65%, 55%); }
+.content-item.printing      { color: hsl( 36, 77%, 38%); }
 
-.content-item.windows       .pro-tip { background-color: hsl(116,20%,96%); }
-.content-item.menu          .pro-tip { background-color: hsl(248,34%,96%); }
-.content-item.native-ui     .pro-tip { background-color: hsl(183,34%,96%); }
-.content-item.communication .pro-tip { background-color: #8FA7E0; }
-.content-item.system        .pro-tip { background-color: hsl(167,53%,96%); }
-.content-item.printing      .pro-tip { background-color: hsl(193,61%,96%); }
+.content-item.windows       .pro-tip { background-color: hsl(116, 20%, 95%); }
+.content-item.menu          .pro-tip { background-color: hsl(193, 71%, 95%); }
+.content-item.native-ui     .pro-tip { background-color: hsl(222, 53%, 96%); }
+.content-item.communication .pro-tip { background-color: hsl(285, 47%, 96%); }
+.content-item.system        .pro-tip { background-color: hsl(330, 65%, 95%); }
+.content-item.printing      .pro-tip { background-color: hsl( 36, 77%, 95%); }
 
 
 
@@ -90,18 +90,31 @@ pre > .hljs {
 .nav-link {
   color: hsl(0,0%,50%);
 }
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus:not(.is-selected) {
   background-color: hsla(0,0%,0%,.1);
 }
+
+.nav-link.is-selected,
+.nav-link.is-selected em {
+  color: #fff;
+}
+.nav-link.is-selected:focus {
+  opacity: .8;
+}
+
 .nav-link em {
   color: hsl(0,0%,12%);
 }
 
-.is-selected.nav-link,
-.is-selected.nav-link em {
-  color: #fff;
-}
-
+.nav-footer-link,
 .nav-footer a {
   color: hsl(0,0%,72%);
+}
+
+.nav-footer-link:active,
+.nav-footer-link:focus,
+.nav-footer a:active,
+.nav-footer a:focus {
+  color: hsl(0,0%,50%);
 }

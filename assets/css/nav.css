@@ -51,15 +51,24 @@
 
 .nav-link {
   display: block;
+  width: 100%;
+  padding: .3rem;
   padding-left: calc(2rem + 16px + .5rem); /* padding + icon + magic */
   line-height: 2;
+  text-align: left;
+  font: inherit;
   font-size: 13px;
+  color: inherit;
+  border: none;
+  background-color: transparent;
   cursor: default;
+  outline: none;
 }
 
 .nav-link em {
   font-style: normal;
   font-weight: 600;
+  pointer-events: none; /* makes it invisible to clicks */
 }
 
 .nav-footer {
@@ -72,4 +81,23 @@
 .nav-footer-icon {
   width: calc(770px / 6.5);
   height: calc(88px / 6.5);
+}
+
+.nav-footer a {
+  outline: none;
+}
+
+.nav-footer-link {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  line-height: 2;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  border: none;
+  background-color: transparent;
+  cursor: default;
+  outline: none;
+  text-align: center;
 }
