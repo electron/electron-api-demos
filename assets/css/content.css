@@ -135,10 +135,20 @@
   border-color: hsl(0,0%,88%);
 }
 
-/* Demo Responses */
+/* Demo */
+
+.demo {
+  display: flex;
+  align-items: center;
+}
+
+.demo-button {
+  align-self: flex-start;
+}
 
 .demo-response {
-  line-height: 3em;
+  flex: 1;
+  word-break: break-word;
 }
 
 
