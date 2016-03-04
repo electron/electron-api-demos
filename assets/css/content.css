@@ -135,6 +135,12 @@
   border-color: hsl(0,0%,88%);
 }
 
+/* Demo Responses */
+
+.demo-response {
+  line-height: 3em;
+}
+
 
 /* Code */
 
