@@ -1,3 +1,5 @@
+var path = require('path');
+
 var app = require('electron').app;
 var BrowserWindow = require('electron').BrowserWindow;
 
@@ -14,7 +16,8 @@ glob('main-process/**/*.js', function (error, files) {
 });
 
 function createWindow () {
-  mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900 });
+  var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
+  mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900, icon: iconPath });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   mainWindow.on('closed', function () {
     mainWindow = null;
