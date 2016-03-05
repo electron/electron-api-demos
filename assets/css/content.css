@@ -118,9 +118,15 @@
 }
 
 
-/* Button */
+/* Demo */
+
+.demo {
+  display: flex;
+  align-items: center;
+}
 
 .demo-button {
+  align-self: flex-start;
   border: 2px solid;
   border-radius: 4px;
   font: inherit;
@@ -133,17 +139,6 @@
 .demo-button:active {
   outline: none;
   border-color: hsl(0,0%,88%);
-}
-
-/* Demo */
-
-.demo {
-  display: flex;
-  align-items: center;
-}
-
-.demo-button {
-  align-self: flex-start;
 }
 
 .demo-response {
