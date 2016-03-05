@@ -120,7 +120,7 @@
 
 /* Button */
 
-.content button {
+.demo-button {
   border: 2px solid;
   border-radius: 4px;
   font: inherit;
@@ -129,8 +129,8 @@
   padding: .4em 1.2em;
   background-color: transparent;
 }
-.content button:focus,
-.content button:active {
+.demo-button:focus,
+.demo-button:active {
   outline: none;
   border-color: hsl(0,0%,88%);
 }
@@ -161,20 +161,27 @@ pre code {
 
 /* Clicky */
 
-.content h2 {
+.toggle-button {
   display: block;
   margin: 0;
   padding: .5em 1em;
   line-height: 1.5;
+  font: inherit;
   font-weight: 600;
-  border-left: 2px solid;
+  font-size: 1.2em;
+  text-align: left;
+  border: none;
+  border-left: 2px solid hsl(0,0%,88%);
+  color: inherit;
+  background-color: transparent;
   transition: border-color .12s;
   outline: none;
 }
-.content h2:active {
-  border-color: hsl(0,0%,88%);
+.toggle-button:focus,
+.toggle-button:active {
+  border-color: inherit;
 }
-.active h2 {
+.active toggle-button {
   border-left-color: transparent;
 }
 
@@ -198,6 +205,7 @@ pre code {
 .exlink:focus {
   cursor: pointer;
   text-decoration: underline;
+  outline: none;
 }
 
 
