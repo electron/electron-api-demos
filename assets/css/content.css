@@ -171,7 +171,7 @@ pre code {
   font-size: 1.2em;
   text-align: left;
   border: none;
-  border-left: 2px solid;
+  border-left: 2px solid hsl(0,0%,88%);
   color: inherit;
   background-color: transparent;
   transition: border-color .12s;
@@ -179,7 +179,7 @@ pre code {
 }
 .toggle-button:focus,
 .toggle-button:active {
-  border-color: hsl(0,0%,88%);
+  border-color: inherit;
 }
 .active toggle-button {
   border-left-color: transparent;
