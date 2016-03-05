@@ -19,7 +19,10 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <button id="copy-to" class="demo-button">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
+          <div class="demo">
+            <button class="demo-button" id="copy-to">Copy</button>
+            <input class="demo-input" id="copy-to-input" placeholder="Click copy."></input>
+          </div>
           <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
           <pre><code id="copy-to-renderer"></pre></code>
@@ -33,7 +36,10 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <button id="paste-to" class="demo-button">Paste</button><span id="paste-from"></span>
+          <div class="demo">
+            <button class="demo-button" id="paste-to">Paste</button>
+            <span class="demo-response" id="paste-from"></span>
+          </div>
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
