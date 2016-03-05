@@ -20,7 +20,10 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <button id="select-directory" class="demo-button">Demo</button><span id="selected-file"></span>
+          <div class="demo">
+            <button class="demo-button" id="select-directory">Demo</button>
+            <span class="demo-response" id="selected-file"></span>
+          </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="open-file-renderer"></pre></code>
@@ -36,7 +39,9 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <button id="error-dialog" class="demo-button">Demo</button>
+          <div class="demo">
+            <button id="error-dialog" class="demo-button">Demo</button>
+          </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
 
           <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon start up.</p>
@@ -54,7 +59,10 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <button id="information-dialog" class="demo-button">Demo</button><span id="info-selection"></span>
+          <div class="demo">
+            <button class="demo-button" id="information-dialog">Demo</button>
+            <span class="demo-response" id="info-selection"></span>
+          </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the information dialog. Options may be provided for responses which can then be relayed back to the renderer process.</p>
 
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
@@ -72,7 +80,10 @@
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <button id="save-dialog" class="demo-button">Demo</button><span id="file-saved"></span>
+          <div class="demo">
+            <button class="demo-button" id="save-dialog">Demo</button>
+            <span class="demo-response" id="file-saved"></span>
+          </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
           <h5>Renderer Process</h5>
           <pre><code id="save-dialog-renderer"></pre></code>
