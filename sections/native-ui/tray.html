@@ -15,11 +15,11 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Tray
-        <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
-        </h2>
+        <button class="js-container-target toggle-button">Tray
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
+        </button>
         <div class="toggle-content">
-          <button id="put-in-tray">Demo</button><span id="tray-countdown"></span>
+          <button id="put-in-tray" class="demo-button">Demo</button><span id="tray-countdown"></span>
           <p>The demo button sends a message to the main process using the <code>ipc</code> module. In the main process the app is told to place an icon, with a context menu, in the tray.</p>
 
           <p>In this example the tray icon can be removed by clicking 'Remove' in the context menu or selecting the demo button again.</p>
