@@ -15,17 +15,21 @@
 
 .nav-title {
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1;
   margin: 0;
 }
 
+.nav-title strong {
+  font-weight: 600;
+}
+
 .nav-header-icon {
   position: absolute;
-  width: 48px;
-  height: 48px;
-  top: 1rem;
-  right: 3.6rem; /* magic */
+  width: 36px;
+  height: 36px;
+  top: 1.5rem; /* magic */
+  right: 1.75rem; /* magic */
 }
 
 
