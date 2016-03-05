@@ -74,15 +74,6 @@
   margin-right: .5em;
 }
 
-.content input {
-  font-size: 14px;
-  border: none;
-  padding: 14px 19px;
-  width: 300px;
-  vertical-align: top;
-  border-radius: 3px;
-}
-
 
 /* Support */
 
@@ -135,15 +126,33 @@
   padding: .4em 1.2em;
   background-color: transparent;
 }
-.demo-button:focus,
-.demo-button:active {
+.demo-button:focus {
   outline: none;
+  background-color: white;
+}
+.demo-button:active {
   border-color: hsl(0,0%,88%);
 }
 
 .demo-response {
   flex: 1;
   word-break: break-word;
+}
+
+.demo-input {
+  flex: 1;
+  border: 2px solid hsl(0,0%,88%);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.2em;
+  color: inherit;
+  padding: .4em .8em;
+  background-color: transparent;
+}
+.demo-input:focus {
+  outline: none;
+  border-color: hsl(0,0%,80%);
+  background-color: white;
 }
 
 
