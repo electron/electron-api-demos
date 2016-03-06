@@ -65,10 +65,10 @@
     <script type="text/javascript">
       var fs = require('fs');
       // New Window
-      var windowRendererContent = fs.readFileSync('renderer-process/windows/create-window.js');
+      var windowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/create-window.js');
       document.getElementById('new-window-renderer').innerHTML= windowRendererContent;
       // Manage Window
-      var manageWindowRendererContent = fs.readFileSync('renderer-process/windows/manage-window.js');
+      var manageWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/manage-window.js');
       document.getElementById('manage-window-renderer').innerHTML= manageWindowRendererContent;
     </script>
   </div><!-- end windows-view -->
