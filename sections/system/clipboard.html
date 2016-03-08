@@ -54,10 +54,10 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Copy
-      var copyToRendererContent = fs.readFileSync('renderer-process/system/copy.js');
+      var copyToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/copy.js');
       document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
       // Paste
-      var pasteToRendererContent = fs.readFileSync('renderer-process/system/paste.js');
+      var pasteToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/paste.js');
       document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
     </script>
   </div><!-- end clipboard-view -->

@@ -5,8 +5,13 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "lint" : "semistandard --verbose | snazzy",
-    "test": "mocha tests && npm run lint"
+    "lint": "semistandard --verbose | snazzy",
+    "test": "mocha tests && npm run lint",
+    "pack-mac": "electron-packager . 'Electron API Demos' --platform=darwin --arch=x64 --version=0.36.9 --icon=assets/app-icon/mac/app.icns --prune=true --out='../EAD-Packages'",
+    "pack-win": "electron-packager . 'Electron API Demos' --platform=win32 --arch=ia32   --version=0.36.9 --icon=assets/app-icon/win/app.ico --prune=true --out='../EAD-Packages'",
+    "pack-win-win": "electron-packager . Electron API Demos --platform=win32 --arch=ia32   --version=0.36.9 --icon=assets/app-icon/win/app.ico --prune=true --out=EAD-Packages",
+    "pack-lin": "electron-packager . 'Electron API Demos' --platform=linux --arch=x64   --version=0.36.9 --icon=assets/app-icon/png/64.png --prune=true --out='../EAD-Packages'",
+    "package": "npm run pack-mac && npm run pack-win && npm run pack-lin"
   },
   "semistandard": {
     "ignore": [
@@ -31,11 +36,12 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
+    "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.36.9",
     "mocha": "^2.3.4",
     "semistandard": "^7.0.3",
-    "spectron": "^0.36.1",
-    "snazzy": "^3.0.0"
+    "snazzy": "^3.0.0",
+    "spectron": "^0.36.1"
   },
   "dependencies": {
     "glob": "^6.0.4"
