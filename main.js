@@ -8,10 +8,10 @@ var glob = require('glob');
 var mainWindow = null;
 
 // Require and setup each JS file in the main-process dir
-glob('main-process/**/*.js', function (error, files) {
+glob(__dirname + '/main-process/**/*.js', function (error, files) {
   if (error) return console.log(error);
   files.forEach(function (file) {
-    require('./' + file).setup();
+    require(file).setup();
   });
 });
 
