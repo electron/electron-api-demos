@@ -53,11 +53,11 @@ describe('demo app', function () {
     it('shows the selected section in the main area', function () {
       return this.app.client.waitUntilWindowLoaded()
         .isVisible('#about-view').should.eventually.be.true
-        .click('button[data-view="windows"]')
+        .click('button[data-view="windows"]').pause(100)
         .waitForVisible('#windows-view')
         .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.true
         .isVisible('#pdf-view').should.eventually.be.false
-        .click('button[data-view="pdf"]')
+        .click('button[data-view="pdf"]').pause(100)
         .waitForVisible('#pdf-view')
         .isVisible('#windows-view').should.eventually.be.false
         .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.false
