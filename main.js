@@ -16,7 +16,7 @@ glob(__dirname + '/main-process/**/*.js', function (error, files) {
 });
 
 function createWindow () {
-  var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
+  var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png');
   mainWindow = new BrowserWindow({ width: 920, 'min-width': 680, height: 900, icon: iconPath });
   mainWindow.loadURL('file://' + __dirname + '/index.html');
   mainWindow.on('closed', function () {
