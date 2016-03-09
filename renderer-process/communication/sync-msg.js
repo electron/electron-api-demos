@@ -1,4 +1,5 @@
 var ipc = require('electron').ipcRenderer;
+
 var syncMsgBtn = document.getElementById('sync-msg');
 
 syncMsgBtn.addEventListener('click', function () {

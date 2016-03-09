@@ -1,20 +1,22 @@
 var BrowserWindow = require('electron').remote.BrowserWindow;
-var path = require('path');
 
 var manageWindowBtn = document.getElementById('manage-window');
 
 manageWindowBtn.addEventListener('click', function (event) {
-  var modalPath = 'file://' + path.join(process.cwd(), 'sections/windows/manage-modal.html');
+  var modalPath = 'file://' + __dirname + '/sections/windows/manage-modal.html';
   var win = new BrowserWindow({ width: 400, height: 225 });
 
-  win.on('move', function () {
-    setTimeout(function () {
-      win.center();
-    }, 250)
-  });
+  win.on('resize', updateReply);
+  win.on('move', updateReply);
 
-  // TODO alter this window's content?
   win.on('closed', function () { win = null; });
   win.loadURL(modalPath);
   win.show();
+
+  function updateReply () {
+    var mangageWindowReply = document.getElementById('manage-window-reply');
+    var message = 'Size: ' + win.getSize() + ' Position: ' + win.getPosition();
+
+    mangageWindowReply.innerText = message;
+  }
 });

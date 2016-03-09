@@ -41,12 +41,56 @@
 .content header .wrapper {
   padding-top: 2rem;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
   border-bottom: 1px solid hsl(0,0%,92%);
 }
 @media (min-width: 940px) {
   .content header .wrapper {
     padding-top: 4rem;
+  }
+}
+
+
+/* About */
+
+.content-item.about {
+  background-color: hsl(0,0%,98%);
+}
+
+.content-item.about header img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.content-item.about h2 {
+  margin: 0 0 1em 0;
+  font-size: 1.5em;
+  color: hsl(0, 0%, 66%);
+}
+
+@media (min-width: 940px) {
+  .columns {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 1.6em;
+  }
+  .columns p + h3 {
+    -webkit-column-break-before: always;
+  }
+}
+
+
+
+/* Section */
+
+.content-item > section:first-of-type {
+  margin-top: 2rem;
+}
+.content-item > section:last-of-type {
+  margin-bottom: 2rem;
+}
+@media (min-width: 940px) {
+  .content-item > section:last-of-type {
+    margin-bottom: 4rem;
   }
 }
 
@@ -58,15 +102,6 @@
   height: 32px;
   vertical-align: middle;
   margin-right: .5em;
-}
-
-.content input {
-  font-size: 14px;
-  border: none;
-  padding: 14px 19px;
-  width: 300px;
-  vertical-align: top;
-  border-radius: 3px;
 }
 
 
@@ -90,7 +125,6 @@
   padding: 1rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
   border-radius: 6px;
-  margin-bottom: 4rem;
 }
 
 .pro-tip strong {
@@ -105,9 +139,15 @@
 }
 
 
-/* Button */
+/* Demo */
 
-button {
+.demo {
+  display: flex;
+  align-items: center;
+}
+
+.demo-button {
+  align-self: flex-start;
   border: 2px solid;
   border-radius: 4px;
   font: inherit;
@@ -116,10 +156,33 @@ button {
   padding: .4em 1.2em;
   background-color: transparent;
 }
-button:focus,
-button:active {
+.demo-button:focus {
   outline: none;
+  background-color: white;
+}
+.demo-button:active {
   border-color: hsl(0,0%,88%);
+}
+
+.demo-response {
+  flex: 1;
+  word-break: break-word;
+}
+
+.demo-input {
+  flex: 1;
+  border: 2px solid hsl(0,0%,88%);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.2em;
+  color: inherit;
+  padding: .4em .8em;
+  background-color: transparent;
+}
+.demo-input:focus {
+  outline: none;
+  border-color: hsl(0,0%,80%);
+  background-color: white;
 }
 
 
@@ -148,20 +211,27 @@ pre code {
 
 /* Clicky */
 
-.content h2 {
+.toggle-button {
   display: block;
   margin: 0;
   padding: .5em 1em;
   line-height: 1.5;
+  font: inherit;
   font-weight: 600;
-  border-left: 2px solid;
+  font-size: 1.2em;
+  text-align: left;
+  border: none;
+  border-left: 2px solid hsl(0,0%,88%);
+  color: inherit;
+  background-color: transparent;
   transition: border-color .12s;
   outline: none;
 }
-.content h2:active {
-  border-color: hsl(0,0%,88%);
+.toggle-button:focus,
+.toggle-button:active {
+  border-color: inherit;
 }
-.active h2 {
+.active toggle-button {
   border-left-color: transparent;
 }
 
@@ -185,6 +255,7 @@ pre code {
 .exlink:focus {
   cursor: pointer;
   text-decoration: underline;
+  outline: none;
 }
 
 

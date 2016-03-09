@@ -1,4 +1,4 @@
-var shell = require('shell');
+var shell = require('electron').shell;
 
 var links = document.querySelectorAll('a[href]');
 Array.prototype.forEach.call(links, function (link) {

@@ -15,11 +15,13 @@
 
       <section>
         <div class="wrapper">
-          <h2 class="js-container-target">Open Path in File Manager
+          <button class="js-container-target toggle-button">Open Path in File Manager
             <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-          </h2>
+          </button>
           <div class="toggle-content">
-            <button id="open-file-manager">Demo</button>
+            <div class="demo">
+              <button class="demo-button" id="open-file-manager">Demo</button>
+            </div>
             <p>This demonstrates using the <code>shell</code> module to open the system file manager at a particular location.</p>
             <p>Clicking the demo button will open your file manager at the root.</p>
             <h5>Renderer Process</h5>
@@ -30,11 +32,13 @@
 
       <section>
         <div class="wrapper">
-          <h2 class="js-container-target">Open External Links
+          <button class="js-container-target toggle-button">Open External Links
             <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-          </h2>
+          </button>
           <div class="toggle-content">
-            <button id="open-ex-links">Demo</button>
+            <div class="demo">
+              <button class="demo-button" id="open-ex-links">Demo</button>
+            </div>
             <p>If you do not want your app to open website links <em>within</em> the app, you can use the <code>shell</code> module to open them externally. When clicked, the links will open outside of your app and in the user's default web browser.</p>
             <p>When the demo button is clicked, the electron website will open in your browser.<p>
             <h5>Renderer Process</h5>
@@ -73,10 +77,10 @@ Array.prototype.forEach.call(links, function (link) {
       <script type="text/javascript">
         var fs = require('fs');
         // Open File Manager
-        var openFileManagerRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
+        var openFileManagerRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/file-manager.js');
         document.getElementById('file-manager-renderer').innerHTML= openFileManagerRendererContent;
         // Open External Links
-        var exLinksRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
+        var exLinksRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/ex-links.js');
         document.getElementById('ex-links-renderer').innerHTML= exLinksRendererContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->

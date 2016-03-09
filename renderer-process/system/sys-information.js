@@ -1,6 +1,6 @@
 var os = require('os');
-var sysInfoBtn = document.getElementById('sys-info');
 
+var sysInfoBtn = document.getElementById('sys-info');
 var homeDir = os.homedir();
 
 sysInfoBtn.addEventListener('click', function () {

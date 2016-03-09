@@ -15,12 +15,15 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Copy
+        <button class="js-container-target toggle-button">Copy
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-        </h2>
+        </button>
         <div class="toggle-content">
-          <button id="copy-to">Copy</button><input id="copy-to-input" placeholder="Click copy."></input>
-          <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste the phrase from the clipboard.</p>
+          <div class="demo">
+            <button class="demo-button" id="copy-to">Copy</button>
+            <input class="demo-input" id="copy-to-input" placeholder="Click copy."></input>
+          </div>
+          <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste (CMD + V or CTRL + V) the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
           <pre><code id="copy-to-renderer"></pre></code>
         </div>
@@ -29,11 +32,14 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Paste
+        <button class="js-container-target toggle-button">Paste
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
-        </h2>
+        </button>
         <div class="toggle-content">
-          <button id="paste-to">Paste</button><span id="paste-from"></span>
+          <div class="demo">
+            <button class="demo-button" id="paste-to">Paste</button>
+            <span class="demo-response" id="paste-from"></span>
+          </div>
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
@@ -48,10 +54,10 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Copy
-      var copyToRendererContent = fs.readFileSync('renderer-process/system/copy.js');
+      var copyToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/copy.js');
       document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
       // Paste
-      var pasteToRendererContent = fs.readFileSync('renderer-process/system/paste.js');
+      var pasteToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/paste.js');
       document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
     </script>
   </div><!-- end clipboard-view -->

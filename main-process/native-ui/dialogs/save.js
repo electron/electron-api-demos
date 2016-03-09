@@ -1,11 +1,11 @@
 var ipc = require('electron').ipcMain;
-var dialog = require('dialog');
+var dialog = require('electron').dialog;
 
 module.exports.setup = function () {
   ipc.on('save-dialog', function (event) {
     var options = {
-      'title': 'Save an Image',
-      'filters': [
+      title: 'Save an Image',
+      filters: [
         { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
       ]
     };

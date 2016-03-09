@@ -14,12 +14,15 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Print to PDF
+        <button class="js-container-target toggle-button">Print to PDF
           <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
-        </h2>
+        </button>
         <div class="toggle-content">
-          <button id="print-pdf">Demo</button><span id="pdf-path"></span>
-          <p>To demonstrate the print to PDF functionality, the demo button above will save and open a PDF of the app.</p>
+          <div class="demo">
+            <button class="demo-button" id="print-pdf">Demo</button>
+            <span class="demo-response" id="pdf-path"></span>
+          </div>
+          <p>To demonstrate the print to PDF functionality, the demo button above will save this page as a PDF and, if you have a PDF viewer, open the file.</p>
           <p>In a real-world application you're more likely to add this to application menu, but for the purposes of the demo we've set it to the demo button.</p>
           <h5>Renderer Process</h5>
           <pre><code id="print-pdf-renderer"></pre></code>
@@ -49,9 +52,9 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Open File Dialog
-      var printPDFRendererContent = fs.readFileSync('renderer-process/printing/pdf.js');
+      var printPDFRendererContent = fs.readFileSync(__dirname + '/renderer-process/printing/pdf.js');
       document.getElementById('print-pdf-main').innerHTML= printPDFRendererContent;
-      var printPDFMainContent = fs.readFileSync('main-process/printing/pdf.js');
+      var printPDFMainContent = fs.readFileSync(__dirname + '/main-process/printing/pdf.js');
       document.getElementById('print-pdf-renderer').innerHTML= printPDFMainContent;
     </script>
   </div><!-- end pdf-view -->

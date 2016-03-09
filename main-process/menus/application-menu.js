@@ -1,8 +1,8 @@
+var BrowserWindow = require('electron').BrowserWindow;
 var Menu = require('electron').Menu;
 var app = require('electron').app;
 
 module.exports.setup = function () {
-  // TODO Windows accelerators?
   var template = [
     {
       label: 'Edit',
@@ -50,6 +50,15 @@ module.exports.setup = function () {
           accelerator: 'CmdOrCtrl+R',
           click: function (item, focusedWindow) {
             if (focusedWindow) {
+              // on reload, start fresh and close any old
+              // open secondary windows
+              if (focusedWindow.id === 1) {
+                BrowserWindow.getAllWindows().forEach(function (win) {
+                  if (win.id > 1) {
+                    win.close();
+                  }
+                });
+              }
               focusedWindow.reload();
             }
           }
@@ -97,7 +106,7 @@ module.exports.setup = function () {
                 buttons: ['Ok'],
                 message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
               };
-              require('electron').dialog.showMessageBox(focusedWindow, options);
+              require('electron').dialog.showMessageBox(focusedWindow, options, function () { });
             }
           }
         }

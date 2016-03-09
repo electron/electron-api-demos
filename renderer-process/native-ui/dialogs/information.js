@@ -1,5 +1,6 @@
-var informationBtn = document.getElementById('information-dialog');
 var ipc = require('electron').ipcRenderer;
+
+var informationBtn = document.getElementById('information-dialog');
 
 informationBtn.addEventListener('click', function (event) {
   ipc.send('open-information-dialog');
