@@ -57,7 +57,7 @@ module.exports.setup = function () {
                   if (win.id > 1) {
                     win.close();
                   }
-                })
+                });
               }
               focusedWindow.reload();
             }
@@ -106,7 +106,7 @@ module.exports.setup = function () {
                 buttons: ['Ok'],
                 message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
               };
-              require('electron').dialog.showMessageBox(focusedWindow, options, function() { });
+              require('electron').dialog.showMessageBox(focusedWindow, options, function () { });
             }
           }
         }
