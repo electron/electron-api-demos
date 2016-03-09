@@ -2,13 +2,15 @@
 
 This app has been developed to be a lightweight Electron app, demonstrating how to create a basic Electron app with a few exceptions that have been made for the sake of code organization in regards the the demos themselves.
 
-All of the sample code shown in the app _is the actual code used in the app_. These JavaScriipt bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, printing, system, windows).
+All of the sample code shown in the app _is the actual code used in the app_. These JavaScript bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, printing, system, windows).
 
 This was done for maintainability—code updates only have to be made in one place—and organization—it's easy to find the sample code you're looking for.
 
 All of the pages (or views) are separate `.html` files which are appended onto the `index.html` using [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/).
 
 ## Folder Structure
+
+![Digram of App Structure and Operations](/assets/img/diagram.png)
 
 #### `assets`
 This directory contains assets for the app itself: CSS, fonts, images and shared JavaScript libraries or helpers.
