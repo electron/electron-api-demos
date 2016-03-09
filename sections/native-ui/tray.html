@@ -15,11 +15,14 @@
 
     <section>
       <div class="wrapper">
-        <h2 class="js-container-target">Tray
-        <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
-        </h2>
+        <button class="js-container-target toggle-button">Tray
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
+        </button>
         <div class="toggle-content">
-          <button id="put-in-tray">Demo</button><span id="tray-countdown"></span>
+          <div class="demo">
+            <button class="demo-button" id="put-in-tray">Demo</button>
+            <span class="demo-response" id="tray-countdown"></span>
+          </div>
           <p>The demo button sends a message to the main process using the <code>ipc</code> module. In the main process the app is told to place an icon, with a context menu, in the tray.</p>
 
           <p>In this example the tray icon can be removed by clicking 'Remove' in the context menu or selecting the demo button again.</p>
@@ -48,9 +51,9 @@
     <script type="text/javascript">
       var fs = require('fs');
       // Put in Tray
-      var trayRendererContent = fs.readFileSync('renderer-process/native-ui/tray/tray.js');
+      var trayRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/tray/tray.js');
       document.getElementById('tray-renderer').innerHTML= trayRendererContent;
-      var trayMainContent = fs.readFileSync('main-process/native-ui/tray/tray.js');
+      var trayMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/tray/tray.js');
       document.getElementById('tray-main').innerHTML= trayMainContent;
     </script>
   </div><!-- end tray-view -->

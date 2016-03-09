@@ -9,7 +9,7 @@ document.body.addEventListener('click', function (event) {
 });
 
 function classContains (event, className) {
-  return event.target.classList.contains(className)
+  return event.target.classList.contains(className);
 }
 
 function removeSelectedShow () {
