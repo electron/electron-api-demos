@@ -67,12 +67,15 @@ describe('demo app', function () {
 
   describe('when a task is clicked', function () {
     it('it expands', function () {
+      var onlyFirstVisible = Array(20).fill(false);
+      onlyFirstVisible[0] = true;
+
       return this.app.client.waitUntilWindowLoaded()
         .click('button[data-view="windows"]')
         .waitForVisible('#windows-view')
         .click('.js-container-target')
         .waitForVisible('.toggle-content')
-        .isVisible('.toggle-content').should.eventually.deep.equal([ true, false ]);
+        .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible);
     });
   });
 });
