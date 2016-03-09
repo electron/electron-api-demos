@@ -77,10 +77,10 @@ Array.prototype.forEach.call(links, function (link) {
       <script type="text/javascript">
         var fs = require('fs');
         // Open File Manager
-        var openFileManagerRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/file-manager.js');
+        var openFileManagerRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/file-manager.js');
         document.getElementById('file-manager-renderer').innerHTML= openFileManagerRendererContent;
         // Open External Links
-        var exLinksRendererContent = fs.readFileSync('renderer-process/native-ui/ex-links-file-manager/ex-links.js');
+        var exLinksRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/ex-links.js');
         document.getElementById('ex-links-renderer').innerHTML= exLinksRendererContent;
       </script>
     </div><!-- end ex-links-file-manager-view -->

@@ -40,8 +40,9 @@
         <div class="toggle-content">
           <div class="demo">
             <button class="demo-button" id="manage-window">Demo</button>
+            <span class="demo-response" id="manage-window-reply"></span>
           </div>
-          <p>In this demo we create a new window, listen for a move event and then set the window to position itself back in the center of the screen.</p>
+          <p>In this demo we create a new window and listen for move and resize events on it. Click the demo button, change the new window and see the dimenions and poisition update here, above.</p>
 
           <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
@@ -69,10 +70,10 @@
     <script type="text/javascript">
       var fs = require('fs');
       // New Window
-      var windowRendererContent = fs.readFileSync('renderer-process/windows/create-window.js');
+      var windowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/create-window.js');
       document.getElementById('new-window-renderer').innerHTML= windowRendererContent;
       // Manage Window
-      var manageWindowRendererContent = fs.readFileSync('renderer-process/windows/manage-window.js');
+      var manageWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/manage-window.js');
       document.getElementById('manage-window-renderer').innerHTML= manageWindowRendererContent;
     </script>
   </div><!-- end windows-view -->
