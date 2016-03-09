@@ -1,5 +1,3 @@
-var path = require('path');
-
 var BrowserWindow = require('electron').remote.BrowserWindow;
 var ipcRenderer = require('electron').ipcRenderer;
 
