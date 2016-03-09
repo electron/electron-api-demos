@@ -42,8 +42,8 @@ describe('demo app', function () {
       .isWindowDevToolsOpened().should.eventually.be.false
       .isWindowVisible().should.eventually.be.true
       .isWindowFocused().should.eventually.be.true
-      .getWindowWidth().should.eventually.equal(920)
-      .getWindowHeight().should.eventually.equal(900)
+      .getWindowWidth().should.eventually.be.above(0)
+      .getWindowHeight().should.eventually.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .isVisible('#about-view').should.eventually.be.true
       .isVisible('#index-view').should.eventually.be.true;
