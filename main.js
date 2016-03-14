@@ -5,6 +5,9 @@ var BrowserWindow = require('electron').BrowserWindow;
 
 var glob = require('glob');
 
+require('electron').hideInternalModules()
+process.throwDeprecation = true;
+
 var mainWindow = null;
 
 // Require and setup each JS file in the main-process dir
