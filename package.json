@@ -41,7 +41,7 @@
     "mocha": "^2.3.4",
     "semistandard": "^7.0.3",
     "snazzy": "^3.0.0",
-    "spectron": "^0.36.1"
+    "spectron": "^0.37.0"
   },
   "dependencies": {
     "glob": "^6.0.4"
