@@ -23,12 +23,12 @@
 }
 .content-item.show {
   display: block;
-  animation: slide-in .36s cubic-bezier(0, .20, .20, .96);
+  /*animation: slide-in .36s cubic-bezier(0, .20, .20, .96);*/
 }
-@keyframes slide-in {
+/*@keyframes slide-in {
     0% { opacity: 0; transform: translateX(-20px); }
   100% { opacity: 1; transform: translateX(0); }
-}
+}*/
 
 
 /* wrapper */
@@ -326,7 +326,10 @@ pre code {
 .hljs {
   position: relative;
 }
-.hljs:hover {
+.hljs:hover,
+.hljs:active {
+  will-change: z-index;
+  z-index: 1;
   margin-left: 1px;
   left: -1px;
 }
