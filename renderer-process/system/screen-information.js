@@ -1,4 +1,4 @@
-var electronScreen = require('screen');
+var electronScreen = require('electron').screen;
 
 var screenInfoBtn = document.getElementById('screen-info');
 var size = electronScreen.getPrimaryDisplay().workAreaSize;
