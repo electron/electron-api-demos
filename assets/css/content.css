@@ -16,20 +16,22 @@
   overflow-y: auto;
 }
 
+/* Show/hide the content */
+
 .content-item {
-  pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-20px);
-  transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
+  display: none;
 }
 .content-item.show {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-  transform: translateX(0);
-  transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
+  display: block;
+  animation: slide-in .36s cubic-bezier(0, .20, .20, .96);
 }
+@keyframes slide-in {
+    0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+/* wrapper */
 
 .wrapper {
   position: relative;
@@ -311,4 +313,20 @@ pre code {
   transform: rotate(-45deg);
   /*border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) hsl(0,0%,96%) hsla(0, 0%, 0%, 0);*/
   /*box-shadow: 1px 1px 0 hsl(0,0%,88%);*/
+}
+
+
+/* Hacks --------------------- */
+
+/* Fixes horizontal scrolling in code blocks on OS X El Cap (10.11.3), retina screen
+ *
+ * By adding and removing 1px, you don't see any visual change,
+ * but it should trigger a reflow, which enables the scrolling.
+ */
+.hljs {
+  position: relative;
+}
+.hljs:hover {
+  margin-left: 1px;
+  left: -1px;
 }
