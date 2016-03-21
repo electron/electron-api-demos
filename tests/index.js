@@ -6,15 +6,15 @@ var path = require('path');
 chai.should();
 chai.use(chaiAsPromised);
 
-var afterEach = global.afterEach;
-var beforeEach = global.beforeEach;
+var after = global.after;
+var before = global.before;
 var describe = global.describe;
 var it = global.it;
 
 describe('demo app', function () {
   this.timeout(30000);
 
-  beforeEach(function () {
+  before(function () {
     this.app = new Application({
       path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
       args: [
@@ -25,11 +25,11 @@ describe('demo app', function () {
     return this.app.start();
   });
 
-  beforeEach(function () {
+  before(function () {
     chaiAsPromised.transferPromiseness = this.app.client.transferPromiseness;
   });
 
-  afterEach(function () {
+  after(function () {
     if (this.app && this.app.isRunning()) {
       return this.app.stop();
     }
