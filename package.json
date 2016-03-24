@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "lint": "semistandard --verbose | snazzy",
+    "lint": "standard --verbose | snazzy",
     "test": "mocha tests && npm run lint",
     "sign-win": "signcode -spc ~/electron-api-demos.spc -v ~/electron-api-demos.pvk -a sha1 -$ commercial -n 'Electron API Demos' -i http://electron.atom.io  -t http://timestamp.verisign.com/scripts/timstamp.dll -tr 10 '../EAD-Packages/Electron API Demos-win32-ia32/Electron API Demos.exe'",
     "pack-mac": "electron-packager . 'Electron API Demos' --platform=darwin --arch=x64 --version=0.36.9 --icon=assets/app-icon/mac/app.icns --prune=true --out='../EAD-Packages' --sign='Developer ID Application: GitHub'",
@@ -14,7 +14,7 @@
     "pack-lin": "electron-packager . 'Electron API Demos' --platform=linux --arch=x64   --version=0.36.9 --icon=assets/app-icon/png/64.png --prune=true --out='../EAD-Packages'",
     "package": "npm run pack-mac && npm run pack-win && npm run pack-lin"
   },
-  "semistandard": {
+  "standard": {
     "ignore": [
       "/assets/highlight.pack.js"
     ]
@@ -40,7 +40,6 @@
     "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.37.2",
     "mocha": "^2.3.4",
-    "semistandard": "^7.0.3",
     "snazzy": "^3.0.0",
     "spectron": "~1.37.0"
   },
