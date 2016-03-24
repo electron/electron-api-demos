@@ -1,5 +1,4 @@
 var BrowserWindow = require('electron').remote.BrowserWindow;
-
 var newWindowBtn = document.getElementById('new-window');
 
 newWindowBtn.addEventListener('click', function (event) {

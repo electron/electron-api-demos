@@ -10,7 +10,7 @@
 
         <p>This is a main process module because this process is more efficient with native utilities and it allows the call to happen without interupting the visible elements in your page's renderer process.</p>
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.8/api/dialog/">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/dialog/">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
@@ -44,7 +44,7 @@
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the error dialog.</p>
 
-          <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon start up.</p>
+          <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon startup.</p>
           <h5>Renderer Process</h5>
           <pre><code id="error-dialog-renderer"></pre></code>
           <h5>Main Process</h5>
@@ -99,7 +99,7 @@
           <h2 class="avoid-clicks">ProTip</h2>
           <div class="non-toggle-content">
             <strong>The sheet-style dialog on OS X.</strong>
-            <p>On OS X you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first arcument in the dialog method.</p>
+            <p>On OS X you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first argument in the dialog method.</p>
             <pre><code>var ipc = require('electron').ipcMain;
 var dialog = require('dialog');
 var BrowserWindow = require('browser-window');

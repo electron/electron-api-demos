@@ -1,5 +1,4 @@
 var BrowserWindow = require('electron').remote.BrowserWindow;
-
 var manageWindowBtn = document.getElementById('manage-window');
 
 manageWindowBtn.addEventListener('click', function (event) {
@@ -8,7 +7,6 @@ manageWindowBtn.addEventListener('click', function (event) {
 
   win.on('resize', updateReply);
   win.on('move', updateReply);
-
   win.on('closed', function () { win = null; });
   win.loadURL(modalPath);
   win.show();

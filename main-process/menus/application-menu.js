@@ -1,6 +1,7 @@
-var BrowserWindow = require('electron').BrowserWindow;
-var Menu = require('electron').Menu;
-var app = require('electron').app;
+var electron = require('electron');
+var BrowserWindow = electron.BrowserWindow;
+var Menu = electron.Menu;
+var app = electron.app;
 
 module.exports.setup = function () {
   var template = [
@@ -106,7 +107,7 @@ module.exports.setup = function () {
                 buttons: ['Ok'],
                 message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
               };
-              require('electron').dialog.showMessageBox(focusedWindow, options, function () { });
+              electron.dialog.showMessageBox(focusedWindow, options, function () { });
             }
           }
         }
@@ -134,14 +135,14 @@ module.exports.setup = function () {
       submenu: [
         {
           label: 'Learn More',
-          click: function () { require('electron').shell.openExternal('http://electron.atom.io'); }
+          click: function () { electron.shell.openExternal('http://electron.atom.io'); }
         }
       ]
     }
   ];
 
   if (process.platform === 'darwin') {
-    var name = require('electron').app.getName();
+    var name = electron.app.getName();
     template.unshift({
       label: name,
       submenu: [
