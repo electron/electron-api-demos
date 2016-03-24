@@ -1,5 +1,5 @@
-var ipc = require('electron').ipcMain;
-var dialog = require('electron').dialog;
+var ipc = require('electron').ipcMain
+var dialog = require('electron').dialog
 
 module.exports.setup = function () {
   ipc.on('save-dialog', function (event) {
@@ -8,9 +8,9 @@ module.exports.setup = function () {
       filters: [
         { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
       ]
-    };
+    }
     dialog.showSaveDialog(options, function (filename) {
-      event.sender.send('saved-file', filename);
-    });
-  });
-};
+      event.sender.send('saved-file', filename)
+    })
+  })
+}
