@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electronjs/electron-api-demos.git"
+    "url": "git+https://github.com/electron/electron-api-demos.git"
   },
   "keywords": [
     "Electron",
@@ -31,9 +31,9 @@
   "author": "GitHub",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electronjs/electron-api-demos/issues"
+    "url": "https://github.com/electron/electron-api-demos/issues"
   },
-  "homepage": "https://github.com/electronjs/electron-api-demos#readme",
+  "homepage": "https://github.com/electron/electron-api-demos#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
