@@ -135,7 +135,7 @@ module.exports.setup = function () {
       submenu: [
         {
           label: 'Learn More',
-          click: function () { electron.shell.openExternal('http://electron.atom.io'); }
+          click: function () { electron.shell.openExternal('http://electron.atom.io') }
         }
       ]
     }
@@ -181,7 +181,7 @@ module.exports.setup = function () {
         {
           label: 'Quit',
           accelerator: 'Command+Q',
-          click: function () { app.quit(); }
+          click: function () { app.quit() }
         }
       ]
     })

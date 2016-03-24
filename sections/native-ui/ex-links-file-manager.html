@@ -55,18 +55,18 @@
               <strong>Open all outbound links externally.</strong>
               <p>You may want to open all <code>http</code> and <code>https</code> links outside of your app. To do this, query the document and loop through each link and add a listener as shown below.</h5>
             <pre>
-<code>var shell = require('shell');
-var links = document.querySelectorAll('a[href]');
+<code>var shell = require('shell')
+var links = document.querySelectorAll('a[href]')
 
 Array.prototype.forEach.call(links, function (link) {
-  var url = link.getAttribute('href');
+  var url = link.getAttribute('href')
   if (url.indexOf('http') === 0) {
     link.addEventListener('click', function (e) {
-      e.preventDefault();
-      shell.openExternal(url);
-    });
+      e.preventDefault()
+      shell.openExternal(url)
+    })
   }
-});</code></pre>
+})</code></pre>
             </div>
           </div>
         </div>
