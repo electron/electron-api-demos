@@ -40,8 +40,8 @@
     "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.37.2",
     "mocha": "^2.3.4",
-    "snazzy": "^3.0.0",
-    "spectron": "~1.37.0"
+    "spectron": "~1.37.0",
+    "standard-format": "^2.1.1"
   },
   "dependencies": {
     "glob": "^6.0.4"
