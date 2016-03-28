@@ -1,5 +1,5 @@
-var ipc = require('electron').ipcMain;
-var dialog = require('electron').dialog;
+var ipc = require('electron').ipcMain
+var dialog = require('electron').dialog
 
 module.exports.setup = function () {
   ipc.on('open-information-dialog', function (event) {
@@ -8,9 +8,9 @@ module.exports.setup = function () {
       title: 'Information',
       message: "This is an information dialog. Isn't it nice?",
       buttons: ['Yes', 'No']
-    };
+    }
     dialog.showMessageBox(options, function (index) {
-      event.sender.send('information-dialog-selection', index);
-    });
-  });
-};
+      event.sender.send('information-dialog-selection', index)
+    })
+  })
+}

@@ -1,18 +1,18 @@
-var Application = require('spectron').Application;
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
-var path = require('path');
+var Application = require('spectron').Application
+var chai = require('chai')
+var chaiAsPromised = require('chai-as-promised')
+var path = require('path')
 
-chai.should();
-chai.use(chaiAsPromised);
+chai.should()
+chai.use(chaiAsPromised)
 
-var after = global.after;
-var before = global.before;
-var describe = global.describe;
-var it = global.it;
+var after = global.after
+var before = global.before
+var describe = global.describe
+var it = global.it
 
 describe('demo app', function () {
-  this.timeout(30000);
+  this.timeout(30000)
 
   before(function () {
     this.app = new Application({
@@ -21,19 +21,19 @@ describe('demo app', function () {
         path.join(__dirname, '..')
       ],
       waitTimeout: 10000
-    });
-    return this.app.start();
-  });
+    })
+    return this.app.start()
+  })
 
   before(function () {
-    chaiAsPromised.transferPromiseness = this.app.client.transferPromiseness;
-  });
+    chaiAsPromised.transferPromiseness = this.app.client.transferPromiseness
+  })
 
   after(function () {
     if (this.app && this.app.isRunning()) {
-      return this.app.stop();
+      return this.app.stop()
     }
-  });
+  })
 
   it('opens a window displaying the about page and nav bar', function () {
     return this.app.client.waitUntilWindowLoaded()
@@ -46,8 +46,8 @@ describe('demo app', function () {
       .getWindowHeight().should.eventually.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .isVisible('#about-view').should.eventually.be.true
-      .isVisible('#index-view').should.eventually.be.true;
-  });
+      .isVisible('#index-view').should.eventually.be.true
+  })
 
   describe('when clicking on a section from the nav bar', function () {
     it('shows the selected section in the main area', function () {
@@ -61,21 +61,21 @@ describe('demo app', function () {
         .waitForVisible('#pdf-view')
         .isVisible('#windows-view').should.eventually.be.false
         .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.false
-        .isExisting('button.is-selected[data-view="pdf"]').should.eventually.be.true;
-    });
-  });
+        .isExisting('button.is-selected[data-view="pdf"]').should.eventually.be.true
+    })
+  })
 
   describe('when a task is clicked', function () {
     it('it expands', function () {
-      var onlyFirstVisible = Array(20).fill(false);
-      onlyFirstVisible[0] = true;
+      var onlyFirstVisible = Array(20).fill(false)
+      onlyFirstVisible[0] = true
 
       return this.app.client.waitUntilWindowLoaded()
         .click('button[data-view="windows"]')
         .waitForVisible('#windows-view')
         .click('.js-container-target')
         .waitForVisible('.toggle-content')
-        .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible);
-    });
-  });
-});
+        .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible)
+    })
+  })
+})

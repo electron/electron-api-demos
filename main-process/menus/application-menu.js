@@ -1,7 +1,7 @@
-var electron = require('electron');
-var BrowserWindow = electron.BrowserWindow;
-var Menu = electron.Menu;
-var app = electron.app;
+var electron = require('electron')
+var BrowserWindow = electron.BrowserWindow
+var Menu = electron.Menu
+var app = electron.app
 
 module.exports.setup = function () {
   var template = [
@@ -56,11 +56,11 @@ module.exports.setup = function () {
               if (focusedWindow.id === 1) {
                 BrowserWindow.getAllWindows().forEach(function (win) {
                   if (win.id > 1) {
-                    win.close();
+                    win.close()
                   }
-                });
+                })
               }
-              focusedWindow.reload();
+              focusedWindow.reload()
             }
           }
         },
@@ -68,14 +68,14 @@ module.exports.setup = function () {
           label: 'Toggle Full Screen',
           accelerator: (function () {
             if (process.platform === 'darwin') {
-              return 'Ctrl+Command+F';
+              return 'Ctrl+Command+F'
             } else {
-              return 'F11';
+              return 'F11'
             }
           })(),
           click: function (item, focusedWindow) {
             if (focusedWindow) {
-              focusedWindow.setFullScreen(!focusedWindow.isFullScreen());
+              focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
             }
           }
         },
@@ -83,14 +83,14 @@ module.exports.setup = function () {
           label: 'Toggle Developer Tools',
           accelerator: (function () {
             if (process.platform === 'darwin') {
-              return 'Alt+Command+I';
+              return 'Alt+Command+I'
             } else {
-              return 'Ctrl+Shift+I';
+              return 'Ctrl+Shift+I'
             }
           })(),
           click: function (item, focusedWindow) {
             if (focusedWindow) {
-              focusedWindow.toggleDevTools();
+              focusedWindow.toggleDevTools()
             }
           }
         },
@@ -106,8 +106,8 @@ module.exports.setup = function () {
                 title: 'Application Menu Demo',
                 buttons: ['Ok'],
                 message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
-              };
-              electron.dialog.showMessageBox(focusedWindow, options, function () { });
+              }
+              electron.dialog.showMessageBox(focusedWindow, options, function () {})
             }
           }
         }
@@ -135,14 +135,14 @@ module.exports.setup = function () {
       submenu: [
         {
           label: 'Learn More',
-          click: function () { electron.shell.openExternal('http://electron.atom.io'); }
+          click: function () { electron.shell.openExternal('http://electron.atom.io') }
         }
       ]
     }
-  ];
+  ]
 
   if (process.platform === 'darwin') {
-    var name = electron.app.getName();
+    var name = electron.app.getName()
     template.unshift({
       label: name,
       submenu: [
@@ -181,10 +181,10 @@ module.exports.setup = function () {
         {
           label: 'Quit',
           accelerator: 'Command+Q',
-          click: function () { app.quit(); }
+          click: function () { app.quit() }
         }
       ]
-    });
+    })
     // Window menu.
     template[3].submenu.push(
       {
@@ -194,9 +194,9 @@ module.exports.setup = function () {
         label: 'Bring All to Front',
         role: 'front'
       }
-    );
+    )
   }
 
-  var menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
-};
+  var menu = Menu.buildFromTemplate(template)
+  Menu.setApplicationMenu(menu)
+}

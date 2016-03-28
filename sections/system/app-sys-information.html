@@ -78,11 +78,11 @@
             <p>Electron includes verions of Chromium, Node.js and V8. You can find exactly which version by checking with the <code>process</code> module.</p>
             <p>Get there quickly by opening up developer tools in an Electron app and typing <code>process.versions</code>.</p>
             <pre><code>// Returns version of Chromium in use
-process.versions.chrome;
+process.versions.chrome
 // Returns version of V8 in use
-process.versions.v8;
+process.versions.v8
 // Returns version of Node in use
-process.versions.node;</code></pre>
+process.versions.node</code></pre>
           </div>
         </div>
       </div>
@@ -93,16 +93,16 @@ process.versions.node;</code></pre>
     <script type="text/javascript" src="renderer-process/system/screen-information.js"></script>
 
     <script type="text/javascript">
-      var fs = require('fs');
+      var fs = require('fs')
       // App Information
-      var appInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/app-information.js');
-      document.getElementById('app-info-renderer').innerHTML= appInfoRendererContent;
+      var appInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/app-information.js')
+      document.getElementById('app-info-renderer').innerHTML= appInfoRendererContent
       // Sys Information
-      var sysInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/sys-information.js');
-      document.getElementById('sys-info-renderer').innerHTML= sysInfoRendererContent;
+      var sysInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/sys-information.js')
+      document.getElementById('sys-info-renderer').innerHTML= sysInfoRendererContent
       // Screen Information
-      var screenInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/screen-information.js');
-      document.getElementById('screen-info-renderer').innerHTML= screenInfoRendererContent;
+      var screenInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/screen-information.js')
+      document.getElementById('screen-info-renderer').innerHTML= screenInfoRendererContent
     </script>
   </div><!-- end app-sys-information -->
 </template>

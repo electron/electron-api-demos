@@ -1,7 +1,7 @@
-var shell = require('electron').shell;
+var shell = require('electron').shell
 
-var exLinksBtn = document.getElementById('open-ex-links');
+var exLinksBtn = document.getElementById('open-ex-links')
 
 exLinksBtn.addEventListener('click', function (event) {
-  shell.openExternal('http://electron.atom.io');
-});
+  shell.openExternal('http://electron.atom.io')
+})
