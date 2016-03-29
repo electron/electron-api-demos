@@ -43,18 +43,13 @@
             <p>When the demo button is clicked, the electron website will open in your browser.<p>
             <h5>Renderer Process</h5>
             <pre><code id="ex-links-renderer"></pre></code>
-          </div>
-        </div>
-      </section>
 
-      <section>
-        <div class="wrapper">
-          <div class="pro-tip">
-            <h2 class="avoid-clicks">ProTip</h2>
-            <div class="non-toggle-content">
-              <strong>Open all outbound links externally.</strong>
-              <p>You may want to open all <code>http</code> and <code>https</code> links outside of your app. To do this, query the document and loop through each link and add a listener as shown below.</h5>
-            <pre>
+            <div class="pro-tip">
+              <h2 class="avoid-clicks">ProTip</h2>
+              <div class="non-toggle-content">
+                <strong>Open all outbound links externally.</strong>
+                <p>You may want to open all <code>http</code> and <code>https</code> links outside of your app. To do this, query the document and loop through each link and add a listener as shown below.</h5>
+              <pre>
 <code>var shell = require('shell')
 var links = document.querySelectorAll('a[href]')
 
@@ -67,6 +62,7 @@ Array.prototype.forEach.call(links, function (link) {
     })
   }
 })</code></pre>
+              </div>
             </div>
           </div>
         </div>
