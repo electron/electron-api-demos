@@ -28,8 +28,21 @@
           <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="new-window-renderer"></pre></code>
+
+          <div class="pro-tip">
+            <h2 class="avoid-clicks">ProTip</h2>
+            <div class="non-toggle-content">
+              <strong>Use an invisible browser window to run background tasks.</strong>
+              <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
+            <pre>
+  <code>var win = new BrowserWindow({
+    width: 400, height: 225, show: false
+  })</code></pre>
+            </div>
+          </div>
         </div>
       </div>
+
     </section>
 
     <section>
@@ -47,22 +60,6 @@
           <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="manage-window-renderer"></pre></code>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrapper">
-        <div class="pro-tip">
-          <h2 class="avoid-clicks">ProTip</h2>
-          <div class="non-toggle-content">
-            <strong>Use an invisible browser window to run background tasks.</strong>
-            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
-          <pre>
-<code>var win = new BrowserWindow({
-  width: 400, height: 225, show: false
-})</code></pre>
-          </div>
         </div>
       </div>
     </section>
