@@ -1,4 +1,3 @@
-const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
@@ -13,7 +12,7 @@ process.throwDeprecation = true
 glob(__dirname + '/main-process/**/*.js', function (error, files) {
   if (error) return console.log(error)
   files.forEach(function (file) {
-    eval(fs.readFileSync(file, 'utf8'))
+    require(file)
   })
 })
 
