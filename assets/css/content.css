@@ -295,6 +295,11 @@ pre code {
 
 .active .toggle-content {
   display: block;
+  animation: toggle-content-fade-in .2s cubic-bezier(0, .20, .20, .96);
+}
+@keyframes toggle-content-fade-in {
+    0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .toggle-content > p:first-child {
