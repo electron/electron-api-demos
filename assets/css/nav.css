@@ -92,8 +92,7 @@
 }
 
 .nav-footer-link {
-  display: block;
-  width: 100%;
+  display: inline-block;
   margin-bottom: 1em;
   line-height: 2;
   text-align: left;
