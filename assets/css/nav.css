@@ -4,13 +4,14 @@
   width: 340px;
   overflow-x: hidden;
   overflow-y: auto;
+  border-right: 1px solid;
 }
 
 .nav-header {
   position: relative;
   padding: 2rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid hsl(0,0%,88%);
+  border-bottom: 1px solid;
 }
 
 .nav-title {
@@ -62,7 +63,6 @@
   text-align: left;
   font: inherit;
   font-size: 13px;
-  color: inherit;
   border: none;
   background-color: transparent;
   cursor: default;
@@ -78,7 +78,7 @@
 .nav-footer {
   margin-top: 1rem;
   padding: 2rem;
-  border-top: 1px solid hsl(0,0%,88%);
+  border-top: 1px solid;
   text-align: center;
 }
 
@@ -91,7 +91,7 @@
   outline: none;
 }
 
-.nav-footer-link {
+.nav-footer-button {
   display: block;
   width: 100%;
   margin-bottom: 1em;
