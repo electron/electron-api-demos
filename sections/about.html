@@ -15,7 +15,15 @@
           <h3>Play Along</h3>
           <p>You can copy and paste the code samples from this app into your own starter Electron app. <a href="">Get going with the Quick Start app</a>.</p>
         </div>
+        <button id="get-started">Get Started</button>
       </div>
     </section>
   </div><!-- end windows-view -->
+  <script>
+    const getStartedBtn =  document.getElementById('get-started')
+    getStartedBtn.addEventListener('click', function () {
+      document.querySelector('#about-view').classList.remove('show')
+      document.querySelector('#windows-view').classList.add('show')
+    })
+  </script>
 </template>
