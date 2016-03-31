@@ -1,26 +1,35 @@
 /* Colors */
 
-.nav-item.windows       .is-selected { background-color: hsl(116, 20%, 50%); }
-.nav-item.menu          .is-selected { background-color: hsl(193, 71%, 43%); }
+.nav-item.windows       .is-selected { background-color: hsl(116, 30%, 36%); }
+.nav-item.menu          .is-selected { background-color: hsl(194, 60%, 36%); }
 .nav-item.native-ui     .is-selected { background-color: hsl(222, 53%, 50%); }
 .nav-item.communication .is-selected { background-color: hsl(285, 47%, 46%); }
-.nav-item.system        .is-selected { background-color: hsl(330, 65%, 55%); }
-.nav-item.printing      .is-selected { background-color: hsl( 36, 77%, 38%); }
+.nav-item.system        .is-selected { background-color: hsl(330, 65%, 48%); }
+.nav-item.printing      .is-selected { background-color: hsl( 36, 77%, 34%); }
 
-.content-item.windows       { color: hsl(116, 20%, 50%); }
-.content-item.menu          { color: hsl(193, 71%, 43%); }
+.content-item.windows       { color: hsl(116, 30%, 36%); }
+.content-item.menu          { color: hsl(194, 60%, 36%); }
 .content-item.native-ui     { color: hsl(222, 53%, 50%); }
 .content-item.communication { color: hsl(285, 47%, 46%); }
-.content-item.system        { color: hsl(330, 65%, 55%); }
-.content-item.printing      { color: hsl( 36, 77%, 38%); }
+.content-item.system        { color: hsl(330, 65%, 48%); }
+.content-item.printing      { color: hsl( 36, 77%, 34%); }
 
-.content-item.windows       .pro-tip { background-color: hsl(116, 20%, 95%); }
-.content-item.menu          .pro-tip { background-color: hsl(193, 71%, 95%); }
+.content-item.windows       .pro-tip { background-color: hsl(116, 30%, 95%); }
+.content-item.menu          .pro-tip { background-color: hsl(194, 61%, 95%); }
 .content-item.native-ui     .pro-tip { background-color: hsl(222, 53%, 96%); }
 .content-item.communication .pro-tip { background-color: hsl(285, 47%, 96%); }
 .content-item.system        .pro-tip { background-color: hsl(330, 65%, 95%); }
 .content-item.printing      .pro-tip { background-color: hsl( 36, 77%, 95%); }
 
+
+/* About ------------------------ */
+
+.content-item.about {
+  background-color: hsl(0,0%,98%);
+}
+.content-item.about h2 {
+  color: hsl(0, 0%, 55%);
+}
 
 
 /* Text ------------------------ */
@@ -32,27 +41,56 @@ html,
 }
 
 
+/* Border ------------------------ */
+.content header .wrapper {
+  border-bottom-color: hsl(0,0%,88%);
+}
+
+
 /* Links ------------------------ */
 
 a {
-  color: hsl(200,100%,50%);
+  color: hsl(200,100%,33%);
 }
 
+/* Demo ------------------------ */
+
+.demo-button {
+  color: inherit;
+  background-color: transparent;
+}
+.demo-button:focus {
+  background-color: white;
+}
+.demo-button:active {
+  border-color: hsl(0,0%,88%);
+}
+
+.demo-input {
+  flex: 1;
+  border-color: hsl(0,0%,88%);
+  color: inherit;
+  background-color: transparent;
+}
+.demo-input:focus {
+  border-color: hsl(0,0%,80%);
+  background-color: white;
+}
 
 /* Code ------------------------ */
 
 code {
-  color: hsl(0,0%,44%);
+  color: hsl(0,0%,36%);
   background-color: hsla(0,0%,60%,.15);
 }
 
 pre {
-  border: 1px solid hsl(0,0%,88%);
+  border-color: hsl(0,0%,88%);
   background-color: white;
 }
 
 pre > .hljs {
-  color: hsl(0,0%,50%);
+  color: hsl(0,0%,44%);
   background-color: white;
 }
 
@@ -60,35 +98,32 @@ pre > .hljs {
 /* Toggle-content ------------------------ */
 
 .toggle-content {
-  border: 1px solid hsl(0,0%,88%);
+  border-color: hsl(0,0%,88%);
   background-color: hsl(0,0%,96%);
 }
 
 .support {
-  color: hsl(0,0%,75%);
+  color: hsl(0,0%,44%);
 }
 
 /* Nav ------------------------ */
 
 .nav {
-  border-right: 1px solid hsl(0,0%,88%);
+  color: hsl(0,0%,44%);
+  border-right-color: hsl(0,0%,88%);
   background-color: hsl(0,0%,96%);
 }
 
 .nav-header {
-  color: hsl(0,0%,66%);
+  border-bottom-color: hsl(0,0%,88%);
 }
 
 .nav-title strong {
-  color: hsl(0,0%,33%);
-}
-
-.nav-category {
-  color: hsl(0,0%,72%);
+  color: hsl(0,0%,22%);
 }
 
 .nav-link {
-  color: hsl(0,0%,50%);
+  color: inherit;
 }
 .nav-link:hover,
 .nav-link:focus:not(.is-selected) {
@@ -104,17 +139,23 @@ pre > .hljs {
 }
 
 .nav-link em {
-  color: hsl(0,0%,12%);
+  color: hsl(0,0%,11%);
 }
 
-.nav-footer-link,
-.nav-footer a {
-  color: hsl(0,0%,72%);
+.nav-footer {
+  border-top-color: hsl(0,0%,88%);
 }
 
-.nav-footer-link:active,
-.nav-footer-link:focus,
-.nav-footer a:active,
-.nav-footer a:focus {
-  color: hsl(0,0%,50%);
+.nav-footer-button {
+  color: inherit;
+}
+.nav-footer-button:focus {
+  color: hsl(0,0%,11%);
+}
+
+.nav-footer-logo {
+  color: hsl(0,0%,66%);
+}
+.nav-footer-logo:focus {
+  color: hsl(0,0%,33%);
 }
