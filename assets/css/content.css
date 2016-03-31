@@ -198,28 +198,51 @@ pre code {
 /* Clicky */
 
 .toggle-button {
+  position: relative;
   display: block;
   margin: 0;
-  padding: .5em 1em;
+  padding: .5em 1.5em;
   line-height: 1.5;
   font: inherit;
   font-weight: 600;
   font-size: 1.2em;
   text-align: left;
   border: none;
-  border-left: 2px solid hsl(0,0%,88%);
   color: inherit;
   background-color: transparent;
   transition: border-color .12s;
   outline: none;
 }
-.toggle-button:focus,
-.toggle-button:active {
-  border-color: inherit;
+
+.toggle-button:before,
+.toggle-button:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 50%;
+  background-color: hsl(0,0%,88%);
+  transition: transform .2s cubic-bezier(.4,.1,0,1);
 }
-.active toggle-button {
-  border-left-color: transparent;
+.toggle-button:before {
+  top: 0;
+  transform-origin: bottom center;
+  transform: translateX(.7em) rotate(-30deg) scale(.75);
 }
+.toggle-button:after {
+  bottom: 0;
+  transform-origin: top center;
+  transform: translateX(.7em) rotate(30deg) scale(.75);
+}
+.active .toggle-button:before,
+.active .toggle-button:after {
+  transform: rotate(0deg);
+}
+.toggle-button:focus:before,
+.toggle-button:focus:after {
+  background-color: currentColor;
+}
+
 
 
 /* External link */
@@ -259,6 +282,11 @@ pre code {
 
 .active .toggle-content {
   display: block;
+  animation: toggle-content-fade-in .2s cubic-bezier(0, .20, .20, .96);
+}
+@keyframes toggle-content-fade-in {
+    0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .toggle-content > p:first-child {
