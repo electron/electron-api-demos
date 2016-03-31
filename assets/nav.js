@@ -18,12 +18,12 @@ document.body.addEventListener('click', function (event) {
 })
 
 // Default to the view that was active the last time the app was open
-storage.get('buttonId', function (err, buttonId) {
-  if (err) return console.error(err)
-  if (buttonId && buttonId.length) {
-    document.getElementById(buttonId).click()
-  }
-})
+// storage.get('buttonId', function (err, buttonId) {
+//   if (err) return console.error(err)
+//   if (buttonId && buttonId.length) {
+//     document.getElementById(buttonId).click()
+//   }
+// })
 
 function removeClass (className) {
   let el = document.querySelector('.' + className)
