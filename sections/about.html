@@ -2,20 +2,30 @@
   <div id="about-view" class="content-item task-wrapper about show">
     <header>
       <div class="wrapper">
-        <img src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x">
+        <img src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x" width="300">
       </div>
     </header>
     <section>
       <div class="wrapper">
-        <h2>Welcome! This is an app with demos of the Electron API.</h2>
-        <div class="columns">
-          <h3>About the Code</h3>
-          <p>The organization and style of the code in this app is meant to both approachable and educational. <a href="">Learn more about how it's setup</a>.</p>
+        <div>
+          <section class="play-along">
+            <h2>Play Along</h2>
+              <p>You can start adding these demos to a new Electron app of your own. The Electron Quick Start app is a bare-bones setup that pairs with these demos. Follow the instructions here to get it going. You'll need <a href="">Git</a> and <a href="">Node.js</a> on your computer to do this.</p>
+<pre><code>$ git clone https://github.com/atom/electron-quick-start
+$ cd electron-quick-start
+$ npm install && npm start
+</code></pre>
+          </section>
+          <section class="about-code">
+            <h2>About the Code</h2>
+              <p>The sample code shown in the demos in this app is the actual code running the app. Each bit of code has been isoldated and oragnized within.</p>
 
-          <h3>Play Along</h3>
-          <p>You can copy and paste the code samples from this app into your own starter Electron app. <a href="">Get going with the Quick Start app</a>.</p>
+              <p>One of the benefits of an Electron app is that it stays up to date with releases of V8 and Chromium. This means that nearly all of (over 90%) ES2015 is availble to use in Electron <em>without the use of pre-processors</em>.</p>
+
+              <p>To illustrate this we've made use of <code>const</code>, for un changing declarations; <code>let</code> for scoped declarations; and template strings like: <code>`Result is ${output}`</code>.</p>
+          </section>
         </div>
-        <button id="get-started">Get Started</button>
+        <button id="get-started" class="demo-button">Get Started</button>
       </div>
     </section>
   </div><!-- end windows-view -->
