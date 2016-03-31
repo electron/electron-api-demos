@@ -1,20 +1,18 @@
-var path = require('path')
-
-var app = require('electron').app
-var BrowserWindow = require('electron').BrowserWindow
-
-var glob = require('glob')
-
-require('electron').hideInternalModules()
-process.throwDeprecation = true
-
+const path = require('path')
+const glob = require('glob')
+const electron = require('electron')
+const BrowserWindow = electron.BrowserWindow
+var app = electron.app
 var mainWindow = null
+
+electron.hideInternalModules()
+process.throwDeprecation = true
 
 // Require and setup each JS file in the main-process dir
 glob(__dirname + '/main-process/**/*.js', function (error, files) {
   if (error) return console.log(error)
   files.forEach(function (file) {
-    require(file).setup()
+    require(file)
   })
 })
 
