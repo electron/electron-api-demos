@@ -118,3 +118,31 @@ pre > .hljs {
 .nav-footer a:focus {
   color: hsl(0,0%,50%);
 }
+
+/* Welcome ------------------------ */
+
+.about section {
+  margin-top: 20px;
+}
+
+.about-code, .play-along {
+  margin-top: 2rem;
+  padding: 1rem 4rem;
+}
+
+.about h2 {
+  text-align: center;
+}
+
+.about .demo-button {
+  margin: 0 auto;
+  display: block;
+}
+
+.about-code h2 {
+  color: hsl(330, 65%, 55%) !important;
+}
+
+.play-along h2 {
+  color: hsl(222, 53%, 50%) !important;
+}
