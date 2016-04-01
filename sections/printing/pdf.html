@@ -28,20 +28,14 @@
           <pre><code id="print-pdf-renderer"></pre></code>
           <h5>Main Process</h5>
           <pre><code id="print-pdf-main"></code></pre>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="wrapper">
-        <div class="pro-tip">
-          <h2 class="avoid-clicks">ProTip</h2>
-          <div class="non-toggle-content">
-            <strong>Use a print style sheet.</strong>
-            <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Create a section in your style sheet like the one below. You can also view the print stylesheet of this app.</p>
-            <pre><code>@media print {
-  /* Print styles here */
-}</code></pre>
+          <div class="pro-tip">
+            <h2 class="avoid-clicks">ProTip</h2>
+            <div class="non-toggle-content">
+              <strong>Use a print style sheet.</strong>
+              <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Below is the stylesheet used in this app, located in <code>assets/css/print.css</code>.</p>
+              <pre><code id="print-style-sheet"></code></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -56,6 +50,9 @@
       document.getElementById('print-pdf-renderer').innerHTML= printPDFRendererContent;
       var printPDFMainContent = fs.readFileSync(__dirname + '/main-process/printing/pdf.js');
       document.getElementById('print-pdf-main').innerHTML= printPDFMainContent;
+      // Print Style Sheet
+      var printStyleSheet = fs.readFileSync(__dirname + '/assets/css/print.css');
+      document.getElementById('print-style-sheet').innerHTML= printStyleSheet;
     </script>
   </div><!-- end pdf-view -->
 </tempalte>

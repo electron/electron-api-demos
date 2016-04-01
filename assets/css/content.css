@@ -41,7 +41,7 @@
 .content header .wrapper {
   padding-top: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid hsl(0,0%,92%);
+  border-bottom: 1px solid;
 }
 @media (min-width: 940px) {
   .content header .wrapper {
@@ -67,7 +67,6 @@
 .content-item.about h2 {
   margin: 0 0 1em 0;
   font-size: 1.5em;
-  color: hsl(0, 0%, 66%);
 }
 
 @media (min-width: 940px) {
@@ -154,16 +153,10 @@
   border-radius: 4px;
   font: inherit;
   font-size: 1.2em;
-  color: inherit;
   padding: .4em 1.2em;
-  background-color: transparent;
 }
 .demo-button:focus {
   outline: none;
-  background-color: white;
-}
-.demo-button:active {
-  border-color: hsl(0,0%,88%);
 }
 
 .demo-response {
@@ -173,18 +166,14 @@
 
 .demo-input {
   flex: 1;
-  border: 2px solid hsl(0,0%,88%);
+  border: 2px solid;
   border-radius: 4px;
   font: inherit;
   font-size: 1.2em;
-  color: inherit;
   padding: .4em .8em;
-  background-color: transparent;
 }
 .demo-input:focus {
   outline: none;
-  border-color: hsl(0,0%,80%);
-  background-color: white;
 }
 
 
@@ -196,6 +185,7 @@ pre {
   padding: 1em;
   margin: 0;
   border-radius: 4px;
+  border: 1px solid;
 }
 
 code {
@@ -214,28 +204,51 @@ pre code {
 /* Clicky */
 
 .toggle-button {
+  position: relative;
   display: block;
   margin: 0;
-  padding: .5em 1em;
+  padding: .5em 1.5em;
   line-height: 1.5;
   font: inherit;
   font-weight: 600;
   font-size: 1.2em;
   text-align: left;
   border: none;
-  border-left: 2px solid hsl(0,0%,88%);
   color: inherit;
   background-color: transparent;
   transition: border-color .12s;
   outline: none;
 }
-.toggle-button:focus,
-.toggle-button:active {
-  border-color: inherit;
+
+.toggle-button:before,
+.toggle-button:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 50%;
+  background-color: hsl(0,0%,88%);
+  transition: transform .2s cubic-bezier(.4,.1,0,1);
 }
-.active toggle-button {
-  border-left-color: transparent;
+.toggle-button:before {
+  top: 0;
+  transform-origin: bottom center;
+  transform: translateX(.7em) rotate(-30deg) scale(.75);
 }
+.toggle-button:after {
+  bottom: 0;
+  transform-origin: top center;
+  transform: translateX(.7em) rotate(30deg) scale(.75);
+}
+.active .toggle-button:before,
+.active .toggle-button:after {
+  transform: rotate(0deg);
+}
+.toggle-button:focus:before,
+.toggle-button:focus:after {
+  background-color: currentColor;
+}
+
 
 
 /* External link */
@@ -270,10 +283,16 @@ pre code {
   margin-top: 1em;
   margin-bottom: 2em;
   border-radius: 6px;
+  border: 1px solid;
 }
 
 .active .toggle-content {
   display: block;
+  animation: toggle-content-fade-in .2s cubic-bezier(0, .20, .20, .96);
+}
+@keyframes toggle-content-fade-in {
+    0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .toggle-content > p:first-child {
@@ -296,10 +315,6 @@ pre code {
 
 /* Pointy arrow */
 
-/*.active h2:hover + .toggle-content:before {
-  visibility: hidden;
-}*/
-
 .toggle-content:before {
   content: "";
   position: absolute;
@@ -311,6 +326,4 @@ pre code {
   border-right: inherit;
   border-top-right-radius: 3px;
   transform: rotate(-45deg);
-  /*border-color: hsla(0, 0%, 0%, 0) hsla(0, 0%, 0%, 0) hsl(0,0%,96%) hsla(0, 0%, 0%, 0);*/
-  /*box-shadow: 1px 1px 0 hsl(0,0%,88%);*/
 }
