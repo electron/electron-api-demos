@@ -162,6 +162,11 @@ pre > .hljs {
 
 /* Welcome ------------------------ */
 
+.about {
+  border: 40px solid hsla(0,0%,80%,.9);
+  background-clip: padding-box;
+}
+
 .about-code, .play-along {
   margin-top: 4rem;
   padding: 1rem 4rem;
