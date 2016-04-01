@@ -162,9 +162,13 @@ pre > .hljs {
 
 /* Welcome ------------------------ */
 
-.about {
+.content-item.about {
   border: 40px solid hsla(0,0%,80%,.9);
   background-clip: padding-box;
+  transform: scale(1.1);
+}
+.content-item.about.show {
+  transform: scale(1);
 }
 
 .about-code, .play-along {
