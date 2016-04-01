@@ -139,7 +139,7 @@ if (process.platform === 'darwin') {
         role: 'hide'
       }, {
         label: 'Hide Others',
-        accelerator: 'Option+Command+H',
+        accelerator: 'Command+Alt+H',
         role: 'hideothers'
       }, {
         label: 'Show All',
