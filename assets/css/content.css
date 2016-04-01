@@ -53,12 +53,14 @@
 /* About */
 
 .content-item.about {
+  z-index: 1;
+  padding: 4rem 0;
   background-color: hsl(0,0%,98%);
 }
 
 .content-item.about header img {
   display: block;
-  margin: 2rem auto;
+  margin: 4rem auto;
   max-width: 100%;
 }
 

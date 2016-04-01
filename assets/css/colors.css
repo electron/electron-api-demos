@@ -121,12 +121,8 @@ pre > .hljs {
 
 /* Welcome ------------------------ */
 
-.about section {
-  margin-top: 20px;
-}
-
 .about-code, .play-along {
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding: 1rem 4rem;
 }
 
@@ -135,7 +131,8 @@ pre > .hljs {
 }
 
 .about .demo-button {
-  margin: 0 auto;
+  font-size: 1.8em;
+  margin: 4rem auto 0 auto;
   display: block;
 }
 
