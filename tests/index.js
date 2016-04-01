@@ -67,7 +67,7 @@ describe('demo app', function () {
 
   describe('when a task is clicked', function () {
     it('it expands', function () {
-      var onlyFirstVisible = Array(20).fill(false)
+      var onlyFirstVisible = Array(21).fill(false)
       onlyFirstVisible[0] = true
 
       return this.app.client.waitUntilWindowLoaded()
