@@ -64,8 +64,43 @@
       </div>
     </section>
 
+    <section>
+      <div class="wrapper">
+        <button class="js-container-target toggle-button">Create a frameless window
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+        </button>
+        <div class="toggle-content">
+          <div class="demo">
+            <button class="demo-button" id="frameless-window">Demo</button>
+          </div>
+          <p>
+            A frameless window is a window that has no <a href="https://developer.mozilla.org/en-US/docs/Glossary/Chrome">"chrome"</a>,
+            such as toolbars, title bars, status bars, borders, etc. You can make a browser window frameless by setting
+            <code>frame</code> to <code>false</code> when creating the window.
+          </p>
+
+          <h5>Renderer Process</h5>
+          <pre><code id="frameless-window-renderer"></pre></code>
+
+          <p>Windows can have a transparent background, too. By setting the <code>transparent</code> option to <code>true</code>, you can also make your frameless window transparent:</p>
+          <pre>
+<code>var win = new BrowserWindow({
+  transparent: true,
+  frame: false
+})</code></pre>
+
+        <p>
+          For more details, see the <a href="http://electron.atom.io/docs/latest/api/frameless-window/">Frameless Window</a> documentation.
+        </p>
+
+        </div>
+      </div>
+    </section>
+
+
     <script type="text/javascript" src="renderer-process/windows/create-window.js"></script>
     <script type="text/javascript" src="renderer-process/windows/manage-window.js"></script>
+    <script type="text/javascript" src="renderer-process/windows/frameless-window.js"></script>
 
     <script type="text/javascript">
       var fs = require('fs');
@@ -75,6 +110,9 @@
       // Manage Window
       var manageWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/manage-window.js');
       document.getElementById('manage-window-renderer').innerHTML= manageWindowRendererContent;
+      // Frameless Window
+      var framelessWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/frameless-window.js');
+      document.getElementById('frameless-window-renderer').innerHTML= framelessWindowRendererContent;
     </script>
   </div><!-- end windows-view -->
 </template>
