@@ -1,6 +1,8 @@
 /* Welcome ------------------------ */
 
 .about {
+  --about-space: 4rem;
+
   position: absolute;
   display: flex;
   top: 0;
@@ -31,27 +33,27 @@
 
 .about-wrapper {
   margin: auto;
-  padding: 4rem 0;
+}
+
+.about-header {
+  padding: var(--about-space) 0;
+  border-bottom: 1px solid hsl(0,0%,88%);
 }
 
 .about-logo {
   display: block;
   margin: 0 auto;
+  width: 320px; /* TODO: Adjust asset to this size */
   max-width: 100%;
-  height: 280px;
 }
 
 .about-sections {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
-  max-width: 1100px;
+  max-width: 680px;
+  padding: 0 var(--about-space);
 }
 
 .about-section {
-  flex: 1 1 0;
-  min-width: 300px;
-  margin: 2rem;
+  margin: var(--about-space) 0;
 }
 
 .about h2 {
@@ -73,7 +75,7 @@
   margin: 0 auto;
   padding: .4em 1.2em;
   font: inherit;
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: inherit;
   border: 2px solid;
   border-radius: 4px;
@@ -82,4 +84,17 @@
 .about-button:focus {
   outline: none;
   border-color: hsl(0,0%,88%);
+}
+
+
+@media (min-width: 940px) {
+  .about-header {
+    align-self: center;
+    padding: var(--about-space);
+    border-right: 1px solid hsl(0,0%,88%);
+    border-bottom: none;
+  }
+  .about-wrapper {
+    display: flex;
+  }
 }
