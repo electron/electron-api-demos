@@ -4,7 +4,7 @@ const ipc = electron.ipcMain
 let appIcon = null
 
 ipc.on('put-in-tray', function (event) {
-  var iconPath = path.join(__dirname, '/iconTemplate.png')
+  var iconPath = path.join(__dirname, 'iconTemplate.png')
   appIcon = new electron.Tray(iconPath)
   var contextMenu = electron.Menu.buildFromTemplate([
     { label: 'Remove',
