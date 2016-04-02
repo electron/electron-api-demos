@@ -159,37 +159,3 @@ pre > .hljs {
 .nav-footer-logo:focus {
   color: hsl(0,0%,33%);
 }
-
-/* Welcome ------------------------ */
-
-.content-item.about {
-  border: 40px solid hsla(0,0%,80%,.9);
-  background-clip: padding-box;
-  transform: scale(1.1);
-}
-.content-item.about.show {
-  transform: scale(1);
-}
-
-.about-code, .play-along {
-  margin-top: 4rem;
-  padding: 1rem 4rem;
-}
-
-.about h2 {
-  text-align: center;
-}
-
-.about .demo-button {
-  font-size: 1.8em;
-  margin: 4rem auto 0 auto;
-  display: block;
-}
-
-.about-code h2 {
-  color: hsl(330, 65%, 55%) !important;
-}
-
-.play-along h2 {
-  color: hsl(222, 53%, 50%) !important;
-}
