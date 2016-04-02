@@ -1,56 +1,85 @@
 /* Welcome ------------------------ */
 
-.about.about {
+.about {
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
-  padding: 4rem 0;
-  border: 40px solid hsla(0,0%,80%,.9);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
   background-color: hsl(0,0%,98%);
-  background-clip: padding-box;
+}
+
+.about {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
   transform: scale(1.1);
+  transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
 }
-.about.about.show {
+.about.show {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
   transform: scale(1);
+  transition: visibility 0s 0s linear , opacity .24s ease-out, transform .24s ease-out;
 }
 
-.about.about header img {
+.about-wrapper {
+  margin: auto;
+  padding: 4rem 0;
+}
+
+.about-logo {
   display: block;
-  margin: 4rem auto;
+  margin: 0 auto;
   max-width: 100%;
+  height: 280px;
 }
 
-.about.about .demo-button {
-  font-size: 1.8em;
-  margin: 4rem auto 0 auto;
-  display: block;
+.about-sections {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  max-width: 1100px;
 }
 
-.about.about h2 {
+.about-section {
+  flex: 1 1 0;
+  min-width: 300px;
+  margin: 2rem;
+}
+
+.about h2 {
   text-align: center;
-  margin: 4rem 0 1em 0;
-  padding: 1rem 4rem;
+  margin: 0 0 1em 0;
   font-size: 1.5em;
 }
 
-.about.about .about-code h2 {
+.about .about-code h2 {
   color: hsl(330, 65%, 55%);
 }
 
-.about.about .play-along h2 {
+.about .play-along h2 {
   color: hsl(222, 53%, 50%);
 }
 
-
-/*@media (min-width: 940px) {
-  .columns {
-    -webkit-column-count: 2;
-    -webkit-column-gap: 1.6em;
-  }
-  .columns p + h3 {
-    -webkit-column-break-before: always;
-  }
-}*/
+.about-button {
+  display: block;
+  margin: 0 auto;
+  padding: .4em 1.2em;
+  font: inherit;
+  font-size: 1.8em;
+  color: inherit;
+  border: 2px solid;
+  border-radius: 4px;
+  background-color: transparent;
+}
+.about-button:focus {
+  outline: none;
+  border-color: hsl(0,0%,88%);
+}
