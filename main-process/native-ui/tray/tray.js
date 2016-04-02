@@ -1,7 +1,7 @@
 const path = require('path')
-var electron = require('electron')
-var ipc = electron.ipcMain
-appIcon = null
+const electron = require('electron')
+const ipc = electron.ipcMain
+let appIcon = null
 
 ipc.on('put-in-tray', function (event) {
   var iconPath = path.join(__dirname, '/iconTemplate.png')
