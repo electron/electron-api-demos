@@ -86,6 +86,61 @@
   border-color: hsl(0,0%,88%);
 }
 
+footer.about-section {
+  text-align: center;
+}
+
+:root {
+  --rainbow-button-width: 180px;
+  --rainbow-button-height: 60px;
+  --rainbow-color-1: hsl(116, 30%, 36%);
+  --rainbow-color-2: hsl(194, 60%, 36%);
+  --rainbow-color-3: hsl(222, 53%, 50%);
+  --rainbow-color-4: hsl(285, 47%, 46%);
+  --rainbow-color-5: hsl(330, 65%, 48%);
+  --rainbow-color-6: hsl( 36, 77%, 34%);
+}
+
+.rainbow-button-wrapper {
+  display: inline-block;
+  width: var(--rainbow-button-width);
+  height: var(--rainbow-button-height);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.rainbow-button-wrapper:before {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: var(--rainbow-button-height);
+  background: #CCC;
+  background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 17%, var(--rainbow-color-3) 33%, var(--rainbow-color-4) 50%, var(--rainbow-color-5) 67%, var(--rainbow-color-6) 83%, var(--rainbow-color-1) 100%);
+  background-position: 600px 0;
+  transition: all 0.5s;
+  content: "";
+}
+
+.rainbow-button-wrapper button {
+  display: block;
+  width: var(--rainbow-button-width);
+  height: var(--rainbow-button-height);
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.rainbow-button-wrapper:hover:before {
+  background-position: 1400px 0;
+}
 
 @media (min-width: 940px) {
   .about-header {
