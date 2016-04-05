@@ -1,5 +1,5 @@
 <template class="task-template">
-  <div id="tray-view" class="content-item native-ui task-wrapper">
+  <div id="tray-section" class="content-item native-ui task-wrapper">
     <header>
       <div class="wrapper">
         <h1>
@@ -52,5 +52,5 @@
       var trayMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/tray/tray.js');
       document.getElementById('tray-main').innerHTML= trayMainContent;
     </script>
-  </div><!-- end tray-view -->
+  </div><!-- end tray-section -->
 </template>
