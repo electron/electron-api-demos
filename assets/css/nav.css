@@ -91,8 +91,9 @@
   outline: none;
 }
 
-.nav-footer-link {
-  display: inline-block;
+.nav-footer-button {
+  display: block;
+  width: 100%;
   margin-bottom: 1em;
   line-height: 2;
   text-align: left;

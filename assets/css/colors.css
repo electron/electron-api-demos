@@ -146,10 +146,10 @@ pre > .hljs {
   border-top-color: hsl(0,0%,88%);
 }
 
-.nav-footer-link {
+.nav-footer-button {
   color: inherit;
 }
-.nav-footer-link:focus {
+.nav-footer-button:focus {
   color: hsl(0,0%,11%);
 }
 
