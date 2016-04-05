@@ -1,5 +1,5 @@
 <template class="task-template">
-  <div id="about-view" class="about show">
+  <div id="about-modal" class="about modal">
     <div class="about-wrapper">
       <header class="about-header">
         <img class="about-logo" src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x">
@@ -23,17 +23,10 @@ $ npm install && npm start
         </section>
         <footer class="about-section footer">
           <div class="rainbow-button-wrapper">
-            <button id="get-started" class="about-button">Get Started</button>
+            <button id="get-started" class="about-button modal-hide">Get Started</button>
           </div>
         </footer>
       </main>
     </div>
   </div>
-  <script>
-    const getStartedBtn =  document.getElementById('get-started')
-    getStartedBtn.addEventListener('click', function () {
-      document.querySelector('#about-view').classList.remove('show')
-      document.querySelector('#windows-view').classList.add('show')
-    })
-  </script>
 </template>
