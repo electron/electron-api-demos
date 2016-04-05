@@ -14,16 +14,14 @@ document.body.addEventListener('click', function (event) {
   document.getElementById(viewId).classList.add('show')
 
   // Save currently active button in localStorage
-  storage.set('buttonId', event.target.getAttribute('id'))
+  storage.set('activeSectionButtonId', event.target.getAttribute('id'))
 })
 
 // Default to the view that was active the last time the app was open
-// storage.get('buttonId', function (err, buttonId) {
-//   if (err) return console.error(err)
-//   if (buttonId && buttonId.length) {
-//     document.getElementById(buttonId).click()
-//   }
-// })
+storage.get('activeSectionButtonId', function (err, id) {
+  if (err) return console.error(err)
+  if (id && id.length) document.getElementById(id).click()
+})
 
 function removeClass (className) {
   let el = document.querySelector('.' + className)
