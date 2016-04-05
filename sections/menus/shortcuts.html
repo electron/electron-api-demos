@@ -1,0 +1,42 @@
+<template class="task-template">
+  <div id="shortcuts-view" class="content-item menu task-wrapper">
+    <header>
+      <div class="wrapper">
+        <h1>
+          <svg class="icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
+          Register Keyboard Shortcuts
+        </h1>
+        <h3>Register keyboard shortcuts to control different parts of your app.</h3>
+
+
+        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrapper">
+        <button class="js-container-target toggle-button">Register a global shortcut
+          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+        </button>
+        <div class="toggle-content">
+          <p>
+            The <code>globalShortcut</code> module can register/unregister a global keyboard shortcut with the operating system.
+            Global shortcuts will work even if the app does not have keyboard focus. You should not use this module until the
+            ready event of the app module is emitted.
+          </p>
+
+          <h5>Main Process</h5>
+          <pre><code id="shortcuts-main"></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="main-process/menus/shortcuts.js"></script>
+
+    <script type="text/javascript">
+      var fs = require('fs');
+      var shortcutsMainContent = fs.readFileSync(__dirname + '/main-process/menus/shortcuts.js');
+      document.getElementById('shortcuts-main').innerHTML= shortcutsMainContent;
+    </script>
+  </div><!-- end menu-view -->
+</template>
