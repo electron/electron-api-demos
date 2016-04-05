@@ -47,12 +47,13 @@ describe('demo app', function () {
       .getTitle().should.eventually.equal('Electron API Demos')
       .isVisible('#about-view').should.eventually.be.true
       .isVisible('#index-view').should.eventually.be.true
+      .click('button[id="get-started"]').pause(100)
   })
 
   describe('when clicking on a section from the nav bar', function () {
     it('shows the selected section in the main area', function () {
       return this.app.client.waitUntilWindowLoaded()
-        .isVisible('#about-view').should.eventually.be.true
+        .isVisible('#windows-view').should.eventually.be.true
         .click('button[data-view="windows"]').pause(100)
         .waitForVisible('#windows-view')
         .isExisting('button.is-selected[data-view="windows"]').should.eventually.be.true
