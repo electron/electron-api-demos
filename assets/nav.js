@@ -14,7 +14,7 @@ function init () {
     if (id && id.length) {
       document.getElementById(id).click()
     } else {
-      activeDefaultSection()
+      activateDefaultSection()
       displayAbout()
     }
   })
@@ -46,8 +46,13 @@ function init () {
     })
   }
 
-  function activeDefaultSection () {
+  function activateDefaultSection () {
     document.getElementById('button-windows').click()
+  }
+
+  function showMainContent () {
+    document.querySelector('.section-nav').classList.add('show')
+    document.querySelector('.content').classList.add('show')
   }
 
   function handleModalTrigger (event) {
@@ -62,6 +67,7 @@ function init () {
     Array.prototype.forEach.call(modals, function (modal) {
       modal.classList.remove('show')
     })
+    showMainContent()
   }
 
   function hideAllSectionsAndDeselectButtons () {

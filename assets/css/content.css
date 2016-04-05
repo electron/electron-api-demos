@@ -1,5 +1,16 @@
 /* content */
 
+.main-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-content.show {
+  visibility: visible;;
+  opacity: 1;
+}
+
+
 .content {
   flex: 1;
   position: relative;

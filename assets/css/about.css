@@ -14,9 +14,6 @@
   overflow-y: auto;
   padding: 0;
   background-color: hsl(0,0%,98%);
-}
-
-.about {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;

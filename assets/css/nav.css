@@ -1,5 +1,15 @@
 /* Nav */
 
+.section-nav {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.section-nav.show {
+  visibility: visible;;
+  opacity: 1;
+}
+
 .nav {
   width: 340px;
   overflow-x: hidden;
