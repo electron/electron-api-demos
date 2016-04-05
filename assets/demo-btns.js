@@ -1,3 +1,5 @@
+var storage = require('electron-json-storage')
+
 var demoBtns = document.querySelectorAll('.js-container-target')
 // Listen for demo button clicks
 Array.prototype.forEach.call(demoBtns, function (btn) {
@@ -5,7 +7,9 @@ Array.prototype.forEach.call(demoBtns, function (btn) {
     event.target.parentElement.classList.toggle('active')
 
     // Save currently active demo button in localStorage
-    storage.set('activeDemoButtonId', event.target.getAttribute('id'))
+    storage.set('activeDemoButtonId', event.target.getAttribute('id'), function (err) {
+      if (err) return console.error(err)
+    })
   })
 })
 
