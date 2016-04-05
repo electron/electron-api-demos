@@ -46,7 +46,7 @@ describe('demo app', function () {
       .getWindowHeight().should.eventually.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .isVisible('#about-section').should.eventually.be.true
-      .isVisible('#index-section').should.eventually.be.true
+      .isVisible('#section-nav').should.eventually.be.true
       .click('button[id="get-started"]').pause(100)
   })
 
