@@ -81,7 +81,7 @@ describe('demo app', function () {
   })
 
   describe('when clicking on a section from the nav bar', function () {
-    it('shows the selected section in the main area', function () {
+    it('it shows the selected section in the main area', function () {
       return app.client.isVisible('#windows-section').should.eventually.be.true
         .click('button[data-section="windows"]').pause(100)
         .waitForVisible('#windows-section')
@@ -95,8 +95,8 @@ describe('demo app', function () {
     })
   })
 
-  describe('when a task is clicked', function () {
-    it('it expands', function () {
+  describe('when a demo title is clicked', function () {
+    it('it expands the demo content', function () {
       var onlyFirstVisible = Array(21).fill(false)
       onlyFirstVisible[0] = true
 
@@ -105,9 +105,20 @@ describe('demo app', function () {
         .click('.js-container-target')
         .waitForVisible('.toggle-content')
         .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible)
+    })
+  })
+
+  describe('when the app is restarted after use', function () {
+    it('it launches at last visted section & demo', function () {
+      var onlyFirstVisible = Array(21).fill(false)
+      onlyFirstVisible[0] = true
+
+      return app.client.waitForVisible('#windows-section')
         .then(restartApp)
         .then(function () {
           return app.client.waitForVisible('#windows-section')
+            .isVisible('#windows-section').should.eventually.be.true
+            .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible)
         })
     })
   })
