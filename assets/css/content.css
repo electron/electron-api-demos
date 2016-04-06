@@ -3,6 +3,7 @@
 .main-content {
   visibility: hidden;
   opacity: 0;
+  background-color: #fff;
 }
 
 .main-content.show {
