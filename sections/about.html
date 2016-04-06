@@ -1,21 +1,32 @@
 <template class="task-template">
-  <div id="about-view" class="content-item task-wrapper about show">
-    <header>
-      <div class="wrapper">
-        <img src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x">
-      </div>
-    </header>
-    <section>
-      <div class="wrapper">
-        <h2>Welcome! This is an app with demos of the Electron API.</h2>
-        <div class="columns">
-          <h3>Sample Code is the Code</h3>
-          <p>Each of the code snippets shown in the demos is the actual code being used in the app. Each snippet is read from its file and added to the HTML on the page.</p>
+  <div id="about-modal" class="about modal">
+    <div class="about-wrapper">
+      <header class="about-header">
+        <img class="about-logo" src="assets/img/about.png" srcset="assets/img/about.png 1x, assets/img/about@2x.png 2x">
+      </header>
+      <main class="about-sections">
+        <section class="about-section play-along">
+          <h2>Play Along</h2>
+            <p>Use the demo snippets in an Electron app of your own. The <a href="" class="exlink">Electron Quick Start</a> app is a bare-bones setup that pairs with these demos. Follow the instructions here to get it going. You'll need <a href="" class="exlink">Git</a> and <a href="" class="exlink">Node.js</a> on your computer to do this.</p>
+<pre><code>$ git clone https://github.com/atom/electron-quick-start
+$ cd electron-quick-start
+$ npm install && npm start
+</code></pre>
+        </section>
+        <section class="about-section about-code">
+          <h2>About the Code</h2>
+            <p>The <a href="" class="exlink">source code of this app</a> has been organized with ease of navigation in mind.</p>
 
-          <h3>View Source</h3>
-          <p>This app is not only open source, but intentially organized for ease of finding snippets and copypasta-ing. Checkout the <a class="exlink" href="https://github.com/atom/electron-demo">repository</a> and see.</p>
-        </div>
-      </div>
-    </section>
-  </div><!-- end windows-view -->
+            <p>Nearly all (over 90%) of <a href="" class="exlink">ES2015</a> is availble to use in Electron <em>without the use of pre-processors</em> because it's a part of <a href="" class="exlink">V8</a> which is built into Electron.</p>
+
+            <p>To illustrate this we've made use of <code>const</code>, for un changing declarations; <code>let</code> for scoped declarations; and template strings like: <code>`Result is ${output}`</code> in the demo snippets.</p>
+        </section>
+        <footer class="about-section footer">
+          <div class="rainbow-button-wrapper">
+            <button id="get-started" class="about-button modal-hide">Get Started</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
 </template>

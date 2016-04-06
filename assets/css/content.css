@@ -1,5 +1,16 @@
 /* content */
 
+.main-content {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-content.show {
+  visibility: visible;;
+  opacity: 1;
+}
+
+
 .content {
   flex: 1;
   position: relative;
@@ -48,31 +59,6 @@
     padding-top: 4rem;
   }
 }
-
-
-/* About */
-
-.content-item.about header img {
-  display: block;
-  margin: 2rem auto;
-  max-width: 100%;
-}
-
-.content-item.about h2 {
-  margin: 0 0 1em 0;
-  font-size: 1.5em;
-}
-
-@media (min-width: 940px) {
-  .columns {
-    -webkit-column-count: 2;
-    -webkit-column-gap: 1.6em;
-  }
-  .columns p + h3 {
-    -webkit-column-break-before: always;
-  }
-}
-
 
 
 /* Section */

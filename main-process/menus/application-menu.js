@@ -37,12 +37,12 @@ var template = [{
   submenu: [{
     label: 'Reload',
     accelerator: 'CmdOrCtrl+R',
-    click: function(item, focusedWindow) {
+    click: function (item, focusedWindow) {
       if (focusedWindow) {
         // on reload, start fresh and close any old
         // open secondary windows
         if (focusedWindow.id === 1) {
-          BrowserWindow.getAllWindows().forEach(function(win) {
+          BrowserWindow.getAllWindows().forEach(function (win) {
             if (win.id > 1) {
               win.close()
             }
@@ -53,28 +53,28 @@ var template = [{
     }
   }, {
     label: 'Toggle Full Screen',
-    accelerator: (function() {
+    accelerator: (function () {
       if (process.platform === 'darwin') {
         return 'Ctrl+Command+F'
       } else {
         return 'F11'
       }
     })(),
-    click: function(item, focusedWindow) {
+    click: function (item, focusedWindow) {
       if (focusedWindow) {
         focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
       }
     }
   }, {
     label: 'Toggle Developer Tools',
-    accelerator: (function() {
+    accelerator: (function () {
       if (process.platform === 'darwin') {
         return 'Alt+Command+I'
       } else {
         return 'Ctrl+Shift+I'
       }
     })(),
-    click: function(item, focusedWindow) {
+    click: function (item, focusedWindow) {
       if (focusedWindow) {
         focusedWindow.toggleDevTools()
       }
@@ -83,7 +83,7 @@ var template = [{
     type: 'separator'
   }, {
     label: 'App Menu Demo',
-    click: function(item, focusedWindow) {
+    click: function (item, focusedWindow) {
       if (focusedWindow) {
         var options = {
           type: 'info',
@@ -91,7 +91,7 @@ var template = [{
           buttons: ['Ok'],
           message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
         }
-        electron.dialog.showMessageBox(focusedWindow, options, function() {})
+        electron.dialog.showMessageBox(focusedWindow, options, function () {})
       }
     }
   }]
@@ -112,7 +112,7 @@ var template = [{
   role: 'help',
   submenu: [{
     label: 'Learn More',
-    click: function() {
+    click: function () {
       electron.shell.openExternal('http://electron.atom.io')
     }
   }]
@@ -121,40 +121,40 @@ var template = [{
 if (process.platform === 'darwin') {
   var name = electron.app.getName()
   template.unshift({
-      label: name,
-      submenu: [{
-        label: 'About ' + name,
-        role: 'about'
-      }, {
-        type: 'separator'
-      }, {
-        label: 'Services',
-        role: 'services',
-        submenu: []
-      }, {
-        type: 'separator'
-      }, {
-        label: 'Hide ' + name,
-        accelerator: 'Command+H',
-        role: 'hide'
-      }, {
-        label: 'Hide Others',
-        accelerator: 'Command+Alt+H',
-        role: 'hideothers'
-      }, {
-        label: 'Show All',
-        role: 'unhide'
-      }, {
-        type: 'separator'
-      }, {
-        label: 'Quit',
-        accelerator: 'Command+Q',
-        click: function() {
-          app.quit()
-        }
-      }]
-    })
-    // Window menu.
+    label: name,
+    submenu: [{
+      label: 'About ' + name,
+      role: 'about'
+    }, {
+      type: 'separator'
+    }, {
+      label: 'Services',
+      role: 'services',
+      submenu: []
+    }, {
+      type: 'separator'
+    }, {
+      label: 'Hide ' + name,
+      accelerator: 'Command+H',
+      role: 'hide'
+    }, {
+      label: 'Hide Others',
+      accelerator: 'Command+Alt+H',
+      role: 'hideothers'
+    }, {
+      label: 'Show All',
+      role: 'unhide'
+    }, {
+      type: 'separator'
+    }, {
+      label: 'Quit',
+      accelerator: 'Command+Q',
+      click: function () {
+        app.quit()
+      }
+    }]
+  })
+  // Window menu.
   template[3].submenu.push({
     type: 'separator'
   }, {

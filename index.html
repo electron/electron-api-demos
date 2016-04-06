@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/css/nativize.css">
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/about.css">
   <link rel="stylesheet" href="assets/css/nav.css">
   <link rel="stylesheet" href="assets/css/content.css">
   <link rel="stylesheet" href="assets/css/github.css">
@@ -27,7 +28,7 @@
 </head>
 <body>
 
-  <nav id="index-view" class="nav">
+  <nav class="nav section-nav">
     <header class="nav-header">
       <h1 class="nav-title">Electron <strong>API Demos</strong></h1>
       <svg class="nav-header-icon" viewBox="0 0 32 32"><use xlink:href="#icon-electron"></use></svg>
@@ -38,7 +39,7 @@
         <svg class="nav-icon" viewBox="0 0 14 16"><use xlink:href="#icon-windows"></use></svg>
         Windows
       </h5>
-      <button type="button" id="button-windows" data-view="windows" class="nav-link">Create and manage <em>windows</em></button>
+      <button type="button" id="button-windows" data-section="windows" class="nav-link">Create and manage <em>windows</em></button>
     </section>
 
     <section class="nav-item menu">
@@ -46,16 +47,16 @@
         <svg class="nav-icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
         Menus
       </h5>
-      <button type="button" id="button-menus" data-view="menus" class="nav-link">Customize <em>menus</em> </button>
+      <button type="button" id="button-menus" data-section="menus" class="nav-link">Customize <em>menus</em> </button>
     </section>
 
     <section class="nav-item native-ui">
       <h5 class="nav-category">
         <svg class="nav-icon" viewBox="0 0 16 16"><use xlink:href="#icon-native-ui"></use></svg>
         Native User Interface</h5>
-      <button type="button" id="button-ex-links-file-manager" data-view="ex-links-file-manager" class="nav-link">Open <em>external links</em> or system <em>file manager</em></button>
-      <button type="button" id="button-dialogs" data-view="dialogs" class="nav-link">Use system <em>dialogs</em></button>
-      <button type="button" id="button-tray" data-view="tray" class="nav-link">Put your app in the <em>tray</em></button>
+      <button type="button" id="button-ex-links-file-manager" data-section="ex-links-file-manager" class="nav-link">Open <em>external links</em> or system <em>file manager</em></button>
+      <button type="button" id="button-dialogs" data-section="dialogs" class="nav-link">Use system <em>dialogs</em></button>
+      <button type="button" id="button-tray" data-section="tray" class="nav-link">Put your app in the <em>tray</em></button>
     </section>
 
     <section class="nav-item communication">
@@ -63,7 +64,7 @@
         <svg class="nav-icon" viewBox="0 0 16 16"><use xlink:href="#icon-communication"></use></svg>
         Communication
       </h5>
-      <button type="button" id="button-ipc" data-view="ipc" class="nav-link">Communicate between the <em>two processes</em></button>
+      <button type="button" id="button-ipc" data-section="ipc" class="nav-link">Communicate between the <em>two processes</em></button>
     </section>
 
     <section class="nav-item system">
@@ -71,8 +72,8 @@
         <svg class="nav-icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
         System
       </h5>
-      <button type="button" id="button-app-sys-information" data-view="app-sys-information" class="nav-link" >Get app or user <em>system information</em></button>
-      <button type="button" id="button-clipboard" data-view="clipboard" class="nav-link">Copy and paste from the <em>clipboard</em></button>
+      <button type="button" id="button-app-sys-information" data-section="app-sys-information" class="nav-link" >Get app or user <em>system information</em></button>
+      <button type="button" id="button-clipboard" data-section="clipboard" class="nav-link">Copy and paste from the <em>clipboard</em></button>
     </section>
 
     <section class="nav-item printing">
@@ -80,18 +81,18 @@
         <svg class="nav-icon" viewBox="0 0 12 16"><use xlink:href="#icon-printing"></use></svg>
         Printing
       </h5>
-      <button type="button" id="button-pdf" data-view="pdf" class="nav-link"><em>Print</em> to PDF</button>
+      <button type="button" id="button-pdf" data-section="pdf" class="nav-link"><em>Print</em> to PDF</button>
     </section>
 
     <footer class="nav-footer">
-      <button type="button" id="button-about" data-view="about" class="nav-footer-button">About</button>
+      <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
       <a  class="nav-footer-logo" href="https://github.com">
         <svg class="nav-footer-icon" viewBox="0 0 770 88"><use xlink:href="#icon-love"></use></svg>
       </a>
     </footer>
   </nav>
 
-  <main class="content"></main>
+  <main class="main-content content"></main>
 
   <svg style="display:none;">
     <!-- Usage -->

@@ -1,5 +1,5 @@
 <template class="task-template">
-  <div id="dialogs-view" class="content-item native-ui task-wrapper">
+  <div id="dialogs-section" class="content-item native-ui task-wrapper">
     <header>
       <div class="wrapper">
         <h1>
@@ -137,5 +137,5 @@ ipc.on('open-file-dialog-sheet', function (event) {
       var SaveRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/save.js')
       document.getElementById('save-dialog-renderer').innerHTML= SaveRendererContent
     </script>
-  </div><!-- end dialog-view -->
+  </div><!-- end dialog-section -->
 </template>
