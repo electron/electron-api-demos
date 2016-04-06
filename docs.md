@@ -10,7 +10,7 @@ All of the pages (or views) are separate `.html` files which are appended onto t
 
 ## Folder Structure
 
-![Digram of App Structure and Operations](/assets/img/diagram.png)
+![Diagram of App Structure and Operations](/assets/img/diagram.png)
 
 #### `assets`
 This directory contains assets for the app itself: CSS, fonts, images and shared JavaScript libraries or helpers.
@@ -43,3 +43,7 @@ This file is required when using `npm` and Electron.js. It contains details on t
 
 #### Docs
 The files: `CODE_OF_CONDUCT`, `README`, `docs` and `CONTRIBUTING` files make up the documentation for the project.
+
+## UI Terminology
+
+![UI Terminology](/assets/img/ui-terminology.png)
