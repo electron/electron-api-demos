@@ -20,6 +20,11 @@ const zipAsset = (asset) => {
     const assetBase = path.basename(asset.path)
     const assetDirectory = path.dirname(asset.path)
     console.log(`Zipping ${assetBase} to ${asset.name}`)
+
+    if (!fs.existsSync(asset.path)) {
+      return reject(new Error(`${asset.path} does not exist`))
+    }
+
     const zipCommand = `zip --recurse-paths --symlinks '${asset.name}' '${assetBase}'`
     const options = {cwd: assetDirectory, maxBuffer: Infinity}
     childProcess.exec(zipCommand, options, (error) => {
