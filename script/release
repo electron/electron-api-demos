@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const request = require('request')
+
+if (!process.env.ELECTRON_API_DEMO_GITHUB_TOKEN) {
+  console.error('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set')
+  console.error('Set it to a token with repo scope created from https://github.com/settings/tokens/new')
+  process.exit(1)
+}
