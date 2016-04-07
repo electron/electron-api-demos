@@ -47,8 +47,6 @@ const zipAssets = () => {
 }
 
 const createRelease = (assets) => {
-  console.log('Creating new draft release')
-
   const options = {
     uri: 'https://api.github.com/repos/electron/electron-api-demos/releases',
     headers: {
@@ -66,6 +64,8 @@ const createRelease = (assets) => {
   }
 
   return new Promise((resolve, reject) => {
+    console.log('Creating new draft release')
+
     request.post(options, (error, response, body) => {
       if (error) {
         return reject(Error(`Request failed: ${error.message || error}`))
@@ -80,8 +80,6 @@ const createRelease = (assets) => {
 }
 
 const uploadAsset = (release, asset) => {
-  console.log(`Uploading ${asset.name} as release asset`)
-
   const options = {
     uri: release.upload_url.replace(/\{.*$/, `?name=${asset.name}`),
     headers: {
@@ -93,6 +91,8 @@ const uploadAsset = (release, asset) => {
   }
 
   return new Promise((resolve, reject) => {
+    console.log(`Uploading ${asset.name} as release asset`)
+
     const assetRequest = request.post(options, (error, response, body) => {
       if (error) {
         return reject(Error(`Uploading asset failed: ${error.message || error}`))
@@ -100,6 +100,7 @@ const uploadAsset = (release, asset) => {
       if (response.statusCode >= 400) {
         return reject(Error(`400+ response: ${response.statusCode}\n${util.inspect(body)}`))
       }
+
       resolve(asset)
     })
     fs.createReadStream(asset.zip).pipe(assetRequest)
@@ -113,8 +114,6 @@ const uploadAssets = (release) => {
 }
 
 const publishRelease = (release) => {
-  console.log('Publishing release')
-
   const options = {
     uri: release.draft.url,
     headers: {
@@ -127,6 +126,8 @@ const publishRelease = (release) => {
   }
 
   return new Promise((resolve, reject) => {
+    console.log('Publishing release')
+
     request.post(options, (error, response, body) => {
       if (error) {
         return reject(Error(`Request failed: ${error.message || error}`))
