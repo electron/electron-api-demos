@@ -10,6 +10,7 @@ html {
   font-size: 14px;
   line-height: 1.5;
   overflow: hidden; /* Prevents rubber-band scrolling of the whole "page" */
+  background-color: #fff; /* To cover OSes with no default background color */
 }
 
 body {
