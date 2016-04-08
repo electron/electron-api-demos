@@ -19,12 +19,11 @@ checkToken()
     process.exit(1)
   })
 
-
 function checkToken () {
   if (!token) {
     return Promise.reject('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set\nSet it to a token with repo scope created from https://github.com/settings/tokens/new')
   } else {
-    return Promise.resolve()
+    return Promise.resolve(token)
   }
 }
 
