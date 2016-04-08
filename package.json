@@ -1,6 +1,6 @@
 {
   "name": "electron-api-demos",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Electron interactive API demos",
   "private": true,
   "main": "main.js",
