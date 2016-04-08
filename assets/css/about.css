@@ -88,8 +88,10 @@ footer.about-section {
 }
 
 :root {
-  --rainbow-button-width: 180px;
-  --rainbow-button-height: 60px;
+  --rainbow-button-width: 170px;
+  --rainbow-button-height: 50px;
+  --rainbow-button-width-inner: 164px;
+  --rainbow-button-height-inner: 44px;
   --rainbow-color-1: hsl(116, 30%, 36%);
   --rainbow-color-2: hsl(194, 60%, 36%);
   --rainbow-color-3: hsl(222, 53%, 50%);
@@ -104,7 +106,7 @@ footer.about-section {
   height: var(--rainbow-button-height);
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .rainbow-button-wrapper:before {
@@ -116,27 +118,29 @@ footer.about-section {
   width: 1000px;
   height: var(--rainbow-button-height);
   background: #CCC;
-  background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 17%, var(--rainbow-color-3) 33%, var(--rainbow-color-4) 50%, var(--rainbow-color-5) 67%, var(--rainbow-color-6) 83%, var(--rainbow-color-1) 100%);
-  background-position: 600px 0;
+  /*background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 17%, var(--rainbow-color-3) 33%, var(--rainbow-color-4) 50%, var(--rainbow-color-5) 67%, var(--rainbow-color-6) 83%, var(--rainbow-color-1) 100%);*/
+  background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 12.5%, var(--rainbow-color-3) 25%, var(--rainbow-color-4) 37.5%, var(--rainbow-color-5) 50%, var(--rainbow-color-6) 62.5%, var(--rainbow-color-1) 75%, black 87.5%);
+  background-position: -820px 0;
   transition: all 0.5s;
   content: "";
 }
 
 .rainbow-button-wrapper button {
   display: block;
-  width: var(--rainbow-button-width);
-  height: var(--rainbow-button-height);
+  width: var(--rainbow-button-width-inner);
+  height: var(--rainbow-button-height-inner);
   position: absolute;
   z-index: 3;
-  top: 0;
-  left: 0;
-  color: white;
+  top: 3px;
+  left: 3px;
   border: none;
-  cursor: pointer;
+  background: white;
+  color: black;
+  font-size: 1.3rem;
 }
 
 .rainbow-button-wrapper:hover:before {
-  background-position: 1400px 0;
+  background-position: 0px 0;
 }
 
 @media (min-width: 940px) {
