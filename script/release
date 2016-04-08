@@ -9,7 +9,18 @@ const util = require('util')
 const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
 const version = require('../package').version
 
-const checkToken = () => {
+checkToken()
+  .then(zipAssets)
+  .then(createRelease)
+  .then(uploadAssets)
+  .then(publishRelease)
+  .catch((error) => {
+    console.error(error.message || error)
+    process.exit(1)
+  })
+
+
+function checkToken () {
   if (!token) {
     return Promise.reject('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set\nSet it to a token with repo scope created from https://github.com/settings/tokens/new')
   } else {
@@ -17,7 +28,7 @@ const checkToken = () => {
   }
 }
 
-const zipAsset = (asset) => {
+function zipAsset (asset) {
   return new Promise((resolve, reject) => {
     const assetBase = path.basename(asset.path)
     const assetDirectory = path.dirname(asset.path)
@@ -40,7 +51,7 @@ const zipAsset = (asset) => {
   })
 }
 
-const zipAssets = () => {
+function zipAssets () {
   const assets = [{
     name: 'electron-api-demos-mac.zip',
     path: path.join(__dirname, '..', 'out', 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
@@ -56,7 +67,7 @@ const zipAssets = () => {
   return Promise.all(assets.map(zipAsset))
 }
 
-const createRelease = (assets) => {
+function createRelease (assets) {
   const options = {
     uri: 'https://api.github.com/repos/electron/electron-api-demos/releases',
     headers: {
@@ -89,7 +100,7 @@ const createRelease = (assets) => {
   })
 }
 
-const uploadAsset = (release, asset) => {
+function uploadAsset (release, asset) {
   const options = {
     uri: release.upload_url.replace(/\{.*$/, `?name=${asset.name}`),
     headers: {
@@ -117,13 +128,13 @@ const uploadAsset = (release, asset) => {
   })
 }
 
-const uploadAssets = (release) => {
+function uploadAssets (release) {
   return Promise.all(release.assets.map((asset) => {
     return uploadAsset(release.draft, asset)
   })).then(() => release)
 }
 
-const publishRelease = (release) => {
+function publishRelease (release) {
   const options = {
     uri: release.draft.url,
     headers: {
@@ -151,13 +162,3 @@ const publishRelease = (release) => {
     })
   })
 }
-
-checkToken()
-  .then(zipAssets)
-  .then(createRelease)
-  .then(uploadAssets)
-  .then(publishRelease)
-  .catch((error) => {
-    console.error(error.message || error)
-    process.exit(1)
-  })
