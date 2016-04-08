@@ -9,10 +9,12 @@ const util = require('util')
 const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
 const version = require('../package').version
 
-if (!token) {
-  console.error('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set')
-  console.error('Set it to a token with repo scope created from https://github.com/settings/tokens/new')
-  process.exit(1)
+const checkToken = () => {
+  if (!token) {
+    return Promise.reject('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set\nSet it to a token with repo scope created from https://github.com/settings/tokens/new')
+  } else {
+    return Promise.resolve()
+  }
 }
 
 const zipAsset = (asset) => {
@@ -150,7 +152,8 @@ const publishRelease = (release) => {
   })
 }
 
-zipAssets()
+checkToken()
+  .then(zipAssets)
   .then(createRelease)
   .then(uploadAssets)
   .then(publishRelease)
