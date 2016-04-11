@@ -120,11 +120,15 @@ var template = [{
 
 if (process.platform === 'darwin') {
   var name = electron.app.getName()
+  var version = electron.app.getVersion()
   template.unshift({
     label: name,
     submenu: [{
       label: 'About ' + name,
       role: 'about'
+    }, {
+      label: 'Version ' + version,
+      enabled: false
     }, {
       type: 'separator'
     }, {
