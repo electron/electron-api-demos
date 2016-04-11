@@ -43,6 +43,7 @@
     "electron-winstaller": "^2.1.0",
     "mocha": "^2.3.4",
     "request": "^2.70.0",
+    "rimraf": "^2.5.2",
     "spectron": "~1.37.0",
     "standard": "^6.0.8"
   },
