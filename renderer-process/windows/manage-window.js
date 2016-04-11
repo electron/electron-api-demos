@@ -1,8 +1,10 @@
 var BrowserWindow = require('electron').remote.BrowserWindow
+var path = require('path')
+
 var manageWindowBtn = document.getElementById('manage-window')
 
 manageWindowBtn.addEventListener('click', function (event) {
-  var modalPath = 'file://' + __dirname + '/sections/windows/manage-modal.html'
+  var modalPath = 'file://' + path.join(__dirname, 'sections/windows/manage-modal.html')
   var win = new BrowserWindow({ width: 400, height: 225 })
 
   win.on('resize', updateReply)
