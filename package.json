@@ -43,7 +43,7 @@
     "mocha": "^2.3.4",
     "request": "^2.70.0",
     "spectron": "~1.37.0",
-    "standard-format": "^2.1.1"
+    "standard": "^6.0.8"
   },
   "dependencies": {
     "electron-json-storage": "^2.0.0",
