@@ -2,6 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
 const BrowserWindow = electron.BrowserWindow
+const devMode = require('electron-is-dev')
 var app = electron.app
 var mainWindow = null
 
@@ -20,6 +21,12 @@ function createWindow () {
   var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
   mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
   mainWindow.loadURL('file://' + __dirname + '/index.html')
+
+  if (devMode) {
+    mainWindow.webContents.openDevTools()
+    mainWindow.maximize()
+  }
+
   mainWindow.on('closed', function () {
     mainWindow = null
   })
