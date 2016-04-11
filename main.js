@@ -2,7 +2,7 @@ const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
 const BrowserWindow = electron.BrowserWindow
-const devMode = require('electron-is-dev')
+const debug = /--debug/.test(process.argv[2])
 var app = electron.app
 var mainWindow = null
 
@@ -22,7 +22,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
   mainWindow.loadURL('file://' + __dirname + '/index.html')
 
-  if (devMode) {
+  if (debug) {
     mainWindow.webContents.openDevTools()
     mainWindow.maximize()
   }
