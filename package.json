@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "lint": "standard-format --write",
+    "lint": "standard",
     "test": "mocha tests && npm run lint",
     "sign-win": "signcode -spc ~/electron-api-demos.spc -v ~/electron-api-demos.pvk -a sha1 -$ commercial -n 'Electron API Demos' -i http://electron.atom.io  -t http://timestamp.verisign.com/scripts/timstamp.dll -tr 10 './out/Electron API Demos-win32-ia32/Electron API Demos.exe'",
     "pack-mac": "electron-packager . 'Electron API Demos' --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --sign='Developer ID Application: GitHub'",
