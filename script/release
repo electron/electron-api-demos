@@ -2,8 +2,8 @@
 
 const childProcess = require('child_process')
 const fs = require('fs')
-const request = require('request')
 const path = require('path')
+const request = require('request')
 const util = require('util')
 
 const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
