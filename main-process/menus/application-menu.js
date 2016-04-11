@@ -138,7 +138,6 @@ if (process.platform === 'darwin') {
       visible: false,
       key: 'checkForUpdate',
       click: function () {
-        console.log('hereclick')
         require('electron').autoUpdater.checkForUpdates()
       }
     }, {
