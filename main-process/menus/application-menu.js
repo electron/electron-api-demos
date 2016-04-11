@@ -130,6 +130,26 @@ if (process.platform === 'darwin') {
       label: 'Version ' + version,
       enabled: false
     }, {
+      label: 'Checking for Update',
+      enabled: false,
+      key: 'checkingForUpdate'
+    }, {
+      label: 'Check for Update',
+      visible: false,
+      key: 'checkForUpdate',
+      click: function () {
+        console.log('hereclick')
+        require('electron').autoUpdater.checkForUpdates()
+      }
+    }, {
+      label: 'Restart and Install Update',
+      enabled: false,
+      visible: false,
+      key: 'restartToUpdate',
+      click: function () {
+        require('electron').autoUpdater.quitAndInstall()
+      }
+    }, {
       type: 'separator'
     }, {
       label: 'Services',
