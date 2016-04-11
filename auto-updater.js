@@ -35,7 +35,10 @@ exports.initialize = function () {
 }
 
 exports.updateMenu = function () {
-  Menu.getApplicationMenu().items.forEach(function (item) {
+  var menu = Menu.getApplicationMenu()
+  if (!menu) return
+
+  menu.items.forEach(function (item) {
     if (item.submenu)  {
       item.submenu.items.forEach(function (item) {
         switch (item.key) {
