@@ -1,7 +1,8 @@
 {
   "name": "electron-api-demos",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Electron interactive API demos",
+  "private": true,
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -40,6 +41,7 @@
     "electron-packager": "^6.0.0",
     "electron-prebuilt": "^0.37.2",
     "mocha": "^2.3.4",
+    "request": "^2.70.0",
     "spectron": "~1.37.0",
     "standard-format": "^2.1.1"
   },
