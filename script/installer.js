@@ -14,19 +14,21 @@ deleteOutputFolder()
   })
 
 function getInstallerConfig () {
-  const outPath = path.join(__dirname, '..', 'out')
+  const rootPath = path.join(__dirname, '..')
+  const outPath = path.join(rootPath, 'out')
+
   return Promise.resolve({
     appDirectory: path.join(outPath, 'Electron API Demos-win32-ia32'),
     exe: 'Electron API Demos.exe',
-    outputDirectory: path.join(outPath, 'windows-installer')
+    outputDirectory: path.join(outPath, 'windows-installer'),
+    setupIcon: path.join(rootPath, 'assets', 'app-icon', 'win', 'app.ico')
   })
 }
 
 function deleteOutputFolder () {
   return new Promise((resolve, reject) => {
     rimraf(path.join(__dirname, '..', 'out', 'windows-installer'), (error) => {
-      if (error) return reject(error)
-      resolve()
+      error ? reject(error) : resolve()
     })
   })
 }
