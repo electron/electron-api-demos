@@ -45,7 +45,6 @@
     "standard-format": "^2.1.1"
   },
   "dependencies": {
-    "electron-is-dev": "^0.1.0",
     "electron-json-storage": "^2.0.0",
     "glob": "^6.0.4"
   }
