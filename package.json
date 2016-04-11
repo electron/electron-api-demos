@@ -40,6 +40,7 @@
     "chai-as-promised": "^5.1.0",
     "electron-packager": "^6.0.2",
     "electron-prebuilt": "^0.37.2",
+    "electron-winstaller": "^2.1.0",
     "mocha": "^2.3.4",
     "request": "^2.70.0",
     "spectron": "~1.37.0",
