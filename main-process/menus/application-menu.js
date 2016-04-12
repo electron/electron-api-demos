@@ -118,6 +118,34 @@ var template = [{
   }]
 }]
 
+function addUpdateMenuItems (items, position) {
+  var updateItems = [{
+    label: 'Version ' + version,
+    enabled: false
+  }, {
+    label: 'Checking for Update',
+    enabled: false,
+    key: 'checkingForUpdate'
+  }, {
+    label: 'Check for Update',
+    visible: false,
+    key: 'checkForUpdate',
+    click: function () {
+      require('electron').autoUpdater.checkForUpdates()
+    }
+  }, {
+    label: 'Restart and Install Update',
+    enabled: false,
+    visible: false,
+    key: 'restartToUpdate',
+    click: function () {
+      require('electron').autoUpdater.quitAndInstall()
+    }
+  }]
+
+  items.splice.apply(menu, [position, 0].concat(updateItems))
+}
+
 if (process.platform === 'darwin') {
   var name = electron.app.getName()
   var version = electron.app.getVersion()
@@ -126,28 +154,6 @@ if (process.platform === 'darwin') {
     submenu: [{
       label: 'About ' + name,
       role: 'about'
-    }, {
-      label: 'Version ' + version,
-      enabled: false
-    }, {
-      label: 'Checking for Update',
-      enabled: false,
-      key: 'checkingForUpdate'
-    }, {
-      label: 'Check for Update',
-      visible: false,
-      key: 'checkForUpdate',
-      click: function () {
-        require('electron').autoUpdater.checkForUpdates()
-      }
-    }, {
-      label: 'Restart and Install Update',
-      enabled: false,
-      visible: false,
-      key: 'restartToUpdate',
-      click: function () {
-        require('electron').autoUpdater.quitAndInstall()
-      }
     }, {
       type: 'separator'
     }, {
@@ -184,6 +190,8 @@ if (process.platform === 'darwin') {
     label: 'Bring All to Front',
     role: 'front'
   })
+
+  addUpdateMenuItems(template[0].submenu, 1)
 }
 
 var menu = Menu.buildFromTemplate(template)
