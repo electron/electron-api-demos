@@ -8,7 +8,6 @@ deleteOutputFolder()
   .then(getInstallerConfig)
   .then(createWindowsInstaller)
   .catch((error) => {
-    console.log(error.stack);
     console.error(error.message || error)
     process.exit(1)
   })
