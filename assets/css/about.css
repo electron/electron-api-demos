@@ -57,6 +57,7 @@
   text-align: center;
   margin: 0 0 1em 0;
   font-size: 1.5em;
+  color: hsl(0, 0%, 55%);
 }
 
 .about .about-code h2 {

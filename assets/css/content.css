@@ -10,11 +10,15 @@
   opacity: 1;
 }
 
-
 .content {
   flex: 1;
   position: relative;
   overflow: hidden;
+}
+
+.content h3,
+.content p {
+  color: var(--color);
 }
 
 .content-item {
@@ -25,6 +29,7 @@
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  color: var(--color-accent);
 }
 
 .content-item {
@@ -52,7 +57,7 @@
 .content header .wrapper {
   padding-top: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--color-border);
 }
 @media (min-width: 940px) {
   .content header .wrapper {
@@ -93,6 +98,7 @@
   font-size: 11px;
   font-weight: 300;
   text-transform: uppercase;
+  color: var(--color-subtle);
 }
 .support-divider {
   margin: 0 .5em;
@@ -106,6 +112,7 @@
   padding: 1rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
   border-radius: 6px;
+  background: var(--color-accent) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85));
 }
 
 .pro-tip strong {
@@ -134,9 +141,15 @@
   font: inherit;
   font-size: 1.2em;
   padding: .4em 1.2em;
+  color: inherit;
+  background-color: transparent;
 }
 .demo-button:focus {
   outline: none;
+  background-color: white;
+}
+.demo-button:active {
+  border-color: var(--color-border);
 }
 
 .demo-response {
@@ -146,18 +159,31 @@
 
 .demo-input {
   flex: 1;
-  border: 2px solid;
+  border: 2px solid var(--color-border);
   border-radius: 4px;
   font: inherit;
   font-size: 1.2em;
   padding: .4em .8em;
+  color: inherit;
+  background-color: transparent;
 }
 .demo-input:focus {
   outline: none;
+  border-color: hsl(0,0%,80%);
+  background-color: white;
 }
 
 
 /* Code */
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  border-radius: 4px;
+  padding: 1px 4px;
+  white-space: nowrap;
+  color: hsl(0,0%,36%);
+  background-color: hsla(0,0%,60%,.15);
+}
 
 pre {
   font-size: 13px;
@@ -166,17 +192,17 @@ pre {
   margin: 0;
   border-radius: 4px;
   border: 1px solid;
-}
-
-code {
-  font-family: 'Source Code Pro', monospace;
-  border-radius: 4px;
-  padding: 1px 4px;
-  white-space: nowrap;
+  border-color: var(--color-border);
+  background-color: white;
 }
 
 pre code {
   white-space: pre;
+}
+
+pre > .hljs {
+  color: var(--color-subtle);
+  background-color: white;
 }
 
 
@@ -263,7 +289,8 @@ pre code {
   margin-top: 1em;
   margin-bottom: 2em;
   border-radius: 6px;
-  border: 1px solid;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
 }
 
 .active .toggle-content {
