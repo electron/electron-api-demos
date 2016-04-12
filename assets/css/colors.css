@@ -1,25 +1,17 @@
-/* Colors */
+/* Category Colors */
 
-.nav-item.windows       .is-selected { background-color: hsl(116, 30%, 36%); }
-.nav-item.menu          .is-selected { background-color: hsl(194, 60%, 36%); }
-.nav-item.native-ui     .is-selected { background-color: hsl(222, 53%, 50%); }
-.nav-item.communication .is-selected { background-color: hsl(285, 47%, 46%); }
-.nav-item.system        .is-selected { background-color: hsl(330, 65%, 48%); }
-.nav-item.printing      .is-selected { background-color: hsl( 36, 77%, 34%); }
+.windows       { --category-color: hsl(116, 30%, 36%); }
+.menu          { --category-color: hsl(194, 60%, 36%); }
+.native-ui     { --category-color: hsl(222, 53%, 50%); }
+.communication { --category-color: hsl(285, 47%, 46%); }
+.system        { --category-color: hsl(330, 65%, 48%); }
+.printing      { --category-color: hsl( 36, 77%, 34%); }
 
-.content-item.windows       { color: hsl(116, 30%, 36%); }
-.content-item.menu          { color: hsl(194, 60%, 36%); }
-.content-item.native-ui     { color: hsl(222, 53%, 50%); }
-.content-item.communication { color: hsl(285, 47%, 46%); }
-.content-item.system        { color: hsl(330, 65%, 48%); }
-.content-item.printing      { color: hsl( 36, 77%, 34%); }
 
-.content-item.windows       .pro-tip { background-color: hsl(116, 30%, 95%); }
-.content-item.menu          .pro-tip { background-color: hsl(194, 61%, 95%); }
-.content-item.native-ui     .pro-tip { background-color: hsl(222, 53%, 96%); }
-.content-item.communication .pro-tip { background-color: hsl(285, 47%, 96%); }
-.content-item.system        .pro-tip { background-color: hsl(330, 65%, 95%); }
-.content-item.printing      .pro-tip { background-color: hsl( 36, 77%, 95%); }
+.nav-item .is-selected.is-selected { background-color: var(--category-color); }
+.content-item { color: var(--category-color); }
+.content-item .pro-tip { background: var(--category-color) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85)); }
+
 
 
 /* About ------------------------ */
