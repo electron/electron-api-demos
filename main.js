@@ -1,8 +1,10 @@
 const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
+const autoUpdater = require('./auto-updater')
+
 const BrowserWindow = electron.BrowserWindow
-var app = electron.app
+const app = electron.app
 
 electron.hideInternalModules()
 process.throwDeprecation = true
@@ -16,6 +18,7 @@ function initialize () {
     files.forEach(function (file) {
       require(file)
     })
+    autoUpdater.updateMenu()
   })
 
   function createWindow () {
@@ -27,7 +30,10 @@ function initialize () {
     })
   }
 
-  app.on('ready', createWindow)
+  app.on('ready', function () {
+    createWindow()
+    autoUpdater.initialize()
+  })
 
   app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
