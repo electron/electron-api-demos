@@ -119,6 +119,7 @@ var template = [{
 }]
 
 function addUpdateMenuItems (items, position) {
+  var version = electron.app.getVersion()
   var updateItems = [{
     label: 'Version ' + version,
     enabled: false
@@ -143,12 +144,11 @@ function addUpdateMenuItems (items, position) {
     }
   }]
 
-  items.splice.apply(menu, [position, 0].concat(updateItems))
+  items.splice.apply(items, [position, 0].concat(updateItems))
 }
 
 if (process.platform === 'darwin') {
   var name = electron.app.getName()
-  var version = electron.app.getVersion()
   template.unshift({
     label: name,
     submenu: [{
@@ -192,6 +192,11 @@ if (process.platform === 'darwin') {
   })
 
   addUpdateMenuItems(template[0].submenu, 1)
+}
+
+if (process.platform === 'win32') {
+  var helpMenu = template[template.length - 1].submenu
+  addUpdateMenuItems(helpMenu, 0)
 }
 
 var menu = Menu.buildFromTemplate(template)
