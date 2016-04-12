@@ -17,12 +17,11 @@ function getInstallerConfig () {
   const outPath = path.join(rootPath, 'out')
 
   return Promise.resolve({
-    appDirectory: path.join(outPath, 'Electron API Demos-win32-ia32'),
-    exe: 'Electron API Demos.exe',
+    appDirectory: path.join(outPath, 'ElectronAPIDemos-win32-ia32'),
     noMsi: true,
     outputDirectory: path.join(outPath, 'windows-installer'),
-    setupExe: 'Electron API Demos Setup.exe',
-    setupIcon: path.join(rootPath, 'assets', 'app-icon', 'win', 'app.ico')
+    setupIcon: path.join(rootPath, 'assets', 'app-icon', 'win', 'app.ico'),
+    skipUpdateIcon: true
   })
 }
 
