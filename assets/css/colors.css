@@ -1,16 +1,33 @@
+
+/* Custom Properties */
+
+:root {
+  --color:          hsl(0,0%,22%);
+  --color-subtle:   hsl(0,0%,44%);
+  --color-strong:   hsl(0,0%,11%);
+  --color-link:     hsl(200,100%,33%);
+
+  --color-border:   hsl(0,0%,88%);
+  --color-bg:       hsl(0,0%,96%);
+  --color-bg:       hsl(0,0%,96%);
+
+  --color-accent:   black; /* Fallback */
+}
+
+
 /* Category Colors */
 
-.windows       { --category-color: hsl(116, 30%, 36%); }
-.menu          { --category-color: hsl(194, 60%, 36%); }
-.native-ui     { --category-color: hsl(222, 53%, 50%); }
-.communication { --category-color: hsl(285, 47%, 46%); }
-.system        { --category-color: hsl(330, 65%, 48%); }
-.printing      { --category-color: hsl( 36, 77%, 34%); }
+.windows       { --color-accent: hsl(116, 30%, 36%); }
+.menu          { --color-accent: hsl(194, 60%, 36%); }
+.native-ui     { --color-accent: hsl(222, 53%, 50%); }
+.communication { --color-accent: hsl(285, 47%, 46%); }
+.system        { --color-accent: hsl(330, 65%, 48%); }
+.printing      { --color-accent: hsl( 36, 77%, 34%); }
 
 
-.nav-item .is-selected.is-selected { background-color: var(--category-color); }
-.content-item { color: var(--category-color); }
-.content-item .pro-tip { background: var(--category-color) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85)); }
+.nav-item .is-selected.is-selected { background-color: var(--color-accent); }
+.content-item { color: var(--color-accent); }
+.content-item .pro-tip { background: var(--color-accent) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85)); }
 
 
 
@@ -29,20 +46,20 @@
 html,
 .content h3,
 .content p {
-  color: hsl(0,0%,22%);
+  color: var(--color);
 }
 
 
 /* Border ------------------------ */
 .content header .wrapper {
-  border-bottom-color: hsl(0,0%,88%);
+  border-bottom-color: var(--color-border);
 }
 
 
 /* Links ------------------------ */
 
 a {
-  color: hsl(200,100%,33%);
+  color: var(--color-link);
 }
 
 /* Demo ------------------------ */
@@ -55,12 +72,12 @@ a {
   background-color: white;
 }
 .demo-button:active {
-  border-color: hsl(0,0%,88%);
+  border-color: var(--color-border);
 }
 
 .demo-input {
   flex: 1;
-  border-color: hsl(0,0%,88%);
+  border-color: var(--color-border);
   color: inherit;
   background-color: transparent;
 }
@@ -77,12 +94,12 @@ code {
 }
 
 pre {
-  border-color: hsl(0,0%,88%);
+  border-color: var(--color-border);
   background-color: white;
 }
 
 pre > .hljs {
-  color: hsl(0,0%,44%);
+  color: var(--color-subtle);
   background-color: white;
 }
 
@@ -90,28 +107,28 @@ pre > .hljs {
 /* Toggle-content ------------------------ */
 
 .toggle-content {
-  border-color: hsl(0,0%,88%);
-  background-color: hsl(0,0%,96%);
+  border-color: var(--color-border);
+  background-color: var(--color-bg);
 }
 
 .support {
-  color: hsl(0,0%,44%);
+  color: var(--color-subtle);
 }
 
 /* Nav ------------------------ */
 
 .nav {
-  color: hsl(0,0%,44%);
-  border-right-color: hsl(0,0%,88%);
-  background-color: hsl(0,0%,96%);
+  color: var(--color-subtle);
+  border-right-color: var(--color-border);
+  background-color: var(--color-bg);
 }
 
 .nav-header {
-  border-bottom-color: hsl(0,0%,88%);
+  border-bottom-color: var(--color-border);
 }
 
 .nav-title strong {
-  color: hsl(0,0%,22%);
+  color: var(--color-strong);
 }
 
 .nav-link {
@@ -131,18 +148,18 @@ pre > .hljs {
 }
 
 .nav-link em {
-  color: hsl(0,0%,11%);
+  color: var(--color-strong);
 }
 
 .nav-footer {
-  border-top-color: hsl(0,0%,88%);
+  border-top-color: var(--color-border);
 }
 
 .nav-footer-button {
   color: inherit;
 }
 .nav-footer-button:focus {
-  color: hsl(0,0%,11%);
+  color: var(--color-strong);
 }
 
 .nav-footer-logo {
