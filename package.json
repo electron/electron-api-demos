@@ -10,10 +10,10 @@
     "lint": "standard",
     "test": "mocha tests && npm run lint",
     "sign-win": "signcode -spc ~/electron-api-demos.spc -v ~/electron-api-demos.pvk -a sha1 -$ commercial -n 'Electron API Demos' -i http://electron.atom.io  -t http://timestamp.verisign.com/scripts/timstamp.dll -tr 10 './out/Electron API Demos-win32-ia32/Electron API Demos.exe'",
-    "pack-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub'",
-    "pack-win": "electron-packager . ElectronAPIDemos --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out --version-string.CompanyName='GitHub, Inc.' --version-string.FileDescription='Electron API Demos' --version-string.ProductName='Electron API Demos'",
+    "pack-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub'",
+    "pack-win": "electron-packager . ElectronAPIDemos --asar  --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out --version-string.CompanyName='GitHub, Inc.' --version-string.FileDescription='Electron API Demos' --version-string.ProductName='Electron API Demos'",
     "pack-win-win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out",
-    "pack-lin": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=out",
+    "pack-lin": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=out",
     "package": "npm run pack-mac && npm run pack-win && npm run pack-lin"
   },
   "standard": {
