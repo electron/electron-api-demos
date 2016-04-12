@@ -88,14 +88,17 @@ footer.about-section {
 }
 
 :root {
-  --rainbow-button-width: 180px;
-  --rainbow-button-height: 60px;
+  --rainbow-button-width: 170px;
+  --rainbow-button-height: 50px;
+  --rainbow-button-width-inner: 164px;
+  --rainbow-button-height-inner: 44px;
   --rainbow-color-1: hsl(116, 30%, 36%);
   --rainbow-color-2: hsl(194, 60%, 36%);
   --rainbow-color-3: hsl(222, 53%, 50%);
   --rainbow-color-4: hsl(285, 47%, 46%);
   --rainbow-color-5: hsl(330, 65%, 48%);
-  --rainbow-color-6: hsl( 36, 77%, 34%);
+  --rainbow-color-6: hsl(32, 79%, 49%);
+  --rainbow-color-7: hsl(53, 84%, 50%);
 }
 
 .rainbow-button-wrapper {
@@ -104,7 +107,7 @@ footer.about-section {
   height: var(--rainbow-button-height);
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .rainbow-button-wrapper:before {
@@ -113,30 +116,31 @@ footer.about-section {
   z-index: 2;
   top: 0;
   left: 0;
-  width: 1000px;
+  width: 600px;
   height: var(--rainbow-button-height);
   background: #CCC;
-  background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 17%, var(--rainbow-color-3) 33%, var(--rainbow-color-4) 50%, var(--rainbow-color-5) 67%, var(--rainbow-color-6) 83%, var(--rainbow-color-1) 100%);
-  background-position: 600px 0;
+  background: linear-gradient(to right, var(--rainbow-color-1) 0%, var(--rainbow-color-2) 14%, var(--rainbow-color-3) 28%, var(--rainbow-color-4) 42%, var(--rainbow-color-5) 56%, var(--rainbow-color-6) 70%, var(--rainbow-color-7) 84%, var(--rainbow-color-1) 100%);
+  background-position: -200px 0;
   transition: all 0.5s;
   content: "";
 }
 
 .rainbow-button-wrapper button {
   display: block;
-  width: var(--rainbow-button-width);
-  height: var(--rainbow-button-height);
+  width: var(--rainbow-button-width-inner);
+  height: var(--rainbow-button-height-inner);
   position: absolute;
   z-index: 3;
-  top: 0;
-  left: 0;
-  color: white;
+  top: 3px;
+  left: 3px;
   border: none;
-  cursor: pointer;
+  background: white;
+  color: black;
+  font-size: 1.3rem;
 }
 
 .rainbow-button-wrapper:hover:before {
-  background-position: 1400px 0;
+  background-position: 200px 0;
 }
 
 @media (min-width: 940px) {
