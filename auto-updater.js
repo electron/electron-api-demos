@@ -1,8 +1,7 @@
-var autoUpdater = require('electron').autoUpdater
-var Menu = require('electron').Menu
+const autoUpdater = require('electron').autoUpdater
+const Menu = require('electron').Menu
 
 var state = 'checking'
-var updaterMenuItems = {}
 
 exports.initialize = function () {
   autoUpdater.on('checking-for-update', function () {
@@ -39,7 +38,7 @@ exports.updateMenu = function () {
   if (!menu) return
 
   menu.items.forEach(function (item) {
-    if (item.submenu)  {
+    if (item.submenu) {
       item.submenu.items.forEach(function (item) {
         switch (item.key) {
           case 'checkForUpdate':
