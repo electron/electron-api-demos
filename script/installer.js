@@ -20,6 +20,7 @@ function getInstallerConfig () {
     appDirectory: path.join(outPath, 'ElectronAPIDemos-win32-ia32'),
     noMsi: true,
     outputDirectory: path.join(outPath, 'windows-installer'),
+    setupExe: 'ElectronAPIDemosSetup.exe',
     setupIcon: path.join(rootPath, 'assets', 'app-icon', 'win', 'app.ico'),
     skipUpdateIcon: true
   })
