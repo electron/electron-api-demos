@@ -9,7 +9,7 @@
     "lint": "standard",
     "test": "mocha tests && npm run lint",
     "sign-win": "signcode -spc ~/electron-api-demos.spc -v ~/electron-api-demos.pvk -a sha1 -$ commercial -n 'Electron API Demos' -i http://electron.atom.io  -t http://timestamp.verisign.com/scripts/timstamp.dll -tr 10 './out/Electron API Demos-win32-ia32/Electron API Demos.exe'",
-    "pack-mac": "electron-packager . 'Electron API Demos' --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --sign='Developer ID Application: GitHub'",
+    "pack-mac": "electron-packager . 'Electron API Demos' --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub'",
     "pack-win": "electron-packager . 'Electron API Demos' --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out --version-string.CompanyName='GitHub, Inc.' --version-string.FileDescription='Electron API Demos' --version-string.ProductName='Electron API Demos' && npm run sign-win",
     "pack-win-win": "electron-packager . Electron API Demos --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out",
     "pack-lin": "electron-packager . 'Electron API Demos' --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=out",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
-    "electron-packager": "^6.0.0",
+    "electron-packager": "^6.0.2",
     "electron-prebuilt": "^0.37.2",
     "mocha": "^2.3.4",
     "request": "^2.70.0",
