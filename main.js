@@ -1,9 +1,10 @@
 const path = require('path')
 const glob = require('glob')
 const electron = require('electron')
-const BrowserWindow = electron.BrowserWindow
 const autoUpdater = require('./auto-updater')
-var app = electron.app
+
+const BrowserWindow = electron.BrowserWindow
+const app = electron.app
 
 electron.hideInternalModules()
 process.throwDeprecation = true
