@@ -8,6 +8,15 @@ var mainWindow = null
 electron.hideInternalModules()
 process.throwDeprecation = true
 
+// Handle Squirrel on Windows startup events
+switch (process.argv[1]) {
+  case '--squirrel-install':
+  case '--squirrel-obsolete':
+  case '--squirrel-updated':
+  case '--squirrel-uninstall':
+    return app.quit()
+}
+
 // Require and setup each JS file in the main-process dir
 glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
   if (error) return console.log(error)
