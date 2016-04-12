@@ -9,7 +9,7 @@ electron.hideInternalModules()
 process.throwDeprecation = true
 
 // Require and setup each JS file in the main-process dir
-glob(__dirname + '/main-process/**/*.js', function (error, files) {
+glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
   if (error) return console.log(error)
   files.forEach(function (file) {
     require(file)
@@ -19,7 +19,7 @@ glob(__dirname + '/main-process/**/*.js', function (error, files) {
 function createWindow () {
   var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
   mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
-  mainWindow.loadURL('file://' + __dirname + '/index.html')
+  mainWindow.loadURL('file://' + path.join(__dirname, 'index.html'))
   mainWindow.on('closed', function () {
     mainWindow = null
   })

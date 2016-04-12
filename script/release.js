@@ -54,12 +54,10 @@ function zipAssets () {
   const assets = [{
     name: 'electron-api-demos-mac.zip',
     path: path.join(__dirname, '..', 'out', 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
-  },
-  {
+  }, {
     name: 'electron-api-demos-windows.zip',
     path: path.join(__dirname, '..', 'out', 'Electron API Demos-win32-ia32')
-  },
-  {
+  }, {
     name: 'electron-api-demos-linux.zip',
     path: path.join(__dirname, '..', 'out', 'Electron API Demos-linux-x64')
   }]
