@@ -74,10 +74,10 @@ describe('demo app', function () {
       .getWindowHeight().should.eventually.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .waitForVisible('#about-modal').should.eventually.be.true
-      .isVisible('.section-nav').should.eventually.be.false
+      .isVisible('.js-nav').should.eventually.be.false
       .click('button[id="get-started"]').pause(500)
       .isVisible('#about-modal').should.eventually.be.false
-      .isVisible('.section-nav').should.eventually.be.true
+      .isVisible('.js-nav').should.eventually.be.true
   })
 
   describe('when clicking on a section from the nav bar', function () {

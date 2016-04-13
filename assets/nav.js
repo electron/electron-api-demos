@@ -45,7 +45,7 @@ function activateDefaultSection () {
 }
 
 function showMainContent () {
-  document.querySelector('.section-nav').classList.add('show')
+  document.querySelector('.js-nav').classList.add('show')
   document.querySelector('.content').classList.add('show')
 }
 

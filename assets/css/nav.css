@@ -1,15 +1,5 @@
 /* Nav */
 
-.section-nav {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.section-nav.show {
-  visibility: visible;;
-  opacity: 1;
-}
-
 .nav {
   width: 340px;
   overflow-x: hidden;
@@ -17,6 +7,12 @@
   color: var(--color-subtle);
   border-right: 1px solid var(--color-border);
   background-color: var(--color-bg);
+  visibility: hidden;
+  opacity: 0;
+}
+.nav.show {
+  visibility: visible;;
+  opacity: 1;
 }
 
 .nav-header {
