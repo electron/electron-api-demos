@@ -14,6 +14,18 @@ process.throwDeprecation = true
 var mainWindow = null
 
 function initialize () {
+  var shouldQuit = app.makeSingleInstance(function () {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
+    }
+  })
+
+  if (shouldQuit) {
+    app.quit()
+    return
+  }
+
   // Require and setup each JS file in the main-process dir
   glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
     if (error) return console.log(error)
