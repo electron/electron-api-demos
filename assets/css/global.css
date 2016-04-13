@@ -76,6 +76,38 @@ svg {
   fill: currentColor;
 }
 
+/* Code */
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  border-radius: 4px;
+  padding: 1px 4px;
+  white-space: nowrap;
+  color: hsl(0,0%,36%);
+  background-color: hsla(0,0%,60%,.15);
+}
+
+pre {
+  font-size: 13px;
+  overflow: auto;
+  padding: 1em;
+  margin: 0;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: var(--color-border);
+  background-color: white;
+}
+
+pre code {
+  white-space: pre;
+}
+
+pre > .hljs {
+  color: var(--color-subtle);
+  background-color: white;
+}
+
+
 /* Utilities ---------------------------- */
 
 .avoid-clicks {
