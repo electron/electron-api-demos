@@ -109,21 +109,18 @@
 
 .pro-tip {
   margin-top: 2rem;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
   border-radius: 6px;
   background: var(--color-accent) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85));
 }
 
-.pro-tip strong {
-  font-weight: 600;
+.pro-tip.pro-tip h2 {
+  margin: 0 0 .5rem 0;
 }
 
-.pro-tip.pro-tip h2 {
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: .5em;
+.pro-tip strong {
+  font-weight: 600;
 }
 
 
@@ -304,10 +301,6 @@ pre > .hljs {
 
 .demo-box > p:first-child {
   margin-top: 0;
-}
-
-.non-demo-box {
-  padding-bottom: 20px;
 }
 
 .demo-box button {
