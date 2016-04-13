@@ -45,26 +45,28 @@
   transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
 }
 
-.wrapper {
+.section-wrapper {
   position: relative;
   max-width: 740px;
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.content header .wrapper {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding: 2rem 2rem 1rem 2rem;
   border-bottom: 1px solid var(--color-border);
 }
 @media (min-width: 940px) {
-  .content header .wrapper {
+  .section-wrapper {
     padding-top: 4rem;
   }
 }
 
 
 /* Section */
+
+.wrapper {
+  position: relative;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
 .section > section:first-of-type {
   margin-top: 2rem;
