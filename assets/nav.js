@@ -70,7 +70,7 @@ function hideAllSectionsAndDeselectButtons () {
     section.classList.remove('show')
   })
 
-  let buttons = document.querySelectorAll('.nav-link.is-selected')
+  let buttons = document.querySelectorAll('.nav-button.is-selected')
   Array.prototype.forEach.call(buttons, function (button) {
     button.classList.remove('is-selected')
   })
