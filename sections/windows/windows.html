@@ -27,7 +27,7 @@
 
           <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="new-window-renderer"></pre></code>
+          <pre><code data-path="renderer-process/windows/create-window.js"></pre></code>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -56,7 +56,7 @@
 
           <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="manage-window-renderer"></pre></code>
+          <pre><code data-path="renderer-process/windows/manage-window.js"></pre></code>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@
           </p>
 
           <h5>Renderer Process</h5>
-          <pre><code id="frameless-window-renderer"></pre></code>
+          <pre><code data-path="renderer-process/windows/frameless-window.js"></pre></code>
 
           <p>Windows can have a transparent background, too. By setting the <code>transparent</code> option to <code>true</code>, you can also make your frameless window transparent:</p>
           <pre>
@@ -99,17 +99,5 @@
     <script type="text/javascript" src="renderer-process/windows/manage-window.js"></script>
     <script type="text/javascript" src="renderer-process/windows/frameless-window.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs');
-      // New Window
-      var windowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/create-window.js');
-      document.getElementById('new-window-renderer').textContent = windowRendererContent;
-      // Manage Window
-      var manageWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/manage-window.js');
-      document.getElementById('manage-window-renderer').textContent = manageWindowRendererContent;
-      // Frameless Window
-      var framelessWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/frameless-window.js');
-      document.getElementById('frameless-window-renderer').textContent = framelessWindowRendererContent;
-    </script>
   </section>
 </template>
