@@ -89,13 +89,13 @@ process.versions.node</code></pre>
       var fs = require('fs')
       // App Information
       var appInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/app-information.js')
-      document.getElementById('app-info-renderer').innerHTML= appInfoRendererContent
+      document.getElementById('app-info-renderer').textContent = appInfoRendererContent
       // Sys Information
       var sysInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/sys-information.js')
-      document.getElementById('sys-info-renderer').innerHTML= sysInfoRendererContent
+      document.getElementById('sys-info-renderer').textContent = sysInfoRendererContent
       // Screen Information
       var screenInfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/screen-information.js')
-      document.getElementById('screen-info-renderer').innerHTML= screenInfoRendererContent
+      document.getElementById('screen-info-renderer').textContent = screenInfoRendererContent
     </script>
   </section>
 </template>

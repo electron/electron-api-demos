@@ -55,10 +55,10 @@
       var fs = require('fs');
       // Copy
       var copyToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/copy.js');
-      document.getElementById('copy-to-renderer').innerHTML= copyToRendererContent;
+      document.getElementById('copy-to-renderer').textContent = copyToRendererContent;
       // Paste
       var pasteToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/paste.js');
-      document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
+      document.getElementById('paste-to-renderer').textContent = pasteToRendererContent;
     </script>
   </section>
 </tempalte>

@@ -46,9 +46,9 @@
       var fs = require('fs');
       // Put in Tray
       var trayRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/tray/tray.js');
-      document.getElementById('tray-renderer').innerHTML= trayRendererContent;
+      document.getElementById('tray-renderer').textContent = trayRendererContent;
       var trayMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/tray/tray.js');
-      document.getElementById('tray-main').innerHTML= trayMainContent;
+      document.getElementById('tray-main').textContent = trayMainContent;
     </script>
   </section>
 </template>
