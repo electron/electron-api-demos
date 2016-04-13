@@ -140,6 +140,21 @@ a.no-dec {
 }
 
 
+/* Content ------------------ */
+
+.content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.content.show {
+  visibility: visible;;
+  opacity: 1;
+}
+
+
 /* Hacks ---------------------------- */
 
 /* Fixes horizontal scrolling in code blocks on OS X El Cap (10.11.3), retina screen

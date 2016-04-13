@@ -1,23 +1,3 @@
-/* Content ------------------ */
-/* TODO: Move somewhere else */
-
-.content {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-  visibility: hidden;
-  opacity: 0;
-}
-.content.show {
-  visibility: visible;;
-  opacity: 1;
-}
-
-.content h3,
-.content p {
-  color: var(--color);
-}
-
 /* Section ------------------ */
 
 .section {
@@ -43,6 +23,11 @@
   opacity: 1;
   transform: translateX(0);
   transition: visibility 0s 0s linear , opacity .36s ease-out, transform .36s ease-out;
+}
+
+.section h3,
+.section p {
+  color: var(--color);
 }
 
 .section-wrapper {
