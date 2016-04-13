@@ -64,7 +64,7 @@ function zipAssets () {
     path: path.join(outPath, 'Electron API Demos-linux-x64')
   }]
 
-  return Promise.all(assets.map(zipAsset)).then((zipAssets) => {
+  return Promise.all(zipAssets.map(zipAsset)).then((zipAssets) => {
     return zipAssets.concat([{
       name: 'RELEASES',
       path: path.join(outPath, 'RELEASES')
