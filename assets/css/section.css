@@ -282,7 +282,7 @@ pre > .hljs {
 
 /* TOGGLE! */
 
-.toggle-content {
+.demo-box {
   display: none;
   position: relative;
   padding: 2em;
@@ -293,36 +293,34 @@ pre > .hljs {
   background-color: var(--color-bg);
 }
 
-.active .toggle-content {
+.active .demo-box {
   display: block;
-  animation: toggle-content-fade-in .2s cubic-bezier(0, .20, .20, .96);
+  animation: demo-box-fade-in .2s cubic-bezier(0, .20, .20, .96);
 }
-@keyframes toggle-content-fade-in {
+@keyframes demo-box-fade-in {
     0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.toggle-content > p:first-child {
+.demo-box > p:first-child {
   margin-top: 0;
 }
 
-.non-toggle-content {
+.non-demo-box {
   padding-bottom: 20px;
 }
 
-.toggle-content button {
+.demo-box button {
   margin-right: 1em;
 }
 
-.toggle-content h5 {
+.demo-box h5 {
   font-size: 1em;
   margin-bottom: .6em;
 }
 
-
-/* Pointy arrow */
-
-.toggle-content:before {
+/* Demo Box arrow */
+.demo-box:before {
   content: "";
   position: absolute;
   top: -11px;

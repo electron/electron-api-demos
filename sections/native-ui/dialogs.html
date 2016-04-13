@@ -19,7 +19,7 @@
         <button id="open-file-demo-toggle" class="js-container-target demo-toggle-button">Open a File or Directory
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
+        <div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="select-directory">Demo</button>
             <span class="demo-response" id="selected-file"></span>
@@ -32,7 +32,7 @@
 
           <div class="pro-tip">
             <h2 class="avoid-clicks">ProTip</h2>
-            <div class="non-toggle-content">
+            <div class="non-demo-box">
               <strong>The sheet-style dialog on OS X.</strong>
               <p>On OS X you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first argument in the dialog method.</p>
             <pre><code>var ipc = require('electron').ipcMain
@@ -54,7 +54,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
         <button id="error-dialog-demo-toggle" class="js-container-target demo-toggle-button">Error Dialog
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
+        <div class="demo-box">
           <div class="demo-controls">
             <button id="error-dialog" class="demo-button">Demo</button>
           </div>
@@ -74,7 +74,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
         <button id="information-dialog-demo-toggle" class="js-container-target demo-toggle-button">Information Dialog
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
+        <div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="information-dialog">Demo</button>
             <span class="demo-response" id="info-selection"></span>
@@ -95,7 +95,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
         <button id="save-dialog-demo-toggle" class="js-container-target demo-toggle-button">Save Dialog
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
+        <div class="demo-box">
           <div class="demo-controls">
             <button class="demo-button" id="save-dialog">Demo</button>
             <span class="demo-response" id="file-saved"></span>
