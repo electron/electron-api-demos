@@ -1,19 +1,15 @@
 /* content */
 
-.main-content {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.main-content.show {
-  visibility: visible;;
-  opacity: 1;
-}
-
 .content {
   flex: 1;
   position: relative;
   overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.content.show {
+  visibility: visible;;
+  opacity: 1;
 }
 
 .content h3,
