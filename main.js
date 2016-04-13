@@ -20,6 +20,7 @@ function createWindow () {
   var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
   mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
   mainWindow.loadURL('file://' + path.join(__dirname, 'index.html'))
+  BrowserWindow.addDevToolsExtension(path.join(__dirname, 'assets/accessibility-devtools'))
   mainWindow.on('closed', function () {
     mainWindow = null
   })
