@@ -2,6 +2,9 @@
 
 set -ex
 
+EXE_PATH=./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe
+SIGNED_EXE_PATH=./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemosSigned.exe
+
 osslsigncode \
   -spc ~/electron-api-demos.spc \
   -key ~/electron-api-demos.key \
@@ -9,11 +12,10 @@ osslsigncode \
   -n 'Electron API Demos' \
   -i http://electron.atom.io  \
   -t http://timestamp.verisign.com/scripts/timstamp.dll \
-  -in './out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe' \
-  -out './out/ElectronAPIDemos-win32-ia32/ElectronAPIDemosSigned.exe'
+  -in "$EXE_PATH" \
+  -out "$SIGNED_EXE_PATH"
 
-rm -fr ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe
-mv ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemosSigned.exe ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe
+mv "$SIGNED_EXE_PATH" "$EXE_PATH"
 
 osslsigncode \
   -spc ~/electron-api-demos.spc \
@@ -23,8 +25,7 @@ osslsigncode \
   -i http://electron.atom.io  \
   -t http://timestamp.verisign.com/scripts/timstamp.dll \
   -nest \
-  -in './out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe' \
-  -out './out/ElectronAPIDemos-win32-ia32/ElectronAPIDemosSigned.exe'
+  -in "$EXE_PATH" \
+  -out "$SIGNED_EXE_PATH"
 
-rm -fr ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe
-mv ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemosSigned.exe ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe
+mv "$SIGNED_EXE_PATH" "$EXE_PATH"
