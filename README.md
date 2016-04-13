@@ -29,6 +29,12 @@ $ npm start
 
 If you don't wish to clone, you can [download the source code](https://github.com/atom/electron-api-demos/archive/master.zip).
 
+For easier developing you can launch the app in fullscreen with DevTools open:
+
+```bash
+$ npm run debug
+```
+
 #### See the [contributing doc]() on how to contribute.
 
 #### Reads the [docs]() to learn more about how this app is built.

@@ -7,6 +7,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "dev": "electron . --debug",
     "lint": "standard",
     "test": "mocha tests && npm run lint",
     "sign-win": "signcode -spc ~/electron-api-demos.spc -v ~/electron-api-demos.pvk -a sha1 -$ commercial -n 'Electron API Demos' -i http://electron.atom.io  -t http://timestamp.verisign.com/scripts/timstamp.dll -tr 10 './out/Electron API Demos-win32-ia32/Electron API Demos.exe'",
