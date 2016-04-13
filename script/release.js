@@ -51,17 +51,31 @@ function zipAsset (asset) {
 }
 
 function zipAssets () {
-  const assets = [{
+  const outPath = path.join(__dirname, '..', 'out')
+
+  const zipAssets = [{
     name: 'electron-api-demos-mac.zip',
-    path: path.join(__dirname, '..', 'out', 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
+    path: path.join(outPath, 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
   }, {
     name: 'electron-api-demos-windows.zip',
-    path: path.join(__dirname, '..', 'out', 'Electron API Demos-win32-ia32')
+    path: path.join(outPath, 'Electron API Demos-win32-ia32')
   }, {
     name: 'electron-api-demos-linux.zip',
-    path: path.join(__dirname, '..', 'out', 'Electron API Demos-linux-x64')
+    path: path.join(outPath, 'Electron API Demos-linux-x64')
   }]
-  return Promise.all(assets.map(zipAsset))
+
+  return Promise.all(assets.map(zipAsset)).then((zipAssets) => {
+    return zipAssets.concat([{
+      name: 'RELEASES',
+      path: path.join(outPath, 'RELEASES')
+    }, {
+      name: 'ElectronAPIDemosSetup.exe',
+      path: path.join(outPath, 'ElectronAPIDemosSetup.exe')
+    }, {
+      name: `ElectronAPIDemos-${version}-full.nupkg`,
+      path: path.join(outPath, `ElectronAPIDemos-${version}-full.nupkg`)
+    }])
+  })
 }
 
 function createRelease (assets) {
