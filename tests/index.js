@@ -18,7 +18,8 @@ describe('demo app', function () {
   var app
 
   var removeStoredPreferences = function () {
-    var userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', 'electron-api-demos')
+    var productName = require('../package').productName
+    var userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
     try {
       fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
     } catch (error) {
