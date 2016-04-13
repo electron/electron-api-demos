@@ -58,6 +58,13 @@
   }
 }
 
+.section-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: .5em;
+}
+
 
 /* Demo */
 
@@ -78,16 +85,6 @@
   max-width: 740px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-
-/* Icon */
-
-.content .icon {
-  width: 32px;
-  height: 32px;
-  vertical-align: middle;
-  margin-right: .5em;
 }
 
 
