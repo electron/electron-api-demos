@@ -24,7 +24,7 @@
 
           <p>This app uses the code below to set the application menu. If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed.</p>
           <h5>Main Process</h5>
-          <pre><code id="application-menu-main"></code></pre>
+          <pre><code data-path="main-process/menus/application-menu.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -54,21 +54,12 @@
 
           <p>In this demo we use the <code>remote</code> module to access <code>menu</code> and <code>menuitem</code> from the renderer process.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="context-menu-renderer"></pre></code>
+          <pre><code data-path="renderer-process/menus/context-menu.js"></pre></code>
         </div>
       </div>
     </div>
 
     <script type="text/javascript" src="renderer-process/menus/context-menu.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs');
-      // Application Menu
-      var appMenuMainContent = fs.readFileSync(__dirname + '/main-process/menus/application-menu.js');
-      document.getElementById('application-menu-main').textContent = appMenuMainContent;
-      // Context Menu
-      var contextMenuRendererContent = fs.readFileSync(__dirname + '/renderer-process/menus/context-menu.js');
-      document.getElementById('context-menu-renderer').textContent = contextMenuRendererContent;
-    </script>
   </section>
 </template>

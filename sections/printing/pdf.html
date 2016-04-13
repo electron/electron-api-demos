@@ -25,15 +25,15 @@
           <p>To demonstrate the print to PDF functionality, the demo button above will save this page as a PDF and, if you have a PDF viewer, open the file.</p>
           <p>In a real-world application you're more likely to add this to application menu, but for the purposes of the demo we've set it to the demo button.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="print-pdf-renderer"></pre></code>
+          <pre><code data-path="renderer-process/printing/pdf.js"></pre></code>
           <h5>Main Process</h5>
-          <pre><code id="print-pdf-main"></code></pre>
+          <pre><code data-path="main-process/printing/pdf.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
             <strong>Use a print style sheet.</strong>
             <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Below is the stylesheet used in this app, located in <code>assets/css/print.css</code>.</p>
-            <pre><code id="print-style-sheet"></code></pre>
+            <pre><code data-path="assets/css/print.css"></code></pre>
           </div>
         </div>
       </div>
@@ -41,16 +41,5 @@
 
     <script type="text/javascript" src="renderer-process/printing/pdf.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs');
-      // Open File Dialog
-      var printPDFRendererContent = fs.readFileSync(__dirname + '/renderer-process/printing/pdf.js');
-      document.getElementById('print-pdf-renderer').textContent = printPDFRendererContent;
-      var printPDFMainContent = fs.readFileSync(__dirname + '/main-process/printing/pdf.js');
-      document.getElementById('print-pdf-main').textContent = printPDFMainContent;
-      // Print Style Sheet
-      var printStyleSheet = fs.readFileSync(__dirname + '/assets/css/print.css');
-      document.getElementById('print-style-sheet').textContent = printStyleSheet;
-    </script>
   </section>
 </tempalte>

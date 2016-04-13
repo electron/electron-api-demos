@@ -25,7 +25,7 @@
           </div>
           <p>In this example we copy a phrase to the clipboard. After clicking 'Copy' use the text area to paste (CMD + V or CTRL + V) the phrase from the clipboard.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="copy-to-renderer"></pre></code>
+          <pre><code data-path="renderer-process/system/copy.js"></pre></code>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <p>In this example we copy a string to the clipboard and then paste the results into a message above.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code id="paste-to-renderer"></pre></code>
+          <pre><code data-path="renderer-process/system/paste.js"></pre></code>
         </div>
       </div>
     </div>
@@ -51,14 +51,5 @@
     <script type="text/javascript" src="renderer-process/system/copy.js"></script>
     <script type="text/javascript" src="renderer-process/system/paste.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs');
-      // Copy
-      var copyToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/copy.js');
-      document.getElementById('copy-to-renderer').textContent = copyToRendererContent;
-      // Paste
-      var pasteToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/paste.js');
-      document.getElementById('paste-to-renderer').textContent = pasteToRendererContent;
-    </script>
   </section>
 </tempalte>

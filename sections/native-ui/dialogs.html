@@ -26,9 +26,9 @@
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="open-file-renderer"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/open-file.js"></pre></code>
           <h5>Main Process</h5>
-          <pre><code id="open-file-main"></code></pre>
+          <pre><code data-path="main-process/native-ui/dialogs/open-file.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -60,9 +60,9 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
           <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon startup.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="error-dialog-renderer"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/error.js"></pre></code>
           <h5>Main Process</h5>
-          <pre><code id="error-dialog-main"></code></pre>
+          <pre><code data-path="main-process/native-ui/dialogs/error.js"></code></pre>
         </div>
       </div>
     </div>
@@ -81,9 +81,9 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="information-dialog-renderer"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/information.js"></pre></code>
           <h5>Main Process</h5>
-          <pre><code id="information-dialog-main"></code></pre>
+          <pre><code data-path="main-process/native-ui/dialogs/information.js"></code></pre>
         </div>
       </div>
     </div>
@@ -100,9 +100,9 @@ ipc.on('open-file-dialog-sheet', function (event) {
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
           <h5>Renderer Process</h5>
-          <pre><code id="save-dialog-renderer"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/save.js"></pre></code>
           <h5>Main Process</h5>
-          <pre><code id="save-dialog-main"></code></pre>
+          <pre><code data-path="main-process/native-ui/dialogs/save.js"></code></pre>
         </div>
       </div>
     </div>
@@ -112,28 +112,5 @@ ipc.on('open-file-dialog-sheet', function (event) {
     <script type="text/javascript" src="renderer-process/native-ui/dialogs/information.js"></script>
     <script type="text/javascript" src="renderer-process/native-ui/dialogs/save.js"></script>
 
-    <script type="text/javascript">
-      var fs = require('fs')
-      // Open File Dialog
-      var OpenFileMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/open-file.js')
-      document.getElementById('open-file-main').textContent = OpenFileMainContent
-      var OpenFileRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/open-file.js')
-      document.getElementById('open-file-renderer').textContent = OpenFileRendererContent
-      // Error Dialog
-      var ErrorMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/error.js')
-      document.getElementById('error-dialog-main').textContent = ErrorMainContent
-      var ErrorRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/error.js')
-      document.getElementById('error-dialog-renderer').textContent = ErrorRendererContent
-      // Information Dialog
-      var InfoMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/information.js')
-      document.getElementById('information-dialog-main').textContent = InfoMainContent
-      var InfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/information.js')
-      document.getElementById('information-dialog-renderer').textContent = InfoRendererContent
-      // Save Dialog
-      var SaveMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/save.js')
-      document.getElementById('save-dialog-main').textContent = SaveMainContent
-      var SaveRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/save.js')
-      document.getElementById('save-dialog-renderer').textContent = SaveRendererContent
-    </script>
   </section>
 </template>
