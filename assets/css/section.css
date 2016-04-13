@@ -99,9 +99,9 @@
 }
 
 
-/* Pro tip */
+/* ProTip */
 
-.pro-tip {
+.demo-protip {
   margin-top: 2rem;
   padding: 1.5rem 2rem 2rem 2rem;
   border: 1px solid hsla(0,0%,0%,.06);
@@ -109,11 +109,11 @@
   background: var(--color-accent) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85));
 }
 
-.pro-tip.pro-tip h2 {
+.demo-protip h2 {
   margin: 0 0 .5rem 0;
 }
 
-.pro-tip strong {
+.demo-protip strong {
   font-weight: 600;
 }
 
