@@ -20,8 +20,7 @@ glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
 function createWindow () {
   var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
   mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
-  
-  mainWindow.loadURL('file://' + __dirname + '/index.html')
+  mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
 
   // Launch fullscreen with DevTools open, usage: npm run debug
   if (debug) {
