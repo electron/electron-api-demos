@@ -43,7 +43,7 @@ function zipAsset (asset) {
       if (error) {
         reject(error)
       } else {
-        asset.zip = path.join(assetDirectory, asset.name)
+        asset.path = path.join(assetDirectory, asset.name)
         resolve(asset)
       }
     })
@@ -67,13 +67,13 @@ function zipAssets () {
   return Promise.all(zipAssets.map(zipAsset)).then((zipAssets) => {
     return zipAssets.concat([{
       name: 'RELEASES',
-      path: path.join(outPath, 'RELEASES')
+      path: path.join(outPath, 'windows-installer', 'RELEASES')
     }, {
       name: 'ElectronAPIDemosSetup.exe',
-      path: path.join(outPath, 'ElectronAPIDemosSetup.exe')
+      path: path.join(outPath, 'windows-installer', 'ElectronAPIDemosSetup.exe')
     }, {
       name: `ElectronAPIDemos-${version}-full.nupkg`,
-      path: path.join(outPath, `ElectronAPIDemos-${version}-full.nupkg`)
+      path: path.join(outPath, 'windows-installer', `ElectronAPIDemos-${version}-full.nupkg`)
     }])
   })
 }
@@ -117,7 +117,7 @@ function uploadAsset (release, asset) {
     headers: {
       Authorization: `token ${token}`,
       'Content-Type': 'application/zip',
-      'Content-Length': fs.statSync(asset.zip).size,
+      'Content-Length': fs.statSync(asset.path).size,
       'User-Agent': `node/${process.versions.node}`
     }
   }
@@ -135,7 +135,7 @@ function uploadAsset (release, asset) {
 
       resolve(asset)
     })
-    fs.createReadStream(asset.zip).pipe(assetRequest)
+    fs.createReadStream(asset.path).pipe(assetRequest)
   })
 }
 
