@@ -110,17 +110,12 @@ pre > .hljs {
 
 /* Utilities ---------------------------- */
 
-.avoid-clicks {
+.u-avoid-clicks {
   pointer-events: none;
 }
 
-a.no-dec {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* External link */
-.exlink::after {
+.u-exlink::after {
   content: '';
   position: relative;
   display: inline-block;
@@ -132,8 +127,8 @@ a.no-dec {
   background: url(../img/link-external.svg) no-repeat top right;
   background-size: auto 100%;
 }
-.exlink:hover,
-.exlink:focus {
+.u-exlink:hover,
+.u-exlink:focus {
   cursor: pointer;
   text-decoration: underline;
   outline: none;
