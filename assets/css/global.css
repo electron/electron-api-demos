@@ -118,3 +118,23 @@ a.no-dec {
   text-decoration: none;
   color: inherit;
 }
+
+/* External link */
+.exlink::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: -3px;
+  margin-left: 3px;
+  text-decoration: none;
+  background: url(../img/link-external.svg) no-repeat top right;
+  background-size: auto 100%;
+}
+.exlink:hover,
+.exlink:focus {
+  cursor: pointer;
+  text-decoration: underline;
+  outline: none;
+}
