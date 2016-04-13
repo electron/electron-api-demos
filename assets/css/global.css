@@ -138,3 +138,17 @@ a.no-dec {
   text-decoration: underline;
   outline: none;
 }
+
+
+/* Hacks ---------------------------- */
+
+/* Fixes horizontal scrolling in code blocks on OS X El Cap (10.11.3), retina screen
+ *
+ * By adding an invisible outline property, it will force a repaint
+ * which enables the scrolling.
+ */
+
+.hljs:hover,
+.hljs:active {
+  outline: 1px solid transparent;
+}
