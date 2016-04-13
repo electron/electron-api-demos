@@ -88,7 +88,7 @@ footer.about-section {
   text-align: center;
 }
 
-:root {
+.rainbow-button-wrapper {
   --rainbow-button-width: 170px;
   --rainbow-button-height: 50px;
   --rainbow-button-width-inner: 164px;
@@ -100,9 +100,7 @@ footer.about-section {
   --rainbow-color-5: hsl(330, 65%, 48%);
   --rainbow-color-6: hsl(32, 79%, 49%);
   --rainbow-color-7: hsl(53, 84%, 50%);
-}
 
-.rainbow-button-wrapper {
   display: inline-block;
   width: var(--rainbow-button-width);
   height: var(--rainbow-button-height);
