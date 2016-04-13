@@ -81,9 +81,11 @@ process.versions.node</code></pre>
       </div>
     </div>
 
-    <script type="text/javascript" src="renderer-process/system/app-information.js"></script>
-    <script type="text/javascript" src="renderer-process/system/sys-information.js"></script>
-    <script type="text/javascript" src="renderer-process/system/screen-information.js"></script>
+    <script type="text/javascript">
+      require('./renderer-process/system/app-information.js')
+      require('./renderer-process/system/sys-information.js')
+      require('./renderer-process/system/screen-information.js')
+    </script>
 
   </section>
 </template>
