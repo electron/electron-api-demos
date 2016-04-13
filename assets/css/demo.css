@@ -59,8 +59,8 @@
   transform-origin: top center;
   transform: translateX(.7em) rotate(30deg) scale(.75);
 }
-.active .demo-toggle-button:before,
-.active .demo-toggle-button:after {
+.is-open .demo-toggle-button:before,
+.is-open .demo-toggle-button:after {
   transform: rotate(0deg);
 }
 .demo-toggle-button:focus:before,
@@ -107,7 +107,7 @@
   transform: rotate(-45deg);
 }
 
-.active .demo-box {
+.is-open .demo-box {
   display: block;
   animation: demo-box-fade-in .2s cubic-bezier(0, .20, .20, .96);
 }
