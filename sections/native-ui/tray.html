@@ -1,25 +1,25 @@
 <template class="task-template">
-  <div id="tray-section" class="content-item native-ui task-wrapper">
-    <header>
-      <div class="wrapper">
+  <section id="tray-section" class="section js-section u-category-native-ui">
+    <header class="section-header">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-native-ui"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
           Tray
         </h1>
         <h3>The <code>tray</code> module allows you to create an icon in the operating system's notification area.</h3>
         <p>This icon can also have a context menu attached.</p>
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/tray">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/tray">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="tray-demo-toggle" class="js-container-target toggle-button">Tray
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="tray-demo-toggle" class="js-container-target demo-toggle-button">Tray
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux | Process: Main</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="put-in-tray">Demo</button>
             <span class="demo-response" id="tray-countdown"></span>
           </div>
@@ -31,16 +31,14 @@
           <h5>Renderer Process</h5>
           <pre><code id="tray-renderer"></pre></code>
 
-          <div class="pro-tip">
-            <h2 class="avoid-clicks">ProTip</h2>
-            <div class="non-toggle-content">
-              <strong>Tray support in Linux.</strong>
-              <p>On Linux distributions that only have app indicator support, users will need to install <code>libappindicator1</code> to make the tray icon work. See the <a class="exlink" href="http://electron.atom.io/docs/latest/api/tray">full API documentation</a> for more details about using Tray on Linux.</p>
-            </div>
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Tray support in Linux.</strong>
+            <p>On Linux distributions that only have app indicator support, users will need to install <code>libappindicator1</code> to make the tray icon work. See the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/tray">full API documentation</a> for more details about using Tray on Linux.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/native-ui/tray/tray.js"></script>
 
@@ -52,5 +50,5 @@
       var trayMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/tray/tray.js');
       document.getElementById('tray-main').innerHTML= trayMainContent;
     </script>
-  </div><!-- end tray-section -->
+  </section>
 </template>

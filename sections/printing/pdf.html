@@ -1,24 +1,24 @@
 <template class="task-template">
-  <div id="pdf-section" class="content-item printing task-wrapper">
-    <header>
-      <div class="wrapper">
+  <section id="pdf-section" class="section js-section u-category-printing">
+    <header class="section-header">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-printing"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-printing"></use></svg>
           Print to PDF
         </h1>
         <h3>The <code>browser window</code> module in Electron has a property, <code>webContents</code>, which allows your app to print as well as print to PDF.</h3>
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/v0.36.0/api/web-contents/#webcontents-print-options">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="print-pdf-demo-toggle" class="js-container-target toggle-button">Print to PDF
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">Print to PDF
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="print-pdf">Demo</button>
             <span class="demo-response" id="pdf-path"></span>
           </div>
@@ -29,17 +29,15 @@
           <h5>Main Process</h5>
           <pre><code id="print-pdf-main"></code></pre>
 
-          <div class="pro-tip">
-            <h2 class="avoid-clicks">ProTip</h2>
-            <div class="non-toggle-content">
-              <strong>Use a print style sheet.</strong>
-              <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Below is the stylesheet used in this app, located in <code>assets/css/print.css</code>.</p>
-              <pre><code id="print-style-sheet"></code></pre>
-            </div>
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Use a print style sheet.</strong>
+            <p>You can create a stylesheet targeting printing to optimize the look of what your users print. Below is the stylesheet used in this app, located in <code>assets/css/print.css</code>.</p>
+            <pre><code id="print-style-sheet"></code></pre>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/printing/pdf.js"></script>
 
@@ -54,5 +52,5 @@
       var printStyleSheet = fs.readFileSync(__dirname + '/assets/css/print.css');
       document.getElementById('print-style-sheet').innerHTML= printStyleSheet;
     </script>
-  </div><!-- end pdf-section -->
+  </section>
 </tempalte>

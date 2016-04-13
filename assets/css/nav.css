@@ -1,27 +1,25 @@
 /* Nav */
 
-.section-nav {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.section-nav.show {
-  visibility: visible;;
-  opacity: 1;
-}
-
 .nav {
   width: 340px;
   overflow-x: hidden;
   overflow-y: auto;
-  border-right: 1px solid;
+  color: var(--color-subtle);
+  border-right: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  visibility: hidden;
+  opacity: 0;
+}
+.nav.is-shown {
+  visibility: visible;;
+  opacity: 1;
 }
 
 .nav-header {
   position: relative;
   padding: 2rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav-title {
@@ -33,6 +31,7 @@
 
 .nav-title strong {
   font-weight: 600;
+  color: var(--color-strong);
 }
 
 .nav-header-icon {
@@ -64,7 +63,7 @@
   text-transform: uppercase;
 }
 
-.nav-link {
+.nav-button {
   display: block;
   width: 100%;
   padding: .3rem;
@@ -73,22 +72,38 @@
   text-align: left;
   font: inherit;
   font-size: 13px;
+  color: inherit;
   border: none;
   background-color: transparent;
   cursor: default;
   outline: none;
 }
+.nav-button:hover,
+.nav-button:focus:not(.is-selected) {
+  background-color: hsla(0,0%,0%,.1);
+}
+.nav-button.is-selected {
+  background-color: var(--color-accent);
+}
+.nav-button.is-selected,
+.nav-button.is-selected em {
+  color: #fff;
+}
+.nav-button.is-selected:focus {
+  opacity: .8;
+}
 
-.nav-link em {
+.nav-button em {
   font-style: normal;
   font-weight: 600;
+  color: var(--color-strong);
   pointer-events: none; /* makes it invisible to clicks */
 }
 
 .nav-footer {
   margin-top: 1rem;
   padding: 2rem;
-  border-top: 1px solid;
+  border-top: 1px solid var(--color-border);
   text-align: center;
 }
 
@@ -109,9 +124,20 @@
   text-align: left;
   font: inherit;
   font-size: 13px;
+  color: inherit;
   border: none;
   background-color: transparent;
   cursor: default;
   outline: none;
   text-align: center;
+}
+.nav-footer-button:focus {
+  color: var(--color-strong);
+}
+
+.nav-footer-logo {
+  color: hsl(0,0%,66%);
+}
+.nav-footer-logo:focus {
+  color: hsl(0,0%,33%);
 }

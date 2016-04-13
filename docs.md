@@ -47,3 +47,12 @@ The files: `CODE_OF_CONDUCT`, `README`, `docs` and `CONTRIBUTING` files make up 
 ## UI Terminology
 
 ![UI Terminology](/assets/img/ui-terminology.png)
+
+## CSS Naming Convention
+
+Nothing too strict and used more as a guide:
+
+- Styling elements directly should be avoided, but ok in some cases. Like `<p>` or `<code>`.
+- Elements that belong together are prefixed with their parent class. `.section`, `.section-header`, `.section-icon`.
+- States use `is-` prefix
+- Utilities use `u-` prefix

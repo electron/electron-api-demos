@@ -20,7 +20,7 @@
   transform: scale(1.1);
   transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
 }
-.about.show {
+.about.is-shown {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
@@ -57,6 +57,7 @@
   text-align: center;
   margin: 0 0 1em 0;
   font-size: 1.5em;
+  color: hsl(0, 0%, 55%);
 }
 
 .about .about-code h2 {
@@ -87,7 +88,7 @@ footer.about-section {
   text-align: center;
 }
 
-:root {
+.rainbow-button-wrapper {
   --rainbow-button-width: 170px;
   --rainbow-button-height: 50px;
   --rainbow-button-width-inner: 164px;
@@ -99,9 +100,7 @@ footer.about-section {
   --rainbow-color-5: hsl(330, 65%, 48%);
   --rainbow-color-6: hsl(32, 79%, 49%);
   --rainbow-color-7: hsl(53, 84%, 50%);
-}
 
-.rainbow-button-wrapper {
   display: inline-block;
   width: var(--rainbow-button-width);
   height: var(--rainbow-button-height);

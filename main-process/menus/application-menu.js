@@ -118,6 +118,35 @@ var template = [{
   }]
 }]
 
+function addUpdateMenuItems (items, position) {
+  var version = electron.app.getVersion()
+  var updateItems = [{
+    label: 'Version ' + version,
+    enabled: false
+  }, {
+    label: 'Checking for Update',
+    enabled: false,
+    key: 'checkingForUpdate'
+  }, {
+    label: 'Check for Update',
+    visible: false,
+    key: 'checkForUpdate',
+    click: function () {
+      require('electron').autoUpdater.checkForUpdates()
+    }
+  }, {
+    label: 'Restart and Install Update',
+    enabled: false,
+    visible: false,
+    key: 'restartToUpdate',
+    click: function () {
+      require('electron').autoUpdater.quitAndInstall()
+    }
+  }]
+
+  items.splice.apply(items, [position, 0].concat(updateItems))
+}
+
 if (process.platform === 'darwin') {
   var name = electron.app.getName()
   template.unshift({
@@ -161,6 +190,13 @@ if (process.platform === 'darwin') {
     label: 'Bring All to Front',
     role: 'front'
   })
+
+  addUpdateMenuItems(template[0].submenu, 1)
+}
+
+if (process.platform === 'win32') {
+  var helpMenu = template[template.length - 1].submenu
+  addUpdateMenuItems(helpMenu, 0)
 }
 
 var menu = Menu.buildFromTemplate(template)

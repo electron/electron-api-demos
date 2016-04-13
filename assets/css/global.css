@@ -1,0 +1,164 @@
+/* Fonts ---------------------------- */
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Code Pro'), local('SourceCodePro'), url(fonts/SourceCodePro-Regular.ttf) format('truetype');
+}
+
+
+/* Global ---------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: hidden; /* Prevents rubber-band scrolling of the whole "page" */
+  color: var(--color);
+  background-color: #fff; /* To cover OSes with no default background color */
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+}
+
+a {
+  color: var(--color-link);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.12em;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid hsla(0,0%,0%,.08);
+  border-width: 0 1px 1px 0;
+}
+th {
+  background-color: hsla(0,0%,50%,.06);
+}
+th,
+td {
+  text-align: center;
+  border: 1px solid hsla(0,0%,0%,.08);
+  border-width: 1px 0 0 1px;
+}
+
+svg {
+  fill: currentColor;
+}
+
+/* Code */
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  border-radius: 4px;
+  padding: 1px 4px;
+  white-space: nowrap;
+  color: hsl(0,0%,36%);
+  background-color: hsla(0,0%,60%,.15);
+}
+
+pre {
+  font-size: 13px;
+  overflow: auto;
+  padding: 1em;
+  margin: 0;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: var(--color-border);
+  background-color: white;
+}
+
+pre code {
+  white-space: pre;
+}
+
+pre > .hljs {
+  color: var(--color-subtle);
+  background-color: white;
+}
+
+
+/* Utilities ---------------------------- */
+
+.u-avoid-clicks {
+  pointer-events: none;
+}
+
+/* External link */
+.u-exlink::after {
+  content: '';
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: -3px;
+  margin-left: 3px;
+  text-decoration: none;
+  background: url(../img/link-external.svg) no-repeat top right;
+  background-size: auto 100%;
+}
+.u-exlink:hover,
+.u-exlink:focus {
+  cursor: pointer;
+  text-decoration: underline;
+  outline: none;
+}
+
+
+/* Content ------------------ */
+
+.content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.content.is-shown {
+  visibility: visible;;
+  opacity: 1;
+}
+
+
+/* Hacks ---------------------------- */
+
+/* Fixes horizontal scrolling in code blocks on OS X El Cap (10.11.3), retina screen
+ *
+ * By adding an invisible outline property, it will force a repaint
+ * which enables the scrolling.
+ */
+
+.hljs:hover,
+.hljs:active {
+  outline: 1px solid transparent;
+}
