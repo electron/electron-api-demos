@@ -103,13 +103,13 @@
       var fs = require('fs');
       // New Window
       var windowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/create-window.js');
-      document.getElementById('new-window-renderer').innerHTML= windowRendererContent;
+      document.getElementById('new-window-renderer').textContent = windowRendererContent;
       // Manage Window
       var manageWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/manage-window.js');
-      document.getElementById('manage-window-renderer').innerHTML= manageWindowRendererContent;
+      document.getElementById('manage-window-renderer').textContent = manageWindowRendererContent;
       // Frameless Window
       var framelessWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/frameless-window.js');
-      document.getElementById('frameless-window-renderer').innerHTML= framelessWindowRendererContent;
+      document.getElementById('frameless-window-renderer').textContent = framelessWindowRendererContent;
     </script>
   </section>
 </template>

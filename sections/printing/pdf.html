@@ -45,12 +45,12 @@
       var fs = require('fs');
       // Open File Dialog
       var printPDFRendererContent = fs.readFileSync(__dirname + '/renderer-process/printing/pdf.js');
-      document.getElementById('print-pdf-renderer').innerHTML= printPDFRendererContent;
+      document.getElementById('print-pdf-renderer').textContent = printPDFRendererContent;
       var printPDFMainContent = fs.readFileSync(__dirname + '/main-process/printing/pdf.js');
-      document.getElementById('print-pdf-main').innerHTML= printPDFMainContent;
+      document.getElementById('print-pdf-main').textContent = printPDFMainContent;
       // Print Style Sheet
       var printStyleSheet = fs.readFileSync(__dirname + '/assets/css/print.css');
-      document.getElementById('print-style-sheet').innerHTML= printStyleSheet;
+      document.getElementById('print-style-sheet').textContent = printStyleSheet;
     </script>
   </section>
 </tempalte>

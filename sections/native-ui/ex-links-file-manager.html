@@ -62,13 +62,13 @@
       var fs = require('fs');
       // Open File Manager
       var openFileManagerRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/file-manager.js');
-      document.getElementById('file-manager-renderer').innerHTML= openFileManagerRendererContent;
+      document.getElementById('file-manager-renderer').textContent = openFileManagerRendererContent;
       // Open External Links
       var exLinksRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/ex-links-file-manager/ex-links.js');
-      document.getElementById('ex-links-renderer').innerHTML= exLinksRendererContent;
+      document.getElementById('ex-links-renderer').textContent = exLinksRendererContent;
       // Open All External Links
       var AllExLinksRendererContent = fs.readFileSync(__dirname + '/assets/ex-links.js');
-      document.getElementById('all-ex-links-renderer').innerHTML= AllExLinksRendererContent;
+      document.getElementById('all-ex-links-renderer').textContent = AllExLinksRendererContent;
     </script>
   </section>
 </template>

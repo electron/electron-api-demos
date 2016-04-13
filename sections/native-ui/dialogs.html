@@ -116,24 +116,24 @@ ipc.on('open-file-dialog-sheet', function (event) {
       var fs = require('fs')
       // Open File Dialog
       var OpenFileMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/open-file.js')
-      document.getElementById('open-file-main').innerHTML= OpenFileMainContent
+      document.getElementById('open-file-main').textContent = OpenFileMainContent
       var OpenFileRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/open-file.js')
-      document.getElementById('open-file-renderer').innerHTML= OpenFileRendererContent
+      document.getElementById('open-file-renderer').textContent = OpenFileRendererContent
       // Error Dialog
       var ErrorMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/error.js')
-      document.getElementById('error-dialog-main').innerHTML= ErrorMainContent
+      document.getElementById('error-dialog-main').textContent = ErrorMainContent
       var ErrorRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/error.js')
-      document.getElementById('error-dialog-renderer').innerHTML= ErrorRendererContent
+      document.getElementById('error-dialog-renderer').textContent = ErrorRendererContent
       // Information Dialog
       var InfoMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/information.js')
-      document.getElementById('information-dialog-main').innerHTML= InfoMainContent
+      document.getElementById('information-dialog-main').textContent = InfoMainContent
       var InfoRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/information.js')
-      document.getElementById('information-dialog-renderer').innerHTML= InfoRendererContent
+      document.getElementById('information-dialog-renderer').textContent = InfoRendererContent
       // Save Dialog
       var SaveMainContent = fs.readFileSync(__dirname + '/main-process/native-ui/dialogs/save.js')
-      document.getElementById('save-dialog-main').innerHTML= SaveMainContent
+      document.getElementById('save-dialog-main').textContent = SaveMainContent
       var SaveRendererContent = fs.readFileSync(__dirname + '/renderer-process/native-ui/dialogs/save.js')
-      document.getElementById('save-dialog-renderer').innerHTML= SaveRendererContent
+      document.getElementById('save-dialog-renderer').textContent = SaveRendererContent
     </script>
   </section>
 </template>
