@@ -10,7 +10,7 @@
   visibility: hidden;
   opacity: 0;
 }
-.nav.show {
+.nav.is-shown {
   visibility: visible;;
   opacity: 1;
 }

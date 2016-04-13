@@ -144,7 +144,7 @@ pre > .hljs {
   visibility: hidden;
   opacity: 0;
 }
-.content.show {
+.content.is-shown {
   visibility: visible;;
   opacity: 1;
 }
