@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "default_locale": "en",
+   "description": "Accessibility audit and element properties.",
+   "devtools_page": "devtools.html",
+   "icons": {
+      "128": "images/icon128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLoq7goGePRgHGJUh062AivkyY02+zjyK7MfZsqgu2UfU5+BZm2xL+AbSGhyLaRUhkvoDcInJ5ZgovWbb3hj1Ck9ag5Cjhiy7bOngWYGsDclaCNJlkYCv/9rqexUdZ4+O698PEwaErIUmbIs9AQbFyNzqSHFIh1V8Y5F/HGMd9qwIDAQAB",
+   "manifest_version": 2,
+   "minimum_chrome_version": "21.0.1137.1",
+   "name": "__MSG_extName__",
+   "options_page": "options_old.html",
+   "options_ui": {
+      "chrome_style": true,
+      "page": "options.html"
+   },
+   "permissions": [ "experimental", "tabs", "webNavigation", "storage", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.10.9",
+   "web_accessible_resources": [ "generated/axs.js", "generated/constants.js", "generated/extension.js", "generated/utils.js", "generated/properties.js", "generated/audits.js", "devtools.js", "devtools.html", "sidebar.html", "sidebar.js", "sidebar.css" ]
+}

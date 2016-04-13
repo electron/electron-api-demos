@@ -1,0 +1,43 @@
+<div id="focus-properties" class="properties-container">
+  <div class="sidebar-separator">{{heading}}</div>
+  <div class="properties">
+    <ul class="properties">
+{{?tabindex}}
+      <li id="tabindex" class="property{{^tabindex.valid}} warning invalid{{/}}">
+        <span class="property">tabindex</span>:
+        <span id="tabindex-value">{{tabindex.value}}
+      </li>
+{{/}}
+{{?visible}}
+      <li id="visible" class="property{{^visible.valid}} warning{{/}}">
+        <span class="property">visibility</span>:{{?visible.value}}
+        <span id="visible-value">visible</span>
+        {{/}}<ul class="valuelist">
+  {{?visible.transparent}}
+          <li class="text">Transparent</li>
+  {{/}}{{?visible.zeroArea}}
+          <li class="text">Zero area</li>
+  {{/}}{{?visible.outsideScrollArea}}
+          <lie class="text">Outside scroll area</li>
+  {{/}}{{#visible.overlappingElements}}
+          <li class="text">Obscured by
+            <a href="#" element="{{node}}">{{text}}</a>
+          </li>
+  {{/}}
+        </ul>
+      </li>
+  {{?visible.hidden}}
+      <li id="hidden" class="property{{^visible.hidden.valid}} warning{{/}}">
+        <span class="property">hidden</span>:
+    {{^visible.hidden.value}}<span id="hidden-value">{{visible.hidden.value}}</span>
+    {{:}}<span id="hidden-reason" class="text">
+           <span class="property">{{visible.hidden.reason.property}}</span> on
+           <a href="#" element="{{visible.hidden.reason.on.node}}">{{visible.hidden.reason.on.text}}</a>
+        </span>
+    {{/}}
+      </li>
+  {{/}}
+{{/}}
+    </ul>
+  </div>
+</div>

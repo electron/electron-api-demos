@@ -1,0 +1,164 @@
+/* TODO: platform-specific style rules vased on devtools.css */
+
+body {
+    cursor: default;
+    font-family: Lucida Grande, sans-serif;
+    font-size: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#main {
+    max-width: 100%;
+}
+
+div.properties {
+    padding: 5px;
+    border-bottom: 1px solid #BFBFBF;
+    min-height: 12px;
+}
+
+div.properties.speech {
+    background-image: url(images/speech-16.png);
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    padding-left: 22px;
+}
+
+span.none {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+div.properties:last-child {
+    border-bottom: none;
+}
+
+ul.properties {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    font-family: Menlo, monospace;
+    font-size: 11px;
+    margin: 1px 0 0 2px;
+    padding: 0;
+}
+
+li.property {
+    padding-left: 15px;
+}
+
+li.property.unused {
+    text-decoration: line-through;
+}
+
+li.property.warning {
+    background-image: url(images/warningIcon.png);
+    background-repeat: no-repeat;
+    background-position: left 2px;
+}
+
+.text {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Lucida Grande, sans-serif;
+}
+
+li.text {
+    margin-bottom: 2px;
+}
+
+li.textValue {
+    display: block;
+}
+
+.error {
+    color: #C80000;
+    font-style: italic;
+}
+
+ul.valuelist {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0;
+    padding-left: 1em;
+}
+
+.invalid {
+    text-decoration: line-through;
+}
+
+li > div {
+   margin-left: 15px;
+}
+
+span.property {
+    font-family: Menlo, monospace;
+    color: #C80000;
+}
+
+span.info {
+    font-style: italic;
+}
+
+span.suggestion {
+    font-style: italic;
+    font-size: 10px;
+}
+
+span.warning {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+.bevel-border {
+     border: 1px solid rgba(64, 64, 64, 0.8);
+     width: 10px;
+     height: 10px;
+     display: inline-block;
+     margin-left: 0.5em;
+     box-sizing: content-box;
+     vertical-align: middle;
+}
+
+.bevel {
+    border-style: solid;
+    border-right-width: 10px;
+    border-style: solid;
+    border-top-width: 10px;
+    border-left: 0;
+    border-bottom: 0;
+    width: 0;
+    height: 0;
+    display: inline-block;
+}
+
+.info {
+    text-align: center;
+    font-style: italic;
+    font-size: 10px;
+    padding: 6px;
+    color: black;
+}
+
+.sidebar-separator {
+    background-image: -webkit-gradient(linear, left top, left bottom,
+                                       from(#F3F3F3), color-stop(0.05, #F3F3F3),
+                                       color-stop(0.05, #E6E6E6), to(#D1D1D1));
+    padding: 0 5px;
+    border-top: 1px solid #BDBDBD;
+    border-bottom: 1px solid #BDBDBD;
+    color: #6E6E6E;
+    text-shadow: white 0 1px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 11px;
+}
+
+

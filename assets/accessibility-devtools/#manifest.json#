@@ -1,0 +1,38 @@
+{
+  "name": "__MSG_extName__",
+  "version": "2.8.4.1",
+  "description": "Accessibility audit and element properties.",
+  "default_locale": "en",
+  "icons": {
+      "128": "images/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "devtools_page": "devtools.html",
+  "options_page": "options.html",
+  "permissions": [
+    "experimental",
+    "tabs",
+    "webNavigation",
+    "storage",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "generated/axs.js",
+    "generated/constants.js",
+    "generated/extension.js",
+    "generated/utils.js",
+    "generated/properties.js",
+    "generated/audits.js",
+    "devtools.js",
+    "devtools.html",
+    "sidebar.html",
+    "sidebar.js",
+    "sidebar.css"
+  ],
+  "manifest_version": 2,
+  "minimum_chrome_version": "21.0.1137.1"
+}

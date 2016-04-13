@@ -1,0 +1,66 @@
+<div id="video-properties" class="properties-container">
+  <div class="sidebar-separator">{{heading}}</div>
+  <div class="properties">
+    <ul class="properties">
+      <li id="caption-tracks" class="property">
+        <span class="property" msg="videoCaptionTracks"></span>:
+{{?captionTracks.valid}}
+        <ul class="properties">
+  {{#captionTracks.values}}
+          <li class="property{{^valid}} warning{{/}}">
+            <span class="property">{{name}}</span>:
+    {{?valid}}
+            <span>{{src}}</span>
+    {{:}}
+            <span>{{reason}}</span>
+    {{/}}
+          </li>
+  {{/}}
+        </ul>
+{{:captionTracks.valid}}
+        <span id="caption-tracks-none-value">{{captionTracks.reason}}</span>
+{{/captionTracks.valid}}
+      </li>
+
+      <li class="property">
+        <span class="property" msg="videoDescriptionTracks"></span>:
+{{?descriptionTracks.valid}}
+        <ul class="properties">
+  {{#descriptionTracks.values}}
+          <li class="property{{^valid}} warning{{/}}">
+            <span class="property">{{name}}</span>:
+    {{?valid}}
+            <span>{{src}}</span>
+    {{:}}
+            <span>{{reason}}</span>
+    {{/}}
+          </li>
+  {{/}}
+        </ul>
+{{:descriptionTracks.valid}}
+        <span id="description-tracks-none-value">{{descriptionTracks.reason}}</span>
+{{/descriptionTracks.valid}}
+      </li>
+
+      <li class="property">
+        <span class="property" msg="videoChapterTracks"></span>:
+{{?chapterTracks.valid}}
+        <ul class="properties">
+  {{#chapterTracks.values}}
+          <li class="property{{^valid}} warning{{/}}">
+            <span class="property">{{name}}</span>:
+    {{?valid}}
+            <span>{{src}}</span>
+    {{:}}
+            <span>{{reason}}</span>
+    {{/}}
+          </li>
+  {{/}}
+        </ul>
+{{:chapterTracks.valid}}
+        <span id="chapter-tracks-none-value">{{chapterTracks.reason}}</span>
+{{/chapterTracks.valid}}
+      </li>
+    </ul>
+  </div>
+</div>

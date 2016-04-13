@@ -1,0 +1,38 @@
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE_CHROMIUM file. */
+
+body {
+  color: rgb(48, 57, 66);
+  margin: 14px 17px;
+}
+
+section + section::before {
+  background-color: #eee;
+  content: ' ';
+  display: block;
+  height: 1px;
+  position: relative;
+  top: 0;
+}
+
+h2, h3 {
+  margin-bottom: 0.8em;
+}
+
+fieldset#audit-rules {
+  border: 0 none;
+  padding-top: 0;
+}
+
+.checkbox label  {
+  display: -webkit-inline-box;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+label input[type=checkbox] ~ span {
+  -webkit-margin-start: 0.6em;
+  display: block;
+}
+

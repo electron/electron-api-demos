@@ -1,0 +1,73 @@
+<div id="text-properties" class="properties-container">
+  <div class="sidebar-separator">{{heading}}</div>
+  <div class="properties speech">
+{{?computedText}}
+    <span class="text">{{computedText}}</span>
+{{:}}
+    <span msg="noText" class="none"></span>
+{{/}}
+  </div>
+{{?hasProperties}}
+  <div class="properties">
+    <ul class="properties">
+{{?ariaLabelledby}}
+      <li id="aria-labelledby" class="property{{?ariaLabelledby.unused}} unused{{/}}{{^ariaLabelledby.valid}} warning{{/}}">
+        <span class="property">aria-labelledby</span>:
+          <ul class="valuelist">
+  {{#ariaLabelledby.values}}
+    {{?valid}}
+        <li><span class="text">"{{text}}"</span>{{^last}},{{/}}</li>
+    {{:}}
+        <li><span class="invalid">{{value}}</span>{{^last}},{{/}}</li>
+    {{/}}
+  {{/}}
+      </li>
+{{/}}
+{{?ariaLabel}}
+      <li id="aria-label" class="property{{?ariaLabel.unused}} unused{{/}}">
+        <span class="property">aria-label</span>:
+        <span class="text">"{{ariaLabel.text}}"</span>
+      </li>
+{{/}}
+{{?labelFor.values}}
+      <li class="property{{?labelFor.unused}} unused{{/}}">
+        <span class="property">label-for</span>:
+  {{#labelFor.values}}
+        <span class="text">"{{text}}"</span>{{^last}},{{/}}
+  {{/}}
+      </li>
+{{/}}
+{{?labelWrapped}}
+      <li id="label-wrapped" class="property{{?labelWrapped.unused}} unused{{/}}">
+        <span class="property">label-wrapped</span>:
+        <span class="text">"{{labelWrapped.text}}"</span>
+      </li>
+{{/}}
+{{?alt}}
+      <li id="alt" class="property{{?alt.unused}} unused{{/}}{{^alt.valid}} warning{{/}}">
+        <span class="property">alt</span>:
+  {{?alt.valid}}
+        <span class="text" id="alt-value">"{{alt.text}}"</span>
+  {{:}}
+        <span id="alt-value" class="none">undefined</span>
+  {{/}}
+      </li>
+{{/}}
+{{?content}}
+      <li id="content" class="property{{?content.unused}} unused{{/}}">
+        <span class="property">content</span>:
+        <span class="text">{{content.text}}</span>
+{{/}}
+{{?title}}
+      <li id="title" class="property{{?title.unused}} unused{{/}}">
+        <span class="property">title</span>:
+        <span id="title-value">"{{title.text}}"</span>
+      </li>
+{{/}}
+{{?noLabel}}
+      <li id="no-label" class="property warning"><span class="error text">No label</span></li>
+{{/}}
+    </ul>
+  </div>
+{{/}}
+</div>

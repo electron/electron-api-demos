@@ -1,0 +1,25 @@
+<div id="aria-properties" class="properties-container">
+  <div class="sidebar-separator">{{heading}}</div>
+  <div class="properties">
+    <ul class="properties">
+{{?roles}}
+  {{#roles.roles}}
+      <li id="role" class="property{{^valid}} warning invalid{{/}}">
+        <span class="property">role</span>:
+        <span id="role-value">{{name}}</span>
+      </li>
+  {{/}}
+{{/}}
+{{#properties}}
+      <li id="{{name}}" class="property{{^valid}} warning{{/}}">
+        <span class="property">{{name}}</span>:
+        {{?values}}
+          {{#values}}{{+ariaPartial}}{{^isLast}} {{/isLast}}{{/values}}
+        {{:}}
+          {{+ariaPartial}}
+        {{/}}
+      </li>
+{{/properties}}
+    </ul>
+        </div>
+</div>

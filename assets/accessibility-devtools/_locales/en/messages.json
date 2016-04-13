@@ -1,0 +1,520 @@
+{
+   "ariaProperties": {
+      "description": "Heading for the 'ARIA' sidebar section",
+      "message": "ARIA"
+   },
+   "aria_autocomplete_both": {
+      "message": "Autocompletion inline and list"
+   },
+   "aria_autocomplete_inline": {
+      "message": "Autocompletion inline"
+   },
+   "aria_autocomplete_list": {
+      "message": "Autocompletion list"
+   },
+   "aria_checked_false": {
+      "message": "Not checked"
+   },
+   "aria_checked_mixed": {
+      "message": "Partially checked"
+   },
+   "aria_checked_true": {
+      "message": "Checked"
+   },
+   "aria_disabled_true": {
+      "message": "Disabled"
+   },
+   "aria_expanded_false": {
+      "message": "Collapsed"
+   },
+   "aria_expanded_true": {
+      "message": "Expanded"
+   },
+   "aria_invalid_grammar": {
+      "message": "Grammatical mistake detected"
+   },
+   "aria_invalid_spelling": {
+      "message": "Spelling mistake detected"
+   },
+   "aria_invalid_true": {
+      "message": "Invalid input"
+   },
+   "aria_multiline_true": {
+      "message": "Multi line"
+   },
+   "aria_multiselectable_true": {
+      "message": "Multi select"
+   },
+   "aria_pressed_false": {
+      "message": "Not pressed"
+   },
+   "aria_pressed_mixed": {
+      "message": "Partially pressed"
+   },
+   "aria_pressed_true": {
+      "message": "Pressed"
+   },
+   "aria_readonly_true": {
+      "message": "Read only"
+   },
+   "aria_required_true": {
+      "message": "Required"
+   },
+   "aria_role_alert": {
+      "message": "Alert"
+   },
+   "aria_role_alertdialog": {
+      "message": "Alert dialog"
+   },
+   "aria_role_application": {
+      "message": "Application"
+   },
+   "aria_role_article": {
+      "message": "Article"
+   },
+   "aria_role_banner": {
+      "message": "Banner"
+   },
+   "aria_role_button": {
+      "message": "Button"
+   },
+   "aria_role_checkbox": {
+      "message": "Check box"
+   },
+   "aria_role_columnheader": {
+      "message": "Column header"
+   },
+   "aria_role_combobox": {
+      "message": "Combo box"
+   },
+   "aria_role_complementary": {
+      "message": "Complementary"
+   },
+   "aria_role_contentinfo": {
+      "message": "Content info"
+   },
+   "aria_role_definition": {
+      "message": "Definition"
+   },
+   "aria_role_dialog": {
+      "message": "Dialog"
+   },
+   "aria_role_directory": {
+      "message": "Directory"
+   },
+   "aria_role_document": {
+      "message": "Document"
+   },
+   "aria_role_form": {
+      "message": "Form"
+   },
+   "aria_role_form_plural": {
+      "message": "$1 forms",
+      "placeholders": {
+         "1": {
+            "content": "$1"
+         }
+      }
+   },
+   "aria_role_form_singular": {
+      "message": "1 form"
+   },
+   "aria_role_grid": {
+      "message": "Grid"
+   },
+   "aria_role_gridcell": {
+      "message": "Cell"
+   },
+   "aria_role_group": {
+      "message": "Group"
+   },
+   "aria_role_heading": {
+      "message": "Heading"
+   },
+   "aria_role_img": {
+      "message": "Image"
+   },
+   "aria_role_link": {
+      "message": "Link"
+   },
+   "aria_role_link_plural": {
+      "message": "$1 links",
+      "placeholders": {
+         "1": {
+            "content": "$1"
+         }
+      }
+   },
+   "aria_role_link_singular": {
+      "message": "1 link"
+   },
+   "aria_role_list": {
+      "message": "List"
+   },
+   "aria_role_listbox": {
+      "message": "List box"
+   },
+   "aria_role_listitem": {
+      "message": "List item"
+   },
+   "aria_role_log": {
+      "message": "Log"
+   },
+   "aria_role_main": {
+      "message": "Main"
+   },
+   "aria_role_marquee": {
+      "message": "Marquee"
+   },
+   "aria_role_math": {
+      "message": "Math"
+   },
+   "aria_role_menu": {
+      "message": "Menu"
+   },
+   "aria_role_menubar": {
+      "message": "Menu bar"
+   },
+   "aria_role_menuitem": {
+      "message": "Menu item"
+   },
+   "aria_role_menuitemcheckbox": {
+      "message": "Menu item check box"
+   },
+   "aria_role_menuitemradio": {
+      "message": "Menu item radio button"
+   },
+   "aria_role_navigation": {
+      "message": "Navigation"
+   },
+   "aria_role_note": {
+      "message": "Note"
+   },
+   "aria_role_option": {
+      "message": " "
+   },
+   "aria_role_progressbar": {
+      "message": "Progress bar"
+   },
+   "aria_role_radio": {
+      "message": "Radio button"
+   },
+   "aria_role_radiogroup": {
+      "message": "Radio button group"
+   },
+   "aria_role_region": {
+      "message": "Region"
+   },
+   "aria_role_rowheader": {
+      "message": "Row header"
+   },
+   "aria_role_scrollbar": {
+      "message": "Scroll bar"
+   },
+   "aria_role_search": {
+      "message": "Search"
+   },
+   "aria_role_separator": {
+      "message": "Separator"
+   },
+   "aria_role_slider": {
+      "message": "Slider"
+   },
+   "aria_role_spinbutton": {
+      "message": "Spin button"
+   },
+   "aria_role_status": {
+      "message": "Status"
+   },
+   "aria_role_tab": {
+      "message": "Tab"
+   },
+   "aria_role_tabpanel": {
+      "message": "Tab panel"
+   },
+   "aria_role_textbox": {
+      "message": "Text box"
+   },
+   "aria_role_timer": {
+      "message": "Timer"
+   },
+   "aria_role_toolbar": {
+      "message": "Tool bar"
+   },
+   "aria_role_tooltip": {
+      "message": "Tool tip"
+   },
+   "aria_role_treeitem": {
+      "message": "Tree item"
+   },
+   "aria_selected_false": {
+      "message": "Not selected"
+   },
+   "aria_selected_true": {
+      "message": "Selected"
+   },
+   "auditResult_Severe": {
+      "description": "Keyword for audit rule severity level Severe (options are Severe, Warning and Info)",
+      "message": "Severe"
+   },
+   "auditResult_Warning": {
+      "description": "Keyword for audit rule severity level Warning (options are Severe, Warning and Info)",
+      "message": "Warning"
+   },
+   "auditTitle": {
+      "description": "Audit title.",
+      "message": "Accessibility"
+   },
+   "auditUrl_after": {
+      "description": "Text to insert after the audit result more information URL. Full English example: 'See [AX_TEXT_01] for more information.' In this case, 'See ' is the 'audit_url_before' value, and ' for more information' is the audit_url_after' value. Note that placeholders can't be used in this case as the three parts are different nodes. For RTL languages, 'before' and 'after' should be reversed.",
+      "message": " for more information."
+   },
+   "auditUrl_before": {
+      "description": "Text to insert before the audit result more information URL. Should be short, may be empty. Full English example: 'See [AX_TEXT_01] for more information.' In this case, 'See ' is the 'audit_url_before' value, and ' for more information' is the audit_url_after' value. Note that placeholders can't be used in this case as the three parts are different nodes. For RTL languages, 'before' and 'after' should be reversed.",
+      "message": "See "
+   },
+   "backspace_key": {
+      "message": "Backspace"
+   },
+   "backward": {
+      "message": "Navigate backward"
+   },
+   "benchmark": {
+      "message": "Debug benchmark"
+   },
+   "character_granularity": {
+      "message": "Character"
+   },
+   "checkbox_checked_state": {
+      "message": "checked"
+   },
+   "checkbox_unchecked_state": {
+      "message": "not checked"
+   },
+   "colorProperties": {
+      "description": "Heading for the 'Color' sidebar section",
+      "message": "Color"
+   },
+   "contrastRatio": {
+      "description": "Label for the contrast ratio value in the sidebar",
+      "message": "Contrast ratio"
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "Accessibility Developer Tools"
+   },
+   "focusProperties": {
+      "description": "Heading for the 'Focus' sidebar section",
+      "message": "Focus"
+   },
+   "input_type_button": {
+      "message": "Button"
+   },
+   "input_type_checkbox": {
+      "message": "Check box"
+   },
+   "input_type_color": {
+      "message": "Color picker"
+   },
+   "input_type_date": {
+      "message": "Date control"
+   },
+   "input_type_datetime": {
+      "message": "Date time control"
+   },
+   "input_type_datetime_local": {
+      "message": "Date time control"
+   },
+   "input_type_email": {
+      "message": "Edit text for email"
+   },
+   "input_type_file": {
+      "message": "File selection"
+   },
+   "input_type_image": {
+      "message": "Button"
+   },
+   "input_type_month": {
+      "message": "Month control"
+   },
+   "input_type_number": {
+      "message": "Edit text numeric only"
+   },
+   "input_type_password": {
+      "message": "Password edit text"
+   },
+   "input_type_radio": {
+      "message": "Radio button"
+   },
+   "input_type_range": {
+      "message": "Slider"
+   },
+   "input_type_reset": {
+      "message": "Reset"
+   },
+   "input_type_search": {
+      "message": "Edit text for search"
+   },
+   "input_type_submit": {
+      "message": "Button"
+   },
+   "input_type_tel": {
+      "message": "Edit text for telephone number"
+   },
+   "input_type_text": {
+      "message": "Edit text"
+   },
+   "input_type_url": {
+      "message": "Edit text for URL"
+   },
+   "input_type_week": {
+      "message": "Week of the year control"
+   },
+   "noAccessibilityInformation": {
+      "description": "Message shown when there are no accessibility-related properties to show in the sidebar",
+      "message": "No Accessibility Information"
+   },
+   "noElementWithId": {
+      "description": "Message shown in the sidebar when no element exists with the given ID",
+      "message": "No element with ID $ID$",
+      "placeholders": {
+         "id": {
+            "content": "$1"
+         }
+      }
+   },
+   "noText": {
+      "description": "Informative value displayed when there is intentionally no computed text for an element.",
+      "message": "None"
+   },
+   "noTextAlternative": {
+      "description": "Warning message shown when the inspected element doesn't have any text alternative (such as label, title etc.)",
+      "message": "No text alternative"
+   },
+   "notApplicableTestsSubtitle": {
+      "description": "Title for N/A tests category",
+      "message": "Not applicable tests ($NUM_NA$)",
+      "placeholders": {
+         "num_na": {
+            "content": "$1"
+         }
+      }
+   },
+   "notApplicableTestsTitle": {
+      "description": "Title for N/A tests category",
+      "message": "The following tests were not applicable:"
+   },
+   "passingTestsSubtitle": {
+      "description": "Subtitle for passing tests with number of passed tests",
+      "message": "Passing tests ($NUM_PASSING$)",
+      "placeholders": {
+         "num_passing": {
+            "content": "$1"
+         }
+      }
+   },
+   "passingTestsTitle": {
+      "description": "Title for passing tests category",
+      "message": "The following tests passed:"
+   },
+   "sidebarTitle": {
+      "description": "Title for sidebar pane.",
+      "message": "Accessibility Properties"
+   },
+   "tag_article": {
+      "message": "Article"
+   },
+   "tag_aside": {
+      "message": "Aside"
+   },
+   "tag_button": {
+      "message": "Button"
+   },
+   "tag_footer": {
+      "message": "Footer"
+   },
+   "tag_h1": {
+      "message": "Heading 1"
+   },
+   "tag_h2": {
+      "message": "Heading 2"
+   },
+   "tag_h3": {
+      "message": "Heading 3"
+   },
+   "tag_h4": {
+      "message": "Heading 4"
+   },
+   "tag_h5": {
+      "message": "Heading 5"
+   },
+   "tag_h6": {
+      "message": "Heading 6"
+   },
+   "tag_header": {
+      "message": "Header"
+   },
+   "tag_hgroup": {
+      "message": "Heading group"
+   },
+   "tag_li": {
+      "message": "List item"
+   },
+   "tag_link": {
+      "message": "Link"
+   },
+   "tag_mark": {
+      "message": "Mark"
+   },
+   "tag_nav": {
+      "message": "Navigation"
+   },
+   "tag_ol": {
+      "message": "Ordered List"
+   },
+   "tag_section": {
+      "message": "Section"
+   },
+   "tag_select": {
+      "message": "List box"
+   },
+   "tag_textarea": {
+      "message": "Text area"
+   },
+   "tag_time": {
+      "message": "Time"
+   },
+   "tag_ul": {
+      "message": "List"
+   },
+   "textProperties": {
+      "descrtiption": "Heading for the 'Text' sidebar section",
+      "message": "Text"
+   },
+   "truncatedResults": {
+      "description": "Warning shown when number of audit results for a particular rule has been truncated",
+      "message": "Results truncated to $maxResults$ elements.",
+      "placeholders": {
+         "maxResults": {
+            "content": "$1",
+            "example": "100"
+         }
+      }
+   },
+   "videoCaptionTracks": {
+      "description": "Label for the 'Caption tracks' value(s) in the sidebar",
+      "message": "Caption tracks"
+   },
+   "videoChapterTracks": {
+      "description": "Label for the 'Chapter tracks' value(s) in the sidebar",
+      "message": "Chapter tracks"
+   },
+   "videoDescriptionTracks": {
+      "description": "Label for the 'Description tracks' value(s) in the sidebar",
+      "message": "Description tracks"
+   },
+   "videoProperties": {
+      "description": "Heading for the 'Video' sidebar section",
+      "message": "Video"
+   }
+}

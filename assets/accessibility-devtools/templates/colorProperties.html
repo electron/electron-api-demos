@@ -1,0 +1,46 @@
+<div id="color-properties" class="properties-container">
+  <div class="sidebar-separator">{{heading}}</div>
+  <div class="properties">
+    <ul class="properties">
+{{?contrastRatio}}
+      <li id="contrast-ratio"
+  {{?contrastRatio.alert}}
+          class="property warning">
+  {{:}}
+          class="property">
+  {{/}}
+        <span class="property" msg="contrastRatio"></span>:
+        <span id="contrast-ratio-value">{{contrastRatio.value}}</span>
+        <div class="bevel-border" {{?contrastRatio.suggestedColors}}title="Click to apply foreground/background colors" style="cursor: pointer;"{{/}}>
+          <div id="contrast-ratio-bevel" class="bevel"
+               style="border-right-color: {{contrastRatio.backgroundColor}}; border-top-color: {{contrastRatio.foregroundColor}};"></div>
+        </div>
+  {{?contrastRatio.suggestedColors}}
+        <ul class="properties">
+    {{?contrastRatio.suggestedColors.AA}}
+          <li id="suggested-colors-AA">
+            <span class="suggestion">AA level ({{contrastRatio.suggestedColors.AA.contrast}})</span>:
+            <span id="suggested-colors-AA-value">{{contrastRatio.suggestedColors.AA.fg}}/{{contrastRatio.suggestedColors.AA.bg}}</span>
+            <div class="bevel-border" title="Click to apply foreground/background colors" style="cursor: pointer;">
+              <div id="contrast-ratio-bevel" class="bevel"
+                   style="border-right-color: {{contrastRatio.suggestedColors.AA.bg}}; border-top-color: {{contrastRatio.suggestedColors.AA.fg}};"></div>
+            </div>
+          </li>
+    {{/}}
+    {{?contrastRatio.suggestedColors.AAA}}
+          <li id="suggested-colors-AAA">
+            <span class="suggestion">AAA level ({{contrastRatio.suggestedColors.AAA.contrast}})</span>:
+            <span id="suggested-colors-AAA-value">{{contrastRatio.suggestedColors.AAA.fg}}/{{contrastRatio.suggestedColors.AAA.bg}}</span>
+            <div class="bevel-border" title="Click to apply foreground/background colors" style="cursor: pointer;">
+              <div id="contrast-ratio-bevel" class="bevel"
+                   style="border-right-color: {{contrastRatio.suggestedColors.AAA.bg}}; border-top-color: {{contrastRatio.suggestedColors.AAA.fg}};"></div>
+            </div>
+          </li>
+    {{/}}
+        </ul>
+  {{/}}
+      </li>
+{{/}}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript" src="generated/axs.js"></script>
+  <script type="text/javascript" src="generated/constants.js"></script>
+  <script type="text/javascript" src="generated/utils.js"></script>
+  <script type="text/javascript" src="generated/properties.js"></script>
+  <script type="text/javascript" src="generated/extension_properties.js"></script>
+  <script type="text/javascript" src="generated/audits.js"></script>
+  <script type="text/javascript" src="generated/extension_audits.js"></script>
+  <link rel="stylesheet" type="text/css" href="options.css" />
+</head>
+<body>
+  <section>
+    <h2>Select which audit rules to use</h2>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="reset-audit-rules">
+        <span>Select All</span>
+      </label>
+    </div>
+    <fieldset id="audit-rules">
+    </fieldset>
+  </section>
+  <section>
+    <h2>Select which external rulesets to use</h2>
+    <fieldset id="external-rulesets"></fieldset>
+  </section>
+  <script type="text/javascript" src="options.js"></script>
+</body>
+</html>

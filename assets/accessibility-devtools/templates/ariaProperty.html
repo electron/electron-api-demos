@@ -1,0 +1,15 @@
+  {{?text}}
+        <span class="text">"{{text}}"</span>
+  {{:}}{{?idref}}
+        <!-- TODO: better formatting? -->
+        {{?valid}}
+        <a href="#" idref="{{idref}}">{{idref}}</a>
+        {{:}}
+        <span class="invalid">{{idref}}</span>
+        {{/valid}}
+  {{:}}{{?value}}
+        <span>{{value}}</span>
+      </li>
+  {{:}}{{?reason}}
+        <span class="text warning">{{reason}}</span>
+  {{/reason}}{{/value}}{{/idref}}{{/text}}
