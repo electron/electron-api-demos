@@ -1,5 +1,5 @@
 <template class="task-template">
-  <div id="menus-section" class="content-item menu task-wrapper">
+  <section id="menus-section" class="section js-section menu task-wrapper">
     <header>
       <div class="wrapper">
         <h1>
@@ -72,5 +72,5 @@
       var contextMenuRendererContent = fs.readFileSync(__dirname + '/renderer-process/menus/context-menu.js');
       document.getElementById('context-menu-renderer').innerHTML= contextMenuRendererContent;
     </script>
-  </div><!-- end menu-section -->
+  </section><!-- end menu-section -->
 </template>

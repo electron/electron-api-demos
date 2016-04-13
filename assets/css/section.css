@@ -1,4 +1,5 @@
-/* content */
+/* Content ------------------ */
+/* TODO: Move somewhere else */
 
 .content {
   flex: 1;
@@ -17,7 +18,9 @@
   color: var(--color);
 }
 
-.content-item {
+/* Section ------------------ */
+
+.section {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,16 +29,15 @@
   overflow-x: hidden;
   overflow-y: auto;
   color: var(--color-accent);
-}
 
-.content-item {
+  /* Hide */
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
   transform: translateX(-20px);
   transition: visibility 0s .12s linear , opacity .12s ease-in, transform .12s ease-in;
 }
-.content-item.show {
+.section.show {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
@@ -64,14 +66,14 @@
 
 /* Section */
 
-.content-item > section:first-of-type {
+.section > section:first-of-type {
   margin-top: 2rem;
 }
-.content-item > section:last-of-type {
+.section > section:last-of-type {
   margin-bottom: 2rem;
 }
 @media (min-width: 940px) {
-  .content-item > section:last-of-type {
+  .section > section:last-of-type {
     margin-bottom: 4rem;
   }
 }

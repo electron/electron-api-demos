@@ -65,7 +65,7 @@ function hideAllModals () {
 }
 
 function hideAllSectionsAndDeselectButtons () {
-  let sections = document.querySelectorAll('.content-item.show')
+  let sections = document.querySelectorAll('.js-section.show')
   Array.prototype.forEach.call(sections, function (section) {
     section.classList.remove('show')
   })
