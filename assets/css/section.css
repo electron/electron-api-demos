@@ -59,25 +59,25 @@
 }
 
 
-/* Section */
+/* Demo */
 
-.wrapper {
+.demo:first-of-type {
+  margin-top: 2rem;
+}
+.demo:last-of-type {
+  margin-bottom: 2rem;
+}
+@media (min-width: 940px) {
+  .demo:last-of-type {
+    margin-bottom: 4rem;
+  }
+}
+
+.demo-wrapper {
   position: relative;
   max-width: 740px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-.section > section:first-of-type {
-  margin-top: 2rem;
-}
-.section > section:last-of-type {
-  margin-bottom: 2rem;
-}
-@media (min-width: 940px) {
-  .section > section:last-of-type {
-    margin-bottom: 4rem;
-  }
 }
 
 
@@ -129,7 +129,7 @@
 
 /* Demo */
 
-.demo {
+.demo-controls {
   display: flex;
   align-items: center;
 }
@@ -207,9 +207,9 @@ pre > .hljs {
 
 
 
-/* Clicky */
+/* Toggle Button */
 
-.toggle-button {
+.demo-toggle-button {
   position: relative;
   display: block;
   margin: 0;
@@ -226,8 +226,8 @@ pre > .hljs {
   outline: none;
 }
 
-.toggle-button:before,
-.toggle-button:after {
+.demo-toggle-button:before,
+.demo-toggle-button:after {
   content: "";
   position: absolute;
   left: 0;
@@ -236,22 +236,22 @@ pre > .hljs {
   background-color: hsl(0,0%,88%);
   transition: transform .2s cubic-bezier(.4,.1,0,1);
 }
-.toggle-button:before {
+.demo-toggle-button:before {
   top: 0;
   transform-origin: bottom center;
   transform: translateX(.7em) rotate(-30deg) scale(.75);
 }
-.toggle-button:after {
+.demo-toggle-button:after {
   bottom: 0;
   transform-origin: top center;
   transform: translateX(.7em) rotate(30deg) scale(.75);
 }
-.active .toggle-button:before,
-.active .toggle-button:after {
+.active .demo-toggle-button:before,
+.active .demo-toggle-button:after {
   transform: rotate(0deg);
 }
-.toggle-button:focus:before,
-.toggle-button:focus:after {
+.demo-toggle-button:focus:before,
+.demo-toggle-button:focus:after {
   background-color: currentColor;
 }
 

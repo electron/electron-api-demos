@@ -14,13 +14,13 @@
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target toggle-button">Create a new window
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Create a new window
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="new-window">Demo</button>
           </div>
           <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
@@ -43,15 +43,15 @@
         </div>
       </div>
 
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="manage-window-demo-toggle" class="js-container-target toggle-button">Manage window state
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">Manage window state
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="manage-window">Demo</button>
             <span class="demo-response" id="manage-window-reply"></span>
           </div>
@@ -62,15 +62,15 @@
           <pre><code id="manage-window-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button class="js-container-target toggle-button">Create a frameless window
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button class="js-container-target demo-toggle-button">Create a frameless window
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="frameless-window">Demo</button>
           </div>
           <p>
@@ -95,7 +95,7 @@
 
         </div>
       </div>
-    </section>
+    </div>
 
 
     <script type="text/javascript" src="renderer-process/windows/create-window.js"></script>

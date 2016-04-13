@@ -11,13 +11,13 @@
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="app-info-demo-toggle" class="js-container-target toggle-button">Get app information
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get app information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="app-info">Demo</button>
             <span class="demo-response" id="got-app-info"></span>
           </div>
@@ -42,15 +42,15 @@ process.versions.node</code></pre>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
+    <div class="demo">
       <div class="wrapper">
-        <button id="sys-info-demo-toggle" class="js-container-target toggle-button">Get system information
+        <button id="sys-info-demo-toggle" class="js-container-target demo-toggle-button">Get system information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="sys-info">Demo</button>
             <span class="demo-response" id="got-sys-info"></span>
           </div>
@@ -62,15 +62,15 @@ process.versions.node</code></pre>
           <pre><code id="sys-info-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="screen-info-demo-toggle" class="js-container-target toggle-button">Get screen information
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="screen-info-demo-toggle" class="js-container-target demo-toggle-button">Get screen information
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="screen-info">Demo</button>
             <span class="demo-response" id="got-screen-info"></span>
           </div>
@@ -81,7 +81,7 @@ process.versions.node</code></pre>
           <pre><code id="screen-info-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/system/app-information.js"></script>
     <script type="text/javascript" src="renderer-process/system/sys-information.js"></script>

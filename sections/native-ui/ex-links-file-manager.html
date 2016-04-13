@@ -13,13 +13,13 @@
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="open-file-manager-demo-toggle" class="js-container-target toggle-button">Open Path in File Manager
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="open-file-manager-demo-toggle" class="js-container-target demo-toggle-button">Open Path in File Manager
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="open-file-manager">Demo</button>
           </div>
           <p>This demonstrates using the <code>shell</code> module to open the system file manager at a particular location.</p>
@@ -28,15 +28,15 @@
           <pre><code id="file-manager-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="open-ex-links-demo-toggle" class="js-container-target toggle-button">Open External Links
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="open-ex-links-demo-toggle" class="js-container-target demo-toggle-button">Open External Links
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="open-ex-links">Demo</button>
           </div>
           <p>If you do not want your app to open website links <em>within</em> the app, you can use the <code>shell</code> module to open them externally. When clicked, the links will open outside of your app and in the user's default web browser.</p>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/native-ui/ex-links-file-manager/file-manager.js"></script>
     <script type="text/javascript" src="renderer-process/native-ui/ex-links-file-manager/ex-links.js"></script>

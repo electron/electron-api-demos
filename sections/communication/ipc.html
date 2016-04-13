@@ -13,13 +13,13 @@
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="async-msg-demo-toggle" class="js-container-target toggle-button">Asynchronous messages
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">Asynchronous messages
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="async-msg">Ping</button>
             <span class="demo-response" id="async-reply"></span>
           </div>
@@ -32,15 +32,15 @@
           <pre><code id="async-msg-main"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="sync-msg-demo-toggle" class="js-container-target toggle-button">Synchronous messages
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="sync-msg-demo-toggle" class="js-container-target demo-toggle-button">Synchronous messages
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="sync-msg">Ping</button>
             <span class="demo-response" id="sync-reply"></span>
           </div>
@@ -52,15 +52,15 @@
           <pre><code id="sync-msg-main"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="invis-msg-demo-toggle" class="js-container-target toggle-button">Communicate with an invisible window
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="invis-msg-demo-toggle" class="js-container-target demo-toggle-button">Communicate with an invisible window
           <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
         </button>
         <div class="toggle-content">
-          <div class="demo">
+          <div class="demo-controls">
             <button class="demo-button" id="invis-msg">Ping</button>
             <span class="demo-response" id="invis-reply"></span>
           </div>
@@ -73,7 +73,7 @@
           <pre><code id="invis-window-renderer"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/communication/sync-msg.js"></script>
     <script type="text/javascript" src="renderer-process/communication/async-msg.js"></script>
