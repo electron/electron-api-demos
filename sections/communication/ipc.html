@@ -1,25 +1,25 @@
 <template class="task-template">
-  <div id="ipc-section" class="content-item communication task-wrapper">
+  <section id="ipc-section" class="section js-section u-category-communication">
     <header class="communication">
-      <div class="wrapper">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-communication"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-communication"></use></svg>
           Communication between processes
         </h1>
         <h3>The <code>ipc</code> (inter-process communication) module allows you to send and recieve synchronous and asynchronous messages between the main and renderer processes.</h3>
 
         <p>There is a version of this module available for both processes: <code>ipcMain</code> and <code>ipcRenderer</code>.</p>
-        <p>Open the full API documentation for the <a class="exlink" href="http://electron.atom.io/docs/latest/api/ipc-main">main process</a> and the <a class="exlink" href="http://electron.atom.io/docs/latest/api/ipc-renderer/">renderer process</a> in your browser.</p>
+        <p>Open the full API documentation for the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/ipc-main">main process</a> and the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/ipc-renderer/">renderer process</a> in your browser.</p>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="async-msg-demo-toggle" class="js-container-target toggle-button">Asynchronous messages
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="async-msg-demo-toggle" class="js-container-target demo-toggle-button">Asynchronous messages
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="async-msg">Ping</button>
             <span class="demo-response" id="async-reply"></span>
           </div>
@@ -32,15 +32,15 @@
           <pre><code id="async-msg-main"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="sync-msg-demo-toggle" class="js-container-target toggle-button">Synchronous messages
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="sync-msg-demo-toggle" class="js-container-target demo-toggle-button">Synchronous messages
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="sync-msg">Ping</button>
             <span class="demo-response" id="sync-reply"></span>
           </div>
@@ -52,15 +52,15 @@
           <pre><code id="sync-msg-main"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="invis-msg-demo-toggle" class="js-container-target toggle-button">Communicate with an invisible window
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="invis-msg-demo-toggle" class="js-container-target demo-toggle-button">Communicate with an invisible window
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="invis-msg">Ping</button>
             <span class="demo-response" id="invis-reply"></span>
           </div>
@@ -73,7 +73,7 @@
           <pre><code id="invis-window-renderer"></code></pre>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/communication/sync-msg.js"></script>
     <script type="text/javascript" src="renderer-process/communication/async-msg.js"></script>
@@ -97,5 +97,5 @@
       var invisWindowRendererContent = fs.readFileSync(__dirname + '/sections/communication/invisible.html');
       document.getElementById('invis-window-renderer').textContent = invisWindowRendererContent;
     </script>
-  </div><!--- end ipc-section -->
+  </section>
 </template>

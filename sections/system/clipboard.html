@@ -1,25 +1,25 @@
 <template class="task-template">
-  <div id="clipboard-section" class="content-item system task-wrapper">
-    <header>
-      <div class="wrapper">
+  <section id="clipboard-section" class="section js-section u-category-system">
+    <header class="section-header">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 16 16"><use xlink:href="#icon-system"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
           Clipboard
         </h1>
         <h3>The <code>clipboard</code> module provides methods to perform copy and paste operations.</h3>
         <p>This module also has methods for copying text as markup (HTML) to the clipboard.</p>
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/clipboard">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/clipboard">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="copy-to-demo-toggle" class="js-container-target toggle-button">Copy
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="copy-to-demo-toggle" class="js-container-target demo-toggle-button">Copy
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="copy-to">Copy</button>
             <input class="demo-input" id="copy-to-input" placeholder="Click copy."></input>
           </div>
@@ -28,15 +28,15 @@
           <pre><code id="copy-to-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button id="paste-to-demo-toggle" class="js-container-target toggle-button">Paste
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Both</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="paste-to-demo-toggle" class="js-container-target demo-toggle-button">Paste
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="paste-to">Paste</button>
             <span class="demo-response" id="paste-from"></span>
           </div>
@@ -46,7 +46,7 @@
           <pre><code id="paste-to-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
     <script type="text/javascript" src="renderer-process/system/copy.js"></script>
     <script type="text/javascript" src="renderer-process/system/paste.js"></script>
@@ -60,5 +60,5 @@
       var pasteToRendererContent = fs.readFileSync(__dirname + '/renderer-process/system/paste.js');
       document.getElementById('paste-to-renderer').innerHTML= pasteToRendererContent;
     </script>
-  </div><!-- end clipboard-section -->
+  </section>
 </tempalte>

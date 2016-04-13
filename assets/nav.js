@@ -31,7 +31,7 @@ function handleSectionTrigger (event) {
 
   // Display the current section
   let sectionId = event.target.dataset.section + '-section'
-  document.getElementById(sectionId).classList.add('show')
+  document.getElementById(sectionId).classList.add('is-shown')
 
   // Save currently active button in localStorage
   let buttonId = event.target.getAttribute('id')
@@ -45,37 +45,37 @@ function activateDefaultSection () {
 }
 
 function showMainContent () {
-  document.querySelector('.section-nav').classList.add('show')
-  document.querySelector('.content').classList.add('show')
+  document.querySelector('.js-nav').classList.add('is-shown')
+  document.querySelector('.js-content').classList.add('is-shown')
 }
 
 function handleModalTrigger (event) {
   hideAllModals()
   let modalId = event.target.dataset.modal + '-modal'
   console.log('modalId', modalId)
-  document.getElementById(modalId).classList.add('show')
+  document.getElementById(modalId).classList.add('is-shown')
 }
 
 function hideAllModals () {
-  let modals = document.querySelectorAll('.modal.show')
+  let modals = document.querySelectorAll('.modal.is-shown')
   Array.prototype.forEach.call(modals, function (modal) {
-    modal.classList.remove('show')
+    modal.classList.remove('is-shown')
   })
   showMainContent()
 }
 
 function hideAllSectionsAndDeselectButtons () {
-  let sections = document.querySelectorAll('.content-item.show')
+  let sections = document.querySelectorAll('.js-section.is-shown')
   Array.prototype.forEach.call(sections, function (section) {
-    section.classList.remove('show')
+    section.classList.remove('is-shown')
   })
 
-  let buttons = document.querySelectorAll('.nav-link.is-selected')
+  let buttons = document.querySelectorAll('.nav-button.is-selected')
   Array.prototype.forEach.call(buttons, function (button) {
     button.classList.remove('is-selected')
   })
 }
 
 function displayAbout () {
-  document.querySelector('#about-modal').classList.add('show')
+  document.querySelector('#about-modal').classList.add('is-shown')
 }

@@ -1,76 +1,73 @@
 <template class="task-template">
-  <div id="windows-section" class="content-item task-wrapper windows">
-    <header>
-      <div class="wrapper">
+  <section id="windows-section" class="section js-section u-category-windows">
+    <header class="section-header">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 14 16"><use xlink:href="#icon-windows"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
           Create and Manage Windows
         </h1>
         <h3>The <code>BrowserWindow</code> module in Electron allows you to create a new browser window or manage an existing one.</h3>
 
         <p>Each browser window is a separate process, known as the renderer process. This process, like the main process that controls the life cycle of the app, has full access to the Node.js APIs.
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target toggle-button">Create a new window
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Create a new window
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="new-window">Demo</button>
           </div>
           <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
 
-          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
+          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="new-window-renderer"></pre></code>
 
-          <div class="pro-tip">
-            <h2 class="avoid-clicks">ProTip</h2>
-            <div class="non-toggle-content">
-              <strong>Use an invisible browser window to run background tasks.</strong>
-              <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Use an invisible browser window to run background tasks.</strong>
+            <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
             <pre>
 <code>var win = new BrowserWindow({
   width: 400, height: 225, show: false
 })</code></pre>
-            </div>
           </div>
         </div>
       </div>
+    </div>
 
-    </section>
-
-    <section>
-      <div class="wrapper">
-        <button id="manage-window-demo-toggle" class="js-container-target toggle-button">Manage window state
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="manage-window-demo-toggle" class="js-container-target demo-toggle-button">Manage window state
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="manage-window">Demo</button>
             <span class="demo-response" id="manage-window-reply"></span>
           </div>
           <p>In this demo we create a new window and listen for <code>move</code> and <code>resize</code> events on it. Click the demo button, change the new window and see the dimenions and poisition update here, above.</p>
 
-          <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
+          <p>There are a lot of methods for controlling the state of the window such as the size, location, and focus status as well as events to listen to for window changes. Visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-windows">documentation</a> for the full list.</p>
           <h5>Renderer Process</h5>
           <pre><code id="manage-window-renderer"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <div class="wrapper">
-        <button class="js-container-target toggle-button">Create a frameless window
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button class="js-container-target demo-toggle-button">Create a frameless window
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
-          <div class="demo">
+        <div class="demo-box">
+          <div class="demo-controls">
             <button class="demo-button" id="frameless-window">Demo</button>
           </div>
           <p>
@@ -95,7 +92,7 @@
 
         </div>
       </div>
-    </section>
+    </div>
 
 
     <script type="text/javascript" src="renderer-process/windows/create-window.js"></script>
@@ -114,5 +111,5 @@
       var framelessWindowRendererContent = fs.readFileSync(__dirname + '/renderer-process/windows/frameless-window.js');
       document.getElementById('frameless-window-renderer').innerHTML= framelessWindowRendererContent;
     </script>
-  </div><!-- end windows-section -->
+  </section>
 </template>

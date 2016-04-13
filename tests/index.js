@@ -74,10 +74,10 @@ describe('demo app', function () {
       .getWindowHeight().should.eventually.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .waitForVisible('#about-modal').should.eventually.be.true
-      .isVisible('.section-nav').should.eventually.be.false
+      .isVisible('.js-nav').should.eventually.be.false
       .click('button[id="get-started"]').pause(500)
       .isVisible('#about-modal').should.eventually.be.false
-      .isVisible('.section-nav').should.eventually.be.true
+      .isVisible('.js-nav').should.eventually.be.true
   })
 
   describe('when clicking on a section from the nav bar', function () {
@@ -103,8 +103,8 @@ describe('demo app', function () {
       return app.client.click('button[data-section="windows"]')
         .waitForVisible('#windows-section')
         .click('.js-container-target')
-        .waitForVisible('.toggle-content')
-        .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible)
+        .waitForVisible('.demo-box')
+        .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
     })
   })
 
@@ -118,7 +118,7 @@ describe('demo app', function () {
         .then(function () {
           return app.client.waitForVisible('#windows-section')
             .isVisible('#windows-section').should.eventually.be.true
-            .isVisible('.toggle-content').should.eventually.deep.equal(onlyFirstVisible)
+            .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
         })
     })
   })
