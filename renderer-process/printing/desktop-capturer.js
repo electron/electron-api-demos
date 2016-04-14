@@ -21,6 +21,8 @@ screenshot.addEventListener('click', function (event) {
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
           if (error) return console.log(error)
           shell.openItem(screenshotPath)
+          var message = 'Wrote screenshot to: ' + screenshotPath
+          document.getElementById('screenshot-path').innerHTML = message
         })
       }
     })
