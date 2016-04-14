@@ -29,7 +29,7 @@ exports.initialize = function () {
     exports.updateMenu()
   })
 
-  autoUpdater.setFeedURL('https://electron-api-demos.githubapp.com/mac')
+  autoUpdater.setFeedURL('https://electron-api-demos.githubapp.com/updates')
   autoUpdater.checkForUpdates()
 }
 
