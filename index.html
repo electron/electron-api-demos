@@ -97,14 +97,12 @@
   <script>
     require('electron').hideInternalModules();
     process.throwDeprecation = true;
+    require('./assets/imports')
+    require('./assets/ex-links')
+    require('./assets/nav')
+    require('./assets/demo-btns')
+    require('./assets/code-blocks')
+    hljs.initHighlightingOnLoad()
   </script>
-
-  <script src="assets/imports.js"></script>
-  <script src="assets/ex-links.js"></script>
-  <script src="assets/nav.js"></script>
-  <script src="assets/demo-btns.js"></script>
-  <script src="assets/code-blocks.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
 </body>
 </html>

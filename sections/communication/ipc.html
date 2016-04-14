@@ -75,9 +75,11 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="renderer-process/communication/sync-msg.js"></script>
-    <script type="text/javascript" src="renderer-process/communication/async-msg.js"></script>
-    <script type="text/javascript" src="renderer-process/communication/invisible-msg.js"></script>
+    <script type="text/javascript">
+      require('./renderer-process/communication/sync-msg')
+      require('./renderer-process/communication/async-msg')
+      require('./renderer-process/communication/invisible-msg')
+    </script>
 
   </section>
 </template>

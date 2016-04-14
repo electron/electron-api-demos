@@ -94,10 +94,11 @@
       </div>
     </div>
 
-
-    <script type="text/javascript" src="renderer-process/windows/create-window.js"></script>
-    <script type="text/javascript" src="renderer-process/windows/manage-window.js"></script>
-    <script type="text/javascript" src="renderer-process/windows/frameless-window.js"></script>
+    <script type="text/javascript">
+      require('./renderer-process/windows/create-window')
+      require('./renderer-process/windows/manage-window')
+      require('./renderer-process/windows/frameless-window')
+    </script>
 
   </section>
 </template>
