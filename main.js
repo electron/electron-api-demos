@@ -27,8 +27,16 @@ function initialize () {
   })
 
   function createWindow () {
-    var iconPath = path.join(__dirname, '/assets/app-icon/png/512.png')
-    mainWindow = new BrowserWindow({ width: 1080, minWidth: 680, height: 800, icon: iconPath })
+    var windowOptions = {
+      width: 1080,
+      minWidth: 680,
+      height: 800
+    }
+    if (process.platform === 'linux') {
+      windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
+    }
+
+    mainWindow = new BrowserWindow(windowOptions)
     mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
 
     // Launch fullscreen with DevTools open, usage: npm run debug
