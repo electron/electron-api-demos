@@ -14,6 +14,9 @@ process.throwDeprecation = true
 var mainWindow = null
 
 function initialize () {
+  var shouldQuit = makeSingleInstance()
+  if (shouldQuit) return app.quit()
+
   // Require and setup each JS file in the main-process dir
   glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
     if (error) return console.log(error)
@@ -53,6 +56,22 @@ function initialize () {
   app.on('activate', function () {
     if (mainWindow === null) {
       createWindow()
+    }
+  })
+}
+
+// Make this app a single instance app.
+//
+// The main window will be restored and focused instead of a second window
+// opened when a person attempts to launch a second instance.
+//
+// Returns true if the current version of the app should quit instead of
+// launching.
+function makeSingleInstance () {
+  return app.makeSingleInstance(function () {
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore()
+      mainWindow.focus()
     }
   })
 }
