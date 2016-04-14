@@ -15,10 +15,7 @@ var mainWindow = null
 
 function initialize () {
   var shouldQuit = makeSingleInstance()
-  if (shouldQuit) {
-    app.quit()
-    return
-  }
+  if (shouldQuit) return app.quit()
 
   // Require and setup each JS file in the main-process dir
   glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
