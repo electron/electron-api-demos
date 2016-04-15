@@ -10,7 +10,7 @@
     "dev": "electron . --debug",
     "lint": "standard",
     "test": "mocha tests && npm run lint",
-    "sign-exe": "./script/sign-exe.sh",
+    "sign-exe": "signcode ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe --cert ~/electron-api-demos.p12 --prompt",
     "sign-installer": "./script/sign-installer.sh",
     "pack-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub'",
     "pack-win": "electron-packager . ElectronAPIDemos --asar  --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out --version-string.CompanyName='GitHub, Inc.' --version-string.FileDescription='Electron API Demos' --version-string.ProductName='Electron API Demos'",
