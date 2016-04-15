@@ -136,7 +136,7 @@ function addUpdateMenuItems (items, position) {
     }
   }, {
     label: 'Restart and Install Update',
-    enabled: false,
+    enabled: true,
     visible: false,
     key: 'restartToUpdate',
     click: function () {
