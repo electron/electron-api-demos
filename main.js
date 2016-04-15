@@ -17,15 +17,6 @@ function initialize () {
   var shouldQuit = makeSingleInstance()
   if (shouldQuit) return app.quit()
 
-  // Require and setup each JS file in the main-process dir
-  glob(path.join(__dirname, 'main-process/**/*.js'), function (error, files) {
-    if (error) return console.log(error)
-    files.forEach(function (file) {
-      require(file)
-    })
-    autoUpdater.updateMenu()
-  })
-
   function createWindow () {
     var windowOptions = {
       width: 1080,
@@ -51,6 +42,7 @@ function initialize () {
   }
 
   app.on('ready', function () {
+    loadDemos()
     createWindow()
     autoUpdater.initialize()
   })
@@ -82,6 +74,15 @@ function makeSingleInstance () {
       mainWindow.focus()
     }
   })
+}
+
+// Require each JS file in the main-process dir
+function loadDemos() {
+  var files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
+  files.forEach(function (file) {
+    require(file)
+  })
+  autoUpdater.updateMenu()
 }
 
 // Handle Squirrel on Windows startup events
