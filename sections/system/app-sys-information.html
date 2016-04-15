@@ -13,6 +13,27 @@
 
     <div class="demo">
       <div class="demo-wrapper">
+        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get app information
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="app-info">View Demo</button>
+            <span class="demo-response" id="got-app-info"></span>
+          </div>
+          <p>The main process <code>app</code> module can be used to get the path at which your app is located on the user's computer.</p>
+          <p>In this example, to get that information from the rendrer process, we use the <code>ipc</code> module to send a message to the main process requesting the app's path.</p>
+          <p>See the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/app">app module documentation</a> for more.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/system/app-information.js"></pre></code>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/system/app-information.js"></pre></code>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
         <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get version information
           <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
@@ -82,6 +103,7 @@ process.versions.node</code></pre>
     </div>
 
     <script type="text/javascript">
+      require('./renderer-process/system/app-information')
       require('./renderer-process/system/version-information')
       require('./renderer-process/system/sys-information')
       require('./renderer-process/system/screen-information')
