@@ -13,19 +13,19 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get app information
+        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get version information
           <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="app-info">View Demo</button>
-            <span class="demo-response" id="got-app-info"></span>
+            <button class="demo-button" id="version-info">View Demo</button>
+            <span class="demo-response" id="got-version-info"></span>
           </div>
           <p>The <code>process</code> module is built into Node.js (therefore you can use this in both the main and renderer processes) and in Electron apps this object has a few more useful properties on it.</p>
           <p>The example below gets the version of Electron in use by the app.</p>
           <p>See the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/process">process documentation</a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/system/app-information.js"></pre></code>
+          <pre><code data-path="renderer-process/system/version-information.js"></pre></code>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -82,7 +82,7 @@ process.versions.node</code></pre>
     </div>
 
     <script type="text/javascript">
-      require('./renderer-process/system/app-information')
+      require('./renderer-process/system/version-information')
       require('./renderer-process/system/sys-information')
       require('./renderer-process/system/screen-information')
     </script>
