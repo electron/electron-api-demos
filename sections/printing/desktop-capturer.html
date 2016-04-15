@@ -6,7 +6,7 @@
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-printing"></use></svg>
           Desktop Capturer
         </h1>
-        <h3>The <code>desktopCapturer</code> module in Electron can be used to access any media, such as audio, video and screen, that is available through the <code>getUserMedia</code> web API in Chromium.</h3>
+        <h3>The <code>desktopCapturer</code> module in Electron can be used to access any media, such as audio, video, screen and window, that is available through the <code>getUserMedia</code> web API in Chromium.</h3>
 
         <p>Open the <a class="u-exlink" href="hhttp://electron.atom.io/docs/v0.37.5/api/desktop-capturer">full API documentation</a> in your browser.</p>
       </div>
@@ -22,8 +22,8 @@
             <button class="demo-button" id="screen-shot">View Demo</button>
             <span class="demo-response" id="screenshot-path"></span>
           </div>
-          <p>To demonstrate the print to PDF functionality, the demo button above will save this page as a PDF and, if you have a PDF viewer, open the file.</p>
-          <p>In a real-world application you're more likely to add this to application menu, but for the purposes of the demo we've set it to the demo button.</p>
+          <p>This demo uses the <code>desktopCapturer</code> module to gather screens in use and select the entire screen and take a snapshot of what is visible.</p>
+          <p>Clicking the demo button will take a screenshot of your current screen and open it in your default viewer.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/printing/desktop-capturer.js"></pre></code>
         </div>
