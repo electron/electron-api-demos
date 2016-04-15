@@ -200,6 +200,4 @@ if (process.platform === 'win32') {
 }
 
 var menu = Menu.buildFromTemplate(template)
-console.log('wtf?');
-console.log(template);
 Menu.setApplicationMenu(menu)
