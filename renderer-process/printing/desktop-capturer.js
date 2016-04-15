@@ -8,8 +8,10 @@ const os = require('os')
 const path = require('path')
 
 const screenshot = document.getElementById('screen-shot')
+const screenshotMsg = document.getElementById('screenshot-path')
 
 screenshot.addEventListener('click', function (event) {
+  screenshotMsg.innerHTML = 'Gathering screens...'
   const thumbSize = determineScreenShotSize()
   let options = { types: ['screen'], thumbnailSize: thumbSize }
 
@@ -23,8 +25,8 @@ screenshot.addEventListener('click', function (event) {
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
           if (error) return console.log(error)
           shell.openItem(screenshotPath)
-          var message = 'Wrote screenshot to: ' + screenshotPath
-          document.getElementById('screenshot-path').innerHTML = message
+          var message = 'Saved screenshot to: ' + screenshotPath
+          screenshotMsg.innerHTML = message
         })
       }
     })
