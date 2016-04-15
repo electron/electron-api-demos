@@ -1,3 +1,4 @@
+const app = require('electron').app
 const autoUpdater = require('electron').autoUpdater
 const Menu = require('electron').Menu
 
@@ -29,7 +30,7 @@ exports.initialize = function () {
     exports.updateMenu()
   })
 
-  autoUpdater.setFeedURL('https://electron-api-demos.githubapp.com/updates')
+  autoUpdater.setFeedURL(`https://electron-api-demos.githubapp.com/updates?version=${app.getVersion()}`)
   autoUpdater.checkForUpdates()
 }
 
