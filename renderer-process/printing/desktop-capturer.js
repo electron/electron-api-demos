@@ -17,7 +17,6 @@ screenshot.addEventListener('click', function (event) {
     if (error) return console.log(error)
 
     sources.forEach(function (source) {
-      if (source.name === 'Entire screen') {
         var screenshotPath = path.join(os.tmpdir(), 'screenshot.png')
 
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
