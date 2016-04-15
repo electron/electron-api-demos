@@ -11,11 +11,13 @@ const screenshot = document.getElementById('screen-shot')
 
 screenshot.addEventListener('click', function (event) {
   const thumbSize = determineScreenShotSize()
-  desktopCapturer.getSources({types: ['screen'], thumbnailSize: thumbSize}, function (error, sources) {
+  let options = { types: ['screen'], thumbnailSize: thumbSize }
+
+  desktopCapturer.getSources(options, function (error, sources) {
     if (error) return console.log(error)
 
     sources.forEach(function (source) {
-      if (source.name === "Entire screen") {
+      if (source.name === 'Entire screen') {
         var screenshotPath = path.join(os.tmpdir(), 'screenshot.png')
 
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
