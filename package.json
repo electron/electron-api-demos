@@ -10,8 +10,8 @@
     "dev": "electron . --debug",
     "lint": "standard",
     "test": "mocha tests && npm run lint",
-    "sign-exe": "./script/sign-exe.sh",
-    "sign-installer": "./script/sign-installer.sh",
+    "sign-exe": "signcode ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'https://electron.atom.io'",
+    "sign-installer": "signcode ./out/windows-installer/ElectronAPIDemosSetup.exe --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'https://electron.atom.io'",
     "pack-mac": "electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub'",
     "pack-win": "electron-packager . ElectronAPIDemos --asar  --overwrite --platform=win32 --arch=ia32 --icon=assets/app-icon/win/app.ico --prune=true --out=out --version-string.CompanyName='GitHub, Inc.' --version-string.FileDescription='Electron API Demos' --version-string.ProductName='Electron API Demos'",
     "pack-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=out",
@@ -49,6 +49,7 @@
     "mocha": "^2.3.4",
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
+    "signcode": "^0.4.0",
     "spectron": "~1.37.0",
     "standard": "^6.0.8"
   },
