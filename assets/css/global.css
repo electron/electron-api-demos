@@ -115,7 +115,8 @@ pre > .hljs {
 }
 
 /* External link */
-.u-exlink::after {
+a[href^="http://"]:after,
+a[href^="https://"]:after {
   content: '';
   position: relative;
   display: inline-block;
@@ -127,13 +128,15 @@ pre > .hljs {
   background: url(../img/link-external.svg) no-repeat top right;
   background-size: auto 100%;
 }
-.u-exlink:hover,
-.u-exlink:focus {
+
+a[href^="http://"]:hover,
+a[href^="https://"]:hover,
+a[href^="http://"]:focus,
+a[href^="https://"]:focus {
   cursor: pointer;
   text-decoration: underline;
   outline: none;
 }
-
 
 /* Content ------------------ */
 
