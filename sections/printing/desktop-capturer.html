@@ -1,0 +1,38 @@
+<template class="task-template">
+  <section id="desktop-capturer-section" class="section js-section u-category-printing">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-printing"></use></svg>
+          Take a screenshot
+        </h1>
+        <h3>The <code>desktopCapturer</code> module in Electron can be used to access any media, such as audio, video, screen and window, that is available through the <code>getUserMedia</code> web API in Chromium.</h3>
+
+        <p>Open the <a class="u-exlink" href="hhttp://electron.atom.io/docs/v0.37.5/api/desktop-capturer">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="print-pdf-demo-toggle" class="js-container-target demo-toggle-button">Take a Screenshot
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="screen-shot">View Demo</button>
+            <span class="demo-response" id="screenshot-path"></span>
+          </div>
+          <p>This demo uses the <code>desktopCapturer</code> module to gather screens in use and select the entire screen and take a snapshot of what is visible.</p>
+          <p>Clicking the demo button will take a screenshot of your current screen and open it in your default viewer.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/printing/desktop-capturer.js"></pre></code>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/printing/desktop-capturer')
+    </script>
+
+  </section>
+</tempalte>
