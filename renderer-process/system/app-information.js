@@ -1,8 +1,12 @@
-var appInfoBtn = document.getElementById('app-info')
+const ipc = require('electron').ipcRenderer
 
-var electronVersion = process.versions.electron
+const appInfoBtn = document.getElementById('app-info')
 
 appInfoBtn.addEventListener('click', function () {
-  var message = 'This app is using Electron version: ' + electronVersion
+  ipc.send('get-app-path')
+})
+
+ipc.on('got-app-path', function (event, path) {
+  let message = `This app is located at: ${path}`
   document.getElementById('got-app-info').innerHTML = message
 })
