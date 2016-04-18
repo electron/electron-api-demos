@@ -11,7 +11,7 @@ const screenshot = document.getElementById('screen-shot')
 const screenshotMsg = document.getElementById('screenshot-path')
 
 screenshot.addEventListener('click', function (event) {
-  screenshotMsg.innerHTML = 'Gathering screens...'
+  screenshotMsg.textContent = 'Gathering screens...'
   const thumbSize = determineScreenShotSize()
   let options = { types: ['screen'], thumbnailSize: thumbSize }
 
@@ -26,7 +26,7 @@ screenshot.addEventListener('click', function (event) {
           if (error) return console.log(error)
           shell.openItem(screenshotPath)
           var message = 'Saved screenshot to: ' + screenshotPath
-          screenshotMsg.innerHTML = message
+          screenshotMsg.textContent = message
         })
       }
     })
