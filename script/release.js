@@ -14,6 +14,7 @@ checkToken()
   .then(createRelease)
   .then(uploadAssets)
   .then(publishRelease)
+  .then(deployToHeroku)
   .catch((error) => {
     console.error(error.message || error)
     process.exit(1)
@@ -168,8 +169,30 @@ function publishRelease (release) {
         return reject(Error(`Non-200 response: ${response.statusCode}\n${util.inspect(body)}`))
       }
 
-      console.log(body.html_url)
       resolve(body)
+    })
+  })
+}
+
+
+function deployToHeroku () {
+  return new Promise((resolve, reject) => {
+    console.log('Deploying to heroku')
+
+    const herokuCommand = [
+      'heroku',
+      'config:set',
+      '-a',
+      'github-electron-api-demos',
+      `ELECTRON_LATEST_RELEASE=${version}`
+    ].join(' ')
+
+    childProcess.exec(herokuCommand, (error) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve()
+      }
     })
   })
 }
