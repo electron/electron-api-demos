@@ -1,42 +1,45 @@
 <template class="task-template">
-  <div id="shortcuts-view" class="content-item menu task-wrapper">
-    <header>
-      <div class="wrapper">
+  <section id="shortcuts-section" class="section js-section u-category-menu">
+    <header class="section-header">
+      <div class="section-wrapper">
         <h1>
-          <svg class="icon" viewBox="0 0 12 16"><use xlink:href="#icon-menu"></use></svg>
-          Register Keyboard Shortcuts
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Keyboard Shortcuts
         </h1>
-        <h3>Register keyboard shortcuts to control different parts of your app.</h3>
 
+        <h3>The <code>globalShortcut</code> and <code>Menu</code> modules can be used to define keyboard shortcuts.</h3>
 
-        <p>Open the <a class="exlink" href="http://electron.atom.io/docs/latest/api/menu">full API documentation</a> in your browser.</p>
+        <p>
+          In Electron, keyboard shortcuts are called <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/accelerator">accelerators</a>.
+
+          They can be assigned to actions in your application's
+          <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/accelerator">Menu</a>,
+          or they can be assigned globally, so they'll be triggered even when
+          your app doesn't have keyboard focus.
+        </p>
+
       </div>
     </header>
 
-    <section>
-      <div class="wrapper">
-        <button class="js-container-target toggle-button">Register a global shortcut
-          <div class="support avoid-clicks">Supports: Win, OS X, Linux <span class="support-divider">|</span> Process: Main</div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button">Register a global keyboard shortcut
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
-        <div class="toggle-content">
+        <div class="demo-box">
           <p>
-            The <code>globalShortcut</code> module can register/unregister a global keyboard shortcut with the operating system.
-            Global shortcuts will work even if the app does not have keyboard focus. You should not use this module until the
-            ready event of the app module is emitted.
+            To try this demo, press <kbd class="normalize-to-platform">CommandOrControl+D</kbd> on your keyboard.
+          </p>
+
+          <p>
+            Note: Global shortcuts should be registered after the app's `ready` event is emitted.
           </p>
 
           <h5>Main Process</h5>
-          <pre><code id="shortcuts-main"></code></pre>
+          <pre><code data-path="main-process/menus/shortcuts.js"></pre></code>
         </div>
       </div>
-    </section>
+    </div>
 
-    <script type="text/javascript" src="main-process/menus/shortcuts.js"></script>
-
-    <script type="text/javascript">
-      var fs = require('fs');
-      var shortcutsMainContent = fs.readFileSync(__dirname + '/main-process/menus/shortcuts.js');
-      document.getElementById('shortcuts-main').innerHTML= shortcutsMainContent;
-    </script>
-  </div><!-- end menu-view -->
+  </section>
 </template>

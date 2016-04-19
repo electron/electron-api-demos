@@ -1,16 +1,16 @@
 var electron = require('electron')
 var app = electron.app
+var dialog = electron.dialog
 var globalShortcut = electron.globalShortcut
 
-// app.on('ready', function () {
-//   let shorty = globalShortcut.register('D', function () {
-//     console.log('D is pressed')
-//   })
-//
-//   console.log('shorty')
-//   console.log(shorty)
-// })
-//
-// app.on('will-quit', function () {
-//   globalShortcut.unregisterAll()
-// })
+globalShortcut.register('CommandOrControl+D', function () {
+  dialog.showMessageBox({
+    type: 'info',
+    message: "Success! You hit the CommandOrControl+D",
+    buttons: ['Yay']
+  })
+})
+
+app.on('will-quit', function () {
+  globalShortcut.unregisterAll()
+})
