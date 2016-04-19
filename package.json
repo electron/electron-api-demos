@@ -43,8 +43,8 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
-    "electron-packager": "^6.0.2",
-    "electron-prebuilt": "^0.37.2",
+    "electron-packager": "^7.0.0",
+    "electron-prebuilt": "^0.37.6",
     "electron-winstaller": "^2.2.0",
     "mocha": "^2.3.4",
     "request": "^2.70.0",
