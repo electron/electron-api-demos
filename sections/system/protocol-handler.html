@@ -1,0 +1,42 @@
+<template class="task-template">
+  <section id="protocol-section" class="section js-section u-category-system">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-system"></use></svg>
+          Protocol Handler
+        </h1>
+        <h3>The <code>protocol</code> module provides methods to perform copy and paste operations.</h3>
+        <p>This module also has methods for copying text as markup (HTML) to the clipboard.</p>
+
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/clipboard">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="copy-to-demo-toggle" class="js-container-target demo-toggle-button">Launch app from url in another app
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="copy-to">Copy</button>
+            <input class="demo-input" id="copy-to-input" placeholder="Click copy."></input>
+          </div>
+          <p>This only runs when packaged.</p>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/system/pr.js"></pre></code>
+          <h5>OS X plist</h5>
+          <pre><code data-path="assets/mac/info.plist"></pre></code>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      require('./renderer-process/system/copy')
+      require('./renderer-process/system/paste')
+    </script>
+
+  </section>
+</tempalte>
