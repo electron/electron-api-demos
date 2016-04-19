@@ -6,7 +6,7 @@ var globalShortcut = electron.globalShortcut
 globalShortcut.register('CommandOrControl+D', function () {
   dialog.showMessageBox({
     type: 'info',
-    message: "Success! You hit the CommandOrControl+D",
+    message: 'Success! You hit the CommandOrControl+D',
     buttons: ['Yay']
   })
 })
