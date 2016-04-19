@@ -78,7 +78,7 @@ svg {
 
 /* Code */
 
-code {
+code, kbd {
   font-family: 'Source Code Pro', monospace;
   border-radius: 4px;
   padding: 1px 4px;
@@ -87,7 +87,7 @@ code {
   background-color: hsla(0,0%,60%,.15);
 }
 
-pre {
+pre, kbd {
   font-size: 13px;
   overflow: auto;
   padding: 1em;
@@ -105,6 +105,10 @@ pre code {
 pre > .hljs {
   color: var(--color-subtle);
   background-color: white;
+}
+
+kbd {
+  padding: 0.5em;
 }
 
 
