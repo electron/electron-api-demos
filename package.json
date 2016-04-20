@@ -20,11 +20,6 @@
     "prepare-release": "npm run package && npm run sign-exe && npm run installer && npm run sign-installer",
     "release": "node ./script/release.js"
   },
-  "standard": {
-    "ignore": [
-      "/assets/highlight.pack.js"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/electron/electron-api-demos.git"
