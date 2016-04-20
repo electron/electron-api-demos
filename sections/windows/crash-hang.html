@@ -6,7 +6,7 @@
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
           Handling Window Crashes and Hangs
         </h1>
-        <h3>The <code>BrowserWindow</code> module will emmit events when the renderer process crashes or hangs. You can listen for these events and give users the chance to reload, wait or close that window.</h3>
+        <h3>The <code>BrowserWindow</code> module will emit events when the renderer process crashes or hangs. You can listen for these events and give users the chance to reload, wait or close that window.</h3>
 
         <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
       </div>
@@ -22,7 +22,7 @@
             <button class="demo-button" id="process-crash">View Demo</button>
           </div>
           <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force a crash using <code>process.crash()</code>.</p>
-          <p>The window is listening for the crash event and when the event occurs it prompts the user with two options: relaunch or close.</p>
+          <p>The window is listening for the crash event and when the event occurs it prompts the user with two options: reload or close.</p>
 
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/windows/process-crash.js"></pre></code>
@@ -40,7 +40,7 @@
             <button class="demo-button" id="process-hang">View Demo</button>
           </div>
           <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force the process to hang using <code>process.hang()</code>.</p>
-          <p>The window is listening for the process to become offcially unresponsive (this can take up to 30 seconds). When this event occurs it prompts the user with two options: relaunch or close.</p>
+          <p>The window is listening for the process to become offcially unresponsive (this can take up to 30 seconds). When this event occurs it prompts the user with two options: reload or close.</p>
 
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/windows/process-hang.js"></pre></code>
