@@ -174,7 +174,6 @@ function publishRelease (release) {
   })
 }
 
-
 function deployToHeroku () {
   return new Promise((resolve, reject) => {
     console.log('Deploying to heroku')
