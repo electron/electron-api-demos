@@ -6,7 +6,8 @@ storage.get('activeSectionButtonId', function (err, id) {
 
   if (id && id.length) {
     showMainContent()
-    document.getElementById(id).click()
+    var section = document.getElementById(id)
+    if (section) section.click()
   } else {
     activateDefaultSection()
     displayAbout()
