@@ -9,7 +9,7 @@ processHangBtn.addEventListener('click', function (event) {
   var hangWinPath = path.join('file://', __dirname, '../../sections/windows/process-hang.html')
   var win = new BrowserWindow({ width: 400, height: 320 })
 
-  win.webContents.on('unresponsive', function () {
+  win.on('unresponsive', function () {
     console.log('unresponsive')
     var options = {
       type: 'info',
