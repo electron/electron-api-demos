@@ -34,7 +34,7 @@
             <strong>Use an invisible browser window to run background tasks.</strong>
             <p>You can set a new browser window to not be shown (be invisible) in order to use that additional renderer process as a kind of new thread in which to run JavaScript in the background of your app. You do this by setting the <code>show</code> property to <code>false</code> when defining the new window.</p>
             <pre>
-<code>var win = new BrowserWindow({
+<code class="language-js">var win = new BrowserWindow({
   width: 400, height: 225, show: false
 })</code></pre>
           </div>
@@ -81,7 +81,7 @@
 
           <p>Windows can have a transparent background, too. By setting the <code>transparent</code> option to <code>true</code>, you can also make your frameless window transparent:</p>
           <pre>
-<code>var win = new BrowserWindow({
+<code class="language-js">var win = new BrowserWindow({
   transparent: true,
   frame: false
 })</code></pre>
