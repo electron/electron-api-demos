@@ -1,0 +1,59 @@
+<template class="task-template">
+  <section id="crash-hang-section" class="section js-section u-category-windows">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          Relaunch Windows After a Process Error
+        </h1>
+        <h3>The <code>BrowserWindow</code> module in Electron allows you to create a new browser window or manage an existing one.</h3>
+
+        <p>Each browser window is a separate process, known as the renderer process. This process, like the main process that controls the life cycle of the app, has full access to the Node.js APIs.
+
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="process-crash">View Demo</button>
+          </div>
+          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
+
+          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/windows/create-window.js"></pre></code>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process hangs
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="process-hang">View Demo</button>
+          </div>
+          <p>The <code>BrowserWindow</code> module gives you the ability to create new windows in your app. This main process module can be used from the renderer process with the <code>remote</code> module, as is shown in this demo.</p>
+
+          <p>There are a lot of options when creating a new window. A few are in this demo, but visit the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">documentation</a> for the full list.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/windows/create-window.js"></pre></code>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/windows/process-crash')
+      // require('./renderer-process/windows/process-hang')
+    </script>
+
+  </section>
+</template>
