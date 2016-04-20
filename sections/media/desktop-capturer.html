@@ -1,9 +1,9 @@
 <template class="task-template">
-  <section id="desktop-capturer-section" class="section js-section u-category-printing">
+  <section id="desktop-capturer-section" class="section js-section u-category-media">
     <header class="section-header">
       <div class="section-wrapper">
         <h1>
-          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-printing"></use></svg>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
           Take a screenshot
         </h1>
         <h3>The <code>desktopCapturer</code> module in Electron can be used to access any media, such as audio, video, screen and window, that is available through the <code>getUserMedia</code> web API in Chromium.</h3>
@@ -25,13 +25,13 @@
           <p>This demo uses the <code>desktopCapturer</code> module to gather screens in use and select the entire screen and take a snapshot of what is visible.</p>
           <p>Clicking the demo button will take a screenshot of your current screen and open it in your default viewer.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/printing/desktop-capturer.js"></pre></code>
+          <pre><code data-path="renderer-process/media/desktop-capturer.js"></pre></code>
         </div>
       </div>
     </div>
 
     <script type="text/javascript">
-      require('./renderer-process/printing/desktop-capturer')
+      require('./renderer-process/media/desktop-capturer')
     </script>
 
   </section>
