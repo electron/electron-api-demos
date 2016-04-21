@@ -63,7 +63,7 @@ Nothing too strict and used more as a guide:
 
 Here are tips for covering the bases when adding a new section or demo. General tip—for some of these just copy the line or file of a similar existing item to get started!
 
-## New Section
+### New Section
 
 A whole new page with one or more demos.
 
@@ -87,15 +87,13 @@ This template is added to the `index.html` in the app.
 - Update all the text in the `header` tag with text relevant to your new section.
  - Remove the demos and pro-tips as needed.
 
-## Code
+### Demo
 
 Any code that you create for your demo should be added to the 'main-process' or 'renderer-process' directories depending on where it runs.
 
 All JavaScript files within the 'main-process' directory are run when the app starts but you'll link to the file so that it is displayed within your demo (see below).
 
 The renderer process code you add will be read and displayed within the demo and then required on the template page so that it runs in that process (see below).
-
-## Demo
 
 - Start by copying and pasting an existing `<div class="demo">` blocks from the template page.
 - Update the demo button `id`
@@ -109,6 +107,6 @@ The renderer process code you add will be read and displayed within the demo and
  - Require your render process code in the script tag at the bottom of the template
    - i.e  `require('./renderer-process/native-ui/dialogs/information')`
 
-## Try it out
+#### Try it out
 
 At this point you should be able to run the app, `npm start`, and see you section and/or demo. :tada:
