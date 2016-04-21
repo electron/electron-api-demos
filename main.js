@@ -17,6 +17,8 @@ function initialize () {
   var shouldQuit = makeSingleInstance()
   if (shouldQuit) return app.quit()
 
+  loadDemos()
+
   function createWindow () {
     var windowOptions = {
       width: 1080,
@@ -42,7 +44,6 @@ function initialize () {
   }
 
   app.on('ready', function () {
-    loadDemos()
     createWindow()
     autoUpdater.initialize()
   })
