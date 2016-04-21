@@ -2,7 +2,7 @@
 
 This app has been developed to be a lightweight Electron app, demonstrating how to create a basic Electron app with a few exceptions that have been made for the sake of code organization in regards the the demos themselves.
 
-All of the sample code shown in the app _is the actual code used in the app_. These JavaScript bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, printing, system, windows).
+All of the sample code shown in the app _is the actual code used in the app_. These JavaScript bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, media, system, windows).
 
 This was done for maintainability—code updates only have to be made in one place—and organization—it's easy to find the sample code you're looking for.
 

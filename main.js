@@ -77,7 +77,7 @@ function makeSingleInstance () {
 }
 
 // Require each JS file in the main-process dir
-function loadDemos() {
+function loadDemos () {
   var files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
   files.forEach(function (file) {
     require(file)
