@@ -53,7 +53,6 @@ function showMainContent () {
 function handleModalTrigger (event) {
   hideAllModals()
   let modalId = event.target.dataset.modal + '-modal'
-  console.log('modalId', modalId)
   document.getElementById(modalId).classList.add('is-shown')
 }
 
