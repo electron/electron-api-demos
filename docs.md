@@ -8,6 +8,8 @@ This was done for maintainability—code updates only have to be made in one pla
 
 All of the pages (or views) are separate `.html` files which are appended onto the `index.html` using [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/).
 
+Are you looking to add a demo? Jump to the [add a new demo section](#add-a-demo).
+
 ## Folder Structure
 
 ![Diagram of App Structure and Operations](/assets/img/diagram.png)
@@ -56,3 +58,12 @@ Nothing too strict and used more as a guide:
 - Elements that belong together are prefixed with their parent class. `.section`, `.section-header`, `.section-icon`.
 - States use `is-` prefix
 - Utilities use `u-` prefix
+
+## Add a Demo
+
+Here are tips for covering the bases when adding a new demo. General tip—for some of these just copy the line or file of a similar existing item to get started!
+
+- Add demo to sidebar in the appropriate category in `index.html`
+ - update `id`
+ - update `data-section`
+- Add demo template path to the import links in the `head` of `index.html`
