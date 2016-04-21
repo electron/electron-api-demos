@@ -1,0 +1,68 @@
+<template class="task-template">
+  <section id="crash-hang-section" class="section js-section u-category-windows">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-windows"></use></svg>
+          Handling Window Crashes and Hangs
+        </h1>
+        <h3>The <code>BrowserWindow</code> module will emit events when the renderer process crashes or hangs. You can listen for these events and give users the chance to reload, wait or close that window.</h3>
+
+        <p>Open the <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/browser-window">full API documentation</a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="process-crash">View Demo</button>
+          </div>
+          <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force a crash using <code>process.crash()</code>.</p>
+          <p>The window is listening for the crash event and when the event occurs it prompts the user with two options: reload or close.</p>
+
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/windows/process-crash.js"></pre></code>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process hangs
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="process-hang">View Demo</button>
+          </div>
+          <p>In this demo we create a new window (via the <code>remote</code> module) and provide a link that will force the process to hang using <code>process.hang()</code>.</p>
+          <p>The window is listening for the process to become offcially unresponsive (this can take up to 30 seconds). When this event occurs it prompts the user with two options: reload or close.</p>
+
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/windows/process-hang.js"></pre></code>
+
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Wait for the process to become responsive again.</strong>
+            <p>A third option in the case of a process that is hanging is to wait and see if the problem resolves, allowing the process to become responsive again. To to do this, use the <code>BrowserWindow</code> event 'responsive' as shown below.</p>
+            <pre><code class="language-js">win.on('responsive', function () {
+  // Do something when the window is responsive again
+})</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+      require('./renderer-process/windows/process-crash')
+      require('./renderer-process/windows/process-hang')
+    </script>
+
+  </section>
+</template>

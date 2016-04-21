@@ -13,10 +13,9 @@
   <link rel="stylesheet" href="assets/css/demo.css">
   <link rel="stylesheet" href="assets/css/github.css">
 
-  <script src="assets/highlight.pack.js"></script>
-
   <link rel="import" href="sections/about.html">
   <link rel="import" href="sections/windows/windows.html">
+  <link rel="import" href="sections/windows/crash-hang.html">
   <link rel="import" href="sections/menus/menus.html">
   <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
   <link rel="import" href="sections/native-ui/dialogs.html">
@@ -25,8 +24,8 @@
   <link rel="import" href="sections/system/app-sys-information.html">
   <link rel="import" href="sections/system/clipboard.html">
   <link rel="import" href="sections/system/protocol-handler.html">
-  <link rel="import" href="sections/printing/pdf.html">
-  <link rel="import" href="sections/printing/desktop-capturer.html">
+  <link rel="import" href="sections/media/pdf.html">
+  <link rel="import" href="sections/media/desktop-capturer.html">
 </head>
 <body>
 
@@ -42,6 +41,7 @@
         Windows
       </h5>
       <button type="button" id="button-windows" data-section="windows" class="nav-button">Create and manage <em>windows</em></button>
+      <button type="button" id="button-windows" data-section="crash-hang" class="nav-button">Handling window <em>crashes and hangs</em></button>
     </div>
 
     <div class="nav-item u-category-menu">
@@ -79,10 +79,10 @@
       <button type="button" id="button-protocol" data-section="protocol" class="nav-button">Launch app from <em>protocol handler</em></button>
     </div>
 
-    <div class="nav-item u-category-printing">
+    <div class="nav-item u-category-media">
       <h5 class="nav-category">
-        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-printing"></use></svg>
-        Printing
+        <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
+        Media
       </h5>
       <button type="button" id="button-pdf" data-section="pdf" class="nav-button"><em>Print</em> to PDF</button>
       <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button">Take a <em>Screenshot</em></button>
@@ -90,7 +90,7 @@
 
     <footer class="nav-footer">
       <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
-      <a  class="nav-footer-logo" href="https://github.com">
+      <a class="nav-footer-logo" href="https://github.com">
         <svg class="nav-footer-icon"><use xlink:href="assets/img/icons.svg#icon-love"></use></svg>
       </a>
     </footer>
@@ -106,7 +106,6 @@
     require('./assets/nav')
     require('./assets/demo-btns')
     require('./assets/code-blocks')
-    hljs.initHighlightingOnLoad()
   </script>
 </body>
 </html>
