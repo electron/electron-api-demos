@@ -79,6 +79,8 @@ ipc.on('open-file-dialog-sheet', function (event) {
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the information dialog. Options may be provided for responses which can then be relayed back to the renderer process.</p>
 
+          <p>Note: The <code>title</code> property is not displayed in OS X.</p>
+
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/native-ui/dialogs/information.js"></pre></code>
