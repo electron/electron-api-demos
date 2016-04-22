@@ -134,7 +134,10 @@ pre > .hljs {
   outline: none;
 }
 
-.u-exlink .u-sr-only {
+/* Hide external link description
+   existing for screen readers */
+.u-exlink[href^="https://"] span,
+.u-exlink[href^="http://"] span {
   position: absolute;
   width: 1px;
   height: 1px;
