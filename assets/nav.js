@@ -1,4 +1,4 @@
-var storage = require('electron-json-storage')
+const storage = require('electron-json-storage')
 
 // Default to the view that was active the last time the app was open
 storage.get('activeSectionButtonId', function (err, id) {
@@ -6,7 +6,7 @@ storage.get('activeSectionButtonId', function (err, id) {
 
   if (id && id.length) {
     showMainContent()
-    var section = document.getElementById(id)
+    let section = document.getElementById(id)
     if (section) section.click()
   } else {
     activateDefaultSection()
