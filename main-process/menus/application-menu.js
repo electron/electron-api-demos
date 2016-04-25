@@ -121,7 +121,7 @@ let template = [{
 function addUpdateMenuItems (items, position) {
   const version = electron.app.getVersion()
   let updateItems = [{
-    label: 'Version ' + version,
+    label: `Version ${version}`,
     enabled: false
   }, {
     label: 'Checking for Update',
@@ -152,7 +152,7 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: name,
     submenu: [{
-      label: 'About ' + name,
+      label: `About ${name}`,
       role: 'about'
     }, {
       type: 'separator'
@@ -163,7 +163,7 @@ if (process.platform === 'darwin') {
     }, {
       type: 'separator'
     }, {
-      label: 'Hide ' + name,
+      label: `Hide ${name}`,
       accelerator: 'Command+H',
       role: 'hide'
     }, {
