@@ -1,8 +1,8 @@
-var os = require('os')
+const shell = require('electron').shell
 
-var shell = require('electron').shell
+const os = require('os')
 
-var fileMangerBtn = document.getElementById('open-file-manager')
+const fileMangerBtn = document.getElementById('open-file-manager')
 
 fileMangerBtn.addEventListener('click', function (event) {
   shell.showItemInFolder(os.homedir())

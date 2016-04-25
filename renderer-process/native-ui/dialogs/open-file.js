@@ -1,6 +1,6 @@
-var ipc = require('electron').ipcRenderer
+const ipc = require('electron').ipcRenderer
 
-var selectDirBtn = document.getElementById('select-directory')
+const selectDirBtn = document.getElementById('select-directory')
 
 selectDirBtn.addEventListener('click', function (event) {
   ipc.send('open-file-dialog')

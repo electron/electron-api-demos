@@ -1,7 +1,7 @@
-var clipboard = require('electron').clipboard
+const clipboard = require('electron').clipboard
 
-var copyBtn = document.getElementById('copy-to')
-var copyInput = document.getElementById('copy-to-input')
+const copyBtn = document.getElementById('copy-to')
+const copyInput = document.getElementById('copy-to-input')
 
 copyBtn.addEventListener('click', function () {
   if (copyInput.value !== '') copyInput.value = ''

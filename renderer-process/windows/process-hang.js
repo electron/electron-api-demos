@@ -1,17 +1,17 @@
-var BrowserWindow = require('electron').remote.BrowserWindow
-var dialog = require('electron').remote.dialog
+const BrowserWindow = require('electron').remote.BrowserWindow
+const dialog = require('electron').remote.dialog
 
-var path = require('path')
+const path = require('path')
 
-var processHangBtn = document.getElementById('process-hang')
+const processHangBtn = document.getElementById('process-hang')
 
 processHangBtn.addEventListener('click', function (event) {
-  var hangWinPath = path.join('file://', __dirname, '../../sections/windows/process-hang.html')
-  var win = new BrowserWindow({ width: 400, height: 320 })
+  const hangWinPath = path.join('file://', __dirname, '../../sections/windows/process-hang.html')
+  let win = new BrowserWindow({ width: 400, height: 320 })
 
   win.on('unresponsive', function () {
     console.log('unresponsive')
-    var options = {
+    const options = {
       type: 'info',
       title: 'Renderer Process Hanging',
       message: "This process is hanging.",

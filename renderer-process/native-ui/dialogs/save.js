@@ -1,6 +1,6 @@
-var ipc = require('electron').ipcRenderer
+const ipc = require('electron').ipcRenderer
 
-var saveBtn = document.getElementById('save-dialog')
+const saveBtn = document.getElementById('save-dialog')
 
 saveBtn.addEventListener('click', function (event) {
   ipc.send('save-dialog')

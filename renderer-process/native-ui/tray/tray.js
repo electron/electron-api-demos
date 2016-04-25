@@ -1,7 +1,7 @@
-var ipc = require('electron').ipcRenderer
+const ipc = require('electron').ipcRenderer
 
-var trayBtn = document.getElementById('put-in-tray')
-var trayOn = false
+const trayBtn = document.getElementById('put-in-tray')
+let trayOn = false
 
 trayBtn.addEventListener('click', function (event) {
   if (trayOn) {
@@ -10,7 +10,7 @@ trayBtn.addEventListener('click', function (event) {
     ipc.send('remove-tray')
   } else {
     trayOn = true
-    var message = 'Click demo again to remove.'
+    const message = 'Click demo again to remove.'
     document.getElementById('tray-countdown').innerHTML = message
     ipc.send('put-in-tray')
   }
