@@ -10,7 +10,6 @@ processHangBtn.addEventListener('click', function (event) {
   let win = new BrowserWindow({ width: 400, height: 320 })
 
   win.on('unresponsive', function () {
-    console.log('unresponsive')
     const options = {
       type: 'info',
       title: 'Renderer Process Hanging',
