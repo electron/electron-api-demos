@@ -7,6 +7,6 @@ appInfoBtn.addEventListener('click', function () {
 })
 
 ipc.on('got-app-path', function (event, path) {
-  let message = `This app is located at: ${path}`
+  const message = `This app is located at: ${path}`
   document.getElementById('got-app-info').innerHTML = message
 })

@@ -1,8 +1,8 @@
-var versionInfoBtn = document.getElementById('version-info')
+const versionInfoBtn = document.getElementById('version-info')
 
-var electronVersion = process.versions.electron
+const electronVersion = process.versions.electron
 
 versionInfoBtn.addEventListener('click', function () {
-  var message = 'This app is using Electron version: ' + electronVersion
+  const message = `This app is using Electron version: ${electronVersion}`
   document.getElementById('got-version-info').innerHTML = message
 })

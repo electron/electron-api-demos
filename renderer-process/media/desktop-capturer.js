@@ -20,12 +20,12 @@ screenshot.addEventListener('click', function (event) {
 
     sources.forEach(function (source) {
       if (source.name === 'Entire screen' || source.name === 'Screen 1') {
-        var screenshotPath = path.join(os.tmpdir(), 'screenshot.png')
+        const screenshotPath = path.join(os.tmpdir(), 'screenshot.png')
 
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
           if (error) return console.log(error)
           shell.openItem(screenshotPath)
-          var message = 'Saved screenshot to: ' + screenshotPath
+          const message = `Saved screenshot to: ${screenshotPath}`
           screenshotMsg.textContent = message
         })
       }
@@ -34,8 +34,8 @@ screenshot.addEventListener('click', function (event) {
 })
 
 function determineScreenShotSize () {
-  var screenSize = electronScreen.getPrimaryDisplay().workAreaSize
-  var maxDimension = Math.max(screenSize.width, screenSize.height)
+  const screenSize = electronScreen.getPrimaryDisplay().workAreaSize
+  const maxDimension = Math.max(screenSize.width, screenSize.height)
   return {
     width: maxDimension * window.devicePixelRatio,
     height: maxDimension * window.devicePixelRatio
