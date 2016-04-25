@@ -13,7 +13,7 @@ processCrashBtn.addEventListener('click', function (event) {
     const options = {
       type: 'info',
       title: 'Renderer Process Crashed',
-      message: "This process has crashed.",
+      message: 'This process has crashed.',
       buttons: ['Reload', 'Close']
     }
     dialog.showMessageBox(options, function (index) {
