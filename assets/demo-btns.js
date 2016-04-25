@@ -1,6 +1,6 @@
-var storage = require('electron-json-storage')
+const storage = require('electron-json-storage')
 
-var demoBtns = document.querySelectorAll('.js-container-target')
+const demoBtns = document.querySelectorAll('.js-container-target')
 // Listen for demo button clicks
 Array.prototype.forEach.call(demoBtns, function (btn) {
   btn.addEventListener('click', function (event) {
