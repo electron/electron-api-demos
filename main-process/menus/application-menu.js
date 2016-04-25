@@ -1,9 +1,9 @@
-var electron = require('electron')
-var BrowserWindow = electron.BrowserWindow
-var Menu = electron.Menu
-var app = electron.app
+const electron = require('electron')
+const BrowserWindow = electron.BrowserWindow
+const Menu = electron.Menu
+const app = electron.app
 
-var template = [{
+let template = [{
   label: 'Edit',
   submenu: [{
     label: 'Undo',
@@ -85,7 +85,7 @@ var template = [{
     label: 'App Menu Demo',
     click: function (item, focusedWindow) {
       if (focusedWindow) {
-        var options = {
+        const options = {
           type: 'info',
           title: 'Application Menu Demo',
           buttons: ['Ok'],
@@ -119,9 +119,9 @@ var template = [{
 }]
 
 function addUpdateMenuItems (items, position) {
-  var version = electron.app.getVersion()
-  var updateItems = [{
-    label: 'Version ' + version,
+  const version = electron.app.getVersion()
+  let updateItems = [{
+    label: `Version ${version}`,
     enabled: false
   }, {
     label: 'Checking for Update',
@@ -148,11 +148,11 @@ function addUpdateMenuItems (items, position) {
 }
 
 if (process.platform === 'darwin') {
-  var name = electron.app.getName()
+  const name = electron.app.getName()
   template.unshift({
     label: name,
     submenu: [{
-      label: 'About ' + name,
+      label: `About ${name}`,
       role: 'about'
     }, {
       type: 'separator'
@@ -163,7 +163,7 @@ if (process.platform === 'darwin') {
     }, {
       type: 'separator'
     }, {
-      label: 'Hide ' + name,
+      label: `Hide ${name}`,
       accelerator: 'Command+H',
       role: 'hide'
     }, {
@@ -195,9 +195,9 @@ if (process.platform === 'darwin') {
 }
 
 if (process.platform === 'win32') {
-  var helpMenu = template[template.length - 1].submenu
+  const helpMenu = template[template.length - 1].submenu
   addUpdateMenuItems(helpMenu, 0)
 }
 
-var menu = Menu.buildFromTemplate(template)
+const menu = Menu.buildFromTemplate(template)
 Menu.setApplicationMenu(menu)
