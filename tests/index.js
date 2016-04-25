@@ -1,25 +1,25 @@
-var Application = require('spectron').Application
-var chai = require('chai')
-var chaiAsPromised = require('chai-as-promised')
-var path = require('path')
-var fs = require('fs')
+const Application = require('spectron').Application
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
+const path = require('path')
+const fs = require('fs')
 
 chai.should()
 chai.use(chaiAsPromised)
 
-var after = global.after
-var before = global.before
-var describe = global.describe
-var it = global.it
+let after = global.after
+let before = global.before
+let describe = global.describe
+let it = global.it
 
 describe('demo app', function () {
   this.timeout(30000)
 
-  var app
+  let app
 
-  var removeStoredPreferences = function () {
-    var productName = require('../package').productName
-    var userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
+  const removeStoredPreferences = function () {
+    const productName = require('../package').productName
+    const userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
     try {
       fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
     } catch (error) {
@@ -32,7 +32,7 @@ describe('demo app', function () {
     }
   }
 
-  var startApp = function () {
+  const startApp = function () {
     app = new Application({
       path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
       args: [
@@ -48,7 +48,7 @@ describe('demo app', function () {
     })
   }
 
-  var restartApp = function () {
+  const restartApp = function () {
     return app.stop().then(function () {
       return startApp()
     })
@@ -98,7 +98,7 @@ describe('demo app', function () {
 
   describe('when a demo title is clicked', function () {
     it('it expands the demo content', function () {
-      var onlyFirstVisible = Array(21).fill(false)
+      let onlyFirstVisible = Array(21).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.click('button[data-section="windows"]')
@@ -111,7 +111,7 @@ describe('demo app', function () {
 
   describe('when the app is restarted after use', function () {
     it('it launches at last visted section & demo', function () {
-      var onlyFirstVisible = Array(21).fill(false)
+      let onlyFirstVisible = Array(21).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.waitForVisible('#windows-section')
