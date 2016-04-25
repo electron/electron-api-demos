@@ -1,12 +1,13 @@
 const path = require('path')
 const electron = require('electron')
 const ipc = electron.ipcMain
+
 let appIcon = null
 
 ipc.on('put-in-tray', function (event) {
-  var iconPath = path.join(__dirname, 'iconTemplate.png')
+  const iconPath = path.join(__dirname, 'iconTemplate.png')
   appIcon = new electron.Tray(iconPath)
-  var contextMenu = electron.Menu.buildFromTemplate([
+  const contextMenu = electron.Menu.buildFromTemplate([
     { label: 'Remove',
       click: function (menuItem, browserWindow) {
         event.sender.send('tray-removed')

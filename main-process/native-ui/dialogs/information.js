@@ -1,8 +1,8 @@
-var ipc = require('electron').ipcMain
-var dialog = require('electron').dialog
+const ipc = require('electron').ipcMain
+const dialog = require('electron').dialog
 
 ipc.on('open-information-dialog', function (event) {
-  var options = {
+  const options = {
     type: 'info',
     title: 'Information',
     message: "This is an information dialog. Isn't it nice?",
