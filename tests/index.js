@@ -39,7 +39,7 @@ describe('demo app', function () {
     })
 
     return app.start().then(function () {
-      chaiAsPromised.transferPromiseness = app.client.transferPromiseness
+      chaiAsPromised.transferPromiseness = app.transferPromiseness
     }).then(function () {
       return app.client.waitUntilWindowLoaded()
     })
@@ -64,12 +64,12 @@ describe('demo app', function () {
 
   it('opens a window displaying the about page', function () {
     return app.client.getWindowCount().should.eventually.equal(1)
-      .isWindowMinimized().should.eventually.be.false
-      .isWindowDevToolsOpened().should.eventually.be.false
-      .isWindowVisible().should.eventually.be.true
-      .isWindowFocused().should.eventually.be.true
-      .getWindowWidth().should.eventually.be.above(0)
-      .getWindowHeight().should.eventually.be.above(0)
+      .browserWindow.isMinimized().should.eventually.be.false
+      .browserWindow.isDevToolsOpened().should.eventually.be.false
+      .browserWindow.isVisible().should.eventually.be.true
+      .browserWindow.isFocused().should.eventually.be.true
+      .browserWindow.getBounds().should.eventually.have.property('width').and.be.above(0)
+      .browserWindow.getBounds().should.eventually.have.property('height').and.be.above(0)
       .getTitle().should.eventually.equal('Electron API Demos')
       .waitForVisible('#about-modal').should.eventually.be.true
       .isVisible('.js-nav').should.eventually.be.false
