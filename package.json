@@ -45,7 +45,7 @@
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
     "signcode": "^0.4.0",
-    "spectron": "~1.37.0",
+    "spectron": "git://github.com/kevinsawicki/spectron.git#full-api",
     "standard": "^6.0.8"
   },
   "dependencies": {
