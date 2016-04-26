@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const Application = require('spectron').Application
 const chai = require('chai')

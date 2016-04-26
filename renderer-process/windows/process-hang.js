@@ -14,7 +14,7 @@ processHangBtn.addEventListener('click', function (event) {
     var options = {
       type: 'info',
       title: 'Renderer Process Hanging',
-      message: "This process is hanging.",
+      message: 'This process is hanging.',
       buttons: ['Reload', 'Close']
     }
     dialog.showMessageBox(options, function (index) {
