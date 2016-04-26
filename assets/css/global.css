@@ -114,10 +114,8 @@ pre > .hljs {
   pointer-events: none;
 }
 
-/* Hide external link description
-   existing for screen readers */
-.u-exlink[href^="https://"] span,
-.u-exlink[href^="http://"] span {
+/* Visually hidden, but will be read by screen readers */
+.u-visible-to-screen-reader {
   position: absolute;
   width: 1px;
   height: 1px;
