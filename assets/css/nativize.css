@@ -27,10 +27,31 @@ code {
 
 /* Buttons and links */
 
-button,
-a {
+button{
   cursor: default;
+}
+
+/* Internal links */
+a {
+  cursor: pointer;
   text-decoration: none;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  outline: none;
+}
+
+/* New window (target) + external links */
+a[target],
+a[href^="https://"],
+a[href^="http://"] {
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  border-bottom: none;
 }
 
 
@@ -38,13 +59,4 @@ a {
 
 img {
   -webkit-user-drag: none; /* disable dragging */
-}
-
-
-/* New window links */
-
-a[target]:hover,
-a[target]:focus {
-  cursor: pointer;
-  text-decoration: underline;
 }
