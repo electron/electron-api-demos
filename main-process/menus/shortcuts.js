@@ -1,7 +1,7 @@
-var electron = require('electron')
-var app = electron.app
-var dialog = electron.dialog
-var globalShortcut = electron.globalShortcut
+const electron = require('electron')
+const app = electron.app
+const dialog = electron.dialog
+const globalShortcut = electron.globalShortcut
 
 app.on('ready', function () {
   globalShortcut.register('CommandOrControl+Alt+D', function () {
