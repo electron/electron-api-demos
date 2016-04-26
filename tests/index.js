@@ -7,11 +7,6 @@ const fs = require('fs')
 chai.should()
 chai.use(chaiAsPromised)
 
-let after = global.after
-let before = global.before
-let describe = global.describe
-let it = global.it
-
 describe('demo app', function () {
   this.timeout(30000)
 
