@@ -95,7 +95,7 @@ describe('demo app', function () {
 
   describe('when a demo title is clicked', function () {
     it('it expands the demo content', function () {
-      let onlyFirstVisible = Array(21).fill(false)
+      let onlyFirstVisible = Array(26).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.click('button[data-section="windows"]')
@@ -108,7 +108,7 @@ describe('demo app', function () {
 
   describe('when the app is restarted after use', function () {
     it('it launches at last visted section & demo', function () {
-      let onlyFirstVisible = Array(21).fill(false)
+      let onlyFirstVisible = Array(26).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.waitForVisible('#windows-section')
