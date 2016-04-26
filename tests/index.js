@@ -29,6 +29,11 @@ describe('demo app', function () {
     }
   }
 
+  const setupApp = function (app) {
+    chaiAsPromised.transferPromiseness = app.transferPromiseness
+    return app.client.waitUntilWindowLoaded()
+  }
+
   const startApp = function () {
     app = new Application({
       path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
@@ -38,17 +43,11 @@ describe('demo app', function () {
       waitTimeout: 10000
     })
 
-    return app.start().then(function () {
-      chaiAsPromised.transferPromiseness = app.transferPromiseness
-    }).then(function () {
-      return app.client.waitUntilWindowLoaded()
-    })
+    return app.start().then(setupApp)
   }
 
   const restartApp = function () {
-    return app.stop().then(function () {
-      return startApp()
-    })
+    return app.restart().then(setupApp)
   }
 
   before(function () {
