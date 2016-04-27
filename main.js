@@ -88,6 +88,10 @@ function loadDemos () {
 // Handle Squirrel on Windows startup events
 switch (process.argv[1]) {
   case '--squirrel-install':
+    autoUpdater.createShortcut(function () {
+      app.quit()
+    })
+    break
   case '--squirrel-obsolete':
   case '--squirrel-updated':
   case '--squirrel-uninstall':
