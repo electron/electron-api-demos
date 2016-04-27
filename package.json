@@ -45,7 +45,7 @@
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
     "signcode": "^0.4.0",
-    "spectron": "~1.37.0",
+    "spectron": "~2.37.0",
     "standard": "^6.0.8"
   },
   "dependencies": {
