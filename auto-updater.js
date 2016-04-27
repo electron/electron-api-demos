@@ -81,12 +81,14 @@ var spawnUpdate = function(args, callback) {
     return
   }
 
+  var error = null
+
   spawned.stdout.on('data', function (data) { stdout += data })
 
-  var error = null
   spawned.on('error', function (processError) {
     if (!error) error = processError
   })
+
   spawned.on('close', function (code, signal) {
     if (!error && code !== 0) {
       error = new Error('Command failed: ' + code + ' ' + signal)
