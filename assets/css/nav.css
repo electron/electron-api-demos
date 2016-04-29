@@ -119,7 +119,8 @@
 .nav-footer-button {
   display: block;
   width: 100%;
-  margin-bottom: 1em;
+  padding: 0;
+  margin-bottom: .75rem;
   line-height: 2;
   text-align: left;
   font: inherit;
