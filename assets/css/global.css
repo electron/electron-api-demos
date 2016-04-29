@@ -118,30 +118,8 @@ kbd {
   pointer-events: none;
 }
 
-/* External link */
-.u-exlink::after {
-  content: '';
-  position: relative;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  top: -3px;
-  margin-left: 3px;
-  text-decoration: none;
-  background: url(../img/link-external.svg) no-repeat top right;
-  background-size: auto 100%;
-}
-.u-exlink:hover,
-.u-exlink:focus {
-  cursor: pointer;
-  text-decoration: underline;
-  outline: none;
-}
-
-/* Hide external link description
-   existing for screen readers */
-.u-exlink[href^="https://"] span,
-.u-exlink[href^="http://"] span {
+/* Visually hidden, but will be read by screen readers */
+.u-visible-to-screen-reader {
   position: absolute;
   width: 1px;
   height: 1px;

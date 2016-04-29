@@ -141,3 +141,8 @@
 .nav-footer-logo:focus {
   color: hsl(0,0%,33%);
 }
+
+/* Remove border on the logo */
+.nav-footer-logo.nav-footer-logo {
+  border-bottom: none;
+}
