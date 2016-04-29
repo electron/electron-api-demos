@@ -1,0 +1,72 @@
+<template class="task-template">
+  <section id="shortcuts-section" class="section js-section u-category-menu">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
+          Keyboard Shortcuts
+        </h1>
+
+        <h3>The <code>globalShortcut</code> and <code>Menu</code> modules can be used to define keyboard shortcuts.</h3>
+
+        <p>
+          In Electron, keyboard shortcuts are called accelerators.
+          They can be assigned to actions in your application's Menu,
+          or they can be assigned globally so they'll be triggered even when
+          your app doesn't have keyboard focus.
+        </p>
+
+        <p>
+          Open the full documentation for the
+          <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/menu">Menu</a>,
+          <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/accelerator">Accelerator</a>,
+          and
+          <a class="u-exlink" href="http://electron.atom.io/docs/latest/api/globalShorcut">globalShortcut</a>
+          APIs in your browser.
+        </p>
+
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="shortcuts-demo-toggle" class="js-container-target demo-toggle-button">Register a global keyboard shortcut
+          <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
+        </button>
+        <div class="demo-box">
+          <p>
+            To try this demo, press <kbd class="normalize-to-platform">CommandOrControl+Alt+D</kbd> on your keyboard.
+          </p>
+
+          <p>
+            Global shortcuts are detected even when the app doesn't have
+            keyboard focus, and they must be registered after the app's
+            `ready` event is emitted.
+          </p>
+
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/menus/shortcuts.js"></pre></code>
+
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Avoid overriding system-wide keyboard shortcuts.</strong>
+            <p>
+              When registering global shortcuts, it's important to be aware of
+              existing defaults in the target operating system, so as not to
+              override any existing behaviors. For an overview of each
+              operating system's keyboard shortcuts, view these documents:
+            </p>
+
+            <ul>
+              <li><a class="u-exlink" href="https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Keyboard.html">OS X</a></li>
+              <li><a class="u-exlink" href="http://windows.microsoft.com/en-us/windows-10/keyboard-shortcuts">Windows</a></li>
+              <li><a class="u-exlink" href="https://developer.gnome.org/hig/stable/keyboard-input.html.en">Linux</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+</template>
