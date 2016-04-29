@@ -35,7 +35,6 @@ button{
 a {
   cursor: pointer;
   text-decoration: none;
-  text-decoration: none;
   border-bottom: 1px dashed;
   outline: none;
 }
@@ -44,13 +43,11 @@ a {
 a[target],
 a[href^="https://"],
 a[href^="http://"] {
-  text-decoration: underline;
-  border-bottom: none;
+  border-bottom: 1px solid;
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
   border-bottom: none;
 }
 
