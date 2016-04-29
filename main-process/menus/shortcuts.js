@@ -7,7 +7,7 @@ app.on('ready', function () {
   globalShortcut.register('CommandOrControl+Alt+D', function () {
     dialog.showMessageBox({
       type: 'info',
-      message: 'Success! You hit CommandOrControl+Alt+D',
+      message: 'Success! You pressed the registered global shortcut keybinding.',
       buttons: ['Yay']
     })
   })
