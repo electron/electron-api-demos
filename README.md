@@ -8,14 +8,14 @@ Use this app to see what you can do with Electron and use the source code to lea
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable
-behavior to atom@github.com.
+behavior to electron@github.com.
 
 Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
 announcements. Visit the [electron website](http://electron.atom.io).
 
 ## To Use
 
-You can [download the latest release](https://github.com/atom/electron-api-demos/releases) for your operating system or build it yourself.
+You can [download the latest release](https://github.com/atom/electron-api-demos/releases) for your operating system or build it yourself (see below).
 
 ### To Build
 
@@ -36,6 +36,4 @@ For easier developing you can launch the app in fullscreen with DevTools open:
 $ npm run dev
 ```
 
-#### See the [contributing doc]() on how to contribute.
-
-#### Reads the [docs]() to learn more about how this app is built.
+#### [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
