@@ -4,7 +4,7 @@ This is a desktop app that interactively and with sample code demonstrates core 
 
 Use this app to see what you can do with Electron and use the source code to learn how to create a basic Electron app.
 
-![Electron API Demos Screenshot](https://cloud.githubusercontent.com/assets/671378/14999808/7a9d7c6e-1140-11e6-875b-d7f5cc990e01.png)
+<img width="539" alt="Electron API Demos Screenshot" src="https://cloud.githubusercontent.com/assets/671378/14999808/7a9d7c6e-1140-11e6-875b-d7f5cc990e01.png">
 
 ---
 
