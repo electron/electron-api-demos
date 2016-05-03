@@ -1,11 +1,10 @@
-![electron-api-demos](https://cloud.githubusercontent.com/assets/671378/14999763/24e09298-1140-11e6-88ba-201a0f3a52d0.png)
-
-
 # Electron API Demos
 
 This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, OS X and Linux operating systems.
 
 Use this app to see what you can do with Electron and use the source code to learn how to create a basic Electron app.
+
+![Electron API Demos Screenshot](https://cloud.githubusercontent.com/assets/671378/14999808/7a9d7c6e-1140-11e6-875b-d7f5cc990e01.png)
 
 ---
 
