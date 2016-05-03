@@ -1,4 +1,4 @@
-# electron-api-demos
+# Electron API Demos
 
 This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, OS X and Linux operating systems.
 
