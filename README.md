@@ -1,4 +1,5 @@
-![electron-api-demos](https://cloud.githubusercontent.com/assets/671378/14999726/ef80502a-113f-11e6-801b-706f67fbc313.png)
+![electron-api-demos](https://cloud.githubusercontent.com/assets/671378/14999763/24e09298-1140-11e6-88ba-201a0f3a52d0.png)
+
 
 # Electron API Demos
 
