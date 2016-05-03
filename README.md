@@ -13,11 +13,11 @@ behavior to electron@github.com.
 Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
 announcements. Visit the [electron website](http://electron.atom.io).
 
-## To Use
+## Using
 
 You can [download the latest release](https://github.com/atom/electron-api-demos/releases) for your operating system or build it yourself (see below).
 
-### To Build
+## Building
 
 You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
 
@@ -36,4 +36,6 @@ For easier developing you can launch the app in fullscreen with DevTools open:
 $ npm run dev
 ```
 
-#### [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
+## Extending
+
+ [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
