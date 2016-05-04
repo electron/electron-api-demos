@@ -1,8 +1,10 @@
-# electron-api-demos
+# Electron API Demos
 
 This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, OS X and Linux operating systems.
 
 Use this app to see what you can do with Electron and use the source code to learn how to create a basic Electron app.
+
+![Electron API Demos Screenshots](https://cloud.githubusercontent.com/assets/378023/15016148/ae06cc80-124a-11e6-80dd-076d83e492f6.png)
 
 ---
 
@@ -13,11 +15,11 @@ behavior to electron@github.com.
 Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
 announcements. Visit the [electron website](http://electron.atom.io).
 
-## To Use
+## Using
 
 You can [download the latest release](https://github.com/atom/electron-api-demos/releases) for your operating system or build it yourself (see below).
 
-### To Build
+## Building
 
 You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
 
@@ -36,4 +38,6 @@ For easier developing you can launch the app in fullscreen with DevTools open:
 $ npm run dev
 ```
 
-#### [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
+## Extending
+
+ [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
