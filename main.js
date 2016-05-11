@@ -8,9 +8,6 @@ const app = electron.app
 
 const debug = /--debug/.test(process.argv[2])
 
-electron.hideInternalModules()
-process.throwDeprecation = true
-
 var mainWindow = null
 
 function initialize () {
