@@ -76,7 +76,7 @@ exports.removeShortcut = function (callback) {
 }
 
 function spawnUpdate (args, callback) {
-  var updateExe = path.resolve(process.execPath, '..', '..', 'Update.exe')
+  var updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe')
   var stdout = ''
   var spawned = null
 
