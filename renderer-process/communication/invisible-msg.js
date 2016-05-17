@@ -7,7 +7,7 @@ const invisReply = document.getElementById('invis-reply')
 
 invisMsgBtn.addEventListener('click', function (clickEvent) {
   const windowID = BrowserWindow.getFocusedWindow().id
-  const invisPath = 'file://' + path.join(__dirname, 'sections/communication/invisible.html')
+  const invisPath = 'file://' + path.join(__dirname, '../../sections/communication/invisible.html')
   let win = new BrowserWindow({ width: 400, height: 400, show: false })
   win.loadURL(invisPath)
 
