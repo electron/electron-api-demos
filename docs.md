@@ -1,6 +1,6 @@
 # Documentation
 
-This app has been developed to be a lightweight Electron app, demonstrating how to create a basic Electron app with a few exceptions that have been made for the sake of code organization in regards the the demos themselves.
+This app has been developed to be a lightweight Electron app, demonstrating how to create a basic Electron app with a few exceptions that have been made for the sake of code organization in regards to the demos themselves.
 
 All of the sample code shown in the app _is the actual code used in the app_. These JavaScript bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, media, system, windows).
 
