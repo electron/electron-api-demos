@@ -14,9 +14,9 @@ manageWindowBtn.addEventListener('click', function (event) {
   win.show()
 
   function updateReply () {
-    const mangageWindowReply = document.getElementById('manage-window-reply')
+    const manageWindowReply = document.getElementById('manage-window-reply')
     const message = `Size: ${win.getSize()} Position: ${win.getPosition()}`
 
-    mangageWindowReply.innerText = message
+    manageWindowReply.innerText = message
   }
 })
