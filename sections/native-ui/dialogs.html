@@ -35,8 +35,9 @@
             <strong>The sheet-style dialog on OS X.</strong>
             <p>On OS X you can choose between a "sheet" dialog or a default dialog. The sheet version descends from the top of the window. To use sheet version, pass the <code>window</code> as the first argument in the dialog method.</p>
             <pre><code class="language-js">const ipc = require('electron').ipcMain
-const dialog = require('dialog')
-const BrowserWindow = require('browser-window')
+const dialog = require('electron').dialog
+const {BrowserWindow} = require('electron')
+
 
 ipc.on('open-file-dialog-sheet', function (event) {
   const window = BrowserWindow.fromWebContents(event.sender)
