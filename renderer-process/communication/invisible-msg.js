@@ -11,7 +11,7 @@ invisMsgBtn.addEventListener('click', function (clickEvent) {
   let win = new BrowserWindow({ width: 400, height: 400, show: false })
   win.loadURL(invisPath)
 
-  win.webContents.on('did-finish-load', function (clickEvent) {
+  win.webContents.on('did-finish-load', function () {
     const input = 100
     win.webContents.send('compute-factorial', input, windowID)
   })
