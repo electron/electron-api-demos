@@ -1,7 +1,6 @@
 language: node_js
 
-node_js:
-  - stable
+node_js: "4"
 
 before_script:
   - export DISPLAY=:99.0
@@ -10,6 +9,7 @@ before_script:
 
 script:
   - npm test
+  - npm run pack-linux
 
 branches:
   only:
