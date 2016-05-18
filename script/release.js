@@ -92,7 +92,7 @@ function createRelease (assets) {
       name: version,
       body: 'An awesome new release :tada:',
       draft: true,
-      prerelease: true
+      prerelease: false
     }
   }
 
