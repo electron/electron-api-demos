@@ -23,7 +23,7 @@
           </div>
           <p>The main process <code>app</code> module can be used to get the path at which your app is located on the user's computer.</p>
           <p>In this example, to get that information from the renderer process, we use the <code>ipc</code> module to send a message to the main process requesting the app's path.</p>
-          <p>See the <a href="http://electron.atom.io/docs/latest/api/app">app module documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
+          <p>See the <a href="http://electron.atom.io/docs/api/app">app module documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/system/app-information.js"></pre></code>
           <h5>Main Process</h5>
@@ -44,7 +44,7 @@
           </div>
           <p>The <code>process</code> module is built into Node.js (therefore you can use this in both the main and renderer processes) and in Electron apps this object has a few more useful properties on it.</p>
           <p>The example below gets the version of Electron in use by the app.</p>
-          <p>See the <a href="http://electron.atom.io/docs/latest/api/process">process documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
+          <p>See the <a href="http://electron.atom.io/docs/api/process">process documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/system/version-information.js"></pre></code>
 
@@ -95,7 +95,7 @@ process.versions.node</code></pre>
           </div>
           <p>The Electron <code>screen</code> module retrieves information about screen size, displays, cursor position, etc. In the example below we retrieve the dimensions of the monitor in use.</p>
 
-          <p>See the full <a href="http://electron.atom.io/docs/latest/api/screen">screen documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
+          <p>See the full <a href="http://electron.atom.io/docs/api/screen">screen documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/system/screen-information.js"></pre></code>
         </div>
