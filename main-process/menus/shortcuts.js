@@ -9,7 +9,7 @@ app.on('ready', function () {
       type: 'info',
       message: 'Success!',
       detail: 'You pressed the registered global shortcut keybinding.',
-      buttons: ['Yay']
+      buttons: ['OK']
     })
   })
 })
