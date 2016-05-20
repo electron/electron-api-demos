@@ -1,22 +1,22 @@
 const electron = require('electron')
-const {BrowserWindow, Menu, MenuItem} = electron
+const BrowserWindow = electron.BrowserWindow
+const Menu = electron.Menu
+const MenuItem = electron.MenuItem
 const ipc = electron.ipcMain
+const app = electron.app
 
-let menu = new Menu()
-
+const menu = new Menu()
 menu.append(new MenuItem({ label: 'Hello' }))
 menu.append(new MenuItem({ type: 'separator' }))
 menu.append(new MenuItem({ label: 'Electron', type: 'checkbox', checked: true }))
 
-// Show when the window is right clicked.
-// Adds event listener to all created windows.
-for (const win of BrowserWindow.getAllWindows()) {
+app.on('browser-window-created', function (event, win) {
   win.webContents.on('context-menu', function (e, params) {
     menu.popup(win, params.x, params.y)
   })
-}
+})
 
-// Show when the renderer asks for a menu.
-ipc.on('show-context-menu', function () {
-  menu.popup(BrowserWindow.getFocusedWindow())
+ipc.on('show-context-menu', function (event) {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  menu.popup(win)
 })
