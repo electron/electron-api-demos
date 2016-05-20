@@ -22,6 +22,7 @@ function initialize () {
       minWidth: 680,
       height: 840
     }
+
     if (process.platform === 'linux') {
       windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
     }

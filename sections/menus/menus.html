@@ -6,7 +6,7 @@
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-menu"></use></svg>
           Customize Menus
         </h1>
-        <h3>The <code>menu</code> and <code>menuitem</code> modules can be used to create custom native menus.</h3>
+        <h3>The <code>Menu</code> and <code>MenuItem</code> modules can be used to create custom native menus.</h3>
 
         <p>There are two kinds of menus: the application (top) menu and context (right-click) menu.</p>
 
@@ -20,7 +20,7 @@
           <div class="demo-meta u-avoid-clicks">Supports: Win, OS X, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
         <div class="demo-box">
-          <p>The <code>menu</code> and <code>menuitem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
+          <p>The <code>Menu</code> and <code>MenuItem</code> modules allow you to customize your application menu. If you don't set any menu, Electron will generate a minimal menu for your app by default.</p>
 
           <p>This app uses the code below to set the application menu. If you click the 'View' option in the application menu and then the 'App Menu Demo', you'll see an information box displayed.</p>
           <h5>Main Process</h5>
@@ -50,9 +50,12 @@
           <div class="demo-controls">
             <button class="demo-button" id="context-menu">View Demo</button>
           </div>
-          <p>A context, or right-click, menu can be created with the <code>menu</code> and <code>menuitem</code> modules as well. You can right-click anywhere in this app or click the demo button to see an example context menu.</p>
+          <p>A context, or right-click, menu can be created with the <code>Menu</code> and <code>MenuItem</code> modules as well. You can right-click anywhere in this app or click the demo button to see an example context menu.</p>
 
-          <p>In this demo we use the <code>remote</code> module to access <code>menu</code> and <code>menuitem</code> from the renderer process.</p>
+          <p>In this demo we use the <code>ipcRenderer</code> module to show the context menu when explicitly calling it from the renderer process.</p>
+          <p>See the full <a href="http://electron.atom.io/docs/api/web-contents/#event-context-menu">context-menu event documentation</a> for all the available properties.</p>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/menus/context-menu.js"></pre></code>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/menus/context-menu.js"></pre></code>
         </div>
