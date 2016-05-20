@@ -20,10 +20,10 @@ ipc.on('put-in-tray', function (event) {
   appIcon.setContextMenu(contextMenu)
 })
 
-ipc.on('remove-tray', function (event) {
+ipc.on('remove-tray', function () {
   appIcon.destroy()
 })
 
-app.on('window-all-closed', function (event) {
+app.on('window-all-closed', function () {
   appIcon.destroy()
 })
