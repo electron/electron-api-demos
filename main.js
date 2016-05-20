@@ -14,14 +14,13 @@ function initialize () {
   var shouldQuit = makeSingleInstance()
   if (shouldQuit) return app.quit()
 
-  loadDemos()
-
   function createWindow () {
     var windowOptions = {
       width: 1080,
       minWidth: 680,
       height: 840
     }
+
     if (process.platform === 'linux') {
       windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
     }
@@ -43,6 +42,7 @@ function initialize () {
   app.on('ready', function () {
     createWindow()
     autoUpdater.initialize()
+    loadDemos()
   })
 
   app.on('window-all-closed', function () {
