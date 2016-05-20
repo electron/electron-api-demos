@@ -1,6 +1,7 @@
 const path = require('path')
 const electron = require('electron')
 const ipc = electron.ipcMain
+const app = electron.app
 
 let appIcon = null
 
@@ -20,5 +21,9 @@ ipc.on('put-in-tray', function (event) {
 })
 
 ipc.on('remove-tray', function (event) {
+  appIcon.destroy()
+})
+
+app.on('window-all-closed', function (event) {
   appIcon.destroy()
 })
