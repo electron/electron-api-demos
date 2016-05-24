@@ -10,14 +10,13 @@ ipc.on('put-in-tray', function (event) {
   const iconName = process.platform === 'win32' ? 'windows-icon.png' : 'iconTemplate.png'
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
-  const contextMenu = electron.Menu.buildFromTemplate([
-    { label: 'Remove',
-      click: function (menuItem, browserWindow) {
-        event.sender.send('tray-removed')
-        appIcon.destroy()
-      }
+  const contextMenu = electron.Menu.buildFromTemplate([{
+    label: 'Remove',
+    click: function (menuItem, browserWindow) {
+      event.sender.send('tray-removed')
+      appIcon.destroy()
     }
-  ])
+  }])
   appIcon.setToolTip('Electron Demo in the tray.')
   appIcon.setContextMenu(contextMenu)
 })
