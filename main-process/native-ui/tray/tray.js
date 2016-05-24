@@ -13,7 +13,7 @@ ipc.on('put-in-tray', function (event) {
   appIcon = new Tray(iconPath)
   const contextMenu = Menu.buildFromTemplate([{
     label: 'Remove',
-    click: function (menuItem, browserWindow) {
+    click: function () {
       event.sender.send('tray-removed')
       appIcon.destroy()
     }
