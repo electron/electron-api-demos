@@ -8,6 +8,8 @@ This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDU
 By participating, you are expected to uphold this code. Please report unacceptable
 behavior to [electron@github.com](mailto:electron@github.com).
 
+**See the [documentation](docs.md) for information on how this project works.**
+
 ## Code Style & ES6
 
 This project uses the [JavaScript Standard](http://standardjs.com) style and limited E6 syntax.
