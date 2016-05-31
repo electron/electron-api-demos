@@ -1,7 +1,7 @@
 const ChildProcess = require('child_process')
 const path = require('path')
 
-const version = require('../package').version
+const version = require('../package').version + '.0'
 
 const command = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-windows-store.cmd')
 const args = [
