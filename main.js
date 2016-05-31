@@ -43,7 +43,7 @@ function initialize () {
 
   app.on('ready', function () {
     createWindow()
-    // autoUpdater.initialize()
+    autoUpdater.initialize()
   })
 
   app.on('window-all-closed', function () {
