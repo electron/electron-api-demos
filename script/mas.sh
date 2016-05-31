@@ -7,6 +7,7 @@ electron-packager . \
   --overwrite \
   --platform=mas \
   --app-bundle-id=com.github.electron-api-demos \
+  --app-version=1.0.2 \ # TODO read from package.json
   --arch=x64 \
   --icon=assets/app-icon/mac/app.icns \
   --prune=true \
