@@ -17,6 +17,7 @@
     "pack-linux": "electron-packager . --asar --overwrite --platform=linux --arch=x64 --icon=assets/app-icon/png/64.png --prune=true --out=out",
     "package": "npm run pack-mac && npm run pack-win && npm run pack-linux",
     "installer": "node ./script/installer.js",
+    "windows-store": "node ./script/windows-store.js",
     "prepare-release": "npm run package && npm run sign-exe && npm run installer && npm run sign-installer",
     "release": "node ./script/release.js"
   },
