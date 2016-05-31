@@ -6,6 +6,7 @@ electron-packager . \
   --asar \
   --overwrite \
   --platform=mas \
+  --app-bundle-id=com.github.electron-api-demos \
   --arch=x64 \
   --icon=assets/app-icon/mac/app.icns \
   --prune=true \
