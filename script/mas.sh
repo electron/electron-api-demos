@@ -1,5 +1,17 @@
 #!/bin/bash
 
+set -ex
+
+electron-packager . \
+  --asar \
+  --overwrite \
+  --platform=mas \
+  --arch=x64 \
+  --icon=assets/app-icon/mac/app.icns \
+  --prune=true \
+  --out=out \
+  --extend-info=assets/mac/info.plist
+
 # Name of your app.
 APP="Electron API Demos"
 

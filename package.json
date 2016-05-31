@@ -18,7 +18,7 @@
     "package": "npm run pack-mac && npm run pack-win && npm run pack-linux",
     "installer": "node ./script/installer.js",
     "windows-store": "node ./script/windows-store.js",
-    "mas": "electron-packager . --asar --overwrite --platform=mas --arch=x64 --icon=assets/app-icon/mac/app.icns --prune=true --out=out --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
+    "mas": "./script/mas.sh",
     "prepare-release": "npm run package && npm run sign-exe && npm run installer && npm run sign-installer",
     "release": "node ./script/release.js"
   },
