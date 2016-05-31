@@ -8,7 +8,7 @@ const args = [
   '--input-directory',
   path.join(__dirname, '..', 'out', 'ElectronAPIDemos-win32-ia32'),
   '--output-directory',
-  path.join(__dirname, '..', 'windows-store'),
+  path.join(__dirname, '..', 'out', 'windows-store'),
   '--flatten',
   true,
   '--package-version',
