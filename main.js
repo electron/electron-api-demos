@@ -43,7 +43,7 @@ function initialize () {
 
   app.on('ready', function () {
     createWindow()
-    autoUpdater.initialize()
+    // autoUpdater.initialize()
   })
 
   app.on('window-all-closed', function () {
@@ -67,6 +67,7 @@ function initialize () {
 // Returns true if the current version of the app should quit instead of
 // launching.
 function makeSingleInstance () {
+  if (process.mas) return false
   return app.makeSingleInstance(function () {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
