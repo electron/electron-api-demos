@@ -2,33 +2,27 @@
 
 set -ex
 
+# TODO read these from package.json
+VERSION="1.0.2"
+APP="Electron API Demos"
+
 electron-packager . \
   --asar \
   --overwrite \
   --platform=mas \
   --app-bundle-id=com.github.electron-api-demos \
-  --app-version=1.0.2 \ # TODO read from package.json
+  --app-version=$VERSION \
   --arch=x64 \
   --icon=assets/app-icon/mac/app.icns \
   --prune=true \
   --out=out \
   --extend-info=assets/mac/info.plist
 
-# Name of your app.
-APP="Electron API Demos"
-
-# The path of your app to sign.
-APP_PATH="./out/Electron API Demos-mas-x64/Electron API Demos.app"
-
-# The path to the location you want to put the signed package.
-RESULT_PATH="./out/Electron API Demos.pkg"
-
-# The name of certificates you requested.
+APP_PATH="./out/$APP-mas-x64/$APP.app"
+RESULT_PATH="./out/$APP.pkg"
 APP_KEY="3rd Party Mac Developer Application: GitHub (VEKTX9H2N7)"
 INSTALLER_KEY="3rd Party Mac Developer Installer: GitHub (VEKTX9H2N7)"
-
 FRAMEWORKS_PATH="$APP_PATH/Contents/Frameworks"
-
 CHILD_PLIST="./assets/mac/child.plist"
 PARENT_PLIST="./assets/mac/parent.plist"
 
