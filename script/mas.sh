@@ -2,22 +2,19 @@
 
 set -ex
 
-# TODO read these from package.json
-VERSION="1.0.2"
-APP="Electron API Demos"
-
 electron-packager . \
   --asar \
   --overwrite \
   --platform=mas \
   --app-bundle-id=com.github.electron-api-demos \
-  --app-version=$VERSION \
+  --app-version="$npm_package_version" \
   --arch=x64 \
   --icon=assets/app-icon/mac/app.icns \
   --prune=true \
   --out=out \
   --extend-info=assets/mac/info.plist
 
+APP="$npm_package_productName"
 APP_PATH="./out/$APP-mas-x64/$APP.app"
 RESULT_PATH="./out/$APP.pkg"
 APP_KEY="3rd Party Mac Developer Application: GitHub (VEKTX9H2N7)"
