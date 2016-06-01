@@ -1,7 +1,7 @@
 const ChildProcess = require('child_process')
 const path = require('path')
 
-const version = require('../package').version + '.0'
+const metadata = require('../package')
 
 const command = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-windows-store.cmd')
 const args = [
@@ -12,9 +12,9 @@ const args = [
   '--flatten',
   true,
   '--package-version',
-  version,
+  metadata.version + '.0',
   '--package-name',
-  'ElectronAPIDemos'
+  metadata.name
 ]
 
 const windowsStore = ChildProcess.spawn(command, args, {stdio: 'inherit'})
