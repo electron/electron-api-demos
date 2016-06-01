@@ -42,7 +42,7 @@
     "devtron": "^1.0.0",
     "electron-packager": "^7.0.1",
     "electron-prebuilt": "~1.0.2",
-    "electron-windows-store": "^0.2.7",
+    "electron-windows-store": "^0.3.0",
     "electron-winstaller": "^2.2.0",
     "mocha": "^2.3.4",
     "request": "^2.70.0",
