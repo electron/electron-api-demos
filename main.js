@@ -67,6 +67,8 @@ function initialize () {
 // Returns true if the current version of the app should quit instead of
 // launching.
 function makeSingleInstance () {
+  if (process.mas) return false
+
   return app.makeSingleInstance(function () {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
