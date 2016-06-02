@@ -18,7 +18,9 @@ const args = [
   '--package-display-name',
   metadata.productName,
   '--assets',
-  path.join(__dirname, '..', 'assets', 'tiles')
+  path.join(__dirname, '..', 'assets', 'tiles'),
+  '--package-description',
+  metadata.description
 ]
 
 const windowsStore = ChildProcess.spawn(command, args, {stdio: 'inherit'})
