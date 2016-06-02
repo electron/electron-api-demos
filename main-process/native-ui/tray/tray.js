@@ -27,5 +27,5 @@ ipc.on('remove-tray', function () {
 })
 
 app.on('window-all-closed', function () {
-  appIcon.destroy()
+  if (appIcon) appIcon.destroy()
 })
