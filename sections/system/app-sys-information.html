@@ -98,6 +98,14 @@ process.versions.node</code></pre>
           <p>See the full <a href="http://electron.atom.io/docs/api/screen">screen documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/system/screen-information.js"></pre></code>
+
+          <div class="demo-protip">
+            <h2>ProTip</h2>
+            <strong>Differences in dimensions.</strong>
+            <p>The <code>.size</code> method in the example returns the raw dimensions of the screen but because of system menu bars this may not be the actual space available for your app.</p>
+
+            <p>To get the dimensions of the available screen space use the <code>.workAreaSize</code> method. Using <code>.workArea</code> will return the coordinates as well as the dimensions of the available screen space.</p>
+          </div>
         </div>
       </div>
     </div>
