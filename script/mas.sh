@@ -2,7 +2,11 @@
 
 set -ex
 
+# App Store does not allow the work "demos" in the name
+APP="Electron APIs"
+
 electron-packager . \
+  "$APP" \
   --asar \
   --overwrite \
   --platform=mas \
@@ -14,7 +18,6 @@ electron-packager . \
   --out=out \
   --extend-info=assets/mac/info.plist
 
-APP="$npm_package_productName"
 APP_PATH="./out/$APP-mas-x64/$APP.app"
 RESULT_PATH="./out/$APP.pkg"
 APP_KEY="3rd Party Mac Developer Application: GitHub (VEKTX9H2N7)"
