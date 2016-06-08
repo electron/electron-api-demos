@@ -8,6 +8,8 @@ const app = electron.app
 
 const debug = /--debug/.test(process.argv[2])
 
+if (process.mas) app.setName('Electron APIs')
+
 var mainWindow = null
 
 function initialize () {
@@ -21,7 +23,7 @@ function initialize () {
       width: 1080,
       minWidth: 680,
       height: 840,
-      title: process.mas ? 'Electron APIs' : app.getName()
+      title: app.getName()
     }
 
     if (process.platform === 'linux') {
