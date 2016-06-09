@@ -119,6 +119,8 @@ let template = [{
 }]
 
 function addUpdateMenuItems (items, position) {
+  if (process.mas) return
+
   const version = electron.app.getVersion()
   let updateItems = [{
     label: `Version ${version}`,
