@@ -9,7 +9,7 @@ manageWindowBtn.addEventListener('click', function (event) {
 
   win.on('resize', updateReply)
   win.on('move', updateReply)
-  win.on('closed', function () { win = null })
+  win.on('close', function () { win = null })
   win.loadURL(modalPath)
   win.show()
 
