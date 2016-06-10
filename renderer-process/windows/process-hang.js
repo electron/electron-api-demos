@@ -22,7 +22,7 @@ processHangBtn.addEventListener('click', function (event) {
     })
   })
 
-  win.on('closed', function () { win = null })
+  win.on('close', function () { win = null })
   win.loadURL(hangWinPath)
   win.show()
 })
