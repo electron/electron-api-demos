@@ -8,6 +8,7 @@ APP="Electron APIs"
 electron-packager . \
   "$APP" \
   --asar \
+  --asar-unpack=protocol-link.html \
   --overwrite \
   --platform=mas \
   --app-bundle-id=com.github.electron-api-demos \
