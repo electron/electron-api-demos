@@ -16,7 +16,7 @@ ipc.on('print-to-pdf', function (event) {
       if (error) {
         throw error
       }
-      shell.openItem(pdfPath)
+      shell.openExternal('file://' + pdfPath)
       event.sender.send('wrote-pdf', pdfPath)
     })
   })

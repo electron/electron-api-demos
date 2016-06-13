@@ -24,7 +24,7 @@ screenshot.addEventListener('click', function (event) {
 
         fs.writeFile(screenshotPath, source.thumbnail.toPng(), function (error) {
           if (error) return console.log(error)
-          shell.openItem(screenshotPath)
+          shell.openExternal('file://' + screenshotPath)
           const message = `Saved screenshot to: ${screenshotPath}`
           screenshotMsg.textContent = message
         })
