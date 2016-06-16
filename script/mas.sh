@@ -13,7 +13,7 @@ electron-packager . \
   --platform=mas \
   --app-bundle-id=com.github.electron-api-demos \
   --app-version="$npm_package_version" \
-  --build-version="1.0.4" \
+  --build-version="1.1.0" \
   --arch=x64 \
   --icon=assets/app-icon/mac/app.icns \
   --prune=true \
