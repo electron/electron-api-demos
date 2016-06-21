@@ -17,6 +17,7 @@ trayBtn.addEventListener('click', function (event) {
 })
 // Tray removed from context menu on icon
 ipc.on('tray-removed', function () {
+  ipc.send('remove-tray')
   trayOn = false
   document.getElementById('tray-countdown').innerHTML = ''
 })

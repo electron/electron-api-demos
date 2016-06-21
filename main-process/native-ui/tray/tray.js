@@ -15,9 +15,6 @@ ipc.on('put-in-tray', function (event) {
     label: 'Remove',
     click: function () {
       event.sender.send('tray-removed')
-      setImmediate(function () {
-        appIcon.destroy()
-      })
     }
   }])
   appIcon.setToolTip('Electron Demo in the tray.')
@@ -25,15 +22,11 @@ ipc.on('put-in-tray', function (event) {
 })
 
 ipc.on('remove-tray', function () {
-  setImmediate(function () {
     appIcon.destroy()
-  })
 })
 
 app.on('window-all-closed', function () {
   if (appIcon) {
-    setImmediate(function () {
       appIcon.destroy()
-    })
   }
 })
