@@ -15,7 +15,6 @@ ipc.on('put-in-tray', function (event) {
     label: 'Remove',
     click: function () {
       event.sender.send('tray-removed')
-      appIcon.destroy()
     }
   }])
   appIcon.setToolTip('Electron Demo in the tray.')
