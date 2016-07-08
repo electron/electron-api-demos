@@ -47,18 +47,16 @@ describe('demo app', function () {
 
     app.client.addCommand('expandDemos', function () {
       return this.execute(function () {
-        let demos = document.querySelectorAll('.demo-wrapper')
-        for (let i = 0; i < demos.length; i++) {
-          demos[i].classList.add('is-open')
+        for (let demo of document.querySelectorAll('.demo-wrapper')) {
+          demo.classList.add('is-open')
         }
       })
     })
 
     app.client.addCommand('collapseDemos', function () {
       return this.execute(function () {
-        let demos = document.querySelectorAll('.demo-wrapper')
-        for (let i = 0; i < demos.length; i++) {
-          demos[i].classList.remove('is-open')
+        for (let demo of document.querySelectorAll('.demo-wrapper')) {
+          demo.classList.remove('is-open')
         }
       })
     })
