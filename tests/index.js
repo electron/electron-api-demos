@@ -9,8 +9,10 @@ const fs = require('fs')
 chai.should()
 chai.use(chaiAsPromised)
 
+const timeout = process.env.CI ? 30000 : 10000
+
 describe('demo app', function () {
-  this.timeout(30000)
+  this.timeout(timeout)
 
   let app
 
@@ -40,7 +42,7 @@ describe('demo app', function () {
       args: [
         path.join(__dirname, '..')
       ],
-      waitTimeout: 10000
+      waitTimeout: timeout
     })
 
     return app.start().then(setupApp)
