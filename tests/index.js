@@ -32,6 +32,48 @@ describe('demo app', function () {
   }
 
   const setupApp = function (app) {
+    app.client.addCommand('dismissAboutPage', function () {
+      return this.isVisible('.js-nav').then(function (navVisible) {
+        if (!navVisible) {
+          return this.click('button[id="get-started"]').pause(500)
+        }
+      })
+    })
+
+    app.client.addCommand('selectSection', function (section) {
+      return this.click('button[data-section="' + section + '"]').pause(100)
+        .waitForVisible('#' + section + '-section')
+    })
+
+    app.client.addCommand('expandDemos', function () {
+      return this.execute(function () {
+        for (let demo of document.querySelectorAll('.demo-wrapper')) {
+          demo.classList.add('is-open')
+        }
+      })
+    })
+
+    app.client.addCommand('collapseDemos', function () {
+      return this.execute(function () {
+        for (let demo of document.querySelectorAll('.demo-wrapper')) {
+          demo.classList.remove('is-open')
+        }
+      })
+    })
+
+    app.client.addCommand('auditSectionAccessibility', function (section) {
+      const options = {
+        ignoreRules: ['AX_COLOR_01', 'AX_TITLE_01']
+      }
+      return this.selectSection(section)
+        .expandDemos()
+        .auditAccessibility(options).then(function (audit) {
+          if (audit.failed) {
+            throw Error(section + ' section failed accessibility audit\n' + audit.message)
+          }
+        })
+    })
+
     chaiAsPromised.transferPromiseness = app.transferPromiseness
     return app.client.waitUntilWindowLoaded()
   }
@@ -81,13 +123,11 @@ describe('demo app', function () {
 
   describe('when clicking on a section from the nav bar', function () {
     it('it shows the selected section in the main area', function () {
-      return app.client.isVisible('#windows-section').should.eventually.be.true
-        .click('button[data-section="windows"]').pause(100)
-        .waitForVisible('#windows-section')
+      return app.client.dismissAboutPage()
+        .selectSection('windows')
         .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.true
         .isVisible('#pdf-section').should.eventually.be.false
-        .click('button[data-section="pdf"]').pause(100)
-        .waitForVisible('#pdf-section')
+        .selectSection('pdf')
         .isVisible('#windows-section').should.eventually.be.false
         .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.false
         .isExisting('button.is-selected[data-section="pdf"]').should.eventually.be.true
@@ -99,8 +139,9 @@ describe('demo app', function () {
       let onlyFirstVisible = Array(27).fill(false)
       onlyFirstVisible[0] = true
 
-      return app.client.click('button[data-section="windows"]')
-        .waitForVisible('#windows-section')
+      return app.client.dismissAboutPage()
+        .collapseDemos()
+        .selectSection('windows')
         .click('.js-container-target')
         .waitForVisible('.demo-box')
         .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
@@ -120,5 +161,22 @@ describe('demo app', function () {
             .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
         })
     })
+  })
+
+  it('does not contain any accessibility warnings or errors', function () {
+    return app.client.dismissAboutPage()
+      .auditSectionAccessibility('windows')
+      .auditSectionAccessibility('crash-hang')
+      .auditSectionAccessibility('menus')
+      .auditSectionAccessibility('shortcuts')
+      .auditSectionAccessibility('ex-links-file-manager')
+      .auditSectionAccessibility('dialogs')
+      .auditSectionAccessibility('tray')
+      .auditSectionAccessibility('ipc')
+      .auditSectionAccessibility('app-sys-information')
+      .auditSectionAccessibility('clipboard')
+      .auditSectionAccessibility('protocol')
+      .auditSectionAccessibility('pdf')
+      .auditSectionAccessibility('desktop-capturer')
   })
 })
