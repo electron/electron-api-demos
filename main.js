@@ -37,6 +37,7 @@ function initialize () {
     if (debug) {
       mainWindow.webContents.openDevTools()
       mainWindow.maximize()
+      require('devtron').install()
     }
 
     mainWindow.on('closed', function () {
