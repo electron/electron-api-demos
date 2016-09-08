@@ -27,3 +27,15 @@ Tips for making an easier-to-reivew contribution:
 - Please provide a description.
 - Include screenshots and animated GIFs whenever possible.
 - Use short, present tense commit messages.
+
+## Releasing
+
+Releases are created by the core team using the following steps:
+
+1. Check your dependencies: `rm -rf node_modules && npm install`
+2. Make sure tests are passing: `npm run test`
+3. Increment the major, minor or patch `version` in `package.json`
+4. Prepare the release: `npm run prepare-release`
+ - _This packages and signs all the assets._
+5. Release! `npm run release`
+ - _This creates the release on GitHub.com and uploads the assets._
