@@ -44,3 +44,7 @@ $ npm run dev
 ## Extending
 
  [Read the docs](docs.md) to learn more about how this app is built or how to [add a new demo](docs.md#add-a-section-or-demo).
+
+ ## Translations
+
+A Chinese translation of this app is available at [`fuchao2012/zh-cn-Electron-API-Demos`](https://github.com/fuchao2012/zh-cn-Electron-API-Demos). Note: this version is maintained by outside contributors and may not always be in sync with this version.
