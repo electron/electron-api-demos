@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron . --debug",
-    "lint": "standard",
+    "lint": "standard | snazzy",
     "test": "mocha tests && npm run lint",
     "sign-exe": "signcode ./out/ElectronAPIDemos-win32-ia32/ElectronAPIDemos.exe --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
     "sign-installer": "signcode ./out/windows-installer/ElectronAPIDemosSetup.exe --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
@@ -49,6 +49,7 @@
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
     "signcode": "^0.4.0",
+    "snazzy": "^5.0.0",
     "spectron": "~3.2.6",
     "standard": "^6.0.8"
   },
