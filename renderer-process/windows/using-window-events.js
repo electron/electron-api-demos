@@ -28,6 +28,3 @@ manageWindowBtn.addEventListener('click', () => {
     focusModalBtn.classList.remove('smooth-appear')
   }
 })
-
-
-
