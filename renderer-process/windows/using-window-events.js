@@ -1,0 +1,29 @@
+const BrowserWindow = require('electron').remote.BrowserWindow
+const path = require('path')
+
+const manageWindowBtn = document.getElementById('listen-to-window')
+const focusModalBtn = document.getElementById('focus-on-modal-window')
+let win
+
+manageWindowBtn.addEventListener('click', () => {
+  const modalPath = path.join('file://', __dirname, '../../sections/windows/modal-toggle-visibility.html')
+  win = new BrowserWindow({ width: 600, height: 400 })
+  win.on('focus', hideFocusBtn)
+  win.on('blur', showFocusBtn)
+  win.on('close', () => {
+    hideFocusBtn()
+    win = null
+  })
+  win.loadURL(modalPath)
+  win.show()
+  function showFocusBtn (btn) {
+    if (!win) return
+    focusModalBtn.classList.add('smooth-appear')
+    focusModalBtn.classList.remove('disappear')
+    focusModalBtn.addEventListener('click', () => win.focus())
+  }
+  function hideFocusBtn () {
+    focusModalBtn.classList.add('disappear')
+    focusModalBtn.classList.remove('smooth-appear')
+  }
+})

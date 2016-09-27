@@ -173,6 +173,19 @@
   word-break: break-word;
 }
 
+.smooth-appear {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.disappear {
+  opacity: 0;
+}
+.demo-button.smooth-disappear:focus {
+  outline: inherit;
+  border-color: inherit;
+  background-color: inherit;
+}
 
 /* ProTip ----------------------------- */
 
@@ -189,3 +202,4 @@
 .demo-protip strong {
   font-weight: 600;
 }
+
