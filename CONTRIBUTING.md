@@ -22,7 +22,7 @@ Because this project is intended for beginners we stick to mostly vanilla JavaSc
 
 ## Pull Requests and Issues
 
-Tips for making an easier-to-reivew contribution:
+Tips for making an easier-to-review contribution:
 
 - Please provide a description.
 - Include screenshots and animated GIFs whenever possible.

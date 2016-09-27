@@ -5,12 +5,12 @@ const manageWindowBtn = document.getElementById('listen-to-window')
 const focusModalBtn = document.getElementById('focus-on-modal-window')
 let win
 
-manageWindowBtn.addEventListener('click', () => {
+manageWindowBtn.addEventListener('click', function () {
   const modalPath = path.join('file://', __dirname, '../../sections/windows/modal-toggle-visibility.html')
   win = new BrowserWindow({ width: 600, height: 400 })
   win.on('focus', hideFocusBtn)
   win.on('blur', showFocusBtn)
-  win.on('close', () => {
+  win.on('close', function () {
     hideFocusBtn()
     win = null
   })
@@ -20,7 +20,7 @@ manageWindowBtn.addEventListener('click', () => {
     if (!win) return
     focusModalBtn.classList.add('smooth-appear')
     focusModalBtn.classList.remove('disappear')
-    focusModalBtn.addEventListener('click', () => win.focus())
+    focusModalBtn.addEventListener('click', function () { win.focus() })
   }
   function hideFocusBtn () {
     focusModalBtn.classList.add('disappear')
