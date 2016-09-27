@@ -17,7 +17,7 @@ manageWindowBtn.addEventListener('click', () => {
   win.loadURL(modalPath)
   win.show()
   function showFocusBtn (btn) {
-    if(!win) return
+    if (!win) return
     focusModalBtn.classList.add('smooth-appear')
     focusModalBtn.classList.remove('disappear')
     focusModalBtn.addEventListener('click', () => win.focus())
