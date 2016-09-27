@@ -10,9 +10,9 @@ manageWindowBtn.addEventListener('click', () => {
   win = new BrowserWindow({ width: 600, height: 400 })
   win.on('focus', hideFocusBtn)
   win.on('blur', showFocusBtn)
-  win.on('close', () => { 
+  win.on('close', () => {
     hideFocusBtn()
-    win = null 
+    win = null
   })
   win.loadURL(modalPath)
   win.show()
@@ -21,7 +21,6 @@ manageWindowBtn.addEventListener('click', () => {
     focusModalBtn.classList.add('smooth-appear')
     focusModalBtn.classList.remove('disappear')
     focusModalBtn.addEventListener('click', () => win.focus())
-  
   }
   function hideFocusBtn () {
     focusModalBtn.classList.add('disappear')
