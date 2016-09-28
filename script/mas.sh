@@ -2,7 +2,7 @@
 
 set -ex
 
-# App Store does not allow the work "demos" in the name
+# App Store does not allow the word "demos" in the app's name
 APP="Electron APIs"
 
 electron-packager . \
