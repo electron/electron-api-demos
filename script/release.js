@@ -10,6 +10,7 @@ const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
 const version = require('../package').version
 
 checkToken()
+  .then(checkHerokuLoginStatus)
   .then(zipAssets)
   .then(createRelease)
   .then(uploadAssets)
@@ -26,6 +27,20 @@ function checkToken () {
   } else {
     return Promise.resolve(token)
   }
+}
+
+function checkHerokuLoginStatus () {
+  return new Promise((resolve, reject) => {
+    console.log('Checking Heroku login status')
+
+    childProcess.exec('heroku whoami', (error, stdout, stderr) => {
+      if (error || !stdout.match('github.com')) {
+        reject('You are not logged in to GitHub\'s Heroku Enterprise account. To log in, run this command:\n$ heroku login --sso')
+      } else {
+        resolve()
+      }
+    })
+  })
 }
 
 function zipAsset (asset) {
