@@ -34,7 +34,7 @@ function checkHerokuLoginStatus () {
     console.log('Checking Heroku login status')
 
     childProcess.exec('heroku whoami', (error, stdout, stderr) => {
-      if (error || !stdout.match('github.com')) {
+      if (error) {
         reject('You are not logged in to GitHub\'s Heroku Enterprise account. To log in, run this command:\n$ heroku login --sso')
       } else {
         resolve()
