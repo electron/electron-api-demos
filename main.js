@@ -73,10 +73,18 @@ function initialize () {
 function makeSingleInstance () {
   if (process.mas) return false
 
-  return app.makeSingleInstance(function () {
+  return app.makeSingleInstance(function (argv) {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
       mainWindow.focus()
+      // On windows we have to check the second instance arguments to emit the open-url event
+      if (process.platform === 'win32') {
+        // Check if the second instance was attempting to launch a URL for our protocol client
+        const url = argv.find(function (arg) {
+          return /^electron-api-demos:\/\//.test(arg)
+        })
+        if (url) app.emit('open-url', null, url.replace(/^electron-api-demos:\/\//, ''))
+      }
     }
   })
 }
