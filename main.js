@@ -83,7 +83,7 @@ function makeSingleInstance () {
         const url = argv.find(function (arg) {
           return /^electron-api-demos:\/\//.test(arg)
         })
-        if (url) app.emit('open-url', null, url.replace(/^electron-api-demos:\/\//, ''))
+        if (url) app.emit('open-url', null, url)
       }
     }
   })
