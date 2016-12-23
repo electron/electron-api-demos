@@ -1,6 +1,7 @@
 'use strict'
 
 const Application = require('spectron').Application
+const electron = require('electron')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
 const path = require('path')
@@ -80,7 +81,7 @@ describe('demo app', function () {
 
   const startApp = function () {
     app = new Application({
-      path: path.join(__dirname, '..', 'node_modules', '.bin', 'electron'),
+      path: electron,
       args: [
         path.join(__dirname, '..')
       ],
