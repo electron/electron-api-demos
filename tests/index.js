@@ -19,7 +19,24 @@ describe('demo app', function () {
 
   const removeStoredPreferences = function () {
     const productName = require('../package').productName
-    const userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
+
+    let userDataPath = ''
+    switch (process.platform) {
+      case 'darwin':
+        userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
+        break
+      case 'win32':
+        userDataPath = path.join(process.env.APPDATA, productName)
+        break
+      case 'freebsd':
+      case 'linux':
+      case 'sunos':
+        userDataPath = path.join(process.env.HOME, '.config', productName)
+        break
+      default:
+        throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
+    }
+
     try {
       fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
     } catch (error) {
