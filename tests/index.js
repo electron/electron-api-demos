@@ -17,26 +17,24 @@ describe('demo app', function () {
 
   let app
 
-  const removeStoredPreferences = function () {
+  const getUserDataPath = function () {
     const productName = require('../package').productName
-
-    let userDataPath = ''
     switch (process.platform) {
       case 'darwin':
-        userDataPath = path.join(process.env.HOME, 'Library', 'Application Support', productName)
-        break
+        return path.join(process.env.HOME, 'Library', 'Application Support', productName)
       case 'win32':
-        userDataPath = path.join(process.env.APPDATA, productName)
-        break
+        return path.join(process.env.APPDATA, productName)
       case 'freebsd':
       case 'linux':
       case 'sunos':
-        userDataPath = path.join(process.env.HOME, '.config', productName)
-        break
+        return path.join(process.env.HOME, '.config', productName)
       default:
         throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
     }
+  }
 
+  const removeStoredPreferences = function () {
+    const userDataPath = getUserDataPath()
     try {
       fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
     } catch (error) {
@@ -121,6 +119,14 @@ describe('demo app', function () {
     if (app && app.isRunning()) {
       return app.stop()
     }
+  })
+
+  it('checks hardcoded path for userData is correct', function () {
+    return app.client.execute(function () {
+      return require('electron').remote.app.getPath('userData')
+    }).then(function (result) {
+      return result.value
+    }).should.eventually.equal(getUserDataPath())
   })
 
   it('opens a window displaying the about page', function () {
