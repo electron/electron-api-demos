@@ -26,7 +26,7 @@
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the open file (or directory) dialog. If a file is selected, the main process can send that information back to the renderer process.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/native-ui/dialogs/open-file.js"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/open-file.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/native-ui/dialogs/open-file.js"></code></pre>
 
@@ -61,7 +61,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
           <p>You can use an error dialog before the app's <code>ready</code> event, which is useful for showing errors upon startup.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/native-ui/dialogs/error.js"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/error.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/native-ui/dialogs/error.js"></code></pre>
         </div>
@@ -84,7 +84,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
 
           <p>An information dialog can contain an icon, your choice of buttons, title and message.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/native-ui/dialogs/information.js"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/information.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/native-ui/dialogs/information.js"></code></pre>
         </div>
@@ -103,7 +103,7 @@ ipc.on('open-file-dialog-sheet', function (event) {
           </div>
           <p>In this demo, the <code>ipc</code> module is used to send a message from the renderer process instructing the main process to launch the save dialog. It returns the path selected by the user which can be relayed back to the renderer process.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/native-ui/dialogs/save.js"></pre></code>
+          <pre><code data-path="renderer-process/native-ui/dialogs/save.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/native-ui/dialogs/save.js"></code></pre>
         </div>
@@ -111,10 +111,10 @@ ipc.on('open-file-dialog-sheet', function (event) {
     </div>
 
     <script type="text/javascript">
-      require('./renderer-process/native-ui/dialogs/open-file')
-      require('./renderer-process/native-ui/dialogs/error')
-      require('./renderer-process/native-ui/dialogs/information')
-      require('./renderer-process/native-ui/dialogs/save')
+      require('./renderer-process/native-ui/dialogs/open-file');
+      require('./renderer-process/native-ui/dialogs/error');
+      require('./renderer-process/native-ui/dialogs/information');
+      require('./renderer-process/native-ui/dialogs/save');
     </script>
 
   </section>

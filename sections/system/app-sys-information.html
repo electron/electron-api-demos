@@ -25,16 +25,16 @@
           <p>In this example, to get that information from the renderer process, we use the <code>ipc</code> module to send a message to the main process requesting the app's path.</p>
           <p>See the <a href="http://electron.atom.io/docs/api/app">app module documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/system/app-information.js"></pre></code>
+          <pre><code data-path="renderer-process/system/app-information.js"></code></pre>
           <h5>Main Process</h5>
-          <pre><code data-path="main-process/system/app-information.js"></pre></code>
+          <pre><code data-path="main-process/system/app-information.js"></code></pre>
         </div>
       </div>
     </div>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="app-info-demo-toggle" class="js-container-target demo-toggle-button">Get version information
+        <button id="app-version-demo-toggle" class="js-container-target demo-toggle-button">Get version information
           <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
         </button>
         <div class="demo-box">
@@ -46,7 +46,7 @@
           <p>The example below gets the version of Electron in use by the app.</p>
           <p>See the <a href="http://electron.atom.io/docs/api/process">process documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/system/version-information.js"></pre></code>
+          <pre><code data-path="renderer-process/system/version-information.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -78,7 +78,7 @@ process.versions.node</code></pre>
 
           <p>See the full <a href="https://nodejs.org/api/os.html"> os documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/system/sys-information.js"></pre></code>
+          <pre><code data-path="renderer-process/system/sys-information.js"></code></pre>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ process.versions.node</code></pre>
 
           <p>See the full <a href="http://electron.atom.io/docs/api/screen">screen documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> for more.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/system/screen-information.js"></pre></code>
+          <pre><code data-path="renderer-process/system/screen-information.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
@@ -111,10 +111,10 @@ process.versions.node</code></pre>
     </div>
 
     <script type="text/javascript">
-      require('./renderer-process/system/app-information')
-      require('./renderer-process/system/version-information')
-      require('./renderer-process/system/sys-information')
-      require('./renderer-process/system/screen-information')
+      require('./renderer-process/system/app-information');
+      require('./renderer-process/system/version-information');
+      require('./renderer-process/system/sys-information');
+      require('./renderer-process/system/screen-information');
     </script>
 
   </section>

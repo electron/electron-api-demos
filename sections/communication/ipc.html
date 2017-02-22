@@ -27,7 +27,7 @@
 
           <p>This example sends a "ping" from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/communication/async-msg.js"></pre></code>
+          <pre><code data-path="renderer-process/communication/async-msg.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/communication/async-msg.js"></code></pre>
         </div>
@@ -47,7 +47,7 @@
           <p>You can use the <code>ipc</code> module to send synchronous messages between processes as well, but note that the synchronous nature of this method means that it <b>will block</b> other operations while completing its task.</p>
           <p>This example sends a synchronous message, "ping", from this process (renderer) to the main process. The main process then replies with "pong".</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/communication/sync-msg.js"></pre></code>
+          <pre><code data-path="renderer-process/communication/sync-msg.js"></code></pre>
           <h5>Main Process</h5>
           <pre><code data-path="main-process/communication/sync-msg.js"></code></pre>
         </div>
@@ -68,7 +68,7 @@
           <p>In this example we use the <code>remote</code> module to create a new invisible browser window from this renderer process. When the new page is loaded we send a message with <code>ipc</code> that the new window is listening for.</p>
           <p>The new window then computes the factorial and sends the result to be recieved by this, the original, window and added to the page above.</p>
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/communication/invisible-msg.js"></pre></code>
+          <pre><code data-path="renderer-process/communication/invisible-msg.js"></code></pre>
           <h5>Invisible Window Page HTML</h5>
           <pre><code data-path="sections/communication/invisible.html"></code></pre>
         </div>
@@ -76,9 +76,9 @@
     </div>
 
     <script type="text/javascript">
-      require('./renderer-process/communication/sync-msg')
-      require('./renderer-process/communication/async-msg')
-      require('./renderer-process/communication/invisible-msg')
+      require('./renderer-process/communication/sync-msg');
+      require('./renderer-process/communication/async-msg');
+      require('./renderer-process/communication/invisible-msg');
     </script>
 
   </section>
