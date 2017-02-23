@@ -14,7 +14,7 @@
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes
+        <button id="new-window-crashes-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process crashes
           <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
         <div class="demo-box">
@@ -25,14 +25,14 @@
           <p>The window is listening for the crash event and when the event occurs it prompts the user with two options: reload or close.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/windows/process-crash.js"></pre></code>
+          <pre><code data-path="renderer-process/windows/process-crash.js"></code></pre>
         </div>
       </div>
     </div>
 
     <div class="demo">
       <div class="demo-wrapper">
-        <button id="new-window-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process hangs
+        <button id="new-window-hangs-demo-toggle" class="js-container-target demo-toggle-button">Relaunch window after the process hangs
           <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Main</div>
         </button>
         <div class="demo-box">
@@ -43,7 +43,7 @@
           <p>The window is listening for the process to become offcially unresponsive (this can take up to 30 seconds). When this event occurs it prompts the user with two options: reload or close.</p>
 
           <h5>Renderer Process</h5>
-          <pre><code data-path="renderer-process/windows/process-hang.js"></pre></code>
+          <pre><code data-path="renderer-process/windows/process-hang.js"></code></pre>
 
           <div class="demo-protip">
             <h2>ProTip</h2>
