@@ -21,10 +21,7 @@
     "windows-store": "node ./script/windows-store.js",
     "release": "node ./script/release.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/electron/electron-api-demos.git"
-  },
+  "repository": "https://github.com/electron/electron-api-demos",
   "keywords": [
     "Electron",
     "API",
