@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron . --debug",
-    "lint": "standard | snazzy",
+    "lint": "standard",
     "test": "mocha && npm run lint",
     "package": "npm-run-all package:*",
     "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
@@ -41,7 +41,6 @@
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
     "signcode": "^0.5.0",
-    "snazzy": "^5.0.0",
     "spectron": "~3.6.0",
     "standard": "^8.2.0"
   },
