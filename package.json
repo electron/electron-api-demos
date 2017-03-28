@@ -32,10 +32,6 @@
   ],
   "author": "GitHub",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/electron/electron-api-demos/issues"
-  },
-  "homepage": "https://github.com/electron/electron-api-demos#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^6.0.0",
