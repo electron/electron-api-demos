@@ -36,12 +36,7 @@ describe('demo app', function () {
   const removeStoredPreferences = function () {
     const userDataPath = getUserDataPath()
     try {
-      fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
-    } catch (error) {
-      if (error.code !== 'ENOENT') throw error
-    }
-    try {
-      fs.unlinkSync(path.join(userDataPath, 'activeSectionButtonId.json'))
+      fs.unlinkSync(path.join(userDataPath, 'Settings'))
     } catch (error) {
       if (error.code !== 'ENOENT') throw error
     }
