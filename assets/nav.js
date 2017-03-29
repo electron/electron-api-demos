@@ -22,7 +22,7 @@ function handleSectionTrigger (event) {
 
   // Save currently active button in localStorage
   const buttonId = event.target.getAttribute('id')
-  settings.set('activeSectionButtonId', buttonId);
+  settings.set('activeSectionButtonId', buttonId)
 }
 
 function activateDefaultSection () {
