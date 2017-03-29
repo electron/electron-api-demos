@@ -44,7 +44,7 @@
     "standard": "^8.2.0"
   },
   "dependencies": {
-    "electron-json-storage": "^2.0.0",
+    "electron-settings": "^3.0.5",
     "electron-shortcut-normalizer": "^1.0.0",
     "glob": "^7.1.0",
     "highlight.js": "^9.3.0"
