@@ -1,7 +1,9 @@
-const notification = 
+/* global Notification */
+
+const notification =
   {
-    title: "Basic Notification",
-    body: "Short message part"
+    title: 'Basic Notification',
+    body: 'Short message part'
   }
 const notificationButton = document.getElementById('basic-noti')
 

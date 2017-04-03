@@ -155,7 +155,7 @@ describe('demo app', function () {
 
   describe('when a demo title is clicked', function () {
     it('it expands the demo content', function () {
-      let onlyFirstVisible = Array(28).fill(false)
+      let onlyFirstVisible = Array(30).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.dismissAboutPage()
@@ -169,7 +169,7 @@ describe('demo app', function () {
 
   describe('when the app is restarted after use', function () {
     it('it launches at last visted section & demo', function () {
-      let onlyFirstVisible = Array(28).fill(false)
+      let onlyFirstVisible = Array(30).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.waitForVisible('#windows-section')
@@ -191,6 +191,7 @@ describe('demo app', function () {
       .auditSectionAccessibility('ex-links-file-manager')
       .auditSectionAccessibility('dialogs')
       .auditSectionAccessibility('tray')
+      .auditSectionAccessibility('notifications')
       .auditSectionAccessibility('ipc')
       .auditSectionAccessibility('app-sys-information')
       .auditSectionAccessibility('clipboard')
