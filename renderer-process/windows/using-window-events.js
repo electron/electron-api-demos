@@ -25,10 +25,9 @@ manageWindowBtn.addEventListener('click', function () {
   function hideFocusBtn () {
     focusModalBtn.classList.add('disappear')
     focusModalBtn.classList.remove('smooth-appear')
-    focusModalBtn.removeEventListener('click', clickHandler);
+    focusModalBtn.removeEventListener('click', clickHandler)
   }
-
-  function clickHandler(){
+  function clickHandler () {
     win.focus()
   }
 })
