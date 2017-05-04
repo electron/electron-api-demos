@@ -3,7 +3,7 @@ const path = require('path')
 const notification = {
   title: 'Notification with image',
   body: 'Short message plus a custom image',
-  icon: path.join(__dirname, '/../../assets/img/programming.png')
+  icon: path.join(__dirname, '../../../assets/img/programming.png')
 }
 const notificationButton = document.getElementById('advanced-noti')
 
