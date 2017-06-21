@@ -36,12 +36,7 @@ describe('demo app', function () {
   const removeStoredPreferences = function () {
     const userDataPath = getUserDataPath()
     try {
-      fs.unlinkSync(path.join(userDataPath, 'activeDemoButtonId.json'))
-    } catch (error) {
-      if (error.code !== 'ENOENT') throw error
-    }
-    try {
-      fs.unlinkSync(path.join(userDataPath, 'activeSectionButtonId.json'))
+      fs.unlinkSync(path.join(userDataPath, 'Settings'))
     } catch (error) {
       if (error.code !== 'ENOENT') throw error
     }
@@ -160,7 +155,7 @@ describe('demo app', function () {
 
   describe('when a demo title is clicked', function () {
     it('it expands the demo content', function () {
-      let onlyFirstVisible = Array(28).fill(false)
+      let onlyFirstVisible = Array(30).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.dismissAboutPage()
@@ -174,7 +169,7 @@ describe('demo app', function () {
 
   describe('when the app is restarted after use', function () {
     it('it launches at last visted section & demo', function () {
-      let onlyFirstVisible = Array(28).fill(false)
+      let onlyFirstVisible = Array(30).fill(false)
       onlyFirstVisible[0] = true
 
       return app.client.waitForVisible('#windows-section')
@@ -194,6 +189,7 @@ describe('demo app', function () {
       .auditSectionAccessibility('menus')
       .auditSectionAccessibility('shortcuts')
       .auditSectionAccessibility('ex-links-file-manager')
+      .auditSectionAccessibility('notifications')
       .auditSectionAccessibility('dialogs')
       .auditSectionAccessibility('tray')
       .auditSectionAccessibility('ipc')

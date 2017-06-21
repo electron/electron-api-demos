@@ -12,7 +12,7 @@ behavior to [electron@github.com](mailto:electron@github.com).
 
 ## Code Style & ES6
 
-This project uses the [JavaScript Standard](http://standardjs.com) style and limited E6 syntax.
+This project uses the [JavaScript Standard](http://standardjs.com) style and limited ES6 syntax.
 
 Because this project is intended for beginners we stick to mostly vanilla JavaScript. One of the features we want illustrate about Electron, however, is that you can use most of ES6 out of the box. To that end, in this project we use these parts of ES6:
 

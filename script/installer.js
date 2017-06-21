@@ -17,7 +17,8 @@ function getInstallerConfig () {
   const outPath = path.join(rootPath, 'out')
 
   return Promise.resolve({
-    appDirectory: path.join(outPath, 'ElectronAPIDemos-win32-ia32'),
+    appDirectory: path.join(outPath, 'Electron API Demos-win32-ia32'),
+    exe: 'Electron API Demos.exe',
     iconUrl: 'https://raw.githubusercontent.com/electron/electron-api-demos/master/assets/app-icon/win/app.ico',
     loadingGif: path.join(rootPath, 'assets', 'img', 'loading.gif'),
     noMsi: true,

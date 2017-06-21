@@ -9,7 +9,7 @@ before_script:
 
 script:
   - npm test
-  - npm run pack-linux
+  - npm run package:linux
 
 branches:
   only:
