@@ -66,7 +66,7 @@
           </div>
           <p>It is common practice to create a new invisible browser window (renderer process) in order to run tasks without impacting performance in the main app's window.</p>
           <p>In this example we use the <code>remote</code> module to create a new invisible browser window from this renderer process. When the new page is loaded we send a message with <code>ipc</code> that the new window is listening for.</p>
-          <p>The new window then computes the factorial and sends the result to be recieved by this, the original, window and added to the page above.</p>
+          <p>The new window then computes the factorial and sends the result to be received by this, the original, window and added to the page above.</p>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/communication/invisible-msg.js"></code></pre>
           <h5>Invisible Window Page HTML</h5>
