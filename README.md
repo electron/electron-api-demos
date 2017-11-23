@@ -47,4 +47,4 @@ $ npm run dev
 
 ## Translations
 
-A Chinese translation of this app is available at [`fuchao2012/zh-cn-Electron-API-Demos`](https://github.com/fuchao2012/zh-cn-Electron-API-Demos). Note: this version is maintained by outside contributors and may not always be in sync with this version.
+A Chinese version of this app is available at [`demopark/electron-api-demos-Zh_CN`](https://github.com/demopark/electron-api-demos-Zh_CN). Note: this version is maintained by outside contributors and may not always be in sync with this version.
