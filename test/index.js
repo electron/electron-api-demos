@@ -5,7 +5,7 @@ const electron = require('electron')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
 const path = require('path')
-const fs = require('fs')
+const setup = require('./setup')
 
 chai.should()
 chai.use(chaiAsPromised)
@@ -17,79 +17,7 @@ describe('demo app', function () {
 
   let app
 
-  const getUserDataPath = function () {
-    const productName = require('../package').productName
-    switch (process.platform) {
-      case 'darwin':
-        return path.join(process.env.HOME, 'Library', 'Application Support', productName)
-      case 'win32':
-        return path.join(process.env.APPDATA, productName)
-      case 'freebsd':
-      case 'linux':
-      case 'sunos':
-        return path.join(process.env.HOME, '.config', productName)
-      default:
-        throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
-    }
-  }
-
-  const removeStoredPreferences = function () {
-    const userDataPath = getUserDataPath()
-    try {
-      fs.unlinkSync(path.join(userDataPath, 'Settings'))
-    } catch (error) {
-      if (error.code !== 'ENOENT') throw error
-    }
-  }
-
-  const setupApp = function (app) {
-    app.client.addCommand('dismissAboutPage', function () {
-      return this.isVisible('.js-nav').then(function (navVisible) {
-        if (!navVisible) {
-          return this.click('button[id="get-started"]').pause(500)
-        }
-      })
-    })
-
-    app.client.addCommand('selectSection', function (section) {
-      return this.click('button[data-section="' + section + '"]').pause(100)
-        .waitForVisible('#' + section + '-section')
-    })
-
-    app.client.addCommand('expandDemos', function () {
-      return this.execute(function () {
-        for (let demo of document.querySelectorAll('.demo-wrapper')) {
-          demo.classList.add('is-open')
-        }
-      })
-    })
-
-    app.client.addCommand('collapseDemos', function () {
-      return this.execute(function () {
-        for (let demo of document.querySelectorAll('.demo-wrapper')) {
-          demo.classList.remove('is-open')
-        }
-      })
-    })
-
-    app.client.addCommand('auditSectionAccessibility', function (section) {
-      const options = {
-        ignoreRules: ['AX_COLOR_01', 'AX_TITLE_01']
-      }
-      return this.selectSection(section)
-        .expandDemos()
-        .auditAccessibility(options).then(function (audit) {
-          if (audit.failed) {
-            throw Error(section + ' section failed accessibility audit\n' + audit.message)
-          }
-        })
-    })
-
-    chaiAsPromised.transferPromiseness = app.transferPromiseness
-    return app.client.waitUntilWindowLoaded()
-  }
-
-  const startApp = function () {
+  const startApp = () => {
     app = new Application({
       path: electron,
       args: [
@@ -98,30 +26,34 @@ describe('demo app', function () {
       waitTimeout: timeout
     })
 
-    return app.start().then(setupApp)
+    return app.start().then((ret) => {
+      setup.setupApp(ret)
+    })
   }
 
-  const restartApp = function () {
-    return app.restart().then(setupApp)
+  const restartApp = () => {
+    return app.restart().then((ret) => {
+      setup.setupApp(ret)
+    })
   }
 
-  before(function () {
-    removeStoredPreferences()
+  before(() => {
+    setup.removeStoredPreferences()
     return startApp()
   })
 
-  after(function () {
+  after(() => {
     if (app && app.isRunning()) {
       return app.stop()
     }
   })
 
   it('checks hardcoded path for userData is correct', function () {
-    return app.client.execute(function () {
+    return app.client.execute(() => {
       return require('electron').remote.app.getPath('userData')
-    }).then(function (result) {
+    }).then((result) => {
       return result.value
-    }).should.eventually.equal(getUserDataPath())
+    }).should.eventually.equal(setup.getUserDataPath())
   })
 
   it('opens a window displaying the about page', function () {
