@@ -5,7 +5,7 @@ const electron = require('electron')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
 const path = require('path')
-const setup = require('./setup.js')
+const setup = require('./setup')
 
 chai.should()
 chai.use(chaiAsPromised)
