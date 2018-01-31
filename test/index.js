@@ -1,11 +1,11 @@
 'use strict'
 
-const Application = require('spectron').Application
+const {Application} = require('spectron')
 const electron = require('electron')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
 const path = require('path')
-const fs = require('fs')
+const setup = require('./setup.js')
 
 chai.should()
 chai.use(chaiAsPromised)
@@ -16,31 +16,6 @@ describe('demo app', function () {
   this.timeout(timeout)
 
   let app
-
-  const getUserDataPath = function () {
-    const productName = require('../package').productName
-    switch (process.platform) {
-      case 'darwin':
-        return path.join(process.env.HOME, 'Library', 'Application Support', productName)
-      case 'win32':
-        return path.join(process.env.APPDATA, productName)
-      case 'freebsd':
-      case 'linux':
-      case 'sunos':
-        return path.join(process.env.HOME, '.config', productName)
-      default:
-        throw new Error(`Unknown userDataPath path for platform ${process.platform}`)
-    }
-  }
-
-  const removeStoredPreferences = function () {
-    const userDataPath = getUserDataPath()
-    try {
-      fs.unlinkSync(path.join(userDataPath, 'Settings'))
-    } catch (error) {
-      if (error.code !== 'ENOENT') throw error
-    }
-  }
 
   const setupApp = function (app) {
     app.client.addCommand('dismissAboutPage', function () {
@@ -89,7 +64,7 @@ describe('demo app', function () {
     return app.client.waitUntilWindowLoaded()
   }
 
-  const startApp = function () {
+  const startApp = () => {
     app = new Application({
       path: electron,
       args: [
@@ -101,27 +76,25 @@ describe('demo app', function () {
     return app.start().then(setupApp)
   }
 
-  const restartApp = function () {
-    return app.restart().then(setupApp)
-  }
+  const restartApp = () => app.restart().then(setupApp)
 
-  before(function () {
-    removeStoredPreferences()
+  before(() => {
+    setup.removeStoredPreferences()
     return startApp()
   })
 
-  after(function () {
+  after(() => {
     if (app && app.isRunning()) {
       return app.stop()
     }
   })
 
   it('checks hardcoded path for userData is correct', function () {
-    return app.client.execute(function () {
+    return app.client.execute(() => {
       return require('electron').remote.app.getPath('userData')
-    }).then(function (result) {
+    }).then((result) => {
       return result.value
-    }).should.eventually.equal(getUserDataPath())
+    }).should.eventually.equal(setup.getUserDataPath())
   })
 
   it('opens a window displaying the about page', function () {
