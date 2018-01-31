@@ -32,7 +32,7 @@ describe('demo app', function () {
   }
 
   const restartApp = () => {
-    app.restart().then((ret) => {
+    return app.restart().then((ret) => {
       setup.setupApp(ret)
     })
   }
