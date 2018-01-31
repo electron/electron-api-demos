@@ -1,6 +1,6 @@
 'use strict'
 
-const {Application} = require('spectron')
+const Application = require('spectron').Application
 const electron = require('electron')
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
