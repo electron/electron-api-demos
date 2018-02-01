@@ -28,6 +28,7 @@ You'll need [Node.js](https://nodejs.org) installed on your computer in order to
 
 ```bash
 $ git clone https://github.com/electron/electron-api-demos
+$ npm install electron -g
 $ cd electron-api-demos
 $ npm install
 $ npm start
