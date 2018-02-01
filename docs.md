@@ -109,4 +109,4 @@ The renderer process code you add will be read and displayed within the demo and
 
 #### Try it out
 
-At this point you should be able to run the app, `npm start`, and see you section and/or demo. :tada:
+At this point you should be able to run the app, `npm start`, and see your section and/or demo. :tada:
