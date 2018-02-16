@@ -1,12 +1,12 @@
-const ipc = require('electron').ipcRenderer
+const {ipcRenderer} = require('electron')
 
 const printPDFBtn = document.getElementById('print-pdf')
 
-printPDFBtn.addEventListener('click', function (event) {
-  ipc.send('print-to-pdf')
+printPDFBtn.addEventListener('click', (event) => {
+  ipcRenderer.send('print-to-pdf')
 })
 
-ipc.on('wrote-pdf', function (event, path) {
+ipcRenderer.on('wrote-pdf', (event, path) => {
   const message = `Wrote PDF to: ${path}`
   document.getElementById('pdf-path').innerHTML = message
 })

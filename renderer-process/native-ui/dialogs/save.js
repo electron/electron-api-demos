@@ -1,12 +1,12 @@
-const ipc = require('electron').ipcRenderer
+const {ipcRenderer} = require('electron')
 
 const saveBtn = document.getElementById('save-dialog')
 
-saveBtn.addEventListener('click', function (event) {
-  ipc.send('save-dialog')
+saveBtn.addEventListener('click', (event) => {
+  ipcRenderer.send('save-dialog')
 })
 
-ipc.on('saved-file', function (event, path) {
+ipcRenderer.on('saved-file', (event, path) => {
   if (!path) path = 'No path'
   document.getElementById('file-saved').innerHTML = `Path selected: ${path}`
 })
