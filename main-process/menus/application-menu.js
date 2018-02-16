@@ -1,7 +1,4 @@
-const electron = require('electron')
-const BrowserWindow = electron.BrowserWindow
-const Menu = electron.Menu
-const app = electron.app
+const {BrowserWindow, Menu, app, shell, dialog} = require('electron')
 
 let template = [{
   label: 'Edit',
@@ -37,15 +34,13 @@ let template = [{
   submenu: [{
     label: 'Reload',
     accelerator: 'CmdOrCtrl+R',
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         // on reload, start fresh and close any old
         // open secondary windows
         if (focusedWindow.id === 1) {
-          BrowserWindow.getAllWindows().forEach(function (win) {
-            if (win.id > 1) {
-              win.close()
-            }
+          BrowserWindow.getAllWindows().forEach(win => {
+            if (win.id > 1) win.close()
           })
         }
         focusedWindow.reload()
@@ -53,28 +48,28 @@ let template = [{
     }
   }, {
     label: 'Toggle Full Screen',
-    accelerator: (function () {
+    accelerator: (() => {
       if (process.platform === 'darwin') {
         return 'Ctrl+Command+F'
       } else {
         return 'F11'
       }
     })(),
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         focusedWindow.setFullScreen(!focusedWindow.isFullScreen())
       }
     }
   }, {
     label: 'Toggle Developer Tools',
-    accelerator: (function () {
+    accelerator: (() => {
       if (process.platform === 'darwin') {
         return 'Alt+Command+I'
       } else {
         return 'Ctrl+Shift+I'
       }
     })(),
-    click: function (item, focusedWindow) {
+    click: (item, focusedWindow) => {
       if (focusedWindow) {
         focusedWindow.toggleDevTools()
       }
@@ -91,7 +86,7 @@ let template = [{
           buttons: ['Ok'],
           message: 'This demo is for the Menu section, showing how to create a clickable menu item in the application menu.'
         }
-        electron.dialog.showMessageBox(focusedWindow, options, function () {})
+        dialog.showMessageBox(focusedWindow, options, function () {})
       }
     }
   }]
@@ -113,7 +108,7 @@ let template = [{
     accelerator: 'CmdOrCtrl+Shift+T',
     enabled: false,
     key: 'reopenMenuItem',
-    click: function () {
+    click: () => {
       app.emit('activate')
     }
   }]
@@ -122,8 +117,8 @@ let template = [{
   role: 'help',
   submenu: [{
     label: 'Learn More',
-    click: function () {
-      electron.shell.openExternal('http://electron.atom.io')
+    click: () => {
+      shell.openExternal('http://electron.atom.io')
     }
   }]
 }]
@@ -131,7 +126,7 @@ let template = [{
 function addUpdateMenuItems (items, position) {
   if (process.mas) return
 
-  const version = electron.app.getVersion()
+  const version = app.getVersion()
   let updateItems = [{
     label: `Version ${version}`,
     enabled: false
@@ -143,7 +138,7 @@ function addUpdateMenuItems (items, position) {
     label: 'Check for Update',
     visible: false,
     key: 'checkForUpdate',
-    click: function () {
+    click: () => {
       require('electron').autoUpdater.checkForUpdates()
     }
   }, {
@@ -151,7 +146,7 @@ function addUpdateMenuItems (items, position) {
     enabled: true,
     visible: false,
     key: 'restartToUpdate',
-    click: function () {
+    click: () => {
       require('electron').autoUpdater.quitAndInstall()
     }
   }]
@@ -164,9 +159,9 @@ function findReopenMenuItem () {
   if (!menu) return
 
   let reopenMenuItem
-  menu.items.forEach(function (item) {
+  menu.items.forEach(item => {
     if (item.submenu) {
-      item.submenu.items.forEach(function (item) {
+      item.submenu.items.forEach(item => {
         if (item.key === 'reopenMenuItem') {
           reopenMenuItem = item
         }
@@ -177,7 +172,7 @@ function findReopenMenuItem () {
 }
 
 if (process.platform === 'darwin') {
-  const name = electron.app.getName()
+  const name = app.getName()
   template.unshift({
     label: name,
     submenu: [{
@@ -207,7 +202,7 @@ if (process.platform === 'darwin') {
     }, {
       label: 'Quit',
       accelerator: 'Command+Q',
-      click: function () {
+      click: () => {
         app.quit()
       }
     }]
@@ -229,17 +224,17 @@ if (process.platform === 'win32') {
   addUpdateMenuItems(helpMenu, 0)
 }
 
-app.on('ready', function () {
+app.on('ready', () => {
   const menu = Menu.buildFromTemplate(template)
   Menu.setApplicationMenu(menu)
 })
 
-app.on('browser-window-created', function () {
+app.on('browser-window-created', () => {
   let reopenMenuItem = findReopenMenuItem()
   if (reopenMenuItem) reopenMenuItem.enabled = false
 })
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
   let reopenMenuItem = findReopenMenuItem()
   if (reopenMenuItem) reopenMenuItem.enabled = true
 })
