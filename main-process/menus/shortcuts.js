@@ -1,10 +1,7 @@
-const electron = require('electron')
-const app = electron.app
-const dialog = electron.dialog
-const globalShortcut = electron.globalShortcut
+const {app, dialog, globalShortcut} = require('electron')
 
-app.on('ready', function () {
-  globalShortcut.register('CommandOrControl+Alt+K', function () {
+app.on('ready', () => {
+  globalShortcut.register('CommandOrControl+Alt+K', () => {
     dialog.showMessageBox({
       type: 'info',
       message: 'Success!',
@@ -14,6 +11,6 @@ app.on('ready', function () {
   })
 })
 
-app.on('will-quit', function () {
+app.on('will-quit', () => {
   globalShortcut.unregisterAll()
 })

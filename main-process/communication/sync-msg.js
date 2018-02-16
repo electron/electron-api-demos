@@ -1,5 +1,5 @@
-const ipc = require('electron').ipcMain
+const {ipcMain} = require('electron')
 
-ipc.on('synchronous-message', function (event, arg) {
+ipcMain.on('synchronous-message', (event, arg) => {
   event.returnValue = 'pong'
 })

@@ -1,14 +1,13 @@
-const ipc = require('electron').ipcMain
-const dialog = require('electron').dialog
+const {ipcMain, dialog} = require('electron')
 
-ipc.on('save-dialog', function (event) {
+ipcMain.on('save-dialog', (event) => {
   const options = {
     title: 'Save an Image',
     filters: [
       { name: 'Images', extensions: ['jpg', 'png', 'gif'] }
     ]
   }
-  dialog.showSaveDialog(options, function (filename) {
+  dialog.showSaveDialog(options, (filename) => {
     event.sender.send('saved-file', filename)
   })
 })

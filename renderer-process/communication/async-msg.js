@@ -1,12 +1,12 @@
-const ipc = require('electron').ipcRenderer
+const {ipcRenderer} = require('electron')
 
 const asyncMsgBtn = document.getElementById('async-msg')
 
-asyncMsgBtn.addEventListener('click', function () {
-  ipc.send('asynchronous-message', 'ping')
+asyncMsgBtn.addEventListener('click', () => {
+  ipcRenderer.send('asynchronous-message', 'ping')
 })
 
-ipc.on('asynchronous-reply', function (event, arg) {
+ipcRenderer.on('asynchronous-reply', (event, arg) => {
   const message = `Asynchronous message reply: ${arg}`
   document.getElementById('async-reply').innerHTML = message
 })

@@ -1,30 +1,28 @@
 const path = require('path')
-const electron = require('electron')
-const ipc = electron.ipcMain
-const app = electron.app
-const Menu = electron.Menu
-const Tray = electron.Tray
+const {ipcMain, app, Menu, Tray} = require('electron')
 
 let appIcon = null
 
-ipc.on('put-in-tray', function (event) {
+ipcMain.on('put-in-tray', (event) => {
   const iconName = process.platform === 'win32' ? 'windows-icon.png' : 'iconTemplate.png'
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
+
   const contextMenu = Menu.buildFromTemplate([{
     label: 'Remove',
-    click: function () {
+    click: () => {
       event.sender.send('tray-removed')
     }
   }])
+
   appIcon.setToolTip('Electron Demo in the tray.')
   appIcon.setContextMenu(contextMenu)
 })
 
-ipc.on('remove-tray', function () {
+ipcMain.on('remove-tray', () => {
   appIcon.destroy()
 })
 
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
   if (appIcon) appIcon.destroy()
 })

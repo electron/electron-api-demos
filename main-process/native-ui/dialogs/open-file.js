@@ -1,10 +1,11 @@
-const ipc = require('electron').ipcMain
-const dialog = require('electron').dialog
+const {ipcMain, dialog} = require('electron')
 
-ipc.on('open-file-dialog', function (event) {
+ipcMain.on('open-file-dialog', (event) => {
   dialog.showOpenDialog({
     properties: ['openFile', 'openDirectory']
-  }, function (files) {
-    if (files) event.sender.send('selected-directory', files)
+  }, (files) => {
+    if (files) {
+      event.sender.send('selected-directory', files)
+    }
   })
 })
