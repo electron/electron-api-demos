@@ -1,35 +1,33 @@
-const app = require('electron').app
-const autoUpdater = require('electron').autoUpdater
+const {app, autoUpdater, Menu} = require('electron')
 const ChildProcess = require('child_process')
-const Menu = require('electron').Menu
 const path = require('path')
 
-var state = 'checking'
+let state = 'checking'
 
-exports.initialize = function () {
+exports.initialize = () => {
   if (process.mas) return
 
-  autoUpdater.on('checking-for-update', function () {
+  autoUpdater.on('checking-for-update', () => {
     state = 'checking'
     exports.updateMenu()
   })
 
-  autoUpdater.on('update-available', function () {
+  autoUpdater.on('update-available', () => {
     state = 'checking'
     exports.updateMenu()
   })
 
-  autoUpdater.on('update-downloaded', function () {
+  autoUpdater.on('update-downloaded', () => {
     state = 'installed'
     exports.updateMenu()
   })
 
-  autoUpdater.on('update-not-available', function () {
+  autoUpdater.on('update-not-available', () => {
     state = 'no-update'
     exports.updateMenu()
   })
 
-  autoUpdater.on('error', function () {
+  autoUpdater.on('error', () => {
     state = 'no-update'
     exports.updateMenu()
   })
@@ -38,15 +36,15 @@ exports.initialize = function () {
   autoUpdater.checkForUpdates()
 }
 
-exports.updateMenu = function () {
+exports.updateMenu = () => {
   if (process.mas) return
 
-  var menu = Menu.getApplicationMenu()
+  const menu = Menu.getApplicationMenu()
   if (!menu) return
 
-  menu.items.forEach(function (item) {
+  menu.items.forEach(item => {
     if (item.submenu) {
-      item.submenu.items.forEach(function (item) {
+      item.submenu.items.forEach(item => {
         switch (item.key) {
           case 'checkForUpdate':
             item.visible = state === 'no-update'
@@ -63,7 +61,7 @@ exports.updateMenu = function () {
   })
 }
 
-exports.createShortcut = function (callback) {
+exports.createShortcut = callback => {
   spawnUpdate([
     '--createShortcut',
     path.basename(process.execPath),
@@ -72,7 +70,7 @@ exports.createShortcut = function (callback) {
   ], callback)
 }
 
-exports.removeShortcut = function (callback) {
+exports.removeShortcut = callback => {
   spawnUpdate([
     '--removeShortcut',
     path.basename(process.execPath)
@@ -80,29 +78,33 @@ exports.removeShortcut = function (callback) {
 }
 
 function spawnUpdate (args, callback) {
-  var updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe')
-  var stdout = ''
-  var spawned = null
+  const updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe')
+  let stdout = ''
+  let spawned = null
 
   try {
     spawned = ChildProcess.spawn(updateExe, args)
   } catch (error) {
-    if (error && error.stdout == null) error.stdout = stdout
-    process.nextTick(function () { callback(error) })
+    if (error && error.stdout == null) {
+      error.stdout = stdout
+    }
+    process.nextTick(() => { callback(error) })
     return
   }
 
   var error = null
 
-  spawned.stdout.on('data', function (data) { stdout += data })
+  spawned.stdout.on('data', data => {
+    stdout += data
+  })
 
-  spawned.on('error', function (processError) {
+  spawned.on('error', processError => {
     if (!error) error = processError
   })
 
-  spawned.on('close', function (code, signal) {
+  spawned.on('close', (code, signal) => {
     if (!error && code !== 0) {
-      error = new Error('Command failed: ' + code + ' ' + signal)
+      error = new Error(`Command failed: ${code} ${signal}`)
     }
     if (error && error.code == null) error.code = code
     if (error && error.stdout == null) error.stdout = stdout
