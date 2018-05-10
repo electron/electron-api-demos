@@ -1,0 +1,42 @@
+<template class="task-template">
+  <section id="drag-section" class="section js-section u-category-native-ui">
+    <header class="communication">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
+          Drag and drop files
+        </h1>
+        <h3>Electron supports dragging files and content out from web content into the operating system's world.</h3>
+
+        <p>Open the <a href="https://electronjs.org/docs/tutorial/native-file-drag-drop">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="dragging-demo-toggle" class="js-container-target demo-toggle-button">Dragging files
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux <span class="demo-meta-divider">|</span> Process: Both</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <a href="#" id="drag-file-link">Drag Demo</a>
+          </div>
+          <p>Click and drag the link above to copy the renderer process javascript file on to your machine.</p>
+
+          <p>In this demo, the <code>webContents.startDrag()</code> API is called in response to the <code>ondragstart</code> event.</p>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/native-ui/drag/drag.js"></code></pre>
+          <h5>Main Process</h5>
+          <pre><code data-path="main-process/native-ui/drag/drag.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+      require('./renderer-process/native-ui/drag/drag')
+    </script>
+
+  </section>
+</template>
