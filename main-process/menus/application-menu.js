@@ -136,7 +136,6 @@ function addUpdateMenuItems (items, position) {
     key: 'checkingForUpdate'
   }, {
     label: 'Check for Update',
-    visible: false,
     key: 'checkForUpdate',
     click: () => {
       require('electron').autoUpdater.checkForUpdates()
@@ -144,7 +143,6 @@ function addUpdateMenuItems (items, position) {
   }, {
     label: 'Restart and Install Update',
     enabled: true,
-    visible: false,
     key: 'restartToUpdate',
     click: () => {
       require('electron').autoUpdater.quitAndInstall()
