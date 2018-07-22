@@ -6,7 +6,7 @@
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable
-behavior to [electron@github.com](mailto:electron@github.com).
+behavior to [coc@electronjs.org](mailto:coc@electronjs.org).
 
 **See the [documentation](docs.md) for information on how this project works.**
 
