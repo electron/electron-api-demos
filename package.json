@@ -1,7 +1,7 @@
 {
   "name": "electron-api-demos",
   "productName": "Electron API Demos",
-  "version": "1.3.0",
+  "version": "1.5.0",
   "description": "Electron interactive API demos",
   "main": "main.js",
   "bin": "cli.js",
@@ -16,7 +16,7 @@
     "package:sign-exe": "signcode './out/Electron API Demos-win32-ia32/Electron API Demos.exe' --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
     "package:installer": "node ./script/installer.js",
     "package:sign-installer": "signcode './out/windows-installer/ElectronAPIDemosSetup.exe' --cert ~/electron-api-demos.p12 --prompt --name 'Electron API Demos' --url 'http://electron.atom.io'",
-    "package:mas": "./script/mas.sh",
+    "xpackage:mas": "./script/mas.sh",
     "windows-store": "node ./script/windows-store.js",
     "release": "node ./script/release.js",
     "prepack": "check-for-leaks",
