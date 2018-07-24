@@ -88,8 +88,8 @@ function zipAssets () {
       name: 'ElectronAPIDemosSetup.exe',
       path: path.join(outPath, 'windows-installer', 'ElectronAPIDemosSetup.exe')
     }, {
-      name: `ElectronAPIDemos-${version}-full.nupkg`,
-      path: path.join(outPath, 'windows-installer', `ElectronAPIDemos-${version}-full.nupkg`)
+      name: `electron-api-demos-${version}-full.nupkg`,
+      path: path.join(outPath, 'windows-installer', `electron-api-demos-${version}-full.nupkg`)
     }])
   })
 }
