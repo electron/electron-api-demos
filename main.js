@@ -1,7 +1,10 @@
+require('update-electron-app')({
+  logger: require('electron-log')
+})
+
 const path = require('path')
 const glob = require('glob')
 const {app, BrowserWindow} = require('electron')
-const autoUpdater = require('./auto-updater')
 
 const debug = /--debug/.test(process.argv[2])
 
@@ -44,7 +47,6 @@ function initialize () {
 
   app.on('ready', () => {
     createWindow()
-    autoUpdater.initialize()
   })
 
   app.on('window-all-closed', () => {
@@ -82,21 +84,6 @@ function makeSingleInstance () {
 function loadDemos () {
   const files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
   files.forEach((file) => { require(file) })
-  autoUpdater.updateMenu()
 }
 
-// Handle Squirrel on Windows startup events
-switch (process.argv[1]) {
-  case '--squirrel-install':
-    autoUpdater.createShortcut(() => { app.quit() })
-    break
-  case '--squirrel-uninstall':
-    autoUpdater.removeShortcut(() => { app.quit() })
-    break
-  case '--squirrel-obsolete':
-  case '--squirrel-updated':
-    app.quit()
-    break
-  default:
-    initialize()
-}
+initialize()
