@@ -74,7 +74,7 @@ function zipAssets () {
     path: path.join(outPath, 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
   }, {
     name: 'electron-api-demos-windows.zip',
-    path: path.join(outPath, 'ElectronAPIDemos-win32-ia32')
+    path: path.join(outPath, 'Electron API Demos-win32-ia32')
   }, {
     name: 'electron-api-demos-linux.zip',
     path: path.join(outPath, 'Electron API Demos-linux-x64')
