@@ -1,5 +1,6 @@
 require('update-electron-app')({
-  logger: require('electron-log')
+  logger: require('electron-log'),
+  repo: 'electron/electron-api-demos'
 })
 
 const path = require('path')
