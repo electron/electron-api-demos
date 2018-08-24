@@ -1,6 +1,9 @@
-require('update-electron-app')({
-  logger: require('electron-log')
-})
+// only add update server if it's not being run from cli
+if (require.main !== module) {
+  require('update-electron-app')({
+    logger: require('electron-log')
+  })
+}
 
 const path = require('path')
 const glob = require('glob')
