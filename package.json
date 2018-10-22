@@ -43,11 +43,11 @@
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
     "signcode": "^0.5.0",
-    "spectron": "^3.8.0",
+    "spectron": "^5.0.0",
     "standard": "^8.2.0"
   },
   "dependencies": {
-    "electron": "^2.0.4",
+    "electron": "^3.0.3",
     "electron-log": "^2.2.14",
     "electron-settings": "^3.0.7",
     "electron-shortcut-normalizer": "^1.0.0",
