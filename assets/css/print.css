@@ -11,7 +11,7 @@
   }
 
   .nav, button, .demo-box:before,
-  #pdf-path, header p {
+  header p {
     display: none;
   }
 

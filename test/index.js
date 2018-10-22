@@ -72,48 +72,6 @@ describe('demo app', function () {
       .isVisible('.js-nav').should.eventually.be.true
   })
 
-  describe('when clicking on a section from the nav bar', function () {
-    it('it shows the selected section in the main area', function () {
-      return app.client.dismissAboutPage()
-        .selectSection('windows')
-        .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.true
-        .isVisible('#pdf-section').should.eventually.be.false
-        .selectSection('pdf')
-        .isVisible('#windows-section').should.eventually.be.false
-        .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.false
-        .isExisting('button.is-selected[data-section="pdf"]').should.eventually.be.true
-    })
-  })
-
-  describe('when a demo title is clicked', function () {
-    it('it expands the demo content', function () {
-      let onlyFirstVisible = Array(31).fill(false)
-      onlyFirstVisible[0] = true
-
-      return app.client.dismissAboutPage()
-        .collapseDemos()
-        .selectSection('windows')
-        .click('.js-container-target')
-        .waitForVisible('.demo-box')
-        .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
-    })
-  })
-
-  describe('when the app is restarted after use', function () {
-    it('it launches at last visted section & demo', function () {
-      let onlyFirstVisible = Array(31).fill(false)
-      onlyFirstVisible[0] = true
-
-      return app.client.waitForVisible('#windows-section')
-        .then(restartApp)
-        .then(function () {
-          return app.client.waitForVisible('#windows-section')
-            .isVisible('#windows-section').should.eventually.be.true
-            .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
-        })
-    })
-  })
-
   it('does not contain any accessibility warnings or errors', function () {
     return app.client.dismissAboutPage()
       .auditSectionAccessibility('windows')
@@ -128,7 +86,48 @@ describe('demo app', function () {
       .auditSectionAccessibility('app-sys-information')
       .auditSectionAccessibility('clipboard')
       .auditSectionAccessibility('protocol')
-      .auditSectionAccessibility('pdf')
       .auditSectionAccessibility('desktop-capturer')
+  })
+
+  describe('when clicking on a section from the nav bar', function () {
+    it('it shows the selected section in the main area', function () {
+      return app.client.dismissAboutPage()
+        .selectSection('windows')
+        .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.true
+        .isVisible('#menus-section').should.eventually.be.false
+        .selectSection('menus')
+        .isVisible('#windows-section').should.eventually.be.false
+        .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.false
+        .isExisting('button.is-selected[data-section="menus"]').should.eventually.be.true
+    })
+  })
+
+  describe('when a demo title is clicked', function () {
+    it('it expands the demo content', function () {
+      let onlyFirstVisible = Array(30).fill(false)
+      onlyFirstVisible[0] = true
+
+      return app.client.dismissAboutPage()
+        .collapseDemos()
+        .selectSection('windows')
+        .click('.js-container-target')
+        .waitForVisible('.demo-box')
+        .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
+    })
+  })
+
+  describe('when the app is restarted after use', function () {
+    it('it launches at last visited section & demo', function () {
+      let onlyFirstVisible = Array(30).fill(false)
+      onlyFirstVisible[0] = true
+
+      return app.client.waitForVisible('#windows-section')
+        .then(restartApp)
+        .then(function () {
+          return app.client.waitForVisible('#windows-section')
+            .isVisible('#windows-section').should.eventually.be.true
+            .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
+        })
+    })
   })
 })
