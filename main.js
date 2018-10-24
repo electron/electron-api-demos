@@ -75,7 +75,9 @@ function initialize () {
 function makeSingleInstance () {
   if (process.mas) return false
 
-  return app.makeSingleInstance(() => {
+  app.requestSingleInstanceLock()
+
+  app.on('second-instance', () => {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
       mainWindow.focus()
