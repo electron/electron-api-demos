@@ -1,4 +1,5 @@
 const {app, dialog} = require('electron')
+const path = require('path')
 
 if (process.defaultApp) {
   if (process.argv.length >= 2) {
