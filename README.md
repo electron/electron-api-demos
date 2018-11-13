@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/electron/electron-api-demos.svg?branch=master)](https://travis-ci.org/electron/electron-api-demos)
 [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com)
 
-This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electron.atom.io) API. It's built with Electron, too, of course. This app works on Windows, macOS and Linux operating systems.
+This is a desktop app that interactively and with sample code demonstrates core features of the [Electron](http://electronjs.org) API. It's built with Electron, too, of course. This app works on Windows, macOS and Linux operating systems.
 
 Use this app to see what you can do with Electron and use the source code to learn how to create a basic Electron app.
 
@@ -13,10 +13,10 @@ Use this app to see what you can do with Electron and use the source code to lea
 
 This project adheres to the Contributor Covenant [code of conduct](CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable
-behavior to electron@github.com.
+behavior to [coc@electronjs.org](mailto:coc@electronjs.org).
 
 Follow [@ElectronJS](https://twitter.com/electronjs) on Twitter for important
-announcements. Visit the [electron website](http://electron.atom.io).
+announcements. Visit the [electron website](http://electronjs.org).
 
 ## Using
 
@@ -48,6 +48,6 @@ $ npm run dev
 ## Translations
 
 * Simplified Chinese translation of this app is available at [`demopark/electron-api-demos-Zh_CN`](https://github.com/demopark/electron-api-demos-Zh_CN).
-* Tradition Chinese translation of this app is available at [`CalvertYang/electron-api-demos-zh-Hant`](https://github.com/CalvertYang/electron-api-demos-zh-Hant).
+* Traditional Chinese translation of this app is available at [`CalvertYang/electron-api-demos-zh-Hant`](https://github.com/CalvertYang/electron-api-demos-zh-Hant).
 
 Note: these versions are maintained by outside contributors and may not always be in sync with this version.

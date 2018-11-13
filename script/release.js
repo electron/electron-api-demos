@@ -10,12 +10,10 @@ const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
 const version = require('../package').version
 
 checkToken()
-  .then(checkHerokuLoginStatus)
   .then(zipAssets)
   .then(createRelease)
   .then(uploadAssets)
   .then(publishRelease)
-  .then(deployToHeroku)
   .catch((error) => {
     console.error(error.message || error)
     process.exit(1)
@@ -27,20 +25,6 @@ function checkToken () {
   } else {
     return Promise.resolve(token)
   }
-}
-
-function checkHerokuLoginStatus () {
-  return new Promise((resolve, reject) => {
-    console.log('Checking Heroku login status')
-
-    childProcess.exec('heroku whoami', (error, stdout, stderr) => {
-      if (error) {
-        reject('You are not logged in to GitHub\'s Heroku Enterprise account. To log in, run this command:\n$ heroku login --sso')
-      } else {
-        resolve()
-      }
-    })
-  })
 }
 
 function zipAsset (asset) {
@@ -74,7 +58,7 @@ function zipAssets () {
     path: path.join(outPath, 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
   }, {
     name: 'electron-api-demos-windows.zip',
-    path: path.join(outPath, 'ElectronAPIDemos-win32-ia32')
+    path: path.join(outPath, 'Electron API Demos-win32-ia32')
   }, {
     name: 'electron-api-demos-linux.zip',
     path: path.join(outPath, 'Electron API Demos-linux-x64')
@@ -88,8 +72,8 @@ function zipAssets () {
       name: 'ElectronAPIDemosSetup.exe',
       path: path.join(outPath, 'windows-installer', 'ElectronAPIDemosSetup.exe')
     }, {
-      name: `ElectronAPIDemos-${version}-full.nupkg`,
-      path: path.join(outPath, 'windows-installer', `ElectronAPIDemos-${version}-full.nupkg`)
+      name: `electron-api-demos-${version}-full.nupkg`,
+      path: path.join(outPath, 'windows-installer', `electron-api-demos-${version}-full.nupkg`)
     }])
   })
 }
@@ -185,28 +169,6 @@ function publishRelease (release) {
       }
 
       resolve(body)
-    })
-  })
-}
-
-function deployToHeroku () {
-  return new Promise((resolve, reject) => {
-    console.log('Deploying to heroku')
-
-    const herokuCommand = [
-      'heroku',
-      'config:set',
-      '-a',
-      'github-electron-api-demos',
-      `ELECTRON_LATEST_RELEASE=${version}`
-    ].join(' ')
-
-    childProcess.exec(herokuCommand, (error) => {
-      if (error) {
-        reject(error)
-      } else {
-        resolve()
-      }
     })
   })
 }

@@ -1,7 +1,13 @@
+// only add update server if it's not being run from cli
+if (require.main !== module) {
+  require('update-electron-app')({
+    logger: require('electron-log')
+  })
+}
+
 const path = require('path')
 const glob = require('glob')
 const {app, BrowserWindow} = require('electron')
-const autoUpdater = require('./auto-updater')
 
 const debug = /--debug/.test(process.argv[2])
 
@@ -10,8 +16,7 @@ if (process.mas) app.setName('Electron APIs')
 let mainWindow = null
 
 function initialize () {
-  const shouldQuit = makeSingleInstance()
-  if (shouldQuit) return app.quit()
+  makeSingleInstance()
 
   loadDemos()
 
@@ -44,7 +49,6 @@ function initialize () {
 
   app.on('ready', () => {
     createWindow()
-    autoUpdater.initialize()
   })
 
   app.on('window-all-closed', () => {
@@ -68,9 +72,11 @@ function initialize () {
 // Returns true if the current version of the app should quit instead of
 // launching.
 function makeSingleInstance () {
-  if (process.mas) return false
+  if (process.mas) return
 
-  return app.makeSingleInstance(() => {
+  app.requestSingleInstanceLock()
+
+  app.on('second-instance', () => {
     if (mainWindow) {
       if (mainWindow.isMinimized()) mainWindow.restore()
       mainWindow.focus()
@@ -82,21 +88,6 @@ function makeSingleInstance () {
 function loadDemos () {
   const files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
   files.forEach((file) => { require(file) })
-  autoUpdater.updateMenu()
 }
 
-// Handle Squirrel on Windows startup events
-switch (process.argv[1]) {
-  case '--squirrel-install':
-    autoUpdater.createShortcut(() => { app.quit() })
-    break
-  case '--squirrel-uninstall':
-    autoUpdater.removeShortcut(() => { app.quit() })
-    break
-  case '--squirrel-obsolete':
-  case '--squirrel-updated':
-    app.quit()
-    break
-  default:
-    initialize()
-}
+initialize()

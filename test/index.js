@@ -72,16 +72,33 @@ describe('demo app', function () {
       .isVisible('.js-nav').should.eventually.be.true
   })
 
+  it('does not contain any accessibility warnings or errors', function () {
+    return app.client.dismissAboutPage()
+      .auditSectionAccessibility('windows')
+      .auditSectionAccessibility('crash-hang')
+      .auditSectionAccessibility('menus')
+      .auditSectionAccessibility('shortcuts')
+      .auditSectionAccessibility('ex-links-file-manager')
+      .auditSectionAccessibility('notifications')
+      .auditSectionAccessibility('dialogs')
+      .auditSectionAccessibility('tray')
+      .auditSectionAccessibility('ipc')
+      .auditSectionAccessibility('app-sys-information')
+      .auditSectionAccessibility('clipboard')
+      .auditSectionAccessibility('protocol')
+      .auditSectionAccessibility('desktop-capturer')
+  })
+
   describe('when clicking on a section from the nav bar', function () {
     it('it shows the selected section in the main area', function () {
       return app.client.dismissAboutPage()
         .selectSection('windows')
         .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.true
-        .isVisible('#pdf-section').should.eventually.be.false
-        .selectSection('pdf')
+        .isVisible('#menus-section').should.eventually.be.false
+        .selectSection('menus')
         .isVisible('#windows-section').should.eventually.be.false
         .isExisting('button.is-selected[data-section="windows"]').should.eventually.be.false
-        .isExisting('button.is-selected[data-section="pdf"]').should.eventually.be.true
+        .isExisting('button.is-selected[data-section="menus"]').should.eventually.be.true
     })
   })
 
@@ -100,7 +117,7 @@ describe('demo app', function () {
   })
 
   describe('when the app is restarted after use', function () {
-    it('it launches at last visted section & demo', function () {
+    it('it launches at last visited section & demo', function () {
       let onlyFirstVisible = Array(30).fill(false)
       onlyFirstVisible[0] = true
 
@@ -112,23 +129,5 @@ describe('demo app', function () {
             .isVisible('.demo-box').should.eventually.deep.equal(onlyFirstVisible)
         })
     })
-  })
-
-  it('does not contain any accessibility warnings or errors', function () {
-    return app.client.dismissAboutPage()
-      .auditSectionAccessibility('windows')
-      .auditSectionAccessibility('crash-hang')
-      .auditSectionAccessibility('menus')
-      .auditSectionAccessibility('shortcuts')
-      .auditSectionAccessibility('ex-links-file-manager')
-      .auditSectionAccessibility('notifications')
-      .auditSectionAccessibility('dialogs')
-      .auditSectionAccessibility('tray')
-      .auditSectionAccessibility('ipc')
-      .auditSectionAccessibility('app-sys-information')
-      .auditSectionAccessibility('clipboard')
-      .auditSectionAccessibility('protocol')
-      .auditSectionAccessibility('pdf')
-      .auditSectionAccessibility('desktop-capturer')
   })
 })
