@@ -1,83 +1,83 @@
-# Documentation
+# Документация
 
-This app has been developed to be a lightweight Electron app, demonstrating how to create a basic Electron app with a few exceptions that have been made for the sake of code organization in regards to the demos themselves.
+Это приложение было разработано как легкое приложение Electron, демонстрирующее, как создать базовое приложение Electron за несколькими исключениями, которые были сделаны ради организации кода в отношении самих демоверсий.
 
-All of the sample code shown in the app _is the actual code used in the app_. These JavaScript bits have been pulled out into their own file and organized by process (main or renderer) and then by section (communication, menus, native UI, media, system, windows).
+Весь образец кода, показанный в приложении, является _фактическим кодом, используемым в приложении_ Эти фрагменты JavaScript были извлечены из их собственных файлов иорганизованны в процессах (main или renderer) и разнесены по секциям (communication, menus, native UI, media, system, windows).
 
-This was done for maintainability—code updates only have to be made in one place—and organization—it's easy to find the sample code you're looking for.
+Это было сделано для обновления кода работоспособности, которое должно быть сделано только в одном месте - и организации - легко найти пример кода, который вы ищете.
 
-All of the pages (or views) are separate `.html` files which are appended onto the `index.html` using [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/).
+Все страницы (или представления) представляют собой отдельные файлы .html, которые добавляются в `index.html`, используя [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/).
 
-Are you looking to add a demo? Jump to the [add a new demo section](#add-a-section-or-demo).
+Вы хотите добавить демо? Перейти к [add a new demo section](#add-a-section-or-demo).
 
-## Folder Structure
+## Структура папок
 
-![Diagram of App Structure and Operations](/assets/img/diagram.png)
+![Схема структуры и операций приложения](/assets/img/diagram.png)
 
 #### `assets`
-This directory contains assets for the app itself: CSS, fonts, images and shared JavaScript libraries or helpers.
+Этот каталог содержит активы для самого приложения: CSS, fonts, images and shared JavaScript libraries or helpers.
 
 #### `main-process`
-This directory contains sub folders for each demo section that requires JavaScript in the main process. This structure is mirrored in the `renderer-process` directory.
+Этот каталог содержит вспомогательные папки для каждой демонстрационной секции, для которой требуется JavaScript в основном процессе. Эта структура зеркалируется в каталоге `renderer-process`.
 
-The `main.js` file, located in the root, takes each `.js` file in these directories and executes them.
+Файл `main.js` , расположенный в root, принимает каждый `.js` файл в этой папке и исполняет его.
 
 #### `renderer-process`
-This directory contains sub folders for each demo section that requires JavaScript in the renderer process. This structure is mirrored in the `main-process` directory.
+Этот каталог содержит вспомогательные папки для каждой демонстрационной секции, для которой требуется JavaScript в процессе рендеринга. Эта структура зеркалируется в каталоге `main-process`.
 
-Each of the HTML page views requires the corresponding renderer-process `.js` files that it needs for its demo.
+Для каждого view представляемого HTML-страницей требуется соответствующий .js`-файл, который необходим для демонстрации.
 
-Each page view reads the content of its relevant main and renderer process files and adds them to the page for the snippets.
+Каждый page view считывает содержимое соответствующих файлов процессов main и renderer и добавляет их на страницу как снипеты.
 
 #### `sections`
-This directory contains sub folders for each demo section. These subfolders contain the HTML files for each of the demo pages. Each of these files is appended to `index.html`, located at the root.
+Этот каталог содержит вспомогательные папки для каждой демонстрационной секции. Эти подпапки содержат файлы HTML для каждой из демонстрационных страниц. Каждый из этих файлов добавляется к `index.html`, расположенному в корне.
 
 #### `index.html`
-This is the main view in the app. It contains the sidebar with navigation and uses [HTML imports](http://www.html5rocks.com/en/tutorials/webcomponents/imports/) to append each section HTML page to the `body`.
+Это главное view приложения. Он содержит боковую панель с навигацией и использует [HTML-импорт] (http://www.html5rocks.com/en/tutorials/webcomponents/imports/), чтобы добавить HTML-страницу каждого раздела в `body`.
 
 #### `main.js`
-This file contains the lifecycle instructions for the app like how to start and quit, it is the app's main process. It grabs every `.js` file in the `main-process` directory and executes.
+Этот файл содержит инструкции по жизненному циклу для приложения, например, как начать и завершить работу, это основной процесс приложения. Он захватывает каждый файл `.js` в каталоге` main-process` и выполняется.
 
-The `package.json` sets this file as the `main` file.
+Файл `package.json` задает этот файл как `main` файл.
 
 #### `package.json`
-This file is required when using `npm` and Electron.js. It contains details on the app: the author, dependencies, repository and points to `main.js` as the application's main process file.
+Этот файл требуется при использовании `npm` и Electron.js. Он содержит подробную информацию о приложении: автор, зависимости, репозиторий и указывает на `main.js` как основной файл процесса приложения.
 
 #### Docs
-The files: `CODE_OF_CONDUCT`, `README`, `docs` and `CONTRIBUTING` files make up the documentation for the project.
+Файлы: `CODE_OF_CONDUCT`, `README`, `docs` и `CONTRIBUTING` составляют документацию этого проекта.
 
-## UI Terminology
+## UI Терминология
 
 ![UI Terminology](/assets/img/ui-terminology.png)
 
-## CSS Naming Convention
+## CSS Соглашение об именовании
 
-Nothing too strict and used more as a guide:
+Ничто не строго обязательно и больше используется в качестве руководства:
 
-- Styling elements directly should be avoided, but ok in some cases. Like `<p>` or `<code>`.
-- Elements that belong together are prefixed with their parent class. `.section`, `.section-header`, `.section-icon`.
-- States use `is-` prefix
-- Utilities use `u-` prefix
+- Следует избегать прямой стилизации элементов, но в некоторых случаях это нормально. Как `<p>` или `<code>`.
+- Элементы, которые принадлежат друг другу, имеют префикс их родительского класса. `.section`, `.section-header`, `.section-icon`.
+- Состояни используют префикс `is-` 
+- Утилиты используют префикс `u-` 
 
-## Add a Section or Demo
+## Добавление секции или демо
 
-Here are tips for covering the bases when adding a new section or demo. General tip—for some of these just copy the line or file of a similar existing item to get started!
+Общий совет - для некоторых из них просто скопируйте строку или файл аналогичного существующего элемента, чтобы начать работу!
 
-### New Section
+### Новая секция
 
-A whole new page with one or more demos.
+Целая новая страница с одной или несколькими демонстрациями.
 
 #### index.html
 
-This page contains the sidebar list of sections as well as each section template that is imported with HTML imports.
+Эта страница содержит список секций боковой панели, а также каждый шаблон раздела, импортируемый с помощью импорта HTML.
 
-- Add demo to sidebar in the appropriate category in `index.html`
- - update `id` i.e. `id="button-dialogs"`
- - update `data-section` i.e. `data-section="dialogs"`
-- Add demo template path to the import links in the `head` of `index.html`
- - i.e. `<link rel="import" href="sections/native-ui/dialogs.html">`
+- Добавьте демоверсию в боковую панель в соответствующей категории в `index.html`
+ - обновите `id` т.e. `id="button-dialogs"`
+ - обновите `data-section` т.e. `data-section="dialogs"`
+- Добавьте демо template path к import links в `head` страницы `index.html`
+ - т.e. `<link rel="import" href="sections/native-ui/dialogs.html">`
 
-#### Template
+#### Шаблон
 
 This template is added to the `index.html` in the app.
 
