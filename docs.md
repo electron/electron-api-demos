@@ -79,33 +79,33 @@
 
 #### Шаблон
 
-This template is added to the `index.html` in the app.
+Этот шаблон добавляется в `index.html` в приложении.
 
-- In the `sections` directory, copy an existing template `html` file from the category you're adding a section to.
-- Update these tags `id`
- - i.e. `id="dialogs-section"`
-- Update all the text in the `header` tag with text relevant to your new section.
- - Remove the demos and pro-tips as needed.
+- В папке `sections`, скопируйте существующий файл шаблона `html` из категории, которую вы добавляете в раздел.
+- Обновите его тег `id`
+ - т.e. `id="dialogs-section"`
+- Обновите весь текст в тэге `header` текстом соответствующим новой секции.
+ - Удалите демонстрации и проконсультируйтесь по мере необходимости.
 
 ### Demo
 
-Any code that you create for your demo should be added to the 'main-process' or 'renderer-process' directories depending on where it runs.
+Любой код, который вы создаете для своей демонстрации, должен быть добавлен в каталоги 'main-process' или 'renderer-process' в зависимости от того где он выполняется.
 
-All JavaScript files within the 'main-process' directory are run when the app starts but you'll link to the file so that it is displayed within your demo (see below).
+Все JavaScript файлы в папке 'main-process' запускаются при запуске самого приложения но вы должны ссылаться на файлы который хотите отобразить в вашем демо (см. ниже).
 
-The renderer process code you add will be read and displayed within the demo and then required on the template page so that it runs in that process (see below).
+Код процесса рендеринга, который вы добавляете, будет читаться и отображаться в демо, а затем требуется на странице шаблона, чтобы он выполнялся в этом процессе (см. Ниже).
 
-- Start by copying and pasting an existing `<div class="demo">` blocks from the template page.
-- Update the demo button `id`
- - i.e `<button class="demo-button" id="information-dialog">View Demo</button>`
-- If demo includes a response written to the DOM, update that `id`, otherwise delete:
- - i.e. `<span class="demo-response" id="info-selection"></span>`
-- Update the text describing your demo.
-- If you are displaying main or renderer process sample code, include or remove that markup accordingly.
- - Sample code is read and added to the DOM by adding the path to the code in the `data-path`
-   - i.e. `<pre><code data-path="renderer-process/native-ui/dialogs/information.js"></pre></code>`
+- Начните с копирования и вставки существующего блока `<div class="demo">` из страницы шаблона.
+- Обновите demo button `id`
+ - т.e `<button class="demo-button" id="information-dialog">View Demo</button>`
+- Если демо включает ответ, написанный на DOM, обновите его `id`, или удалите:
+ - т.e. `<span class="demo-response" id="info-selection"></span>`
+- Обновите текст, описывающий ваше демо.
+- Если вы показываете код примера основного или визуального процесса, включите или удалите эту разметку соответственно.
+ - Пример кода читается и добавляется в DOM добавив путь к коду в `data-path`
+   - т.e. `<pre><code data-path="renderer-process/native-ui/dialogs/information.js"></pre></code>`
  - Require your render process code in the script tag at the bottom of the template
-   - i.e  `require('./renderer-process/native-ui/dialogs/information')`
+   - т.e  `require('./renderer-process/native-ui/dialogs/information')`
 
 #### Try it out
 
