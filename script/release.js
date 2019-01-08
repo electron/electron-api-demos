@@ -126,7 +126,7 @@ async function uploadAssets (release, assets) {
           console.error('\n')
           console.error(`  There was a network timeout while uploading ${asset.name}.`)
           console.error('  This likely resulted in a bad asset; please visit the release at')
-          console.error(`  ${release.html_url} and manually removed the bad asset,`)
+          console.error(`  ${release.html_url} and manually remove the bad asset,`)
           console.error(`  then run this script again to continue where you left off.`)
           console.error('')
           process.exit(2)
