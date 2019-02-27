@@ -22,7 +22,10 @@ function initialize () {
       width: 1080,
       minWidth: 680,
       height: 840,
-      title: app.getName()
+      title: app.getName(),
+      webPreferences: {
+        nodeIntegration: true
+      }
     }
 
     if (process.platform === 'linux') {
