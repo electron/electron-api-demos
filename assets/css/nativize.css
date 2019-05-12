@@ -5,7 +5,7 @@
 
 html {
   font-family: sans-serif;
-  -webkit-user-select: none; /* disable selection */
+  user-select: none; /* disable selection */
   -webkit-user-drag: none; /* disable dragging */
   cursor: default; /* use default cursor */
 }
@@ -20,7 +20,7 @@ body {
 .is-selectable,
 pre,
 code {
-  -webkit-user-select: auto;
+  user-select: text;
   cursor: auto;
 }
 
