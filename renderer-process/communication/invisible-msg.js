@@ -11,7 +11,10 @@ invisMsgBtn.addEventListener('click', (clickEvent) => {
   let win = new BrowserWindow({
     width: 400,
     height: 400,
-    show: false
+    show: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   win.loadURL(invisPath)
 
