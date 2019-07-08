@@ -5,7 +5,13 @@ const processCrashBtn = document.getElementById('process-crash')
 
 processCrashBtn.addEventListener('click', (event) => {
   const crashWinPath = path.join('file://', __dirname, '../../sections/windows/process-crash.html')
-  let win = new BrowserWindow({ width: 400, height: 320 })
+  let win = new BrowserWindow({
+    width: 400,
+    height: 320,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
 
   win.webContents.on('crashed', () => {
     const options = {
