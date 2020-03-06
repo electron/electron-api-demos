@@ -1,0 +1,39 @@
+name: Generate Sentinel Report
+
+on:
+  repository_dispatch:
+    types: generate-sentinel-report
+
+jobs:
+  build-and-test:
+    name: Build Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Test Suite
+        run: npm run generate-test-report
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v1
+        with:
+          name: report
+          path: report.json
+
+  send-data:
+    name: Generate Report
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Report
+        uses: actions/download-artifact@v1
+        with:
+          name: report
+
+      - name: Send Data to Sentinel
+        uses: codebytere/sentinel-client@v1
+
