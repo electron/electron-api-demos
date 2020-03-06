@@ -9,6 +9,7 @@
     "start": "electron .",
     "dev": "electron . --debug",
     "test": "mocha && standard",
+    "generate-test-report": "mocha --reporter=json --reporter-options output=report.json",
     "package": "npm-run-all package:*",
     "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
     "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico",
@@ -45,7 +46,8 @@
     "rimraf": "^2.5.2",
     "signcode": "^0.5.0",
     "spectron": "^5.0.0",
-    "standard": "^8.2.0"
+    "standard": "^8.2.0",
+    "tap": "^14.10.6"
   },
   "dependencies": {
     "electron": "^5.0.1",
