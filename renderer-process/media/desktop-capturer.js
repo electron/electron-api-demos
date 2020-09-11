@@ -1,4 +1,5 @@
-const {desktopCapturer, screen, shell} = require('electron')
+const {desktopCapturer, shell} = require('electron')
+const {screen} = require('electron').remote
 
 const fs = require('fs')
 const os = require('os')
