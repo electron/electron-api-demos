@@ -1,3 +1,5 @@
+// https://www.electronjs.org/docs/breaking-changes
+// const {screen} = require('electron')
 const {screen} = require('electron').remote
 
 const screenInfoBtn = document.getElementById('screen-info')

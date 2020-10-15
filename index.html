@@ -108,6 +108,16 @@
     require('./assets/demo-btns')
     require('./assets/code-blocks')
     require('./assets/normalize-shortcuts')
+    // Require each JS file in the renderer-process dir
+    function loadRenderers() {
+      const path = require('path')
+      const glob = require('glob')
+      const files = glob.sync(path.join(__dirname, 'renderer-process/**/*.js'))
+      files.forEach((file) => { 
+        require(file) 
+      });
+    }
+    loadRenderers()
   </script>
 </body>
 </html>

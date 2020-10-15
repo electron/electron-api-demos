@@ -172,7 +172,8 @@ function findReopenMenuItem () {
 }
 
 if (process.platform === 'darwin') {
-  const name = app.getName()
+  // const name = app.getName()      // (electron) 'getName function' is deprecated and will be removed. Please use 'name property' instead.
+  const name = app.name
   template.unshift({
     label: name,
     submenu: [{
