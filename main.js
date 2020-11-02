@@ -18,13 +18,17 @@ function initialize () {
   loadDemos()
 
   function createWindow () {
+    // https://www.electronjs.org/docs/api/browser-window
     const windowOptions = {
       width: 1080,
       minWidth: 680,
       height: 840,
-      title: app.getName(),
+      // title: app.getName(),                // (electron) 'getName function' is deprecated and will be removed. Please use 'name property' instead.
+      title: app.name,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,                // will let you access node everywhere. security concern? for a desktop app? i doubt it.
+        worldSafeExecuteJavaScript: true,     // (electron) Security Warning: webFrame.executeJavaScript was called without worldSafeExecuteJavaScript enabled. This is considered unsafe. worldSafeExecuteJavaScript will be enabled by default in Electron 12.
+        enableRemoteModule: true,             // https://github.com/nathanbuchar/electron-settings For Electron v10+, if you want to use electron-settings within a browser window, be sure to set the enableRemoteModule web preference to true. Otherwise you might get the error Cannot read property 'app' of undefined
       }
     }
 
@@ -39,7 +43,9 @@ function initialize () {
     if (debug) {
       mainWindow.webContents.openDevTools()
       mainWindow.maximize()
-      require('devtron').install()
+      // https://github.com/electron/electron/issues/22117
+      // https://github.com/electron/electron/issues/23662
+      // require('devtron').install()
     }
 
     mainWindow.on('closed', () => {

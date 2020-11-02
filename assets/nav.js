@@ -22,7 +22,7 @@ function handleSectionTrigger (event) {
 
   // Save currently active button in localStorage
   const buttonId = event.target.getAttribute('id')
-  settings.set('activeSectionButtonId', buttonId)
+  settings.setSync('activeSectionButtonId', buttonId)
 }
 
 function activateDefaultSection () {
@@ -65,7 +65,7 @@ function displayAbout () {
 }
 
 // Default to the view that was active the last time the app was open
-const sectionId = settings.get('activeSectionButtonId')
+const sectionId = settings.getSync('activeSectionButtonId')
 if (sectionId) {
   showMainContent()
   const section = document.getElementById(sectionId)
