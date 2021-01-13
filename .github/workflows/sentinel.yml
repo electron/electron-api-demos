@@ -37,3 +37,4 @@ jobs:
       - name: Send Data to Sentinel
         uses: codebytere/sentinel-client@v1
 
+      ![Generate Sentinel Report](https://github.com/electron/electron-api-demos/workflows/Generate%20Sentinel%20Report/badge.svg?branch=master&event=status)
