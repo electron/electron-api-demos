@@ -29,11 +29,11 @@ function initialize () {
     }
 
     if (process.platform === 'linux') {
-      windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
+      windowOptions.icon = './assets/app-icon/png/512.png'
     }
 
     mainWindow = new BrowserWindow(windowOptions)
-    mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
+    mainWindow.loadURL('index.html')
 
     // Launch fullscreen with DevTools open, usage: npm run debug
     if (debug) {
@@ -86,7 +86,7 @@ function makeSingleInstance () {
 
 // Require each JS file in the main-process dir
 function loadDemos () {
-  const files = glob.sync(path.join(__dirname, 'main-process/**/*.js'))
+  const files = glob.sync('./main-process/**/*.js')
   files.forEach((file) => { require(file) })
 }
 
