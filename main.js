@@ -24,7 +24,9 @@ function initialize () {
       height: 840,
       title: app.getName(),
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        contextIsolation : false,
+        enableRemoteModule: true,
       }
     }
 

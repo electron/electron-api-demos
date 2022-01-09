@@ -17,8 +17,11 @@ function handleSectionTrigger (event) {
   event.target.classList.add('is-selected')
 
   // Display the current section
-  const sectionId = `${event.target.dataset.section}-section`
-  document.getElementById(sectionId).classList.add('is-shown')
+  const sectionId = event.target.dataset.section + '-section';
+  const section = document.getElementById(sectionId);
+  if (!!section) {
+      section.classList.add('is-shown');
+  }
 
   // Save currently active button in localStorage
   const buttonId = event.target.getAttribute('id')
@@ -61,7 +64,10 @@ function hideAllSectionsAndDeselectButtons () {
 }
 
 function displayAbout () {
-  document.querySelector('#about-modal').classList.add('is-shown')
+  const modal = document.querySelector('#about-modal');
+  if (!!modal) {
+      modal.classList.add('is-shown');
+  }
 }
 
 // Default to the view that was active the last time the app was open
