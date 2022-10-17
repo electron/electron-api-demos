@@ -44,7 +44,7 @@
     "npm-run-all": "^4.0.2",
     "request": "^2.70.0",
     "rimraf": "^2.5.2",
-    "signcode": "^0.5.0",
+    "signcode": "^1.0.0",
     "spectron": "^5.0.0",
     "standard": "^8.2.0",
     "tap": "^14.10.6"
