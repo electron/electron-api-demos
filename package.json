@@ -50,7 +50,7 @@
     "tap": "^14.10.6"
   },
   "dependencies": {
-    "electron": "^15.5.5",
+    "electron": "^18.3.7",
     "electron-log": "^2.2.14",
     "electron-settings": "^3.0.7",
     "electron-shortcut-normalizer": "^1.0.0",
